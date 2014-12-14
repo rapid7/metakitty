@@ -1,7 +1,14 @@
 ---
-title: Metakitty Resources
+title: Metasploit Resource Portal
+topics:
+  - :getting_started
+  - :pro_tips
 ---
 
-  <%= partial :topnav %>
+<%= partial :topnav %>
 
-  <%= partial :content_accordion %>
+<div class="panel-group" id="accordion">
+  <% current_page.data.topics.each do |topic| %>
+    <%= partial :_panel_heading, :locals => {:topic => topic } %>
+  <% end %>
+</div>

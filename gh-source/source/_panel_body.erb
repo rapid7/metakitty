@@ -1,5 +1,5 @@
-<p>
-<%= case data_source # From the parent partial
+<div class="panel-body">
+<%= case topic
   when :getting_started
     %q{
         New to Metasploit? So was everyone, once. I mean, it would be weird to just
@@ -21,14 +21,10 @@
 end
 
 %>
-</p>
-
-<% debug = false %>
-<%= data.getting_started.first.inspect if debug %>
 
 <table class="table">
   <%
-    sorted_data = data.send(data_source).sort_by {|x| x[1]["date"] }.reverse
+    sorted_data = data.send(topic).sort_by {|x| x[1]["date"] }.reverse
     sorted_data.each do |res|
     url_name = res[0]
     details = res[1]
@@ -78,4 +74,4 @@ end
   <% end %>
   </table>
 </div>
-
+</div>
