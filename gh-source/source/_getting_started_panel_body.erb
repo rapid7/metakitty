@@ -1,0 +1,57 @@
+<p>
+New to Metasploit? So was everyone, once. I mean, it would be weird to just
+pop out of the clone vats and immediately start hacking the Matrix.
+You'd have to be some kind of Chosen One.
+</p>
+
+<% debug = false %>
+<%= data.getting_started.first.inspect if debug %>
+
+<table class="table">
+  <%
+    sorted_data = data.getting_started.sort_by {|x| x[1]["date"] }.reverse
+    sorted_data.each do |res|
+    url_name = res[0]
+    details = res[1]
+    url_link = details["url"]
+    date = details["date"] || "1970-01-01"
+    type = details["type"] || "text"
+    auth = details["author"]["name"]
+    aka  = details["author"]["twitter"]
+    text = details["text"]
+
+    # Icons from Font Awesome, an MIT licensed font:
+    # http://fortawesome.github.io/Font-Awesome/icons/
+    icon_type = case type
+                when "video"
+                  :video_camera
+                when "audio"
+                  :volume_up
+                when "email"
+                  :envelope
+                else
+                  :file_text
+                end
+  %>
+
+  <tr>
+      <td>
+        <%= link_to icon(icon_type, library: :font_awesome), url_link %>
+      </td>
+      <td class="resource_url">
+        <%= link_to url_name, url_link %><br/>
+        <%= panel text, context: :success if text %>
+      </td>
+      <td class="resource_date" nowrap>
+        <em><%= date <= Date.new(1970,1,1) ? "the dawn of time" : date %></em>
+      </td>
+      <td nowrap>
+        by
+        <%= aka ? (link_to auth, "https://twitter.com/#{aka}") : auth %>
+      </td>
+    </tr>
+  </tr>
+  <% end %>
+  </table>
+</div>
+
