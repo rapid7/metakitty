@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= current_page.data.title %></title>
+    <!-- Local versions for safety. Pare down the bootstrap.min someday soon -->
+    <%= stylesheet_link_tag('font-awesome.min', :relative => true) %>
+    <%= stylesheet_link_tag('bootstrap.min', :relative => true) %>
+    <%= stylesheet_link_tag('bootstrap-theme.min', :relative => true) %>
+    <%= stylesheet_link_tag(:custom, :relative => true) %>
+    <%= javascript_include_tag 'jquery.min', :relative => true %>
+    <%= javascript_include_tag 'bootstrap.min.js', :relative => true %>
+</head>
+<body>
+  <%= yield %>
+</body>
+</html>
+
