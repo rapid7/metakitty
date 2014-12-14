@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style id="antiClickjack">body{display:none !important;}</style>
+    <script type="text/javascript">
+  if (self === top) {
+    var antiClickjack = document.getElementById("antiClickjack");
+    antiClickjack.parentNode.removeChild(antiClickjack);
+    } else {
+      top.location = self.location;
+  }
+    </script>
+
+  <title><%= current_page.data.title %></title>
+  <%# Don't use stylesheet_link_tag(font_awesome_css) because that's http not https %>
+  <link href="https://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+  <%# Local versions for safety. Pare down the bootstrap js library someday %>
+  <%= stylesheet_link_tag('darkly', :relative => true) %>
+  <%= stylesheet_link_tag(:custom, :relative => true) %>
+  <%= javascript_include_tag 'jquery.min', :relative => true %>
+  <%= javascript_include_tag 'bootstrap.min.js', :relative => true %>
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+
+  <div align="left" style="background-color: white; padding: 5px;">
+    <%= link_to image_tag('r7-logo.png', :class => "logo-r7"), 'https://www.rapid7.com' %>
+  </div>
+
+    <%= yield %>
+  </body>
+</html>
+

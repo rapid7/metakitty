@@ -1,0 +1,105 @@
+#!/usr/bin/env ruby
+
+require 'json'
+require 'erb'
+require 'pry'
+require 'octokit'
+load 'stats_generator.rb'
+
+data  = JSON.parse(File.read('stats.json'))
+stats = data[0][1].keys
+badge = ''
+i = 0
+@weekly_values.each do |stat, value|
+  badge << "
+  <li role=\"presentation\">
+    <a href=\"#{stats[i]}.html\" >#{stat}
+      <span class=\"badge\">#{value}</span>
+    </a>
+  </li>"
+  i += 1
+end
+
+data  = JSON.parse(File.read('stats.json'))
+stats = data[0][1].keys
+toc = ''
+stats.each do |stat|
+  toc << "<li><a href=\"#{stat}.html\" >#{stat}</a></li>\n"
+end
+
+top_committers_1  = ''
+top_committers_2  = ''
+top_committers_3  = ''
+
+@committers_list.to_a[0..9].each do |committer, _value|
+  top_committers_1 << "<td>#{committer}</td>"
+end
+
+@committers_list.to_a[10..19].each do |committer, _value|
+  top_committers_2 << "<td>#{committer}</td>"
+end
+
+@committers_list.to_a[20..29].each do |committer, _value|
+  top_committers_3 << "<td>#{committer}</td>"
+end
+
+# MAKING THE LINKS
+accordion = "
+
+            "
+@weekly_stats.each do |stat, url, _date, _author, _title|
+  top = "
+      <div class=\"panel panel-primary\">
+        <div class=\"panel-heading\" data-toggle=\"collapse\"
+             data-parent=\"#accordion\" data-target=\"\##{stat}\">
+          <h4 class=\"panel-title\">#{stat}</h4>
+        </div>
+        <div id=\"#{stat}\" class=\"panel-collapse collapse\">
+        <div class=\"panel-body\">
+          Check out some of the #{stat} for this week!
+        </div>
+        <div class=\"table-responsive\">
+        <table class=\"table\">
+      "
+  accordion << top
+  url.each do |uri|
+    content = "
+          <tr>
+            <td class=\"resource_url\">
+              <a target=\"_blank\" href=\"#{uri[1]}\">
+                <span class=\"fa-fw fa fa-github\">#{uri[0]}</span>
+              </a>
+              <a title=\"#{uri[4]}\" href=\"#{uri[1]}\">#{uri[4]}
+                <span class=\"fa-fw fa fa-info-circle\"></span>
+              </a>
+            </td>
+
+            <td class=\"resource_date\" nowrap>
+              <em>#{uri[2]}</em>
+            </td>
+
+            <td class=\"resource_author\" nowrap>
+              #{uri[3]}
+            </td>
+          </tr>
+    "
+    accordion << content
+  end
+  bottom = '</table></div></div></div>'
+  accordion << bottom
+  # puts accordion
+end
+accordion << '</div>'
+
+stat_data = []
+title = 'foo'
+
+stats.each do |stat|
+  title = stat
+  stat_data = []
+  data.each do |datum|
+    stat_data << [datum[0], datum[1][stat]]
+  end
+  template = ERB.new(File.read('template.erb'))
+  File.write("#{title}.html", template.result)
+end
