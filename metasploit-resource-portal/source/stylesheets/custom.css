@@ -1,14 +1,13 @@
 /* General */
 
-body {
-  width: 98%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .logo {
   max-width: 300px;
 }
+
+.logo-r7 {
+  max-width: 200px;
+}
+
 
 /* Indicate that panel headings are clickable */
 
