@@ -23,3 +23,9 @@
   type: video
   author: {name: "Hak5", twitter: "hak5" }
 
+"What is Metasploit?":
+  url: "https://www.youtube.com/watch?v=TCPyoWHy4eA"
+  date: 2014-01-06
+  type: video
+  author: {name: "Hak5", twitter: "hak5" }
+

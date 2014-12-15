@@ -21,17 +21,20 @@
         :volume_up
       when "email"
         :envelope
+      when "github"
+        :github
       else
         :file_text
       end
   %>
 
   <tr>
-      <td>
-        <%= link_to icon(icon_type, library: :font_awesome), url_link %>
-      </td>
       <td class="resource_url">
-        <%= link_to url_name, url_link %><br/>
+        <%= link_to icon(
+              icon_type,
+              library: :font_awesome, class: "fa-fw"
+            ) + " #{url_name}",
+          url_link %>
       </td>
       <td class="resource_date" nowrap>
         <em><%= date <= Date.new(1970,1,1) ? "the dawn of time" : date %></em>
@@ -42,11 +45,15 @@
       </td>
 
     </tr>
+
     <% if comment %>
-      <tr><td colspan=4>
-      <%= panel comment, context: :success %>
-    </td></tr>
+      <tr>
+        <td colspan=3>
+          <%= panel comment  %>
+        </td>
+      </tr>
     <% end %>
+
   </tr>
   <% end %>
   </table>
