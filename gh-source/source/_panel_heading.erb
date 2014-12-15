@@ -6,6 +6,7 @@
           "data-parent" => "#accordion",
           :href => "##{topic}" do %>
           <%= topic.to_s.titleize %>
+          (<%= data.send(topic).size-1 %>)
       <% end %>
       </h4>
     </div>
