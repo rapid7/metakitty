@@ -10,6 +10,12 @@
     type = details["type"] || "text"
     auth = details["author"]["name"]
     aka  = details["author"]["twitter"]
+    if aka
+      author_link = link_to(icon(:twitter, library: :font_awesome) + ' ' + auth, "https://twitter.com/#{aka}", target: "_blank")
+    else
+      author_link = auth
+    end
+
     comment = details["comment"]
 
     # Icons from Font Awesome, an MIT licensed font:
@@ -42,7 +48,7 @@
       </td>
       <td nowrap>
         by
-        <%= aka ? (link_to auth, "https://twitter.com/#{aka}") : auth %>
+        <%= author_link %>
       </td>
 
     </tr>
