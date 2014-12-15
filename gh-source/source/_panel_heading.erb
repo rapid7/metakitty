@@ -11,7 +11,7 @@
     </div>
     <% content_tag :div, id: topic, class: "panel-collapse collapse" do %>
       <div class="panel-body">
-        <%= data.send(topic).first[1]["text"] %>
+        <%= data.send(topic).first[1]["comment"] %>
       </div>
       <%= partial :_panel_body, :locals => {:topic => topic} %>
   <% end %>
