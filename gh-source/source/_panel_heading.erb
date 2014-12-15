@@ -20,6 +20,9 @@
       </h4>
     </div>
     <% content_tag :div, id: topic_id, class: "panel-collapse collapse" do %>
+      <div class="panel-body">
+        <%= data.send(topic).first[1]["text"] %>
+      </div>
       <%= partial :_panel_body, :locals => {:topic => topic} %>
   <% end %>
   </div>
