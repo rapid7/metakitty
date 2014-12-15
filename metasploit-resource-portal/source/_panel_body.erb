@@ -32,9 +32,10 @@
       <td class="resource_url">
         <%= link_to icon(
               icon_type,
-              library: :font_awesome, class: "fa-fw"
-            ) + " #{url_name}",
-          url_link %>
+              library: :font_awesome, class: "fa-fw") + " #{url_name}",
+        url_link,
+        target: "_blank"
+      %>
       </td>
       <td class="resource_date" nowrap>
         <em><%= date <= Date.new(1970,1,1) ? "the dawn of time" : date %></em>
