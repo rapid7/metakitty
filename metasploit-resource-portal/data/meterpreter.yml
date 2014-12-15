@@ -1,8 +1,8 @@
 "meterpreter":
   date: 1970-01-01
   comment:
-    Meterpreter is Metasploit's default payload, and is loaded with features. Some of them can be a
-    little mysterious for the novice.
+    Meterpreter is Metasploit's default payload, and is loaded with features and quirks. These resource
+    discuss some of those in more detail.
 
 "Sessiondump Extension":
   url: "http://www.room362.com/blog/2013/04/08/sessiondump-meterpreter-extension/"
