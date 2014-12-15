@@ -4,9 +4,14 @@ body {
   width: 98%;
   margin-left: auto;
   margin-right: auto;
-
 }
 
 .logo {
   max-width: 200px;
+}
+
+/* Indicate that panel headings are clickable */
+
+.panel-heading {
+  cursor: pointer;
 }

@@ -1,20 +1,19 @@
 <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <% content_tag :a,
-          "data-toggle" => :collapse,
-          "data-parent" => "#accordion",
-          :href => "##{topic}" do %>
-          <%= topic.to_s.titleize %>
-          (<%= data.send(topic).size-1 %>)
-      <% end %>
-      </h4>
-    </div>
+  <% content_tag :div,
+    :class => "panel-heading",
+    "data-toggle" => :collapse,
+    "data-parent" => "#accordion",
+    "data-target" => "##{topic}" do %>
+    <h4 class="panel-title">
+      <%= topic.to_s.titleize %>
+      (<%= data.send(topic).size-1 %>)
+    </h4>
+  <% end %>
     <% content_tag :div, id: topic, class: "panel-collapse collapse" do %>
       <div class="panel-body">
-        <%= data.send(topic).first[1]["comment"] %>
-      </div>
-      <%= partial :_panel_body, :locals => {:topic => topic} %>
+      <%= data.send(topic).first[1]["comment"] %>
+    </div>
+    <%= partial :_panel_body, :locals => {:topic => topic} %>
   <% end %>
   </div>
 </div>
