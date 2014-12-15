@@ -1,6 +1,6 @@
-"BLURB: pro_tips":
+"pro_tips":
   date: 1970-01-01
-  text:
+  comment:
     Even if you're a seasoned Metasploit Framework user or
     developer, these tips may still be new to you.
   author: {name: "Rapid7", twitter: "rapid7" }

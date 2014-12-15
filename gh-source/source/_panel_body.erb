@@ -3,14 +3,14 @@
     sorted_data = data.send(topic).sort_by {|x| x[1]["date"] }.reverse
     sorted_data.each do |res|
     url_name = res[0]
-    next if url_name =~ /BLURB:/
+    next if url_name == topic.to_s
     details = res[1]
     url_link = details["url"]
     date = details["date"] || "1970-01-01"
     type = details["type"] || "text"
     auth = details["author"]["name"]
     aka  = details["author"]["twitter"]
-    text = details["text"]
+    comment = details["comment"]
 
     # Icons from Font Awesome, an MIT licensed font:
     # http://fortawesome.github.io/Font-Awesome/icons/
@@ -42,9 +42,9 @@
       </td>
 
     </tr>
-    <% if text %>
+    <% if comment %>
       <tr><td colspan=4>
-      <%= panel text, context: :success %>
+      <%= panel comment, context: :success %>
     </td></tr>
     <% end %>
   </tr>
