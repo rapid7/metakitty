@@ -1,7 +1,6 @@
 <%
-  topic_anchor = "##{topic}"
   topic_id = topic
-  topic_anchor_inner = case topic
+  topic_inner = case topic
     when :getting_started
       "Getting Started"
     when :pro_tips
@@ -9,17 +8,19 @@
     end
   %>
 
-  <div class="panel panel-default">
+<div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href=<%= topic_anchor %>>
-          <%= topic_anchor_inner %>
-      </a>
+        <% content_tag :a,
+          "data-toggle" => :collapse,
+          "data-parent" => "#accordion",
+          :href => "##{topic}" do %>
+          <%= topic_inner %>
+      <% end %>
       </h4>
     </div>
-    <div id=<%= topic_id %> class="panel-collapse collapse">
-      <div class="panel-body">
-        <%= partial :_panel_body, :locals => {:topic => topic} %>
-      </div>
-    </div>
+    <% content_tag :div, id: topic_id, class: "panel-collapse collapse" do %>
+      <%= partial :_panel_body, :locals => {:topic => topic} %>
+  <% end %>
   </div>
+</div>
