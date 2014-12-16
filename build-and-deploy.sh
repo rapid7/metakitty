@@ -3,7 +3,7 @@
 # Build and Deploy to GitHub. Warning, this force pushes!
 LAST_COMMIT=$(git log -1 --format="%h")
 TOPLEVEL=$(git rev-parse --show-toplevel)
-FRAMEWORK=$TOPLEVEL/../metasploit-framework/
+GITHUBIO=$TOPLEVEL/../metasploit.github.io/
 
 echo [*] About to build and force push whatever is in $LAST_COMMIT to gh-pages.
 
@@ -16,12 +16,13 @@ echo [*]
 
 echo [*] --------------------------
 echo -n [*] Destination: &&
-  cd $FRAMEWORK
+  cd $GITHUBIO
 echo $PWD
 
 echo [*] --------------------------
-cd $TOPLEVEL/metasploit-resource-portal
-middleman build
+cd $TOPLEVEL/metasploit-resource-portal &&
+  git checkout $LAST_COMMIT && # Be serious about committed changes
+  middleman build
 echo [*] --------------------------
 
 echo [*] Does this all look right?
@@ -35,15 +36,18 @@ else
   exit 1
 fi
 
-# Wipe local gh-pages, get the latest.
-cd $FRAMEWORK
-git checkout master &&
-  git branch -D gh-pages &&
-  git checkout -b gh-pages --track upstream/gh-pages
+# Wipe local master branch and get the latest. Slightly less dangerous
+# than git force pushing
+cd $GITHUBIO
+git checkout -b temp # May already exist, that's okay
+git checkout temp &&
+  git branch -D master &&
+  git checkout -b master --track origin/master
 
 # Delete Middleman build artifacts
-rm -rf stylesheets/ images/ fonts/ javascripts/
-rm index.html
+rm -rf stylesheets/ images/ fonts/ javascripts/ &&
+  # Individual pages
+  rm *.html
 
 # Get the fresh stuff.
 cp -r $TOPLEVEL/metasploit-resource-portal/build/stylesheets/ . &&
@@ -54,8 +58,5 @@ cp -r $TOPLEVEL/metasploit-resource-portal/build/stylesheets/ . &&
   git add *.html stylesheets/ javascripts/ images/ fonts/ &&
   git status &&
   echo [*] Here we go...
-  git commit -m "Update to $LAST_COMMIT" &&
-  git push upstream gh-pages --force
-
-echo [*] Finished!
-exit 0
+  git commit -m "Update to $LAST_COMMIT from source" &&
+  git push origin master
