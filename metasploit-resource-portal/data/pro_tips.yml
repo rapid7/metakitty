@@ -25,7 +25,7 @@
   url: https://www.youtube.com/watch?v=MeSql-3aOsM
   date: 2014-04-14
   type: video
-  author: {name: "Hak5", twitter: "hak5" }
+  author: {name: "Rob Fuller", twitter: "mubix" }
 
 "Add a New Exploit to the Metasploit Framework":
   url: https://www.youtube.com/watch?v=fxzLlkEnrjk
@@ -37,19 +37,19 @@
   url: https://www.youtube.com/watch?v=bkfgPawWlQs
   date: 2014-04-07
   type: video
-  author: {name: "Hak5", twitter: "hak5" }
+  author: {name: "Rob Fuller", twitter: "mubix" }
 
 "Resource Files":
   url: https://www.youtube.com/watch?v=TaaMSlHe67o
   date: 2014-03-11
   type: video
-  author: {name: "Hak5", twitter: "hak5" }
+  author: {name: "Rob Fuller", twitter: "mubix" }
 
 "Exploitation Using Java RMI":
   url: https://www.youtube.com/watch?v=uH6capdxCWg
   date: 2014-03-31
   type: video
-  author: {name: "Hak5", twitter: "hak5" }
+  author: {name: "Rob Fuller", twitter: "mubix" }
 
 "Getting a Remote Shell on an Android Device":
   url: http://www.infosecisland.com/blogview/23632-Getting-a-Remote-Shell-on-an-Android-Device-using-Metasploit.html

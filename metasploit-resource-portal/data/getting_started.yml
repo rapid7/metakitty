@@ -15,17 +15,17 @@
     This is rather critical for getting started with Metasploit
     Framework development on this favored hacker OS.
   type: video
-  author: {name: "Hak5", twitter: "hak5" }
+  author: {name: "Rob Fuller", twitter: "mubix" }
 
 "Basic MSF Commands":
   url: "https://www.youtube.com/watch?v=gWKyFYMY_Pk"
   date: 2014-03-03
   type: video
-  author: {name: "Hak5", twitter: "hak5" }
+  author: {name: "Rob Fuller", twitter: "mubix" }
 
 "What is Metasploit?":
   url: "https://www.youtube.com/watch?v=TCPyoWHy4eA"
   date: 2014-01-06
   type: video
-  author: {name: "Hak5", twitter: "hak5" }
+  author: {name: "Rob Fuller", twitter: "mubix" }
 
