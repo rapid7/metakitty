@@ -17,7 +17,7 @@ echo [*]
 echo [*] --------------------------
 echo -n [*] Destination: &&
   cd $FRAMEWORK
-echo ' $PWD'
+echo $PWD
 
 echo [*] --------------------------
 cd $TOPLEVEL/metasploit-resource-portal
