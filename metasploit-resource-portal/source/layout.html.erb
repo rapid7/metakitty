@@ -4,16 +4,26 @@
     <meta charset="utf-8" />
     <meta content="IE=edge" http-equiv="X-UA-Compatible" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><%= current_page.data.title %></title>
-    <%= stylesheet_link_tag font_awesome_css %>
-    <!-- Local versions for safety. Pare down the bootstrap.min someday soon -->
-    <%= stylesheet_link_tag('darkly', :relative => true) %>
-    <%= stylesheet_link_tag(:custom, :relative => true) %>
-    <%= javascript_include_tag 'jquery.min', :relative => true %>
-    <%= javascript_include_tag 'bootstrap.min.js', :relative => true %>
-</head>
-<body>
-  <%= yield %>
-</body>
+    <style id="antiClickjack">body{display:none !important;}</style>
+    <script type="text/javascript">
+  if (self === top) {
+    var antiClickjack = document.getElementById("antiClickjack");
+    antiClickjack.parentNode.removeChild(antiClickjack);
+    } else {
+      top.location = self.location;
+  }
+    </script>
+
+  <title><%= current_page.data.title %></title>
+  <%= stylesheet_link_tag font_awesome_css %>
+  <!-- Local versions for safety. Pare down the bootstrap.min someday soon -->
+  <%= stylesheet_link_tag('darkly', :relative => true) %>
+  <%= stylesheet_link_tag(:custom, :relative => true) %>
+  <%= javascript_include_tag 'jquery.min', :relative => true %>
+  <%= javascript_include_tag 'bootstrap.min.js', :relative => true %>
+  </head>
+  <body>
+    <%= yield %>
+  </body>
 </html>
 
