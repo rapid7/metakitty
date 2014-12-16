@@ -1,5 +1,10 @@
 /* General */
+.panel-group {
+  margin-left: 1%;
+  margin-right: 1%;
+}
 
+/* Logo sizes */
 .logo {
   max-width: 300px;
 }
@@ -8,9 +13,12 @@
   max-width: 200px;
 }
 
-
 /* Indicate that panel headings are clickable */
-
 .panel-heading {
   cursor: pointer;
+}
+
+/* Allow 2/3rds horizontal space to a table cell with a link */
+.resource_url {
+  width: 66%;
 }

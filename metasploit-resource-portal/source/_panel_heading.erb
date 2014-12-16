@@ -9,11 +9,10 @@
       (<%= data.send(topic).size-1 %>)
     </h4>
   <% end %>
-    <% content_tag :div, id: topic, class: "panel-collapse collapse" do %>
-      <div class="panel-body">
+  <% content_tag :div, id: topic, class: "panel-collapse collapse" do %>
+    <div class="panel-body">
       <%= data.send(topic).first[1]["comment"] %>
     </div>
     <%= partial :_panel_body, :locals => {:topic => topic} %>
   <% end %>
-  </div>
 </div>

@@ -1,3 +1,4 @@
+<div class="table-responsive">
 <table class="table">
   <%
     sorted_data = data.send(topic).sort_by {|x| x[1]["date"] }.reverse
@@ -46,7 +47,7 @@
       <td class="resource_date" nowrap>
         <em><%= date <= Date.new(1970,1,1) ? "the dawn of time" : date %></em>
       </td>
-      <td nowrap>
+      <td class="resource_author" nowrap>
         by
         <%= author_link %>
       </td>
@@ -55,7 +56,7 @@
 
     <% if comment %>
       <tr>
-        <td colspan=3>
+        <td class="resource_comment" colspan=3>
           <%= panel comment  %>
         </td>
       </tr>
@@ -64,5 +65,4 @@
   </tr>
   <% end %>
   </table>
-</div>
 </div>
