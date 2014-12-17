@@ -9,7 +9,7 @@ Note that this repo will likely disappear for a more boringly-named
 repo. But, for now, it's a staging area for development on
 the Metasploit Resource portal:
 
-http://r-7.co/METAKITTY
+https://metasploit.github.io
 
 (also will not use that URL as a main)
 
