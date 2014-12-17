@@ -15,11 +15,12 @@ https://metasploit.github.io
 
 ## Adding Content
 
-Eventually, the public repo will be the place for content adds, and it
-will use the usual pull request method. For now, feel free to fork
-and edit in the `data/` directory. If you add an entirely new category,
-be sure to update `source/index.html.erb` with the name, and note that
-the filename must match the symbol in the current regime.
+The public repo for contributor content is over at
 
+https://github.com/metasploit/resource-portal-data
 
--todb
+which is submoduled here as `resource-portal-data`.
+
+If you would like to add an entirely new category, that's fine, but be
+sure to update `source/index.html.erb` with the name, and note that the
+filename must match the symbol in the current regime.
