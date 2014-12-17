@@ -60,3 +60,8 @@ cp -r $TOPLEVEL/metasploit-resource-portal/build/stylesheets/ . &&
   echo [*] Here we go...
   git commit -m "Update to $LAST_COMMIT from source" &&
   git push origin master
+
+# End up on the master branch.
+
+cd $TOPLEVEL &&
+  git checkout master
