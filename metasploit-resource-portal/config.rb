@@ -3,6 +3,7 @@ activate :bh
 set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
 set :images_dir, 'images'
+set :data_dir, 'resource-portal-data/data'
 
 # Since this is a project page, all links should be relative.
 set :relative_links, true
