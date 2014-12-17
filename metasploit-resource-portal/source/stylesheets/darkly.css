@@ -913,7 +913,7 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #0ce3ac;
+  color: #BFD730;
   text-decoration: none;
 }
 a:hover,
@@ -3749,7 +3749,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .nav-pills > li {
-  float: left;
+  float: right;
 }
 .nav-pills > li > a {
   border-radius: 4px;
@@ -5079,7 +5079,7 @@ a.list-group-item-danger.active:focus {
   margin-top: 0;
   margin-bottom: 0;
   font-size: 17px;
-  color: inherit;
+  color: ##375a7f;
 }
 .panel-title > a {
   color: inherit;
@@ -6368,7 +6368,7 @@ button.close {
 }
 .text-warning,
 .text-warning:hover {
-  color: #f39c12;
+  color: #EA5709;
 }
 .text-info,
 .text-info:hover {
