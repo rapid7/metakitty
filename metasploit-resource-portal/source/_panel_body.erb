@@ -41,7 +41,8 @@
               icon_type,
               library: :font_awesome, class: "fa-fw") + " #{url_name}",
         url_link,
-        target: "_blank"
+        target: "_blank",
+        title: comment.to_s
       %>
       </td>
       <td class="resource_date" nowrap>
@@ -53,14 +54,6 @@
       </td>
 
     </tr>
-
-    <% if comment %>
-      <tr>
-        <td class="resource_comment" colspan=3>
-          <%= panel comment  %>
-        </td>
-      </tr>
-    <% end %>
 
   </tr>
   <% end %>
