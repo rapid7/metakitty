@@ -41,9 +41,15 @@
               icon_type,
               library: :font_awesome, class: "fa-fw") + " #{url_name}",
         url_link,
-        target: "_blank",
-        title: comment.to_s
+        target: "_blank"
       %>
+    <% if comment %>
+      <%=
+        link_to icon("info-circle", library: :font_awesome, class: "fa-fw"),
+        "#",
+        title: comment
+        %>
+      <% end %>
       </td>
       <td class="resource_date" nowrap>
         <em><%= date <= Date.new(1970,1,1) ? "the dawn of time" : date %></em>
