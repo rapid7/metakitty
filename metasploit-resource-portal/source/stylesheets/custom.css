@@ -18,6 +18,8 @@
   cursor: pointer;
 }
 
+/* Panel title text should be white */
+
 .panel-title {
   color: #ffffff;
 }
@@ -25,4 +27,10 @@
 /* Allow 2/3rds horizontal space to a table cell with a link */
 .resource_url {
   width: 66%;
+}
+
+/* Nav pills should be float left. */
+
+.nav-pills > li {
+  float: left;
 }
