@@ -22,6 +22,8 @@ echo $PWD
 echo [*] --------------------------
 cd $TOPLEVEL/metasploit-resource-portal &&
   git checkout $LAST_COMMIT && # Be serious about committed changes
+  git submodule update --init --recursive
+  git submodule update --recursive
   middleman build
 echo [*] --------------------------
 
