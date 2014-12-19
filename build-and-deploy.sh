@@ -22,8 +22,8 @@ echo $PWD
 echo [*] --------------------------
 cd $TOPLEVEL/metasploit-resource-portal &&
   git checkout $LAST_COMMIT && # Be serious about committed changes
-  git submodule update --init --recursive
-  git submodule update --recursive
+  git submodule foreach git fetch
+  git submodule foreach git rebase --preserve-merges
   middleman build
 echo [*] --------------------------
 
@@ -35,6 +35,7 @@ if [[ $input == "Y" || $input == "y" ]]; then
   echo '[*] Okay!'
 else
   echo '[!] Phew, that was close!'
+  git checkout master
   exit 1
 fi
 
