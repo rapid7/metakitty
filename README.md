@@ -5,13 +5,11 @@ Metakitty -- The Metasploit Resource Portal. This is a staging area to
 actually get this stuff up and running without accidentally stomping all
 over metasploit-framework.
 
-Note that this repo will likely disappear for a more boringly-named
-repo. But, for now, it's a staging area for development on
-the Metasploit Resource portal:
+This repo will not disappear as previously threatened. We'll keep the
+staging area private for now, and publish to:
 
-https://metasploit.github.io
+http://resources.metasploit.com
 
-(also will not use that URL as a main)
 
 ## Adding Content
 
