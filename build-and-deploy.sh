@@ -4,6 +4,12 @@
 LAST_COMMIT=$(git log -1 --format="%h")
 TOPLEVEL=$(git rev-parse --show-toplevel)
 GITHUBIO=$TOPLEVEL/../metasploit.github.io/
+echo [*] Ensuring we have the current gems...
+cd $TOPLEVEL
+bundle install
+cd $TOPLEVEL/metasploit-resource-portal
+bundle install
+cd $TOPLEVEL
 
 echo [*] About to build and force push whatever is in $LAST_COMMIT to gh-pages.
 
