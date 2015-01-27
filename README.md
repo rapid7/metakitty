@@ -14,7 +14,7 @@ http://resources.metasploit.com
 
 Metakitty is actually three repos:
 
-- rapid7/metakitty - this repo
+- rapid7/metakitty - this repo, where all the source for the website lives.
 - metasploit/metasploit.github.io - where things are published on the Internet as http://resources.metasploit.com
 - metasploit/metasploit-resource-data - user submissions and all the data that's relevant to Metakitty
 
@@ -24,6 +24,20 @@ Once that's done, you need to be sure to get the submodule for `metasploit-resou
 
   cd metakitty
   git submodule init & git submodule update --remote
+
+Now you're ready to play bundler:
+
+  bundle install
+  cd metasploit-resource-portal # where the guts of Metakitty live
+  bundle install
+  
+If you want to see Metakitty locally, while in `metasploit-resource-portal`, run:
+
+  middleman
+
+Ta-da!
+
+### Landing new content
 
 When you've landed something new to `metaspoit-resource-data` do this to publish:
 
