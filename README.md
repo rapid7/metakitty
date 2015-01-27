@@ -22,18 +22,18 @@ You'll want to check out all three, side by side, if you're going to work on Met
 
 Once that's done, you need to be sure to get the submodule for `metasploit-resource-data` up to date:
 
-  cd metakitty
-  git submodule init & git submodule update --remote
+    cd metakitty
+    git submodule init & git submodule update --remote
 
 Now you're ready to play bundler:
 
-  bundle install
-  cd metasploit-resource-portal # where the guts of Metakitty live
-  bundle install
+    bundle install
+    cd metasploit-resource-portal # where the guts of Metakitty live
+    bundle install
   
 If you want to see Metakitty locally, while in `metasploit-resource-portal`, run:
 
-  middleman
+    middleman
 
 Ta-da!
 
@@ -41,8 +41,8 @@ Ta-da!
 
 When you've landed something new to `metaspoit-resource-data` do this to publish:
 
-  cd metakitty
-  ./build-and-deploy.sh
+    cd metakitty
+    ./build-and-deploy.sh
 
 That should be it!
 
