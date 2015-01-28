@@ -5,13 +5,46 @@ Metakitty -- The Metasploit Resource Portal. This is a staging area to
 actually get this stuff up and running without accidentally stomping all
 over metasploit-framework.
 
-Note that this repo will likely disappear for a more boringly-named
-repo. But, for now, it's a staging area for development on
-the Metasploit Resource portal:
+This repo will not disappear as previously threatened. We'll keep the
+staging area private for now, and publish to:
 
-https://metasploit.github.io
+http://resources.metasploit.com
 
-(also will not use that URL as a main)
+## Managing Git and Updates
+
+Metakitty is actually three repos:
+
+- rapid7/metakitty - this repo, where all the source for the website lives.
+- metasploit/metasploit.github.io - where things are published on the Internet as http://resources.metasploit.com
+- metasploit/metasploit-resource-data - user submissions and all the data that's relevant to Metakitty
+
+You'll want to check out all three, side by side, if you're going to work on Metakitty at all.
+
+Once that's done, you need to be sure to get the submodule for `metasploit-resource-data` up to date:
+
+    cd metakitty
+    git submodule init & git submodule update --remote
+
+Now you're ready to play bundler:
+
+    bundle install
+    cd metasploit-resource-portal # where the guts of Metakitty live
+    bundle install
+  
+If you want to see Metakitty locally, while in `metasploit-resource-portal`, run:
+
+    middleman
+
+Ta-da!
+
+### Landing new content
+
+When you've landed something new to `metaspoit-resource-data` do this to publish:
+
+    cd metakitty
+    ./build-and-deploy.sh
+
+That should be it!
 
 ## Adding Content
 

@@ -4,6 +4,14 @@
 LAST_COMMIT=$(git log -1 --format="%h")
 TOPLEVEL=$(git rev-parse --show-toplevel)
 GITHUBIO=$TOPLEVEL/../metasploit.github.io/
+echo [*] Ensuring we have the current gems...
+cd $TOPLEVEL
+bundle install
+cd $TOPLEVEL/metasploit-resource-portal
+bundle install
+cd $TOPLEVEL
+git submodule init
+git submodule update --remote
 
 echo [*] About to build and force push whatever is in $LAST_COMMIT to gh-pages.
 
@@ -22,8 +30,6 @@ echo $PWD
 echo [*] --------------------------
 cd $TOPLEVEL/metasploit-resource-portal &&
   git checkout $LAST_COMMIT && # Be serious about committed changes
-  git submodule foreach git fetch
-  git submodule foreach git rebase --preserve-merges
   middleman build
 echo [*] --------------------------
 
@@ -64,7 +70,13 @@ cp -r $TOPLEVEL/metasploit-resource-portal/build/stylesheets/ . &&
   git commit -m "Update to $LAST_COMMIT from source" &&
   git push origin master
 
-# End up on the master branch.
+# Go back to the master branch and remind the user to update
+# if there's any changes.
 
 cd $TOPLEVEL &&
   git checkout master
+  echo [*] If you have any changes to resource-portal-data, be a doll
+  echo [*] and commit the updated Submodule pointer.
+  echo [*] Let\'s check:
+  git status
+
