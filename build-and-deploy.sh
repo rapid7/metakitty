@@ -68,13 +68,12 @@ rm -rf stylesheets/ images/ fonts/ javascripts/ &&
 
 # Get the fresh stuff.
 cp -r $TOPLEVEL/metasploit-resource-portal/build/stylesheets/ . &&
+  cp -r $TOPLEVEL/metasploit-resource-portal/build/assets/ . &&
   cp -r $TOPLEVEL/metasploit-resource-portal/build/images/ . &&
   cp -r $TOPLEVEL/metasploit-resource-portal/build/fonts/ . &&
   cp -r $TOPLEVEL/metasploit-resource-portal/build/javascripts/ . &&
   cp -r $TOPLEVEL/metasploit-resource-portal/build/*.html . &&
-  git add *.html stylesheets/ javascripts/ images/ fonts/ &&
-  exit
-
+  git add *.html assets/ stylesheets/ javascripts/ images/ fonts/ &&
   git status &&
   echo [*] Here we go...
   git commit -m "Update to $LAST_COMMIT from source" &&
