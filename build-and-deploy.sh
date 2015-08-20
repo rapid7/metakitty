@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -e
-
 # Build and Deploy to GitHub. Warning, this force pushes!
 LAST_COMMIT=$(git log -1 --format="%h")
 TOPLEVEL=$(git rev-parse --show-toplevel)
@@ -62,18 +60,18 @@ git checkout temp &&
   git checkout -b master --track origin/master
 
 # Delete Middleman build artifacts
-rm -rf stylesheets/ images/ fonts/ javascripts/ &&
+rm -rf assets/ stylesheets/ images/ fonts/ javascripts/ &&
   # Individual pages
   rm *.html
 
 # Get the fresh stuff.
-cp -r $TOPLEVEL/metasploit-resource-portal/build/stylesheets/ . &&
-  cp -r $TOPLEVEL/metasploit-resource-portal/build/assets/ . &&
-  cp -r $TOPLEVEL/metasploit-resource-portal/build/images/ . &&
-  cp -r $TOPLEVEL/metasploit-resource-portal/build/fonts/ . &&
-  cp -r $TOPLEVEL/metasploit-resource-portal/build/javascripts/ . &&
-  cp -r $TOPLEVEL/metasploit-resource-portal/build/*.html . &&
-  git add *.html assets/ stylesheets/ javascripts/ images/ fonts/ &&
+cp -a $TOPLEVEL/metasploit-resource-portal/build/stylesheets . &&
+  cp -a $TOPLEVEL/metasploit-resource-portal/build/assets . &&
+  cp -a $TOPLEVEL/metasploit-resource-portal/build/images . &&
+  cp -a $TOPLEVEL/metasploit-resource-portal/build/fonts . &&
+  cp -a $TOPLEVEL/metasploit-resource-portal/build/javascripts . &&
+  cp -a $TOPLEVEL/metasploit-resource-portal/build/*.html . &&
+  git add *.html assets stylesheets javascripts images fonts &&
   git status &&
   echo [*] Here we go...
   git commit -m "Update to $LAST_COMMIT from source" &&
