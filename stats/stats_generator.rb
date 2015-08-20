@@ -219,7 +219,10 @@ def merge_stats(stats)
   end
   puts 'Writing new stats to file...'
   stats << new_stat
-  File.write('stats.json', JSON.generate(stats))
+  # Only write new stats if the current stats file is > 1 day old
+  if (Time.now - File.stat('stats.json').mtime).to_i >= 86000
+    File.write('stats.json', JSON.generate(stats))
+  end
   puts "Stats added: #{new_stat}"
 end
 
