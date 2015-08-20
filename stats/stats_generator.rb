@@ -12,7 +12,7 @@ def retrieve_stats
   # Check authentication credentials
   if !ENV.has_key?('GITHUB_USERNAME')
     puts "A GITHUB_USERNAME environment variable must be set to get stats."
-    exit
+    exit 1
   end
 
   do_pw = ENV.has_key?('GITHUB_PASSWORD')
@@ -29,7 +29,7 @@ def retrieve_stats
   else
     puts "An authentication method environment variable must be set"
     puts "Please set GITHUB_OAUTH_TOKEN or GITHUB_PASSWORD"
-    exit
+    exit 1
   end
 
   # Fetch the current user

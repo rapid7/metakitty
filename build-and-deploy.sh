@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 # Build and Deploy to GitHub. Warning, this force pushes!
 LAST_COMMIT=$(git log -1 --format="%h")
 TOPLEVEL=$(git rev-parse --show-toplevel)
@@ -31,6 +33,12 @@ echo [*] --------------------------
 cd $TOPLEVEL/metasploit-resource-portal &&
   git checkout $LAST_COMMIT && # Be serious about committed changes
   middleman build
+echo [*] --------------------------
+
+echo [*] --------------------------
+echo [*] Generating community stats:
+cd $TOPLEVEL/stats && ./generate_pages
+cp -a $TOPLEVEL/stats/*.html $TOPLEVEL/stats/assets $TOPLEVEL/metasploit-resource-portal/build
 echo [*] --------------------------
 
 echo [*] Does this all look right?
@@ -65,6 +73,8 @@ cp -r $TOPLEVEL/metasploit-resource-portal/build/stylesheets/ . &&
   cp -r $TOPLEVEL/metasploit-resource-portal/build/javascripts/ . &&
   cp -r $TOPLEVEL/metasploit-resource-portal/build/*.html . &&
   git add *.html stylesheets/ javascripts/ images/ fonts/ &&
+  exit
+
   git status &&
   echo [*] Here we go...
   git commit -m "Update to $LAST_COMMIT from source" &&
