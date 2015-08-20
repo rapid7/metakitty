@@ -13,6 +13,7 @@
 .dat*
 .repl_history
 build/
+stats/*.html
 
 ## Documentation cache and generated files:
 /.yardoc/
