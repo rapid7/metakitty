@@ -6,10 +6,12 @@ require 'pry'
 require 'octokit'
 load 'stats_generator.rb'
 
+puts "Loading stats..."
 data  = JSON.parse(File.read('stats.json'))
 stats = data[0][1].keys
 badge = ''
 i = 0
+puts "Creating Badges..."
 @weekly_values.each do |stat, value|
   badge << "
   <li role=\"presentation\">
@@ -20,6 +22,7 @@ i = 0
   i += 1
 end
 
+puts "Making some (sausage) links..."
 data  = JSON.parse(File.read('stats.json'))
 stats = data[0][1].keys
 toc = ''
@@ -44,6 +47,7 @@ end
 end
 
 # MAKING THE LINKS
+puts "Some fresh requests coming up..."
 accordion = "
 
             "
@@ -91,6 +95,7 @@ accordion = "
 end
 accordion << '</div>'
 
+puts "And a cherry on top for good measure!"
 stat_data = []
 title = 'foo'
 
@@ -103,3 +108,5 @@ stats.each do |stat|
   template = ERB.new(File.read('template.erb'))
   File.write("#{title}.html", template.result)
 end
+
+puts "All done!"
