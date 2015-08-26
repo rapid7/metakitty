@@ -35,8 +35,9 @@ echo [*] --------------------------
 
 echo [*] --------------------------
 echo [*] Generating community stats:
-cd $TOPLEVEL/stats && ./generate_pages
-cp -a $TOPLEVEL/stats/*.html $TOPLEVEL/stats/assets $TOPLEVEL/metasploit-resource-portal/build
+  cd $TOPLEVEL/stats && ./generate_pages
+  git commit -m "Updated stats for `date`" $TOPLEVEL/stats/stats.json
+  cp -a $TOPLEVEL/stats/*.html $TOPLEVEL/stats/assets $TOPLEVEL/metasploit-resource-portal/build
 echo [*] --------------------------
 
 echo [*] Does this all look right?
@@ -86,4 +87,3 @@ cd $TOPLEVEL &&
   echo [*] and commit the updated Submodule pointer.
   echo [*] Let\'s check:
   git status
-
