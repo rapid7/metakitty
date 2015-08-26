@@ -7,6 +7,7 @@ require 'octokit'
 load 'stats_generator.rb'
 
 data  = JSON.parse(File.read('stats.json'))
+binding.pry
 stats = data[0][1].keys
 badge = ''
 i = 0
