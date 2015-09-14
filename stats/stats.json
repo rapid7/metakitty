@@ -958,5 +958,65 @@
       "features": 509,
       "bugs": 92
     }
+  ],
+  [
+    1441046521000,
+    {
+      "pull_requests": 56,
+      "enhancements": 54,
+      "open_issues": 174,
+      "features": 515,
+      "bugs": 90
+    }
+  ],
+  [
+    1441053731000,
+    {
+      "pull_requests": 54,
+      "enhancements": 54,
+      "open_issues": 173,
+      "features": 515,
+      "bugs": 87
+    }
+  ],
+  [
+    1441910449000,
+    {
+      "pull_requests": 46,
+      "enhancements": 58,
+      "open_issues": 170,
+      "features": 538,
+      "bugs": 84
+    }
+  ],
+  [
+    1441918025000,
+    {
+      "pull_requests": 46,
+      "enhancements": 58,
+      "open_issues": 171,
+      "features": 538,
+      "bugs": 85
+    }
+  ],
+  [
+    1441918330000,
+    {
+      "pull_requests": 46,
+      "enhancements": 58,
+      "open_issues": 171,
+      "features": 538,
+      "bugs": 85
+    }
+  ],
+  [
+    1441918486000,
+    {
+      "pull_requests": 46,
+      "enhancements": 58,
+      "open_issues": 171,
+      "features": 538,
+      "bugs": 85
+    }
   ]
 ]

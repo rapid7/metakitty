@@ -4,15 +4,15 @@
     <title>GitStats - git_stats</title>
     <meta charset='utf-8'>
     <!-- REQUIRED -->
-    <style> body { padding-top: 60px; }
+    <style>
+      body{
+        padding-top: 60px;
+      }
     </style>
     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/superhero/bootstrap.min.css" rel="stylesheet">
-    <script src="assets/jquery.min.js" type='text/javascript'></script>
-    <script src="assets/highstock.js" type='text/javascript'></script>
-
     <script src="assets/bootstrap/js/jquery.min.js"></script>
+    <script src="assets/highcharts.js" type='text/javascript'></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/bootstrap/js/scripts.js"></script>
     <!-- EO REQUIRED -->
   </head>
   <body>
@@ -58,19 +58,55 @@
             <div class='page-header'>
               <h1 class='pagination-centered'><%= title %> by date</h1>
             </div>
-                    <script type="text/javascript">
-                    (function() {
-                      var onload = window.onload;
-                      window.onload = function(){
-                        if (typeof onload == "function") onload();
-                                var options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "<%= title %>" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "comments_by_date" },"subtitle": {  },"series": [{ "name": "<%= title %> by date","type": "spline","data": <%= stat_data %> }] };
+            <script type="text/javascript">
+        $(function () {
+            $('#container').highcharts({
+                chart: {
+                    type: 'spline'
+                },
+                title: {
+                    text: '<%= title %>'
+                },
+                subtitle: {
+                    text: ''
+                },
+                xAxis: {
+                    type: 'datetime',
+                    dateTimeLabelFormats: { // don't display the dummy year
+                        month: '%e. %b',
+                        year: '%b'
+                    },
+                    title: {
+                        text: 'Date'
+                    }
+                },
+                yAxis: {
+                    title: {
+                        text: '<%= title %>'
+                    },
+                    min: 0
+                },
+                tooltip: {
+                    headerFormat: '<b>{series.name}</b><br>',
+                    pointFormat: '{point.x:%e. %b}: {point.y:.2f} m'
+                },
 
-                    window.chart_comments_by_date = new Highcharts.StockChart(options);
+                plotOptions: {
+                    spline: {
+                        marker: {
+                            enabled: true
+                        }
+                    }
+                },
 
-                      };
-                    })()
-                    </script>
-            <div id="comments_by_date"></div>
+                series: [{
+                    name: "<%= title %>",
+                    data: <%= stat_data %>
+                }]
+            });
+        });
+            </script>
+            <div id="container"></div>
           </div>
         </div>
       </div>
