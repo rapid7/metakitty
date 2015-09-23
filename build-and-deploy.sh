@@ -37,7 +37,7 @@ echo [*] --------------------------
 echo [*] Generating community stats:
   cd $TOPLEVEL/stats && bundle exec ./generate_pages
   cp $TOPLEVEL/stats/*.html $TOPLEVEL/metasploit-resource-portal/build
-  cp $TOPLEVEL/stats/assets/*.js $TOPLEVEL/metasploit-resource-portal/build/assets/
+  cp -a $TOPLEVEL/stats/assets/* $TOPLEVEL/metasploit-resource-portal/build/assets/
   git commit -m "Updated stats for `date`" $TOPLEVEL/stats/stats.json
 echo [*] --------------------------
 
@@ -74,6 +74,7 @@ cp -a $TOPLEVEL/metasploit-resource-portal/build/stylesheets . &&
   git add *.html assets bootstrap stylesheets javascripts images fonts &&
   git status &&
   echo [*] Here we go...
+  git add -r assets
   git commit -m "Update to $LAST_COMMIT from source" . &&
   git push origin master
 
