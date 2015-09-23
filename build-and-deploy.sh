@@ -29,6 +29,9 @@ echo $PWD
 git checkout master
 git fetch origin
 git reset --hard origin/master
+if [ `git branch --list $branch_name `]; then
+  git branch -D temp
+fi
 
 echo [*] --------------------------
 cd $TOPLEVEL/metasploit-resource-portal &&
