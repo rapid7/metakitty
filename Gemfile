@@ -7,3 +7,4 @@ gem 'bh', '~> 1.2'
 
 gem 'json'
 gem 'octokit'
+gem 'pry'

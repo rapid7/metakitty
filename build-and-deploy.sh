@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 
 # Build and Deploy to GitHub. Warning, this force pushes!
 LAST_COMMIT=$(git log -1 --format="%h")
@@ -26,16 +26,19 @@ echo [*] --------------------------
 echo -n [*] Destination: &&
   cd $GITHUBIO
 echo $PWD
+git checkout master
+git fetch origin
+git reset --hard origin/master
 
 echo [*] --------------------------
 cd $TOPLEVEL/metasploit-resource-portal &&
   git checkout $LAST_COMMIT && # Be serious about committed changes
-  middleman build
+  bundle exec middleman build
 echo [*] --------------------------
 
 echo [*] --------------------------
 echo [*] Generating community stats:
-  cd $TOPLEVEL/stats && ./generate_pages
+  cd $TOPLEVEL/stats && bundle exec ./generate_pages
   git commit -m "Updated stats for `date`" $TOPLEVEL/stats/stats.json
   cp -a $TOPLEVEL/stats/*.html $TOPLEVEL/stats/assets $TOPLEVEL/metasploit-resource-portal/build
 echo [*] --------------------------
