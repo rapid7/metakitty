@@ -36,9 +36,9 @@ echo [*] --------------------------
 echo [*] --------------------------
 echo [*] Generating community stats:
   cd $TOPLEVEL/stats && bundle exec ./generate_pages
+  cp $TOPLEVEL/stats/*.html $TOPLEVEL/metasploit-resource-portal/build
+  cp $TOPLEVEL/stats/assets/*.js $TOPLEVEL/metasploit-resource-portal/build/assets/
   git commit -m "Updated stats for `date`" $TOPLEVEL/stats/stats.json
-  cp -a $TOPLEVEL/stats/*.html $TOPLEVEL/metasploit-resource-portal/build
-  cp -a $TOPLEVEL/stats/assets/*.js $TOPLEVEL/metasploit-resource-portal/build/assets/
 echo [*] --------------------------
 
 echo [*] Does this all look right?
