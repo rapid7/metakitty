@@ -70,6 +70,7 @@ cp -a $TOPLEVEL/metasploit-resource-portal/build/stylesheets . &&
   cp -a $TOPLEVEL/metasploit-resource-portal/build/fonts . &&
   cp -a $TOPLEVEL/metasploit-resource-portal/build/javascripts . &&
   cp -a $TOPLEVEL/metasploit-resource-portal/build/*.html . &&
+  cp -a $TOPLEVEL/stats/assets/*.js ./assets . &&
   git add *.html assets stylesheets javascripts images fonts &&
   git status &&
   echo [*] Here we go...
