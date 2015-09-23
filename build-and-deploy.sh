@@ -26,12 +26,6 @@ echo [*] --------------------------
 echo -n [*] Destination: &&
   cd $GITHUBIO
 echo $PWD
-git checkout master
-git fetch origin
-git reset --hard origin/master
-if [ `git branch --list $branch_name `]; then
-  git branch -D temp
-fi
 
 echo [*] --------------------------
 cd $TOPLEVEL/metasploit-resource-portal &&
@@ -58,13 +52,11 @@ else
   exit 1
 fi
 
-# Wipe local master branch and get the latest. Slightly less dangerous
-# than git force pushing
+# Wipe local master branch.
 cd $GITHUBIO
-git checkout -b temp # May already exist, that's okay
-git checkout temp &&
-  git branch -D master &&
-  git checkout -b master --track origin/master
+git checkout master
+git fetch origin
+git reset --hard origin/master
 
 # Delete Middleman build artifacts
 rm -rf assets/ stylesheets/ images/ fonts/ javascripts/ &&
