@@ -37,7 +37,8 @@ echo [*] --------------------------
 echo [*] Generating community stats:
   cd $TOPLEVEL/stats && bundle exec ./generate_pages
   git commit -m "Updated stats for `date`" $TOPLEVEL/stats/stats.json
-  cp -a $TOPLEVEL/stats/*.html $TOPLEVEL/stats/assets $TOPLEVEL/metasploit-resource-portal/build
+  cp -a $TOPLEVEL/stats/*.html $TOPLEVEL/metasploit-resource-portal/build
+  cp -a $TOPLEVEL/stats/assets/*.js $TOPLEVEL/metasploit-resource-portal/build/assets/
 echo [*] --------------------------
 
 echo [*] Does this all look right?
@@ -59,7 +60,7 @@ git fetch origin
 git reset --hard origin/master
 
 # Delete Middleman build artifacts
-rm -rf assets/ stylesheets/ images/ fonts/ javascripts/ &&
+rm -rf assets/ bootstrap/ stylesheets/ images/ fonts/ javascripts/ &&
   # Individual pages
   rm *.html
 
@@ -70,8 +71,7 @@ cp -a $TOPLEVEL/metasploit-resource-portal/build/stylesheets . &&
   cp -a $TOPLEVEL/metasploit-resource-portal/build/fonts . &&
   cp -a $TOPLEVEL/metasploit-resource-portal/build/javascripts . &&
   cp -a $TOPLEVEL/metasploit-resource-portal/build/*.html . &&
-  cp -a $TOPLEVEL/stats/assets/*.js ./assets . &&
-  git add *.html assets stylesheets javascripts images fonts &&
+  git add *.html assets bootstrap stylesheets javascripts images fonts &&
   git status &&
   echo [*] Here we go...
   git commit -m "Update to $LAST_COMMIT from source" &&
