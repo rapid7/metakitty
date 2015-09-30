@@ -77,7 +77,6 @@ cp -a $TOPLEVEL/metasploit-resource-portal/build/stylesheets . &&
   git add *.html assets bootstrap stylesheets javascripts images fonts &&
   git status &&
   echo [*] Here we go...
-  git add -r assets
   git commit -m "Update to $LAST_COMMIT from source" . &&
   git push origin master
 
