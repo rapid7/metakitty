@@ -1,4 +1,6 @@
-#!/bin/bash -e -x
+#!/bin/bash
+set -x
+set -e
 
 # Build and Deploy to GitHub. Warning, this force pushes!
 LAST_COMMIT=$(git log -1 --format="%h")
