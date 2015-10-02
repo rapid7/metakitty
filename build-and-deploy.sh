@@ -44,6 +44,8 @@ echo [*] Generating community stats:
   git commit -m "Updated stats for `date`" .
 echo [*] --------------------------
 
+git diff
+
 echo [*] Does this all look right?
 echo [*] Hit [Y] to continue, anything else to quit.
 
