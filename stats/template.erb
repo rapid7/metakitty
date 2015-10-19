@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>GitStats - git_stats</title>
+    <title>Metasploit Stats</title>
     <meta charset='utf-8'>
     <!-- REQUIRED -->
     <style>
@@ -25,7 +25,7 @@
 
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                  <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-              </button> <a class="navbar-brand" href="#">MSF Dashboard Stats</a>
+              </button> <a class="navbar-brand" href="#">Metasploit Stats</a>
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -41,14 +41,9 @@
     </div>
     <!-- NAVBAR END-->
 
-    <!-- BADGE LIST -->
-    <ul class="nav nav-pills" role="tablist">
-      <%= badge %>
-    </ul>
-    <!-- BADGE LIST END-->
     <div class='container'>
       <div class='tabbable tabs-left'>
-        <ul class='nav nav-tabs'>
+        <ul class='nav nav-pills'>
           <li>
             <%= toc %>
           </li>
@@ -112,11 +107,12 @@
       </div>
     </div>
     <table class="table table-striped">
-      <h1>Top Committers</h1>
+      <h2>Top committers this last week</h2>
       <tr><%= top_committers_1 %></tr>
       <tr><%= top_committers_2 %></tr>
       <tr><%= top_committers_3 %></tr>
     </table>
+    <h2>Top items this last week</h2>
     <%= accordion %>
   </body>
 </html>

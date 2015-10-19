@@ -4,109 +4,129 @@ require 'json'
 require 'erb'
 require 'pry'
 require 'octokit'
-load 'stats_generator.rb'
+load 'stats.rb'
 
 puts "Loading stats..."
-data  = JSON.parse(File.read('stats.json'))
-stats = data[0][1].keys
-badge = ''
-i = 0
-puts "Creating Badges..."
-@weekly_values.each do |stat, value|
-  badge << "
-  <li role=\"presentation\">
-    <a href=\"#{stats[i]}.html\" >#{stat}
-      <span class=\"badge\">#{value}</span>
-    </a>
-  </li>"
-  i += 1
+if !ENV.has_key?('GITHUB_OAUTH_TOKEN')
+  puts "An authentication method environment variable must be set"
+  puts "Please set GITHUB_OAUTH_TOKEN"
+exit 1
 end
+
+project = 'rapid7/metasploit-framework'
+stats = IssueStats.new(ENV['GITHUB_OAUTH_TOKEN'], project)
+
+charts = [
+  { page: 'pull_requests',
+    title: "Open Pull Requests",
+    labels: [],
+    pull_requests: true },
+  { page: 'features_and_enhancements',
+    title: "Open Features and Enhancements",
+    labels: ["feature", "enhancement"],
+    pull_requests: false },
+  { page: 'bugs',
+    title: "Open Bugs",
+    labels: ["bug"],
+    pull_requests: false }
+  ]
+
+today = DateTime.now
+last_week = today - 7
+last_month = today - 30
 
 puts "Making some (sausage) links..."
-data  = JSON.parse(File.read('stats.json'))
-stats = data[0][1].keys
 toc = ''
-stats.each do |stat|
-  toc << "<li><a href=\"#{stat}.html\" >#{stat}</a></li>\n"
-end
+accordion = '
 
-top_committers_1  = ''
-top_committers_2  = ''
-top_committers_3  = ''
+            '
+charts.each do |chart|
+  items = stats.new_things_between(last_week, today,
+    chart[:pull_requests], chart[:labels])
 
-@committers_list.to_a[0..9].each do |committer, _value|
-  top_committers_1 << "<td>#{committer}</td>"
-end
+  toc << "
+  <li role=\"presentation\">
+    <a href=\"#{chart[:page]}.html\" >#{chart[:title]}
+      <span class=\"badge\">#{items.length} since last week</span>
+    </a>
+  </li>"
 
-@committers_list.to_a[10..19].each do |committer, _value|
-  top_committers_2 << "<td>#{committer}</td>"
-end
+  accordion << "
+    <div class=\"panel panel-primary\">
+      <div class=\"panel-heading\" data-toggle=\"collapse\"
+           data-parent=\"#accordion\" data-target=\"\##{chart[:page]}\">
+        <h4 class=\"panel-title\">New #{chart[:title]}</h4>
+      </div>
+      <div id=\"#{chart[:page]}\" class=\"panel-collapse collapse\">
+      <div class=\"panel-body\">
+        Check out some of the new #{chart[:title]} for this week!
+      </div>
+      <div class=\"table-responsive\">
+      <table class=\"table\">
+    "
 
-@committers_list.to_a[20..29].each do |committer, _value|
-  top_committers_3 << "<td>#{committer}</td>"
-end
-
-# MAKING THE LINKS
-puts "Some fresh requests coming up..."
-accordion = "
-
-            "
-@weekly_stats.each do |stat, url, _date, _author, _title|
-  top = "
-      <div class=\"panel panel-primary\">
-        <div class=\"panel-heading\" data-toggle=\"collapse\"
-             data-parent=\"#accordion\" data-target=\"\##{stat}\">
-          <h4 class=\"panel-title\">#{stat}</h4>
-        </div>
-        <div id=\"#{stat}\" class=\"panel-collapse collapse\">
-        <div class=\"panel-body\">
-          Check out some of the #{stat} for this week!
-        </div>
-        <div class=\"table-responsive\">
-        <table class=\"table\">
-      "
-  accordion << top
-  url.each do |uri|
-    content = "
+  items.each do |item|
+    url = "https://github.com/#{project}/issues/#{item[:number]}"
+    accordion << "
           <tr>
             <td class=\"resource_url\">
-              <a target=\"_blank\" href=\"#{uri[1]}\">
-                <span class=\"fa-fw fa fa-github\">#{uri[0]}</span>
+              <a target=\"_blank\" href=\"#{url}\">
+                <span class=\"fa-fw fa fa-github\">#{item[:title]}</span>
               </a>
-              <a title=\"#{uri[4]}\" href=\"#{uri[1]}\">#{uri[4]}
+              <a title=\"#{item[:title]}\" href=\"#{url}\">#{item[:title]}
                 <span class=\"fa-fw fa fa-info-circle\"></span>
               </a>
             </td>
 
             <td class=\"resource_date\" nowrap>
-              <em>#{uri[2]}</em>
+              <em>#{item[:created_at]}</em>
             </td>
 
             <td class=\"resource_author\" nowrap>
-              #{uri[3]}
+              #{item[:reporter]}
             </td>
-          </tr>
-    "
-    accordion << content
+          </tr>"
   end
-  bottom = '</table></div></div></div>'
-  accordion << bottom
-  # puts accordion
+
+  accordion << '</table></div></div></div>'
 end
 accordion << '</div>'
 
-puts "And a cherry on top for good measure!"
-stat_data = []
-title = 'foo'
+top_committers = stats.top_committers(last_month)
+top_committers_1  = ''
+top_committers_2  = ''
+top_committers_3  = ''
 
-stats.each do |stat|
-  title = stat
+top_committers.to_a[0..9].each do |committer, count|
+  top_committers_1 << "<td>#{committer} (#{count})</td>"
+end
+
+top_committers.to_a[10..19].each do |committer, count|
+  top_committers_2 << "<td>#{committer} (#{count})</td>"
+end
+
+top_committers.to_a[20..29].each do |committer, count|
+  top_committers_3 << "<td>#{committer} (#{count})</td>"
+end
+
+puts "And a cherry on top for good measure!"
+
+title = ''
+stat_data = []
+
+charts.each do |chart|
+  title = chart[:title]
   stat_data = []
-  data.each do |datum|
-    stat_data << [datum[0], datum[1][stat]]
+  first_stat = false
+	(DateTime.new(2011, 1, 1)..DateTime.now).each do |date|
+		issues = stats.open_things_on(date, chart[:pull_requests], chart[:labels])
+    if first_stat || issues.length > 0
+      stat_data << [date.to_time.to_i * 1000, issues.length]
+      first_stat = true
+    end
   end
   template = ERB.new(File.read('template.erb'))
-  File.write("#{title}.html", template.result)
+  File.write("#{chart[:page]}.html", template.result)
 end
 
 puts "All done!"
