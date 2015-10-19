@@ -14,6 +14,7 @@
 .repl_history
 build/
 stats/*.html
+stats/*.json
 
 ## Documentation cache and generated files:
 /.yardoc/
