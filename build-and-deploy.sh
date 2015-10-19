@@ -41,7 +41,6 @@ echo [*] Generating community stats:
   mkdir -p $TOPLEVEL/metasploit-resource-portal/build/assets/
   cp $TOPLEVEL/stats/*.html $TOPLEVEL/metasploit-resource-portal/build
   cp -a $TOPLEVEL/stats/assets/* $TOPLEVEL/metasploit-resource-portal/build/assets/
-  git commit -m "Updated stats for `date`" .
 echo [*] --------------------------
 
 git diff
