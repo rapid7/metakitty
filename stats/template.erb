@@ -68,7 +68,7 @@
                 xAxis: {
                     type: 'datetime',
                     dateTimeLabelFormats: { // don't display the dummy year
-                        month: '%e. %b',
+                        month: '%e. %b %Y',
                         year: '%b'
                     },
                     title: {
@@ -83,7 +83,7 @@
                 },
                 tooltip: {
                     headerFormat: '<b>{series.name}</b><br>',
-                    pointFormat: '{point.x:%e. %b}: {point.y:.2f} m'
+                    pointFormat: '{point.x:%e. %b}: {point.y:.2f}'
                 },
 
                 plotOptions: {

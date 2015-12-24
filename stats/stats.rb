@@ -95,6 +95,22 @@ class IssueStats
     new_things_between(start_date, end_date, true, labels)
   end
 
+  def closed_things_between(start_date, end_date, pull_request = false, labels=[])
+    @issues.select do |i|
+      (labels.length == 0 || (labels - i[:labels]).length < labels.length) &&
+      i[:pull_request] == pull_request &&
+         (!i[:closed_at].nil? && i[:closed_at] >= start_date && i[:closed_at] <= end_date)
+    end
+  end
+
+  def closed_issues_between(start_date, end_date, labels=[])
+    closed_things_between(start_date, end_date, false, labels)
+  end
+
+  def closed_prs_between(start_date, end_date, labels=[])
+    closed_things_between(start_date, end_date, true, labels)
+  end
+
   def top_committers(date)
     commits = @client.commits_since(@project, date)
     committers = {}

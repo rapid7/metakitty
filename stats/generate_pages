@@ -16,7 +16,7 @@ end
 project = 'rapid7/metasploit-framework'
 stats = IssueStats.new(ENV['GITHUB_OAUTH_TOKEN'], project)
 
-charts = [
+steady_state_charts = [
   { page: 'pull_requests',
     title: "Open Pull Requests",
     labels: [],
@@ -31,6 +31,24 @@ charts = [
     pull_requests: false }
   ]
 
+change_charts = [
+  { page: 'opened_pull_requests',
+    title: 'Opened Pull Requests per Quarter',
+    labels: [],
+    pull_requests: true,
+    open: true },
+  { page: 'opened_bugs',
+    title: 'Opened Bugs per Quarter',
+    labels: ["bug"],
+    pull_requests: false,
+    open: true },
+  { page: 'opened_features_and_enhancements',
+    title: 'Opened Features and Enhancements per Quarter',
+    labels: ["feature", "enhancement"],
+    pull_requests: false,
+    open: true },
+  ]
+
 today = DateTime.now
 last_week = today - 7
 last_month = today - 30
@@ -38,9 +56,15 @@ last_month = today - 30
 puts "Making some (sausage) links..."
 toc = ''
 accordion = '
-
             '
-charts.each do |chart|
+change_charts.each do |chart|
+  toc << "
+  <li role=\"presentation\">
+    <a href=\"#{chart[:page]}.html\" >#{chart[:title]}</a>
+  </li>"
+end
+
+steady_state_charts.each do |chart|
   items = stats.new_things_between(last_week, today,
     chart[:pull_requests], chart[:labels])
 
@@ -114,12 +138,33 @@ puts "And a cherry on top for good measure!"
 title = ''
 stat_data = []
 
-charts.each do |chart|
+steady_state_charts.each do |chart|
   title = chart[:title]
   stat_data = []
   first_stat = false
-	(DateTime.new(2011, 1, 1)..DateTime.now).each do |date|
-		issues = stats.open_things_on(date, chart[:pull_requests], chart[:labels])
+  (DateTime.new(2011, 1, 1)..DateTime.now).each do |date|
+    issues = stats.open_things_on(date, chart[:pull_requests], chart[:labels])
+    if first_stat || issues.length > 0
+      stat_data << [date.to_time.to_i * 1000, issues.length]
+      first_stat = true
+    end
+  end
+  template = ERB.new(File.read('template.erb'))
+  File.write("#{chart[:page]}.html", template.result)
+end
+
+change_charts.each do |chart|
+  title = chart[:title]
+  stat_data = []
+  first_stat = false
+  ((DateTime.now - (365 * 4))..DateTime.now).step(91) do |date|
+    if chart[:open]
+      issues = stats.new_things_between(date - 91, date,
+        chart[:pull_requests], chart[:labels])
+    else
+      issues = stats.closed_things_between(date - 91, date,
+        chart[:pull_requests], chart[:labels])
+    end
     if first_stat || issues.length > 0
       stat_data << [date.to_time.to_i * 1000, issues.length]
       first_stat = true
