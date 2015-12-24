@@ -15,7 +15,7 @@ end
 
 projects = ['rapid7/metasploit-framework', 'rapid7/metasploit-payloads',
   'rapid7/meterpreter', 'rapid7/metasploit-javapayload',
-  'rapid7/metasploit-omnibus', 'rapid7/metasploit-resource-portal',
+  'rapid7/metasploit-omnibus', 'metasploit/resource-portal-data',
   'rapid7/metasploit_data_model']
 stats = IssueStats.new(ENV['GITHUB_OAUTH_TOKEN'], projects)
 
