@@ -3,13 +3,13 @@ require 'date'
 require 'json'
 
 class IssueStats
-  def initialize(token, project)
-    @project = project
+  def initialize(token, projects)
+    @projects = projects
     @client = Octokit::Client.new access_token: token
     @client.auto_paginate = true
     @issues = []
 
-    file_name = "#{project.sub(/\//, '_')}.json"
+    file_name = "cache.json"
 
     if File.exist?(file_name) && ((Time.now - File.stat(file_name).mtime).to_i < 21500)
       JSON.parse(File.read(file_name)).each do |i|
@@ -20,6 +20,7 @@ class IssueStats
           title: i['title'],
           labels: i['labels'],
           reporter: i['reporter'],
+          project: i['project'],
           pull_request: i['pull_request'],
           created_at: str_to_datetime(i['created_at']),
           closed_at: str_to_datetime(i['closed_at']),
@@ -27,20 +28,23 @@ class IssueStats
         }
       end
     else
-      (@client.issues(project, state: 'open') +
-       @client.issues(project, state: 'closed')).each do |i|
-        @issues << {
-          number: i.number,
-          url: i.url,
-          state: i.state,
-          title: i.title,
-          reporter: i.user.login,
-          labels: i.labels.map {|label| label.name},
-          pull_request: !i.pull_request.nil?,
-          created_at: time_to_datetime(i.created_at),
-          closed_at: time_to_datetime(i.closed_at),
-          updated_at: time_to_datetime(i.updated_at)
-        }
+      @projects.each do |project|
+        (@client.issues(project, state: 'open') +
+         @client.issues(project, state: 'closed')).each do |i|
+          @issues << {
+            number: i.number,
+            url: i.url,
+            state: i.state,
+            title: i.title,
+            project: project,
+            reporter: i.user.login,
+            labels: i.labels.map {|label| label.name},
+            pull_request: !i.pull_request.nil?,
+            created_at: time_to_datetime(i.created_at),
+            closed_at: time_to_datetime(i.closed_at),
+            updated_at: time_to_datetime(i.updated_at)
+          }
+        end
       end
       ji = @issues.to_json
       File.write(file_name, @issues.to_json)
@@ -112,7 +116,10 @@ class IssueStats
   end
 
   def top_committers(date)
-    commits = @client.commits_since(@project, date)
+    commits = []
+    @projects.each do |project|
+      commits.concat @client.commits_since(project, date)
+    end
     committers = {}
     committers.default = 0
     commits.each do |commit|

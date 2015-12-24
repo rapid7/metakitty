@@ -13,8 +13,9 @@ if !ENV.has_key?('GITHUB_OAUTH_TOKEN')
 exit 1
 end
 
-project = 'rapid7/metasploit-framework'
-stats = IssueStats.new(ENV['GITHUB_OAUTH_TOKEN'], project)
+projects = ['rapid7/metasploit-framework', 'rapid7/metasploit-payloads',
+  'rapid7/meterpreter', 'rapid7/metasploit-javapayload', 'rapid7/metasploit-omnibus']
+stats = IssueStats.new(ENV['GITHUB_OAUTH_TOKEN'], projects)
 
 steady_state_charts = [
   { page: 'pull_requests',
@@ -33,20 +34,17 @@ steady_state_charts = [
 
 change_charts = [
   { page: 'opened_pull_requests',
-    title: 'Opened Pull Requests per Quarter',
+    title: 'Pull Requests per Quarter',
     labels: [],
-    pull_requests: true,
-    open: true },
+    pull_requests: true },
   { page: 'opened_bugs',
-    title: 'Opened Bugs per Quarter',
+    title: 'Bugs per Quarter',
     labels: ["bug"],
-    pull_requests: false,
-    open: true },
+    pull_requests: false },
   { page: 'opened_features_and_enhancements',
-    title: 'Opened Features and Enhancements per Quarter',
+    title: 'Features and Enhancements per Quarter',
     labels: ["feature", "enhancement"],
-    pull_requests: false,
-    open: true },
+    pull_requests: false },
   ]
 
 today = DateTime.now
@@ -90,7 +88,7 @@ steady_state_charts.each do |chart|
     "
 
   items.each do |item|
-    url = "https://github.com/#{project}/issues/#{item[:number]}"
+    url = "https://github.com/#{item[:project]}/issues/#{item[:number]}"
     accordion << "
           <tr>
             <td class=\"resource_url\">
@@ -137,6 +135,8 @@ puts "And a cherry on top for good measure!"
 
 title = ''
 stat_data = []
+open_stat_data = []
+close_stat_data = []
 
 steady_state_charts.each do |chart|
   title = chart[:title]
@@ -155,22 +155,26 @@ end
 
 change_charts.each do |chart|
   title = chart[:title]
-  stat_data = []
+  open_stat_data = []
+  close_stat_data = []
   first_stat = false
   ((DateTime.now - (365 * 4))..DateTime.now).step(91) do |date|
-    if chart[:open]
-      issues = stats.new_things_between(date - 91, date,
-        chart[:pull_requests], chart[:labels])
-    else
-      issues = stats.closed_things_between(date - 91, date,
-        chart[:pull_requests], chart[:labels])
-    end
+
+    issues = stats.new_things_between(date - 91, date,
+      chart[:pull_requests], chart[:labels])
     if first_stat || issues.length > 0
-      stat_data << [date.to_time.to_i * 1000, issues.length]
+      open_stat_data << [date.to_time.to_i * 1000, issues.length]
+      first_stat = true
+    end
+
+    issues = stats.closed_things_between(date - 91, date,
+      chart[:pull_requests], chart[:labels])
+    if first_stat || issues.length > 0
+      close_stat_data << [date.to_time.to_i * 1000, issues.length]
       first_stat = true
     end
   end
-  template = ERB.new(File.read('template.erb'))
+  template = ERB.new(File.read('template_change.erb'))
   File.write("#{chart[:page]}.html", template.result)
 end
 
