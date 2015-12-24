@@ -33,15 +33,15 @@ steady_state_charts = [
   ]
 
 change_charts = [
-  { page: 'opened_pull_requests',
+  { page: 'pull_request_rates',
     title: 'Pull Requests per Quarter',
     labels: [],
     pull_requests: true },
-  { page: 'opened_bugs',
+  { page: 'bug_rates',
     title: 'Bugs per Quarter',
     labels: ["bug"],
     pull_requests: false },
-  { page: 'opened_features_and_enhancements',
+  { page: 'feature_and_enhancement_rates',
     title: 'Features and Enhancements per Quarter',
     labels: ["feature", "enhancement"],
     pull_requests: false },
