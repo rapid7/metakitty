@@ -16,7 +16,7 @@ end
 projects = ['rapid7/metasploit-framework', 'rapid7/metasploit-payloads',
   'rapid7/meterpreter', 'rapid7/metasploit-javapayload',
   'rapid7/metasploit-omnibus', 'metasploit/resource-portal-data',
-  'rapid7/metasploit_data_model']
+  'rapid7/metasploit_data_models']
 stats = IssueStats.new(ENV['GITHUB_OAUTH_TOKEN'], projects)
 
 steady_state_charts = [
