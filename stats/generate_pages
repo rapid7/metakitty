@@ -162,6 +162,10 @@ change_charts.each do |chart|
   first_stat = false
   ((DateTime.now - (365 * 4))..DateTime.now).step(91) do |date|
 
+    if DateTime.now - date < 90
+      date = DateTime.now
+    end
+
     issues = stats.new_things_between(date - 91, date,
       chart[:pull_requests], chart[:labels])
     if first_stat || issues.length > 0
