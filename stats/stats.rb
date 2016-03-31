@@ -83,27 +83,29 @@ class IssueStats
     open_things_on(date, true, labels)
   end
 
-  def new_things_between(start_date, end_date, pull_request = false, labels=[])
+  def new_things_between(start_date, end_date, pull_request = false, labels=[], reporter=nil)
     @issues.select do |i|
       (labels.length == 0 || (labels - i[:labels]).length < labels.length) &&
       i[:pull_request] == pull_request &&
-         (i[:created_at] >= start_date && i[:created_at] <= end_date)
+         (i[:created_at] >= start_date && i[:created_at] <= end_date) &&
+         (reporter.nil? || i[:reporter] =~ /#{reporter}/)
     end
   end
 
-  def new_issues_between(start_date, end_date, labels=[])
-    new_things_between(start_date, end_date, false, labels)
+  def new_issues_between(start_date, end_date, labels=[], reporter=nil)
+    new_things_between(start_date, end_date, false, labels, reporter)
   end
 
-  def new_prs_between(start_date, end_date, labels=[])
-    new_things_between(start_date, end_date, true, labels)
+  def new_prs_between(start_date, end_date, labels=[], reporter=nil)
+    new_things_between(start_date, end_date, true, labels, reporter)
   end
 
-  def closed_things_between(start_date, end_date, pull_request = false, labels=[])
+  def closed_things_between(start_date, end_date, pull_request = false, labels=[], reporter=nil)
     @issues.select do |i|
       (labels.length == 0 || (labels - i[:labels]).length < labels.length) &&
       i[:pull_request] == pull_request &&
-         (!i[:closed_at].nil? && i[:closed_at] >= start_date && i[:closed_at] <= end_date)
+         (!i[:closed_at].nil? && i[:closed_at] >= start_date && i[:closed_at] <= end_date) &&
+         (reporter.nil? || i[:reporter] =~ /#{reporter}/)
     end
   end
 

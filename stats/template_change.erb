@@ -95,8 +95,10 @@
                 },
 
                 series: [
-				{ name: "Opened <%= title %>", data: <%= open_stat_data %> },
-				{ name: "Closed <%= title %>", data: <%= close_stat_data %> },
+				{ name: "Total Opened <%= title %>", data: <%= open_stat_data %> },
+				{ name: "Total Closed <%= title %>", data: <%= close_stat_data %> },
+				{ name: "Rapid7 Opened <%= title %>", data: <%= open_r7_stat_data %> },
+				{ name: "Rapid7 Closed <%= title %>", data: <%= close_r7_stat_data %> },
 				]
             });
         });

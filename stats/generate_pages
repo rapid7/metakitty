@@ -139,6 +139,8 @@ title = ''
 stat_data = []
 open_stat_data = []
 close_stat_data = []
+open_r7_stat_data = []
+close_r7_stat_data = []
 
 steady_state_charts.each do |chart|
   title = chart[:title]
@@ -166,10 +168,14 @@ change_charts.each do |chart|
   title = chart[:title]
   open_stat_data = []
   close_stat_data = []
+  open_r7_stat_data = []
+  close_r7_stat_data = []
+
   first_stat = false
   ((DateTime.now - (365 * 4))..DateTime.now).step(91) do |date|
 
 		quarter = quarter_dates(date)
+
     issues = stats.new_things_between(quarter[:begin_date], quarter[:end_date],
       chart[:pull_requests], chart[:labels])
     if first_stat || issues.length > 0
@@ -177,10 +183,24 @@ change_charts.each do |chart|
       first_stat = true
     end
 
+    issues = stats.new_things_between(quarter[:begin_date], quarter[:end_date],
+      chart[:pull_requests], chart[:labels], '-r7')
+    if first_stat || issues.length > 0
+      open_r7_stat_data << [quarter[:end_date].to_time.to_i * 1000, issues.length]
+      first_stat = true
+    end
+
     issues = stats.closed_things_between(quarter[:begin_date], quarter[:end_date],
       chart[:pull_requests], chart[:labels])
     if first_stat || issues.length > 0
       close_stat_data << [quarter[:end_date].to_time.to_i * 1000, issues.length]
+      first_stat = true
+    end
+
+    issues = stats.closed_things_between(quarter[:begin_date], quarter[:end_date],
+      chart[:pull_requests], chart[:labels], '-r7')
+    if first_stat || issues.length > 0
+      close_r7_stat_data << [date.to_time.to_i * 1000, issues.length]
       first_stat = true
     end
   end
