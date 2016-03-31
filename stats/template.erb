@@ -94,10 +94,10 @@
                     }
                 },
 
-                series: [{
-                    name: "<%= title %>",
-                    data: <%= stat_data %>
-                }]
+                series: [
+                    { name: "<%= title %>", data: <%= stat_data %> },
+                    { name: "Rapid7 <%= title %>", data: <%= stat_r7_data %> }
+                ]
             });
         });
             </script>

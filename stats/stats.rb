@@ -66,12 +66,13 @@ class IssueStats
     DateTime.new(t.year, t.month, t.day, t.hour, t.min, seconds, offset)
   end
 
-  def open_things_on(date, pull_request = false, labels=[])
+  def open_things_on(date, pull_request = false, labels=[], reporter=nil)
     @issues.select do |i|
       (labels.length == 0 || (labels - i[:labels]).length < labels.length) &&
       i[:pull_request] == pull_request &&
         ((i[:closed_at].nil? && i[:created_at] <= date) ||
-         (i[:created_at] <= date && i[:closed_at] >= date))
+         (i[:created_at] <= date && i[:closed_at] >= date)) &&
+         (reporter.nil? || i[:reporter] =~ /#{reporter}/)
     end
   end
 

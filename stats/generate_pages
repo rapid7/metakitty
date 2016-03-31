@@ -137,6 +137,7 @@ puts "And a cherry on top for good measure!"
 
 title = ''
 stat_data = []
+stat_r7_data = []
 open_stat_data = []
 close_stat_data = []
 open_r7_stat_data = []
@@ -150,6 +151,12 @@ steady_state_charts.each do |chart|
     issues = stats.open_things_on(date, chart[:pull_requests], chart[:labels])
     if first_stat || issues.length > 0
       stat_data << [date.to_time.to_i * 1000, issues.length]
+      first_stat = true
+    end
+
+    issues = stats.open_things_on(date, chart[:pull_requests], chart[:labels], '-r7')
+    if first_stat || issues.length > 0
+      stat_r7_data << [date.to_time.to_i * 1000, issues.length]
       first_stat = true
     end
   end
