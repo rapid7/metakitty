@@ -146,6 +146,7 @@ close_r7_stat_data = []
 steady_state_charts.each do |chart|
   title = chart[:title]
   stat_data = []
+  stat_r7_data = []
   first_stat = false
   (DateTime.new(2011, 1, 1)..DateTime.now).each do |date|
     issues = stats.open_things_on(date, chart[:pull_requests], chart[:labels])
