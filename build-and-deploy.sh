@@ -32,12 +32,12 @@ echo $PWD
 echo [*] --------------------------
 cd $TOPLEVEL/metasploit-resource-portal &&
   git checkout $LAST_COMMIT && # Be serious about committed changes
-  bundle exec middleman build
+  middleman build
 echo [*] --------------------------
 
 echo [*] --------------------------
 echo [*] Generating community stats:
-  cd $TOPLEVEL/stats && bundle exec ./generate_pages
+  cd $TOPLEVEL/stats && ./generate_pages
   mkdir -p $TOPLEVEL/metasploit-resource-portal/build/assets/
   cp $TOPLEVEL/stats/*.html $TOPLEVEL/metasploit-resource-portal/build
   cp -a $TOPLEVEL/stats/assets/* $TOPLEVEL/metasploit-resource-portal/build/assets/
