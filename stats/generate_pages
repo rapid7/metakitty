@@ -203,7 +203,7 @@ change_charts.each do |chart|
   close_r7_stat_data = []
 
   first_stat = false
-  ((DateTime.now - (365 * 4))..DateTime.now).step(91) do |date|
+  ((DateTime.now - (365 * 4))..DateTime.now).step(90) do |date|
 
 		quarter = quarter_dates(date)
 
