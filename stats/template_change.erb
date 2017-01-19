@@ -95,11 +95,11 @@
                 },
 
                 series: [
-				{ name: "Total Opened <%= title %>", data: <%= open_stat_data %> },
-				{ name: "Total Closed <%= title %>", data: <%= close_stat_data %> },
-				{ name: "Rapid7 Opened <%= title %>", data: <%= open_r7_stat_data %> },
-				{ name: "Rapid7 Closed <%= title %>", data: <%= close_r7_stat_data %> },
-				]
+                  { name: "Total Opened <%= title %>", data: <%= open_stat_data %> },
+                  { name: "Total Closed <%= title %>", data: <%= close_stat_data %> },
+                  { name: "Rapid7 Opened <%= title %>", data: <%= open_r7_stat_data %> },
+                  { name: "Rapid7 Closed <%= title %>", data: <%= close_r7_stat_data %> },
+                ]
             });
         });
             </script>
@@ -110,9 +110,7 @@
     </div>
     <table class="table table-striped">
       <h2>Top committers this last week</h2>
-      <tr><%= top_committers_1 %></tr>
-      <tr><%= top_committers_2 %></tr>
-      <tr><%= top_committers_3 %></tr>
+      <%= top_committers_html %>
     </table>
     <h2>Top items this last week</h2>
     <%= accordion %>

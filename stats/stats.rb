@@ -2,77 +2,42 @@ require 'octokit'
 require 'date'
 require 'json'
 
+load 'issue.rb'
+
 class IssueStats
   def initialize(token, projects)
     @projects = projects
-    @client = Octokit::Client.new access_token: token
+    @client = Octokit::Client.new(access_token: token) if token
     @client.auto_paginate = true
     @issues = []
 
     file_name = "cache.json"
 
     if File.exist?(file_name) && ((Time.now - File.stat(file_name).mtime).to_i < 21500)
+      $stderr.puts("Using cached issues in #{file_name}")
       JSON.parse(File.read(file_name)).each do |i|
-        @issues << {
-          number: i['number'],
-          url: i['url'],
-          state: i['state'],
-          title: i['title'],
-          labels: i['labels'],
-          reporter: i['reporter'],
-          project: i['project'],
-          pull_request: i['pull_request'],
-          created_at: str_to_datetime(i['created_at']),
-          closed_at: str_to_datetime(i['closed_at']),
-          updated_at: str_to_datetime(i['updated_at'])
-        }
+        @issues << Issue.from_json_hash(i)
       end
     else
       @projects.each do |project|
-        (@client.issues(project, state: 'open') +
-         @client.issues(project, state: 'closed')).each do |i|
-          @issues << {
-            number: i.number,
-            url: i.url,
-            state: i.state,
-            title: i.title,
-            project: project,
-            reporter: i.user.login,
-            labels: i.labels.map {|label| label.name},
-            pull_request: !i.pull_request.nil?,
-            created_at: time_to_datetime(i.created_at),
-            closed_at: time_to_datetime(i.closed_at),
-            updated_at: time_to_datetime(i.updated_at)
-          }
+        $stderr.puts project
+        (
+          @client.issues(project, state: 'open') + @client.issues(project, state: 'closed')
+        ).each do |i|
+          @issues << Issue.from_ghissue(i, project)
         end
       end
-      ji = @issues.to_json
       File.write(file_name, @issues.to_json)
     end
   end
 
-  def time_to_datetime(t)
-    return nil if t.nil?
-    seconds = t.sec + Rational(t.usec, 10**6)
-    offset = Rational(t.utc_offset, 60 * 60 * 24)
-    DateTime.new(t.year, t.month, t.day, t.hour, t.min, seconds, offset)
-  end
-
-  def str_to_datetime(str)
-    return nil if str.nil?
-    t = Time.parse(str)
-    seconds = t.sec + Rational(t.usec, 10**6)
-    offset = Rational(t.utc_offset, 60 * 60 * 24)
-    DateTime.new(t.year, t.month, t.day, t.hour, t.min, seconds, offset)
-  end
-
   def open_things_on(date, pull_request = false, labels=[], reporter=nil)
-    @issues.select do |i|
-      (labels.length == 0 || (labels - i[:labels]).length < labels.length) &&
-      i[:pull_request] == pull_request &&
-        ((i[:closed_at].nil? && i[:created_at] <= date) ||
-         (i[:created_at] <= date && i[:closed_at] >= date)) &&
-         (reporter.nil? || i[:reporter] =~ /#{reporter}/)
+    @issues.select do |issue|
+      (labels.length == 0 || (labels - issue.labels).length < labels.length) &&
+      issue.pull_request == pull_request &&
+        ((issue.closed_at.nil? && issue.created_at <= date) ||
+         (issue.created_at <= date && issue.closed_at >= date)) &&
+         (reporter.nil? || issue.reporter =~ /#{reporter}/)
     end
   end
 
@@ -85,11 +50,11 @@ class IssueStats
   end
 
   def new_things_between(start_date, end_date, pull_request = false, labels=[], reporter=nil)
-    @issues.select do |i|
-      (labels.length == 0 || (labels - i[:labels]).length < labels.length) &&
-      i[:pull_request] == pull_request &&
-         (i[:created_at] >= start_date && i[:created_at] <= end_date) &&
-         (reporter.nil? || i[:reporter] =~ /#{reporter}/)
+    @issues.select do |issue|
+      (labels.length == 0 || (labels - issue.labels).length < labels.length) &&
+      issue.pull_request == pull_request &&
+         (issue.created_at >= start_date && issue.created_at <= end_date) &&
+         (reporter.nil? || issue.reporter =~ /#{reporter}/)
     end
   end
 
@@ -102,11 +67,11 @@ class IssueStats
   end
 
   def closed_things_between(start_date, end_date, pull_request = false, labels=[], reporter=nil)
-    @issues.select do |i|
-      (labels.length == 0 || (labels - i[:labels]).length < labels.length) &&
-      i[:pull_request] == pull_request &&
-         (!i[:closed_at].nil? && i[:closed_at] >= start_date && i[:closed_at] <= end_date) &&
-         (reporter.nil? || i[:reporter] =~ /#{reporter}/)
+    @issues.select do |issue|
+      (labels.length == 0 || (labels - issue.labels).length < labels.length) &&
+      issue.pull_request == pull_request &&
+         (!issue.closed_at.nil? && issue.closed_at >= start_date && issue.closed_at <= end_date) &&
+         (reporter.nil? || issue.reporter =~ /#{reporter}/)
     end
   end
 
