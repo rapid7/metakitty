@@ -39,6 +39,14 @@ projects = [
   'rapid7/rex-random_identifier',
   'rapid7/rex',
   'rapid7/mettle',
+  'rapid7/metasploitable3',
+  'rapid7/msfrpc-client',
+  'rapid7/fastlib',
+  'rapid7/metasploit-credential',
+  'rapid7/metasploit-model',
+  'rapid7/metasploit-aggregator',
+  'rapid7/metasploit-vulnerability-emulator',
+  'rapid7/ruby_smb'
 ]
 
 stats = IssueStats.new(ENV['GITHUB_OAUTH_TOKEN'], projects)
