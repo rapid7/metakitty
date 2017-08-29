@@ -29,6 +29,11 @@ class IssueStats
       end
       File.write(file_name, @issues.to_json)
     end
+    nil
+  end
+
+  def to_s
+    @projects
   end
 
   def open_things_on(date, pull_request = false, labels=[], reporter=nil)
