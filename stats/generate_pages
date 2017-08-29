@@ -18,8 +18,13 @@ projects = [
   'rapid7/meterpreter',
   'rapid7/metasploit-javapayload',
   'rapid7/metasploit-omnibus',
-  'metasploit/resource-portal-data',
   'rapid7/metasploit_data_models',
+  'rapid7/metasploit-credential',
+  'rapid7/metasploit-model',
+  'rapid7/metasploit-aggregator',
+  'rapid7/metasploit-baseline-builder',
+  'rapid7/metasploit-vulnerability-emulator',
+  'rapid7/network_interface',
   'rapid7/rex-encoder',
   'rapid7/rex-rop_builder',
   'rapid7/rex-mime',
@@ -42,11 +47,8 @@ projects = [
   'rapid7/metasploitable3',
   'rapid7/msfrpc-client',
   'rapid7/fastlib',
-  'rapid7/metasploit-credential',
-  'rapid7/metasploit-model',
-  'rapid7/metasploit-aggregator',
-  'rapid7/metasploit-vulnerability-emulator',
-  'rapid7/ruby_smb'
+  'rapid7/ruby_smb',
+  'rapid7/vm-automation'
 ]
 
 stats = IssueStats.new(ENV['GITHUB_OAUTH_TOKEN'], projects)
@@ -140,9 +142,6 @@ steady_state_charts.each do |chart|
             <td class=\"resource_url\">
               <a target=\"_blank\" href=\"#{url}\">
                 <span class=\"fa-fw fa fa-github\">#{item.title}</span>
-              </a>
-              <a title=\"#{item.title}\" href=\"#{url}\">#{item.title}
-                <span class=\"fa-fw fa fa-info-circle\"></span>
               </a>
             </td>
 
