@@ -100,4 +100,26 @@ class IssueStats
     end
     committers.sort_by { |k, v| v }.reverse.to_h
   end
+  
+  def top_committers_json(date, limit)
+    contributers = []
+    @projects.each do |project|
+      contributers.concat @client.contribs(project)
+    end
+    contributer_counts = {}
+    contributer_counts.default = 0
+    contributers.each do |contributer|
+      contributer_counts[contributer[:login]] += contributer[:contributions]
+    end
+    top_20_contributers = contributer_counts.sort_by { |k, v| v }.reverse.first(limit).to_h
+    top_20_contributer_infos = []
+    top_20_contributers.each do |contributer|
+      login = contributer[0]
+      contributions = contributer[1]
+      user = @client.user(login)
+      user[:contributions] = contributions
+      top_20_contributer_infos << user.to_h
+    end
+    top_20_contributer_infos
+  end
 end

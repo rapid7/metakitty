@@ -99,6 +99,9 @@ today = DateTime.now
 last_week = today - 7
 last_month = today - 30
 
+puts 'generating json...'
+File.write('contributers_all.json', stats.top_committers_json(nil, 20).to_json)
+
 puts "Making some (sausage) links..."
 toc = ''
 accordion = '
