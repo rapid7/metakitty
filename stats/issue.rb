@@ -62,6 +62,10 @@ class Issue
       title: title,
       updated_at: updated_at,
       url: url,
+      user: {
+        login: reporter,
+        html_url: 'https://github.com/' + reporter
+      }
     }.to_json(*a)
   end
 

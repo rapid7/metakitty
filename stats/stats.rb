@@ -102,7 +102,10 @@ class IssueStats
   end
   
   def commits_merged_json
-    closed_prs_between(DateTime.now - 30, DateTime.now).first(6)
+    commits_merged = closed_prs_between(DateTime.now - 30, DateTime.now).first(6).each do |pr|
+      pr.labels = pr.labels.map{|l|{name: l}}
+    end
+    commits_merged
   end
   
   def contributers_month_json
@@ -145,6 +148,9 @@ class IssueStats
   end
   
   def issues_newbie_json
-    open_issues_on(DateTime.now, ['newbie-friendly']).first(10)
+    newb_issues = open_issues_on(DateTime.now, ['newbie-friendly']).first(10).each do |issue|
+      issue.labels = issue.labels.map{|l|{name: l}}
+    end
+    newb_issues
   end
 end
