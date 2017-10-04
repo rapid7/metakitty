@@ -101,6 +101,10 @@ class IssueStats
     committers.sort_by { |k, v| v }.reverse.to_h
   end
   
+  def commits_merged_json
+    closed_prs_between(DateTime.now - 30, DateTime.now).first(6)
+  end
+  
   def contributers_month_json
     commits = []
     @projects.each do |project|
