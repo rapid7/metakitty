@@ -101,6 +101,19 @@ class IssueStats
     committers.sort_by { |k, v| v }.reverse.to_h
   end
   
+  def contributers_month_json
+    commits = []
+    @projects.each do |project|
+      commits.concat @client.commits_since(project, DateTime.now - 30)
+    end
+    committers = {}
+    committers.default = 0
+    commits.each do |commit|
+      committers[commit.author.login] += 1 if !commit.author.nil?
+    end
+    top_20_contributer_infos(committers)
+  end
+  
   def contributers_all_json
     contributers = []
     @projects.each do |project|
@@ -111,6 +124,10 @@ class IssueStats
     contributers.each do |contributer|
       contributer_counts[contributer[:login]] += contributer[:contributions]
     end
+    top_20_contributer_infos(contributer_counts)
+  end
+  
+  def top_20_contributer_infos(contributer_counts)
     top_20_contributers = contributer_counts.sort_by { |k, v| v }.reverse.first(20).to_h
     top_20_contributer_infos = []
     top_20_contributers.each do |contributer|
@@ -124,6 +141,6 @@ class IssueStats
   end
   
   def issues_newbie_json
-    open_issues_on(DateTime.now, ['newbie-friendly'])
+    open_issues_on(DateTime.now, ['newbie-friendly']).first(10)
   end
 end
