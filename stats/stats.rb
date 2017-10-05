@@ -101,6 +101,19 @@ class IssueStats
     committers.sort_by { |k, v| v }.reverse.to_h
   end
   
+  def commits_modules_json
+    @client.commits_since('rapid7/metasploit-framework', DateTime.now - 30, {path: 'modules'}).
+      select{|pr|pr[:commit][:message].include?('Land #')}.
+        map{|pr|
+          {
+            message: pr[:commit][:message],
+            author: pr[:author].to_h,
+            html_url: pr[:commit][:html_url],
+            date: pr[:commit][:date]
+          }
+        }.first(6)
+  end
+  
   def commits_merged_json
     commits_merged = closed_prs_between(DateTime.now - 30, DateTime.now).first(6).each do |pr|
       pr.labels = pr.labels.map{|l|{name: l}}
