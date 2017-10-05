@@ -109,7 +109,7 @@ class IssueStats
             message: pr[:commit][:message],
             author: pr[:author].to_h,
             html_url: pr[:commit][:html_url],
-            date: pr[:commit][:date]
+            date: pr[:commit][:author][:date].strftime("%b %d, %Y")
           }
         }.first(6)
   end
