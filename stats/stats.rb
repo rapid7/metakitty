@@ -163,6 +163,7 @@ class IssueStats
   def issues_newbie_json
     newb_issues = open_issues_on(DateTime.now, ['newbie-friendly']).first(10).each do |issue|
       issue.labels = issue.labels.map{|l|{name: l}}
+      issue.html_url = @client.issue(issue.project, issue.number).html_url
     end
     newb_issues
   end

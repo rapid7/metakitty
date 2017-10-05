@@ -12,6 +12,7 @@ class Issue
   attr_accessor :title
   attr_accessor :updated_at
   attr_accessor :url
+  attr_accessor :html_url
 
   def self.from_json_hash(json)
     issue = new
@@ -65,7 +66,8 @@ class Issue
       user: {
         login: reporter,
         html_url: 'https://github.com/' + reporter
-      }
+      },
+      html_url: html_url
     }.to_json(*a)
   end
 
