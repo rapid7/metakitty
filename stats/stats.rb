@@ -108,7 +108,7 @@ class IssueStats
           {
             message: pr[:commit][:message],
             author: pr[:author].to_h,
-            html_url: pr[:commit][:html_url],
+            html_url: pr.html_url,
             date: pr[:commit][:author][:date].strftime("%b %d, %Y")
           }
         }.first(6)
@@ -117,6 +117,7 @@ class IssueStats
   def commits_merged_json
     commits_merged = closed_prs_between(DateTime.now - 30, DateTime.now).first(6).each do |pr|
       pr.labels = pr.labels.map{|l|{name: l}}
+      pr.html_url = @client.issue(pr.project, pr.number).html_url
     end
     commits_merged
   end
