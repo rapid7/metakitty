@@ -100,7 +100,7 @@ class IssueStats
     end
     committers.sort_by { |k, v| v }.reverse.to_h
   end
-  
+
   def commits_modules_json
     @client.commits_since('rapid7/metasploit-framework', DateTime.now - 30, {path: 'modules'}).
       select{|pr|pr[:commit][:message].include?('Land #')}.
@@ -113,7 +113,7 @@ class IssueStats
           }
         }.first(6)
   end
-  
+
   def commits_merged_json
     commits_merged = closed_prs_between(DateTime.now - 30, DateTime.now).first(6).each do |pr|
       pr.labels = pr.labels.map{|l|{name: l}}
@@ -121,8 +121,12 @@ class IssueStats
     end
     commits_merged
   end
-  
-  def contributers_month_json
+
+  def contributor_id(contributor)
+    contributor[:login] || contributor[:name] || contributor[:email]
+  end
+
+  def contributors_month_json
     commits = []
     @projects.each do |project|
       commits.concat @client.commits_since(project, DateTime.now - 30)
@@ -130,37 +134,49 @@ class IssueStats
     committers = {}
     committers.default = 0
     commits.each do |commit|
-      committers[commit.author.login] += 1 if !commit.author.nil?
+      if !commit.author.nil?
+        committers[commit.author.login] += 1
+      else
+        puts commit
+      end
     end
-    top_20_contributer_infos(committers)
+    puts committers
+    top_20_contributor_infos(committers)
   end
-  
-  def contributers_all_json
-    contributers = []
+
+  def contributors_all_json
+    contributors = []
     @projects.each do |project|
-      contributers.concat @client.contribs(project)
+      contributors.concat @client.contribs(project, true)
     end
-    contributer_counts = {}
-    contributer_counts.default = 0
-    contributers.each do |contributer|
-      contributer_counts[contributer[:login]] += contributer[:contributions]
+    contributor_counts = {}
+    contributor_counts.default = 0
+    contributors.each do |contributor|
+      id = contributor_id(contributor)
+      contributor_counts[id] += contributor[:contributions]
     end
-    top_20_contributer_infos(contributer_counts)
+    top_20_contributor_infos(contributor_counts)
   end
-  
-  def top_20_contributer_infos(contributer_counts)
-    top_20_contributers = contributer_counts.sort_by { |k, v| v }.reverse.first(20).to_h
-    top_20_contributer_infos = []
-    top_20_contributers.each do |contributer|
-      login = contributer[0]
-      contributions = contributer[1]
-      user = @client.user(login)
-      user[:contributions] = contributions
-      top_20_contributer_infos << user.to_h
+
+  def top_20_contributor_infos(contributor_counts)
+    top_20_contributors = contributor_counts.sort_by { |k, v| v }.reverse.to_h
+    top_20_contributor_infos = []
+    num_found = 0
+    top_20_contributors.each do |contributor|
+      login = contributor[0]
+      contributions = contributor[1]
+      begin
+        user = @client.user(login)
+        user[:contributions] = contributions
+        top_20_contributor_infos << user.to_h
+        num_found += 1
+        break if num_found >= 20
+      rescue
+      end
     end
-    top_20_contributer_infos
+    top_20_contributor_infos
   end
-  
+
   def issues_newbie_json
     newb_issues = open_issues_on(DateTime.now, ['newbie-friendly']).first(10).each do |issue|
       issue.labels = issue.labels.map{|l|{name: l}}
