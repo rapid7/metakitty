@@ -36,6 +36,16 @@ class IssueStats
     @projects
   end
 
+  def pull_requests
+    @issues.select do |issue|
+      issue.pull_request == true
+    end
+  end
+
+  def issues
+    @issues
+  end
+
   def open_things_on(date, pull_request = false, labels=[], reporter=nil)
     @issues.select do |issue|
       (labels.length == 0 || (labels - issue.labels).length < labels.length) &&
