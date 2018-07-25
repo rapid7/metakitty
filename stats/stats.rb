@@ -106,7 +106,9 @@ class IssueStats
     committers = {}
     committers.default = 0
     commits.each do |commit|
-      committers[commit[:commit][:author][:name]] += 1
+      author = commit[:commit][:author][:name]
+      committers[commit[:commit][:author][:name]] += 1 \
+        unless author == "Metasploit Jenkins Bot (msjenkins-r7)"
     end
     committers.sort_by { |k, v| v }.reverse.to_h
   end
@@ -144,10 +146,8 @@ class IssueStats
     committers = {}
     committers.default = 0
     commits.each do |commit|
-      if !commit.author.nil?
+      if !commit.author.nil? && commit.author.login != 'msjenkins-r7'
         committers[commit.author.login] += 1
-      else
-        puts commit
       end
     end
     puts committers
@@ -163,7 +163,8 @@ class IssueStats
     contributor_counts.default = 0
     contributors.each do |contributor|
       id = contributor_id(contributor)
-      contributor_counts[id] += contributor[:contributions]
+      contributor_counts[id] += contributor[:contributions] \
+        unless id == "msjenkins-r7"
     end
     top_20_contributor_infos(contributor_counts)
   end
