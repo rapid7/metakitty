@@ -151,7 +151,7 @@ class IssueStats
       end
     end
     puts committers
-    top_20_contributor_infos(committers)
+    top_contributor_infos(committers)
   end
 
   def contributors_all_json
@@ -166,26 +166,26 @@ class IssueStats
       contributor_counts[id] += contributor[:contributions] \
         unless id == "msjenkins-r7"
     end
-    top_20_contributor_infos(contributor_counts)
+    top_contributor_infos(contributor_counts)
   end
 
-  def top_20_contributor_infos(contributor_counts)
-    top_20_contributors = contributor_counts.sort_by { |k, v| v }.reverse.to_h
-    top_20_contributor_infos = []
+  def top_contributor_infos(contributor_counts)
+    top_contributors = contributor_counts.sort_by { |k, v| v }.reverse.to_h
+    top_contributor_infos = []
     num_found = 0
-    top_20_contributors.each do |contributor|
+    top_contributors.each do |contributor|
       login = contributor[0]
       contributions = contributor[1]
       begin
         user = @client.user(login)
         user[:contributions] = contributions
-        top_20_contributor_infos << user.to_h
+        top_contributor_infos << user.to_h
         num_found += 1
-        break if num_found >= 20
+        break if num_found >= 30
       rescue
       end
     end
-    top_20_contributor_infos
+    top_contributor_infos
   end
 
   def issues_newbie_json
