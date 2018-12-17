@@ -13,6 +13,12 @@ class IssueStats
 
     file_name = "cache.json"
 
+    @aliases = {
+      'jlee-r7' => 'egypt',
+      'libhoff-r7' => 'KronicDeth',
+      'bcook-r7' => 'busterb'
+    }
+
     if File.exist?(file_name) && ((Time.now - File.stat(file_name).mtime).to_i < 21500)
       $stderr.puts("Using cached issues in #{file_name}")
       JSON.parse(File.read(file_name)).each do |i|
@@ -135,7 +141,8 @@ class IssueStats
   end
 
   def contributor_id(contributor)
-    contributor[:login] || contributor[:name] || contributor[:email]
+    id = contributor[:login] || contributor[:name] || contributor[:email]
+    @aliases.key?(id) ? @aliases[id] : id
   end
 
   def contributors_month_json
@@ -166,6 +173,7 @@ class IssueStats
       contributor_counts[id] += contributor[:contributions] \
         unless id == "msjenkins-r7"
     end
+    puts contributor_counts
     top_contributor_infos(contributor_counts)
   end
 
