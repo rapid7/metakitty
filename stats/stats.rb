@@ -145,10 +145,10 @@ class IssueStats
     @aliases.key?(id) ? @aliases[id] : id
   end
 
-  def contributors_month_json
+  def contributors_date_json(date)
     commits = []
     @projects.each do |project|
-      commits.concat @client.commits_since(project, DateTime.now - 30)
+      commits.concat @client.commits_since(project, date)
     end
     committers = {}
     committers.default = 0
@@ -159,6 +159,14 @@ class IssueStats
     end
     puts committers
     top_contributor_infos(committers)
+  end
+
+  def contributors_month_json
+    contributors_date_json(DateTime.now - 30)
+  end
+
+  def contributors_year_json
+    contributors_date_json(DateTime.now - 365)
   end
 
   def contributors_all_json

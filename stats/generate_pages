@@ -103,6 +103,7 @@ last_month = today - 30
 puts 'generating json...'
 File.write('contributors_all.json', stats.contributors_all_json.to_json)
 File.write('contributors_month.json', stats.contributors_month_json.to_json)
+File.write('contributors_year.json', stats.contributors_year_json.to_json)
 File.write('commits_modules.json', stats.commits_modules_json.to_json)
 File.write('commits_merged.json', stats.commits_merged_json.to_json)
 File.write('issues_newbie.json', stats.issues_newbie_json.to_json)
