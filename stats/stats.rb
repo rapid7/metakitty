@@ -15,8 +15,9 @@ class IssueStats
 
     @aliases = {
       'jlee-r7' => 'egypt',
-      'libhoff-r7' => 'KronicDeth',
-      'bcook-r7' => 'busterb'
+      'limhoff-r7' => 'KronicDeth',
+      'bcook-r7' => 'busterb',
+      'oj' => 'OJ'
     }
 
     if File.exist?(file_name) && ((Time.now - File.stat(file_name).mtime).to_i < 21500)
