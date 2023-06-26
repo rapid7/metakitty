@@ -1,10 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'middleman'
-
-gem 'bootstrap-sass', :require => false
-gem 'bh'
-
-gem 'json'
+gem 'webrick'
 gem 'octokit'
-gem 'pry'
+gem 'pry-byebug'

@@ -2,7 +2,7 @@ require 'octokit'
 require 'date'
 require 'json'
 
-load 'issue.rb'
+require_relative 'issue.rb'
 
 class IssueStats
   def initialize(token, projects)

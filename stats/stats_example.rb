@@ -3,7 +3,7 @@
 require 'json'
 require 'erb'
 require 'octokit'
-load 'stats.rb'
+require_relative 'stats.rb'
 
 puts "Loading stats..."
 if !ENV.has_key?('GITHUB_OAUTH_TOKEN')
