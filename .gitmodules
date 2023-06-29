@@ -1,3 +1,0 @@
-[submodule "metasploit-resource-portal/resource-portal-data"]
-	path = metasploit-resource-portal/resource-portal-data
-	url = https://github.com/metasploit/resource-portal-data

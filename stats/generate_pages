@@ -3,13 +3,29 @@
 require 'json'
 require 'erb'
 require 'octokit'
-load 'stats.rb'
+require 'fileutils'
+require_relative 'stats.rb'
+
+def current_directory
+  File.dirname(__FILE__)
+end
+
+def store_build_asset(name, value)
+   build_directory = File.join(current_directory, 'build')
+  Dir.mkdir(build_directory) unless Dir.exist?(build_directory)
+  File.binwrite(File.join(build_directory, name), value)
+end
+
+def erb_template_for(template_name)
+  template_path = File.join(current_directory, template_name)
+  ERB.new(File.binread(template_path))
+end
 
 puts "Loading stats..."
 if !ENV.has_key?('GITHUB_OAUTH_TOKEN')
   puts "An authentication method environment variable must be set"
   puts "Please set GITHUB_OAUTH_TOKEN"
-exit 1
+  exit 1
 end
 
 projects = [
@@ -56,7 +72,7 @@ stats = IssueStats.new(ENV['GITHUB_OAUTH_TOKEN'], projects)
 
 steady_state_charts = [
   {
-    page: 'pull_requests',
+    page: 'index',
     title: "Open Pull Requests",
     labels: [],
     pull_requests: true
@@ -101,12 +117,15 @@ last_week = today - 7
 last_month = today - 30
 
 puts 'generating json...'
-File.write('contributors_all.json', stats.contributors_all_json.to_json)
-File.write('contributors_month.json', stats.contributors_month_json.to_json)
-File.write('contributors_year.json', stats.contributors_year_json.to_json)
-File.write('commits_modules.json', stats.commits_modules_json.to_json)
-File.write('commits_merged.json', stats.commits_merged_json.to_json)
-File.write('issues_newbie.json', stats.issues_newbie_json.to_json)
+store_build_asset('contributors_all.json', stats.contributors_all_json.to_json)
+store_build_asset('contributors_month.json', stats.contributors_month_json.to_json)
+store_build_asset('contributors_year.json', stats.contributors_year_json.to_json)
+store_build_asset('commits_modules.json', stats.commits_modules_json.to_json)
+store_build_asset('commits_merged.json', stats.commits_merged_json.to_json)
+store_build_asset('issues_newbie.json', stats.issues_newbie_json.to_json)
+
+puts 'Moving assets'
+FileUtils.cp_r File.join(current_directory, 'assets'), File.join(current_directory, 'build', 'assets')
 
 puts "Making some (sausage) links..."
 toc = ''
@@ -204,8 +223,8 @@ steady_state_charts.each do |chart|
       stat_r7_data << [date.to_time.to_i * 1000, issues.length]
     end
   end
-  template = ERB.new(File.read('template.erb'))
-  File.write("#{chart[:page]}.html", template.result)
+  template = erb_template_for('template.erb')
+  store_build_asset("#{chart[:page]}.html", template.result)
 end
 
 def step_by_quarter(start_date, end_date)
@@ -264,9 +283,8 @@ change_charts.each do |chart|
       close_r7_stat_data << [quarter_end.to_time.to_i * 1000, issues.count]
     end
   end
-  template = ERB.new(File.read('template_change.erb'))
-  File.write("#{chart[:page]}.html", template.result)
+  template = erb_template_for('template_change.erb')
+  store_build_asset("#{chart[:page]}.html", template.result)
 end
 
 puts "All done!"
-
