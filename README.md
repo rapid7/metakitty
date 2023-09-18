@@ -22,6 +22,7 @@ Build the stats, further details can be found in the [README.md](./stats/README.
 ```
 export GITHUB_OAUTH_TOKEN=your_token_here
 bundle exec ruby stats/generate_pages
+bundle exec ruby stats/download_acceptance_test_results.rb
 ```
 
 If you want to see the stats locally, run:
