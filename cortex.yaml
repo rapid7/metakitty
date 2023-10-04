@@ -1,0 +1,15 @@
+---
+info:
+  title: Metakitty
+  description: Metakitty, The Metasploit Resource Portal
+  x-cortex-git:
+    github:
+      alias: r7org
+      repository: rapid7/metakitty
+  x-cortex-tag: metakitty
+  x-cortex-type: service
+  x-cortex-domain-parents:
+  - tag: metasploit
+openapi: 3.0.1
+servers:
+- url: "/"
