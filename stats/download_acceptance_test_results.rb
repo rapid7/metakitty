@@ -27,7 +27,9 @@ class AcceptanceTestReport
     latest_artifacts = client.workflow_run_artifacts(@repository_name, latest_successful_acceptance_test.id).artifacts
     final_report_artifact = latest_artifacts.find { |artifact| artifact.name.start_with?('final-report') }
 
-    final_report_zip_bin = client.get(final_report_artifact.archive_download_url)
+    # Currently the artifact URL redirects to an unauthed azure endpoint that raises an error if an auth header is present
+    final_report_zip_bin_url = client.client_without_redirects.head(final_report_artifact.archive_download_url)['Location']
+    final_report_zip_bin = Octokit::Client.new(access_token: nil).get(final_report_zip_bin_url)
 
     final_report_io = StringIO.new
     final_report_io.puts final_report_zip_bin
@@ -52,6 +54,7 @@ class AcceptanceTestReport
     Zip::File.open_buffer(zip_io) do |zip_file|
       zip_file.each do |f|
         fpath = File.join(target_path, f.name)
+        FileUtils.mkdir_p(File.dirname(fpath))
         zip_file.extract(f, fpath)
       end
     end
