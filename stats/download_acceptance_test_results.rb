@@ -23,6 +23,10 @@ class AcceptanceTestReport
 
     all_workflow_runs = client.repository_workflow_runs(@repository_name, { branch: 'master' }).workflow_runs
     latest_successful_acceptance_test = all_workflow_runs.find { |workflow_run| workflow_run.name == 'Acceptance' && workflow_run.conclusion == 'success' }
+    if !latest_successful_acceptance_test
+      warn "No acceptance tests found - ignoring download"
+      return
+    end
 
     latest_artifacts = client.workflow_run_artifacts(@repository_name, latest_successful_acceptance_test.id).artifacts
     final_report_artifact = latest_artifacts.find { |artifact| artifact.name.start_with?('final-report') }
