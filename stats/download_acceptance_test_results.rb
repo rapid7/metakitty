@@ -1,23 +1,16 @@
 require 'octokit'
 require 'zip'
-
-if !ENV.has_key?('GITHUB_OAUTH_TOKEN')
-  puts "An authentication method environment variable must be set"
-  puts "Please set GITHUB_OAUTH_TOKEN"
-  exit 1
-end
-
-token = ENV['GITHUB_OAUTH_TOKEN']
+require_relative 'auth.rb'
 
 # Attempts to download the latest successful run of the Metasploit acceptance tests
 class AcceptanceTestReport
-  def initialize(access_token:, repository_name: 'rapid7/metasploit-framework')
-    @access_token = access_token
+  def initialize(auth_options:, repository_name: 'rapid7/metasploit-framework')
+    @auth_options = auth_options
     @repository_name = repository_name
   end
 
   def download
-    client = Octokit::Client.new(access_token: @access_token)
+    client = Octokit::Client.new(@auth_options)
     # Don't auto_paginate, as there might be hundreds of workflow runs - and we only want the first page
     client.auto_paginate = false
 
@@ -66,7 +59,7 @@ class AcceptanceTestReport
 end
 
 acceptance_test_report = AcceptanceTestReport.new(
-  access_token: ENV['GITHUB_OAUTH_TOKEN'],
+  auth_options: Auth::octokit_auth_options!
 )
 
 acceptance_test_report.download
