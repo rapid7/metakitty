@@ -4,13 +4,10 @@ require 'json'
 require 'erb'
 require 'octokit'
 require_relative 'stats.rb'
+require_relative 'auth.rb'
 
 puts "Loading stats..."
-if !ENV.has_key?('GITHUB_OAUTH_TOKEN')
-  puts "An authentication method environment variable must be set"
-  puts "Please set GITHUB_OAUTH_TOKEN"
-  exit 1
-end
+auth_options = Auth::octokit_auth_options!
 
 projects = [
   'rapid7/metasploit-framework',
@@ -50,7 +47,7 @@ projects = [
   'rapid7/ruby_smb',
   'rapid7/vm-automation'
 ]
-stats = IssueStats.new(ENV['GITHUB_OAUTH_TOKEN'], projects)
+stats = IssueStats.new(auth_options, projects)
 
 puts stats.pull_requests.length
 puts stats.issues.length

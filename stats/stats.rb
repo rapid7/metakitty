@@ -5,9 +5,9 @@ require 'json'
 require_relative 'issue.rb'
 
 class IssueStats
-  def initialize(token, projects)
+  def initialize(auth_options, projects)
     @projects = projects
-    @client = Octokit::Client.new(access_token: token) if token
+    @client = Octokit::Client.new(auth_options) if auth_options
     @client.auto_paginate = true
     @issues = []
 
