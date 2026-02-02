@@ -20,7 +20,6 @@ projects = [
   'rapid7/metasploit-model',
   'rapid7/metasploit-aggregator',
   'rapid7/metasploit-baseline-builder',
-  'rapid7/metasploit-vulnerability-emulator',
   'rapid7/network_interface',
   'rapid7/rex-encoder',
   'rapid7/rex-rop_builder',

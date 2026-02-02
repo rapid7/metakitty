@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# -*- encoding: utf-8 -*-
 
 require 'json'
 require 'erb'
@@ -11,15 +12,101 @@ def current_directory
   File.dirname(__FILE__)
 end
 
+def build_directory
+  @build_directory ||= File.join(current_directory, 'build').tap do |dir|
+    Dir.mkdir(dir) unless Dir.exist?(dir)
+  end
+end
+
+def cache_file_path(name)
+  File.join(build_directory, name)
+end
+
+def cache_valid?(filename, max_age_hours = 24)
+  # Check for command line force option
+  return false if ARGV.include?('--force') || ARGV.include?('-f')
+
+  file_path = cache_file_path(filename)
+  return false unless File.exist?(file_path)
+
+  file_age_hours = (Time.now - File.stat(file_path).mtime) / 3600.0
+  file_age_hours < max_age_hours
+end
+
 def store_build_asset(name, value)
-   build_directory = File.join(current_directory, 'build')
-  Dir.mkdir(build_directory) unless Dir.exist?(build_directory)
-  File.binwrite(File.join(build_directory, name), value)
+  File.binwrite(cache_file_path(name), value)
+end
+
+def load_cached_asset(name)
+  File.read(cache_file_path(name)) if cache_valid?(name)
+end
+
+def should_regenerate_html?(html_filename, *dependency_files)
+  return true if ARGV.include?('--force') || ARGV.include?('-f')
+
+  html_path = cache_file_path(html_filename)
+  return true unless File.exist?(html_path)
+
+  html_mtime = File.stat(html_path).mtime
+
+  # Check if any dependency file is newer than HTML
+  dependency_files.flatten.any? do |dep_file|
+    # Check if it's a template file (ends with .erb)
+    if dep_file.end_with?('.erb')
+      template_path = File.join(current_directory, dep_file)
+      File.exist?(template_path) && File.stat(template_path).mtime > html_mtime
+    else
+      dep_path = cache_file_path(dep_file)
+      File.exist?(dep_path) && File.stat(dep_path).mtime > html_mtime
+    end
+  end
+end
+
+# Cache for expensive time-series computations
+@computation_cache = {}
+
+def cached_time_series_data(cache_key, &block)
+  return @computation_cache[cache_key] if @computation_cache[cache_key]
+  @computation_cache[cache_key] = block.call
+end
+
+def assets_need_update?
+  return true if ARGV.include?('--force') || ARGV.include?('-f')
+
+  source_dir = File.join(current_directory, 'assets')
+  target_dir = File.join(build_directory, 'assets')
+
+  return true unless Dir.exist?(target_dir)
+
+  # Check if any source file is newer than target
+  Dir.glob(File.join(source_dir, '**/*')).any? do |source_file|
+    next if File.directory?(source_file)
+    relative_path = source_file.sub(source_dir + '/', '')
+    target_file = File.join(target_dir, relative_path)
+
+    !File.exist?(target_file) || File.stat(source_file).mtime > File.stat(target_file).mtime
+  end
 end
 
 def erb_template_for(template_name)
   template_path = File.join(current_directory, template_name)
-  ERB.new(File.binread(template_path))
+  template_content = File.read(template_path, encoding: 'UTF-8')
+  ERB.new(template_content)
+end
+
+# Check for help option
+if ARGV.include?('--help') || ARGV.include?('-h')
+  puts "Usage: #{$0} [options]"
+  puts "Options:"
+  puts "  -f, --force    Force regeneration of all cached files (ignores 24-hour cache)"
+  puts "  -h, --help     Show this help message"
+  puts ""
+  puts "By default, JSON files are cached for 24 hours to speed up regeneration."
+  exit 0
+end
+
+if ARGV.include?('--force') || ARGV.include?('-f')
+  puts "Force regeneration enabled - ignoring all caches"
 end
 
 puts "Loading stats..."
@@ -27,7 +114,6 @@ auth_options = Auth::octokit_auth_options!
 
 projects = [
   'rapid7/metasploit-framework',
-
   'rapid7/metasploit-payloads',
   'rapid7/meterpreter',
   'rapid7/metasploit-javapayload',
@@ -37,7 +123,6 @@ projects = [
   'rapid7/metasploit-model',
   'rapid7/metasploit-aggregator',
   'rapid7/metasploit-baseline-builder',
-  'rapid7/metasploit-vulnerability-emulator',
   'rapid7/network_interface',
   'rapid7/rex-encoder',
   'rapid7/rex-rop_builder',
@@ -85,6 +170,13 @@ steady_state_charts = [
     title: "Open Bugs",
     labels: ["bug"],
     pull_requests: false
+  },
+  {
+    page: 'metasploit_repos',
+    title: "Metasploit Repositories",
+    labels: [],
+    pull_requests: true,
+    repo_summary: true
   }
 ]
 
@@ -114,39 +206,71 @@ last_week = today - 7
 last_month = today - 30
 
 puts 'generating json...'
-store_build_asset('contributors_all.json', stats.contributors_all_json.to_json)
-store_build_asset('contributors_month.json', stats.contributors_month_json.to_json)
-store_build_asset('contributors_year.json', stats.contributors_year_json.to_json)
-store_build_asset('commits_modules.json', stats.commits_modules_json.to_json)
-store_build_asset('commits_merged.json', stats.commits_merged_json.to_json)
-store_build_asset('issues_newbie.json', stats.issues_newbie_json.to_json)
+json_tasks = [
+  ['contributors_all.json', -> { stats.contributors_all_json.to_json }],
+  ['contributors_month.json', -> { stats.contributors_month_json.to_json }],
+  ['contributors_year.json', -> { stats.contributors_year_json.to_json }],
+  ['commits_modules.json', -> { stats.commits_modules_json.to_json }],
+  ['commits_merged.json', -> { stats.commits_merged_json.to_json }],
+  ['issues_newbie.json', -> { stats.issues_newbie_json.to_json }],
+  ['metasploit_repos.json', -> { stats.metasploit_repos_json.to_json }]
+]
+
+json_tasks.each do |filename, task|
+  if cache_valid?(filename)
+    puts "Using cached #{filename} (less than 24 hours old)"
+  else
+    puts "Generating #{filename}..."
+    store_build_asset(filename, task.call)
+  end
+end
 
 puts 'Moving assets'
-FileUtils.cp_r File.join(current_directory, 'assets'), File.join(current_directory, 'build', 'assets')
+if assets_need_update?
+  puts 'Updating assets...'
+  FileUtils.cp_r File.join(current_directory, 'assets'), File.join(current_directory, 'build', 'assets')
+else
+  puts 'Assets are up to date'
+end
 
 puts "Making some (sausage) links..."
-toc = ''
-accordion = '
+
+# Cache expensive TOC generation
+toc_cache_key = "toc_#{last_week.to_time.to_i}_#{today.to_time.to_i}_#{steady_state_charts.map { |c| "#{c[:pull_requests]}_#{c[:labels].join('_')}" }.join('|')}"
+toc, accordion = cached_time_series_data(toc_cache_key) do
+  puts "Computing TOC with new things data..."
+  temp_toc = ''
+  temp_accordion = '
             '
-change_charts.each do |chart|
-  toc << "
+
+  change_charts.each do |chart|
+    temp_toc << "
   <li role=\"presentation\">
     <a href=\"#{chart[:page]}.html\" >#{chart[:title]}</a>
   </li>"
-end
+  end
 
-steady_state_charts.each do |chart|
-  items = stats.new_things_between(last_week, today,
-    chart[:pull_requests], chart[:labels])
+  steady_state_charts.each do |chart|
+    # Skip repo summary pages in the "Top items this last week" section
+    if chart[:repo_summary]
+      temp_toc << "
+  <li role=\"presentation\">
+    <a href=\"#{chart[:page]}.html\" >#{chart[:title]}</a>
+  </li>"
+      next
+    end
 
-  toc << "
+    items = stats.new_things_between(last_week, today,
+      chart[:pull_requests], chart[:labels])
+
+    temp_toc << "
   <li role=\"presentation\">
     <a href=\"#{chart[:page]}.html\" >#{chart[:title]}
       <span class=\"badge\">#{items.length} since last week</span>
     </a>
   </li>"
 
-  accordion << "
+    temp_accordion << "
     <div class=\"panel panel-primary\">
       <div class=\"panel-heading\" data-toggle=\"collapse\"
            data-parent=\"#accordion\" data-target=\"\##{chart[:page]}\">
@@ -160,9 +284,9 @@ steady_state_charts.each do |chart|
       <table class=\"table\">
     "
 
-  items.each do |item|
-    url = "https://github.com/#{item.project}/issues/#{item.number}"
-    accordion << "
+    items.each do |item|
+      url = "https://github.com/#{item.project}/issues/#{item.number}"
+      temp_accordion << "
           <tr>
             <td class=\"resource_url\">
               <a target=\"_blank\" href=\"#{url}\">
@@ -178,11 +302,14 @@ steady_state_charts.each do |chart|
               #{item.reporter}
             </td>
           </tr>"
-  end
+    end
 
-  accordion << '</table></div></div></div>'
+    temp_accordion << '</table></div></div></div>'
+  end
+  temp_accordion << '</div>'
+
+  [temp_toc, temp_accordion]
 end
-accordion << '</div>'
 
 top_committers = stats.top_committers(last_month)
 
@@ -205,23 +332,73 @@ close_stat_data = []
 open_r7_stat_data = []
 close_r7_stat_data = []
 
+# Pre-filter data once to avoid repeated scans
+puts "Pre-filtering data for steady state charts..."
+filtering_cache_key = "filtering_#{steady_state_charts.map { |c| "#{c[:pull_requests]}_#{c[:labels].join('_')}" }.join('|')}"
+filtered_data = cached_time_series_data(filtering_cache_key) do
+  puts "Computing filtered data for charts..."
+  temp_filtered_data = {}
+  steady_state_charts.each do |chart|
+    key = "#{chart[:pull_requests]}_#{chart[:labels].join('_')}"
+    temp_filtered_data[key] = stats.filter_issues_for_chart(chart[:pull_requests], chart[:labels])
+  end
+  temp_filtered_data
+end
+
 steady_state_charts.each do |chart|
-  title = chart[:title]
-  stat_data = []
-  stat_r7_data = []
-  (DateTime.new(2011, 1, 1)..DateTime.now).each do |date|
-    issues = stats.open_things_on(date, chart[:pull_requests], chart[:labels])
-    if issues.length > 0
-      stat_data << [date.to_time.to_i * 1000, issues.length]
+  html_filename = "#{chart[:page]}.html"
+  dependencies = chart[:repo_summary] ? ['metasploit_repos.json'] : ['contributors_all.json']
+  template_file = chart[:repo_summary] ? 'template_metasploit_repos.erb' : 'template.erb'
+
+  if should_regenerate_html?(html_filename, dependencies + [template_file])
+    puts "Generating #{chart[:page]}..."
+    title = chart[:title]
+
+    if chart[:repo_summary]
+      # For repo summary pages, generate repository data instead of time series
+      stat_data = stats.metasploit_repos_json.sort_by { |repo| -repo[:open_prs].length }
+      stat_r7_data = []
+    else
+      # Cache expensive time-series computation
+      cache_key = "steady_#{chart[:page]}_#{chart[:pull_requests]}_#{chart[:labels].join('_')}"
+
+      stat_data, stat_r7_data = cached_time_series_data(cache_key) do
+        puts "Computing time series data for #{chart[:page]}..."
+        data = []
+        r7_data = []
+
+        key = "#{chart[:pull_requests]}_#{chart[:labels].join('_')}"
+        chart_issues = filtered_data[key]
+
+        # Sample data points weekly instead of daily for better performance
+        start_date = DateTime.new(2011, 1, 1)
+        end_date = DateTime.now
+        current_date = start_date
+
+        while current_date <= end_date
+          issues_count = stats.count_open_on_date(chart_issues, current_date, false)
+          if issues_count > 0
+            data << [current_date.to_time.to_i * 1000, issues_count]
+          end
+
+          r7_issues_count = stats.count_open_on_date(chart_issues, current_date, true)
+          if r7_issues_count > 0
+            r7_data << [current_date.to_time.to_i * 1000, r7_issues_count]
+          end
+
+          # Sample weekly instead of daily (7x performance improvement)
+          current_date += 7
+        end
+
+        [data, r7_data]
+      end
     end
 
-    issues = stats.open_things_on(date, chart[:pull_requests], chart[:labels], '-r7')
-    if issues.length > 0
-      stat_r7_data << [date.to_time.to_i * 1000, issues.length]
-    end
+    template = erb_template_for(template_file)
+    store_build_asset(html_filename, template.result)
+  else
+    puts "Using cached #{chart[:page]}.html (dependencies unchanged)"
   end
-  template = erb_template_for('template.erb')
-  store_build_asset("#{chart[:page]}.html", template.result)
 end
 
 def step_by_quarter(start_date, end_date)
@@ -233,55 +410,75 @@ def step_by_quarter(start_date, end_date)
   end
 end
 
-change_charts.each do |chart|
-  title = chart[:title]
-  open_stat_data = []
-  close_stat_data = []
-  open_r7_stat_data = []
-  close_r7_stat_data = []
-
-  today = Date.today
-  nearest_quarter = Date.new(today.year, [10,7,4,1].find { |m| m <= today.month })
-  four_years_ago = nearest_quarter << 12 * 4
-
-  step_by_quarter(four_years_ago, today) do |quarter_beginning, quarter_end|
-
-    issues = stats.new_things_between(quarter_beginning,
-                                      quarter_end,
-                                      chart[:pull_requests],
-                                      chart[:labels])
-    if !issues.empty?
-      open_stat_data << [quarter_end.to_time.to_i * 1000, issues.count]
-    end
-
-    issues = stats.new_things_between(quarter_beginning,
-                                      quarter_end,
-                                      chart[:pull_requests],
-                                      chart[:labels],
-                                      '-r7')
-    if !issues.empty?
-      open_r7_stat_data << [quarter_end.to_time.to_i * 1000, issues.count]
-    end
-
-    issues = stats.closed_things_between(quarter_beginning,
-                                         quarter_end,
-                                         chart[:pull_requests],
-                                         chart[:labels])
-    if !issues.empty?
-      close_stat_data << [quarter_end.to_time.to_i * 1000, issues.count]
-    end
-
-    issues = stats.closed_things_between(quarter_beginning,
-                                         quarter_end,
-                                         chart[:pull_requests],
-                                         chart[:labels],
-                                         '-r7')
-    if !issues.empty?
-      close_r7_stat_data << [quarter_end.to_time.to_i * 1000, issues.count]
+# Pre-filter data for change charts to avoid repeated filtering
+puts "Pre-filtering data for change charts..."
+change_filtering_cache_key = "change_filtering_#{change_charts.map { |c| "#{c[:pull_requests]}_#{c[:labels].join('_')}" }.join('|')}"
+change_filtered_data = cached_time_series_data(change_filtering_cache_key) do
+  puts "Computing filtered data for change charts..."
+  temp_change_filtered_data = {}
+  change_charts.each do |chart|
+    key = "#{chart[:pull_requests]}_#{chart[:labels].join('_')}"
+    unless temp_change_filtered_data[key]
+      temp_change_filtered_data[key] = stats.filter_issues_for_chart(chart[:pull_requests], chart[:labels])
     end
   end
-  template = erb_template_for('template_change.erb')
-  store_build_asset("#{chart[:page]}.html", template.result)
+  temp_change_filtered_data
+end
+
+change_charts.each do |chart|
+  html_filename = "#{chart[:page]}.html"
+  dependencies = ['contributors_all.json']
+
+  if should_regenerate_html?(html_filename, dependencies + ['template_change.erb'])
+    puts "Generating #{chart[:page]}..."
+    title = chart[:title]
+
+    # Cache expensive quarterly computation
+    cache_key = "change_#{chart[:page]}_#{chart[:pull_requests]}_#{chart[:labels].join('_')}"
+
+    open_stat_data, close_stat_data, open_r7_stat_data, close_r7_stat_data = cached_time_series_data(cache_key) do
+      puts "Computing quarterly data for #{chart[:page]}..."
+      open_data = []
+      close_data = []
+      open_r7_data = []
+      close_r7_data = []
+
+      today = Date.today
+      nearest_quarter = Date.new(today.year, [10,7,4,1].find { |m| m <= today.month })
+      four_years_ago = nearest_quarter << 12 * 4
+
+      key = "#{chart[:pull_requests]}_#{chart[:labels].join('_')}"
+      chart_issues = change_filtered_data[key]
+
+      step_by_quarter(four_years_ago, today) do |quarter_beginning, quarter_end|
+        # Batch process all quarterly data for this chart in one pass
+        quarterly_data = stats.get_quarterly_data(chart_issues, quarter_beginning, quarter_end)
+
+        if quarterly_data[:new_count] > 0
+          open_data << [quarter_end.to_time.to_i * 1000, quarterly_data[:new_count]]
+        end
+
+        if quarterly_data[:new_r7_count] > 0
+          open_r7_data << [quarter_end.to_time.to_i * 1000, quarterly_data[:new_r7_count]]
+        end
+
+        if quarterly_data[:closed_count] > 0
+          close_data << [quarter_end.to_time.to_i * 1000, quarterly_data[:closed_count]]
+        end
+
+        if quarterly_data[:closed_r7_count] > 0
+          close_r7_data << [quarter_end.to_time.to_i * 1000, quarterly_data[:closed_r7_count]]
+        end
+      end
+
+      [open_data, close_data, open_r7_data, close_r7_data]
+    end
+
+    template = erb_template_for('template_change.erb')
+    store_build_asset(html_filename, template.result)
+  else
+    puts "Using cached #{chart[:page]}.html (dependencies unchanged)"
+  end
 end
 
 puts "All done!"
