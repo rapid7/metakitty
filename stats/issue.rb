@@ -13,6 +13,10 @@ class Issue
   attr_accessor :updated_at
   attr_accessor :url
   attr_accessor :html_url
+  attr_accessor :comment_count
+  attr_accessor :last_commit_at
+  attr_accessor :last_comment_at
+  attr_accessor :assignees
 
   def self.from_json_hash(json)
     issue = new
@@ -28,6 +32,10 @@ class Issue
     issue.created_at = str_to_datetime(json['created_at'])
     issue.closed_at = str_to_datetime(json['closed_at'])
     issue.updated_at = str_to_datetime(json['updated_at'])
+    issue.comment_count = json['comment_count'] || 0
+    issue.last_commit_at = str_to_datetime(json['last_commit_at'])
+    issue.last_comment_at = str_to_datetime(json['last_comment_at'])
+    issue.assignees = json['assignees'] || []
 
     issue
   end
@@ -46,6 +54,8 @@ class Issue
     issue.title = gh.title
     issue.updated_at = time_to_datetime(gh.updated_at)
     issue.url = gh.url
+    issue.comment_count = gh.comments || 0
+    issue.assignees = gh.assignees.map { |a| a.login }
 
     issue
   end
@@ -63,6 +73,10 @@ class Issue
       title: title,
       updated_at: updated_at,
       url: url,
+      comment_count: comment_count,
+      last_commit_at: last_commit_at,
+      last_comment_at: last_comment_at,
+      assignees: assignees,
       user: {
         login: reporter,
         html_url: 'https://github.com/' + reporter
@@ -71,14 +85,14 @@ class Issue
     }.to_json(*a)
   end
 
-  private
-
   def self.time_to_datetime(t)
     return nil if t.nil?
     seconds = t.sec + Rational(t.usec, 10**6)
     offset = Rational(t.utc_offset, 60 * 60 * 24)
     DateTime.new(t.year, t.month, t.day, t.hour, t.min, seconds, offset)
   end
+
+  private
 
   def self.str_to_datetime(str)
     return nil if str.nil?
