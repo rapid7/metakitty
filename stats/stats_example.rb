@@ -44,7 +44,6 @@ projects = [
   'rapid7/msfrpc-client',
   'rapid7/fastlib',
   'rapid7/ruby_smb',
-  'rapid7/vm-automation'
 ]
 stats = IssueStats.new(auth_options, projects)
 
