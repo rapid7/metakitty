@@ -58,12 +58,13 @@ export function QueueOverview({
 
   const segment = (filter: QueueFilter, label: string, count: number, color = "bg-primary"): Segment => ({ filter, label, count, color });
 
+  const youngerCount = pullRequests.filter(
+    (pr) => Number.isFinite(Date.parse(pr.createdAt)) && Date.now() - Date.parse(pr.createdAt) < 30 * 86_400_000
+  ).length;
+
   const bars: Record<string, Segment[]> = {
     "Open PRs": [segment("community", "Community", stats.community), segment("rapid7", "Rapid7", stats.rapid7, "bg-sky-500")],
-    "Average age": [
-      segment("younger", "Under 30 days", stats.total - stats.olderThan30Days),
-      segment("aged", "30+ days", stats.olderThan30Days, "bg-amber-500"),
-    ],
+    "Average age": [segment("younger", "Under 30 days", youngerCount), segment("aged", "30+ days", stats.olderThan30Days, "bg-amber-500")],
     Assignments: [segment("assigned", "Assigned", assignments.assigned), segment("unassigned", "Unassigned", assignments.unassigned, "bg-muted-foreground/40")],
     "Change scope": [segment("research", "Module changes", stats.research, "bg-teal-500"), segment("engineering", "Non-module changes", stats.engineering, "bg-violet-500")],
     "CI status": [
@@ -81,14 +82,16 @@ export function QueueOverview({
     ),
   };
 
+  const histogramTrigger = (
+    <button type="button" onClick={() => setHistogramOpen(true)} className="rounded-sm text-primary underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2">
+      Histogram
+    </button>
+  );
+
   const cards: Array<{ label: string; popover?: ReactNode; value: ReactNode; detail: ReactNode }> = [
     {
       label: "Open PRs",
-      popover: (
-        <button type="button" onClick={() => setHistogramOpen(true)} className="rounded-sm text-primary underline underline-offset-4 focus-visible:outline-2">
-          Histogram
-        </button>
-      ),
+      popover: histogramTrigger,
       value: stat("open", stats.total.toLocaleString(), true),
       detail: (
         <>
@@ -99,6 +102,7 @@ export function QueueOverview({
     },
     {
       label: "Average age",
+      popover: histogramTrigger,
       value: <span className="text-2xl font-semibold tracking-tight">{Math.round(stats.averageAge)} days</span>,
       detail: (
         <>
@@ -111,11 +115,11 @@ export function QueueOverview({
       popover: (
         <Popover open={assigneesOpen} onOpenChange={setAssigneesOpen}>
           <PopoverTrigger asChild>
-            <button type="button" className="rounded-sm text-primary underline underline-offset-4 focus-visible:outline-2">
+            <button type="button" className="rounded-sm text-primary underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2">
               By assignee
             </button>
           </PopoverTrigger>
-          <PopoverContent align="end" className="w-[min(90vw,20rem)] text-xs">
+          <PopoverContent align="start" aria-label="PR workload by assignee" className="max-w-[calc(100vw-2rem)] text-xs">
             <h3 className="font-semibold text-foreground">PRs per assignee</h3>
             <p className="mt-1 text-muted-foreground">
               {assignments.people.length} assignees ·{" "}
@@ -131,26 +135,30 @@ export function QueueOverview({
               </button>
             </p>
             {assignments.people.length ? (
-              <ul className="mt-3 max-h-64 space-y-1 overflow-y-auto">
-                {assignments.people.map(({ login, count }) => (
-                  <li key={login}>
-                    <button
-                      type="button"
-                      onClick={() => {
-                        onSelectAssignee(login);
-                        setAssigneesOpen(false);
-                      }}
-                      aria-pressed={selected === "assigned" && selectedAssignee === `user:${login}`}
-                      className={`flex w-full items-baseline justify-between gap-2 rounded px-2 py-1.5 text-left hover:bg-muted ${selected === "assigned" && selectedAssignee === `user:${login}` ? "bg-muted text-primary" : ""}`}
-                    >
-                      <span className="min-w-0 break-all">@{login}</span>
-                      <span className="font-semibold tabular-nums">{count}</span>
-                    </button>
-                  </li>
-                ))}
-              </ul>
+              <>
+                <ul aria-label="Open PR workload by assignee" className="mt-3 max-h-64 space-y-1 overflow-y-auto">
+                  {assignments.people.map(({ login, count }) => (
+                    <li key={login}>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          onSelectAssignee(login);
+                          setAssigneesOpen(false);
+                        }}
+                        aria-label={`Show ${count} open PRs assigned to ${login}`}
+                        aria-pressed={selected === "assigned" && selectedAssignee === `user:${login}`}
+                        className={`flex w-full items-baseline justify-between gap-2 rounded px-2 py-2 text-left hover:bg-muted focus-visible:outline-2 focus-visible:outline-primary ${selected === "assigned" && selectedAssignee === `user:${login}` ? "bg-muted text-primary" : ""}`}
+                      >
+                        <span className="min-w-0 break-all">@{login}</span>
+                        <span className="font-semibold tabular-nums">{count}</span>
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-3 text-muted-foreground">Shared PRs count toward each assignee. Enforcing a maximum work in progress could be a positive.</p>
+              </>
             ) : (
-              <p className="mt-3 text-muted-foreground">No open PRs.</p>
+              <p className="mt-3 text-muted-foreground">{stats.total ? "No assignees yet." : "No open PRs."}</p>
             )}
           </PopoverContent>
         </Popover>
@@ -221,14 +229,14 @@ export function QueueOverview({
               <div className="tabular-nums">{card.value}</div>
               <p className="mt-1 text-xs text-muted-foreground tabular-nums">{card.detail}</p>
               <div className="mt-auto pt-3">
-                <div role="group" aria-label={`${card.label} proportions`} className="flex h-1.5 overflow-hidden rounded-full bg-muted">
+                <div role="group" aria-label={`${card.label} proportions`} className="flex h-1.5 rounded-full bg-muted">
                   {bars[card.label]
                     .filter((part) => part.count > 0)
-                    .map((part) => {
+                    .map((part, index, parts) => {
                       const percentage = stats.total ? (part.count / stats.total) * 100 : 0;
                       const description = `${part.label}: ${part.count} of ${stats.total} open PRs (${Math.round(percentage)}%)`;
                       return (
-                        <Tooltip key={part.filter}>
+                        <Tooltip key={part.filter} delayDuration={150}>
                           <TooltipTrigger asChild>
                             <button
                               type="button"
@@ -236,10 +244,17 @@ export function QueueOverview({
                               aria-pressed={selected === part.filter}
                               onClick={() => onSelect(part.filter, oldestCreatedAt)}
                               style={{ width: `${percentage}%` }}
-                              className={`h-full min-w-[2px] ${part.color} hover:brightness-110`}
+                              className={`relative h-full min-w-0 ${part.color} ${index === 0 ? "rounded-l-full" : ""} ${index === parts.length - 1 ? "rounded-r-full" : ""} before:absolute before:inset-x-0 before:-inset-y-2 hover:brightness-110 focus-visible:z-10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary`}
                             />
                           </TooltipTrigger>
-                          <TooltipContent>{description}</TooltipContent>
+                          <TooltipContent side="top">
+                            <p>{description}</p>
+                            {part.filter === "engineering" && <p className="mt-1 text-muted-foreground">{nonModuleDescription}</p>}
+                            {(part.filter === "community" || part.filter === "rapid7") && (
+                              <p className="text-muted-foreground">Rapid7 affiliation inferred from the -r7 author suffix.</p>
+                            )}
+                            <p className="text-muted-foreground">Click to filter PRs</p>
+                          </TooltipContent>
                         </Tooltip>
                       );
                     })}

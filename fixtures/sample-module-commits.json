@@ -1,0 +1,22 @@
+[
+  {
+    "html_url": "https://github.com/rapid7/metasploit-framework/commit/aaa111",
+    "commit": { "message": "Land #19321, Add exploit module for Example Widget RCE", "author": { "name": "alice", "date": "2026-11-05T10:00:00Z" } },
+    "author": { "login": "alice" }
+  },
+  {
+    "html_url": "https://github.com/rapid7/metasploit-framework/commit/bbb222",
+    "commit": { "message": "Minor cleanup, no PR reference", "author": { "name": "bob-r7", "date": "2026-11-04T10:00:00Z" } },
+    "author": { "login": "bob-r7" }
+  },
+  {
+    "html_url": "https://github.com/rapid7/metasploit-framework/commit/ccc333",
+    "commit": { "message": "Land #19300, Fix Linux post module path handling", "author": { "name": "carol-r7", "date": "2026-11-03T10:00:00Z" } },
+    "author": { "login": "carol-r7" }
+  },
+  {
+    "html_url": "https://github.com/rapid7/metasploit-framework/commit/ddd444",
+    "commit": { "message": "Land #19290, Add Docker scanner module", "author": { "name": "dave", "date": "2026-11-02T10:00:00Z" } },
+    "author": null
+  }
+]

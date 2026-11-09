@@ -1,4 +1,26 @@
 import type { PullRequest } from "../src/lib/types";
+import type { HistoricalIssue } from "../src/lib/stats/types";
+
+export function historicalIssue(overrides: Partial<HistoricalIssue> = {}): HistoricalIssue {
+  return {
+    number: 1,
+    project: "metasploit-framework",
+    pullRequest: false,
+    title: "Example",
+    url: "https://github.com/rapid7/metasploit-framework/issues/1",
+    reporter: "alice",
+    labels: [],
+    state: "open",
+    createdAt: "2026-10-14T12:00:00Z",
+    closedAt: null,
+    updatedAt: "2026-10-24T12:00:00Z",
+    commentCount: 0,
+    lastCommitAt: null,
+    lastCommentAt: null,
+    assignees: [],
+    ...overrides,
+  };
+}
 
 export function pr(overrides: Partial<PullRequest> = {}): PullRequest {
   return {

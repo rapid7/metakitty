@@ -4,19 +4,23 @@ import "./globals.css";
 import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { SiteNav } from "@/components/site-nav";
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
-  title: "metasploit-framework open pull requests",
-  description: "Static snapshot of the rapid7/metasploit-framework open pull request queue.",
+  title: "metasploit-framework dashboard",
+  description: "Open pull request queue and historical stats for the rapid7 Metasploit project repos.",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={cn("font-sans", geist.variable)}>
       <body className="antialiased">
-        <TooltipProvider>{children}</TooltipProvider>
+        <TooltipProvider>
+          <SiteNav />
+          {children}
+        </TooltipProvider>
       </body>
     </html>
   );

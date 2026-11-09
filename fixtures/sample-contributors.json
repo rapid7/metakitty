@@ -1,0 +1,22 @@
+{
+  "all": [
+    { "login": "alice", "contributions": 120 },
+    { "login": "bob-r7", "contributions": 95 },
+    { "login": "jlee-r7", "contributions": 50 },
+    { "login": "msjenkins-r7", "contributions": 999 }
+  ],
+  "month": [
+    { "login": "alice", "contributions": 5 },
+    { "login": "carol-r7", "contributions": 2 }
+  ],
+  "year": [
+    { "login": "alice", "contributions": 40 },
+    { "login": "bob-r7", "contributions": 30 }
+  ],
+  "profiles": {
+    "alice": { "login": "alice", "name": "Alice A", "avatar_url": "https://avatars.githubusercontent.com/u/1", "html_url": "https://github.com/alice" },
+    "bob-r7": { "login": "bob-r7", "name": "Bob B", "avatar_url": "https://avatars.githubusercontent.com/u/2", "html_url": "https://github.com/bob-r7" },
+    "egypt": { "login": "egypt", "name": "egypt", "avatar_url": "https://avatars.githubusercontent.com/u/6", "html_url": "https://github.com/egypt" },
+    "carol-r7": { "login": "carol-r7", "name": "Carol C", "avatar_url": "https://avatars.githubusercontent.com/u/3", "html_url": "https://github.com/carol-r7" }
+  }
+}

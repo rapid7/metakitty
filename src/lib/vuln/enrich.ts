@@ -1,5 +1,6 @@
 import { resolve } from "node:path";
 import { getFileContent, type GitHubConfig, type RawPullRequestNode } from "../github-client";
+import { runInBatches } from "../async";
 import type { PullRequest, VulnerabilityRef } from "../types";
 import { resolveAdvisory } from "./advisory-resolver";
 import { loadKevSet } from "./kev-client";
@@ -12,12 +13,6 @@ export interface VulnEnrichmentConfig {
   advisoryTtlMs: number;
   nvdApiKey?: string;
   concurrency?: number;
-}
-
-async function runInBatches<T>(items: T[], concurrency: number, task: (item: T) => Promise<void>): Promise<void> {
-  for (let i = 0; i < items.length; i += concurrency) {
-    await Promise.all(items.slice(i, i + concurrency).map(task));
-  }
 }
 
 /**
