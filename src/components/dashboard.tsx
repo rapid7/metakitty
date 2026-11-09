@@ -1,39 +1,32 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
 import { Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { QueueOverview } from "@/components/queue-overview";
 import { PullRequestTable } from "@/components/pull-request-table";
 import { getLabelCounts } from "@/lib/queue-stats";
-import { matchesQueueFilter, queueFilterLabels, type CreationInterval, type QueueFilter } from "@/lib/queue-filter";
+import { matchesQueueFilter, queueFilterLabels, type AgeInterval, type CreationInterval, type QueueFilter } from "@/lib/queue-filter";
+import {
+  readUrlFilterState,
+  writeUrlFilterState,
+  type CiFilter,
+  type QueueDialogId,
+  type ReviewFilter,
+  type ScopeFilter,
+  type SortDirection,
+  type SortField,
+  type TestingFilter,
+} from "@/lib/dashboard-filters";
 import { testingEnvironmentLabels } from "@/lib/testing-environment";
 import { vulnerabilitySummary } from "@/lib/vulnerability-summary";
-import type { CiStatus, PullRequest, ReviewDecision, TestingEnvironment } from "@/lib/types";
+import type { PullRequest } from "@/lib/types";
 
-export type SortField =
-  | "number"
-  | "cvss"
-  | "vulnKnownExploited"
-  | "vulnCoverage"
-  | "title"
-  | "author"
-  | "assignee"
-  | "createdAt"
-  | "filesChanged"
-  | "ci"
-  | "review"
-  | "area"
-  | "testingEnv"
-  | "commentCount";
+export type { SortDirection, SortField } from "@/lib/dashboard-filters";
+
 const VULN_SORT_FIELDS: SortField[] = ["cvss", "vulnKnownExploited", "vulnCoverage"];
-export type SortDirection = "asc" | "desc";
-
-type TestingFilter = "all" | TestingEnvironment;
-type ScopeFilter = "all" | "research" | "engineering";
-type CiFilter = "all" | CiStatus;
-type ReviewFilter = "all" | ReviewDecision;
 
 function useDebounce<T>(value: T, delay: number): T {
   const [debounced, setDebounced] = useState(value);
@@ -44,7 +37,23 @@ function useDebounce<T>(value: T, delay: number): T {
   return debounced;
 }
 
-export function Dashboard({ pullRequests, generatedAt }: { pullRequests: PullRequest[]; generatedAt: string }) {
+export function Dashboard({
+  owner,
+  repo,
+  repos,
+  repoPrCounts,
+  pullRequests,
+  generatedAt,
+}: {
+  owner: string;
+  repo: string;
+  repos: string[];
+  repoPrCounts: Record<string, number>;
+  pullRequests: PullRequest[];
+  generatedAt: string;
+}) {
+  const router = useRouter();
+  const pathname = usePathname();
   const [testingFilter, setTestingFilter] = useState<TestingFilter>("all");
   const [scopeFilter, setScopeFilter] = useState<ScopeFilter>("all");
   const [ciFilter, setCiFilter] = useState<CiFilter>("all");
@@ -54,10 +63,76 @@ export function Dashboard({ pullRequests, generatedAt }: { pullRequests: PullReq
   const [queueFilter, setQueueFilter] = useState<QueueFilter | null>(null);
   const [oldestCreatedAt, setOldestCreatedAt] = useState<number>();
   const [creationInterval, setCreationInterval] = useState<CreationInterval>();
+  const [ageInterval, setAgeInterval] = useState<AgeInterval>();
   const [searchInput, setSearchInput] = useState("");
   const debouncedSearch = useDebounce(searchInput, 300);
   const [sortField, setSortField] = useState<SortField>("createdAt");
   const [sortDirection, setSortDirection] = useState<SortDirection>("desc");
+  const [openDialog, setOpenDialog] = useState<QueueDialogId | null>(null);
+  const [hydratedFromUrl, setHydratedFromUrl] = useState(false);
+
+  // Applies a shared link's selections once on mount, then hands off to the effect below, which
+  // keeps the URL in sync with every later change so the current view stays linkable.
+  useEffect(() => {
+    const state = readUrlFilterState(window.location.search);
+    setQueueFilter(state.queueFilter);
+    setCreationInterval(state.creationInterval);
+    setAgeInterval(state.ageInterval);
+    setOldestCreatedAt(
+      state.queueFilter === "oldest"
+        ? Math.min(...pullRequests.map((pr) => Date.parse(pr.createdAt)).filter(Number.isFinite))
+        : undefined
+    );
+    setAssigneeFilter(state.assigneeFilter);
+    setTestingFilter(state.testingFilter);
+    setScopeFilter(state.scopeFilter);
+    setCiFilter(state.ciFilter);
+    setReviewFilter(state.reviewFilter);
+    setLabelFilter(state.labelFilter);
+    setSearchInput(state.search);
+    setSortField(state.sortField);
+    setSortDirection(state.sortDirection);
+    setOpenDialog(state.openDialog);
+    setHydratedFromUrl(true);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    if (!hydratedFromUrl) return;
+    const query = writeUrlFilterState({
+      queueFilter,
+      creationInterval,
+      ageInterval,
+      assigneeFilter,
+      testingFilter,
+      scopeFilter,
+      ciFilter,
+      reviewFilter,
+      labelFilter,
+      search: debouncedSearch,
+      sortField,
+      sortDirection,
+      openDialog,
+    }).toString();
+    router.replace(query ? `${pathname}?${query}` : pathname, { scroll: false });
+  }, [
+    hydratedFromUrl,
+    queueFilter,
+    creationInterval,
+    ageInterval,
+    assigneeFilter,
+    testingFilter,
+    scopeFilter,
+    ciFilter,
+    reviewFilter,
+    labelFilter,
+    debouncedSearch,
+    sortField,
+    sortDirection,
+    openDialog,
+    pathname,
+    router,
+  ]);
 
   const handleSort = (field: SortField) => {
     if (sortField === field) {
@@ -72,7 +147,7 @@ export function Dashboard({ pullRequests, generatedAt }: { pullRequests: PullReq
   const scopedPullRequests = useMemo(() => {
     const query = debouncedSearch.trim().toLowerCase();
     return pullRequests.filter((pr) => {
-      if (!matchesQueueFilter(pr, queueFilter, oldestCreatedAt, undefined, creationInterval)) return false;
+      if (!matchesQueueFilter(pr, queueFilter, oldestCreatedAt, undefined, creationInterval, ageInterval)) return false;
       if (testingFilter !== "all" && pr.testingEnv !== testingFilter) return false;
       if (scopeFilter === "research" && pr.modules.length === 0) return false;
       if (scopeFilter === "engineering" && pr.modules.length > 0) return false;
@@ -82,10 +157,11 @@ export function Dashboard({ pullRequests, generatedAt }: { pullRequests: PullReq
       if (query && !pr.title.toLowerCase().includes(query) && !pr.author.toLowerCase().includes(query)) return false;
       return true;
     });
-  }, [pullRequests, queueFilter, oldestCreatedAt, creationInterval, testingFilter, scopeFilter, ciFilter, reviewFilter, labelFilter, debouncedSearch]);
+  }, [pullRequests, queueFilter, oldestCreatedAt, creationInterval, ageInterval, testingFilter, scopeFilter, ciFilter, reviewFilter, labelFilter, debouncedSearch]);
 
-  const selectQueueStat = (filter: QueueFilter, oldest?: number, interval?: CreationInterval) => {
+  const selectQueueStat = (filter: QueueFilter, oldest?: number, interval?: CreationInterval, newAgeInterval?: AgeInterval) => {
     setCreationInterval(interval);
+    setAgeInterval(newAgeInterval);
     setQueueFilter(filter);
     setOldestCreatedAt(oldest);
     setAssigneeFilter("all");
@@ -152,19 +228,43 @@ export function Dashboard({ pullRequests, generatedAt }: { pullRequests: PullReq
   return (
     <div className="mx-auto max-w-[1400px] px-4 py-8">
       <div className="mb-6 flex flex-wrap items-baseline justify-between gap-2">
-        <h1 className="text-2xl font-bold text-foreground">rapid7/metasploit-framework open pull requests</h1>
+        <div className="flex flex-wrap items-baseline gap-3">
+          <h1 className="text-2xl font-bold text-foreground">{`${owner}/${repo} open pull requests`}</h1>
+          <Select value={repo} onValueChange={(value) => router.push(`/queue/${value}/`)}>
+            <SelectTrigger className="w-[320px]" aria-label="Switch repo">
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              {repos.map((r) => (
+                <SelectItem key={r} value={r}>
+                  {owner}/{r}
+                  {repoPrCounts[r] ? ` (${repoPrCounts[r]})` : ""}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
         <p className="text-xs text-muted-foreground">
           Generated <time dateTime={generatedAt}>{new Date(generatedAt).toUTCString()}</time>
         </p>
       </div>
 
-      <QueueOverview pullRequests={pullRequests} onSelect={selectQueueStat} selected={queueFilter} onSelectAssignee={selectAssignee} selectedAssignee={assigneeFilter} />
+      <QueueOverview
+        pullRequests={pullRequests}
+        onSelect={selectQueueStat}
+        selected={queueFilter}
+        onSelectAssignee={selectAssignee}
+        selectedAssignee={assigneeFilter}
+        openDialog={openDialog}
+        onOpenDialogChange={setOpenDialog}
+      />
 
       {queueFilter && (
         <div className="mb-4 flex flex-wrap items-center gap-2 text-sm" role="status">
           <span className="rounded-md bg-muted px-3 py-1 font-medium text-foreground">
             {queueFilterLabels[queueFilter]}
             {queueFilter === "created" && creationInterval && `: ${creationInterval.label} (UTC)`}
+            {queueFilter === "age" && ageInterval && `: ${ageInterval.label}`}
           </span>
           <button type="button" onClick={() => setQueueFilter(null)} className="text-primary underline underline-offset-4">
             Clear queue filter

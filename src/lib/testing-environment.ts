@@ -52,6 +52,24 @@ export function classifyTestingEnvironment(filePaths: string[] | null, descripti
     }
   };
 
+  // The "Setup and Reproduction" section of this repo's PR template describes how to stand up
+  // the vulnerable target, so a `docker run`/`docker compose` command there is target-deployment
+  // evidence — unlike a bare "ran it in Docker" mention, which usually means the attacker's own
+  // Metasploit console, not the target.
+  const inspectSetupSection = (text: string, source: string) => {
+    const heading = text.match(/^#{1,6}\s*setup and reproduction\b.*$/im);
+    if (!heading || heading.index === undefined) return;
+    const afterHeading = text.slice(heading.index + heading[0].length);
+    const nextHeading = afterHeading.match(/^#{1,6}\s/m);
+    const section = nextHeading ? afterHeading.slice(0, nextHeading.index) : afterHeading;
+    for (const line of section.split("\n")) {
+      if (/\b(?:not|no|cannot|can't|unsupported|unconfirmed|msfconsole|metasploit)\b/i.test(line)) continue;
+      if (/\bdocker(?:[\s-]compose)?\s+(?:run|up|exec)\b|\bdocker environment\b/i.test(line)) {
+        add("docker", `${source}: ${line.trim().slice(0, 220)}`);
+      }
+    }
+  };
+
   const inspectProse = (text: string, source: string) => {
     const clean = text.replace(/<!--[\s\S]*?-->/g, "");
     for (const line of clean.split("\n")) {
@@ -71,6 +89,7 @@ export function classifyTestingEnvironment(filePaths: string[] | null, descripti
 
   inspectProse(description ?? "", "PR description");
   inspectInstructions(description ?? "", "PR test instructions");
+  inspectSetupSection(description ?? "", "PR setup instructions");
 
   for (const rawPath of filePaths ?? []) {
     const normalized = rawPath.replaceAll("\\", "/").toLowerCase();

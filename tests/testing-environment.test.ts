@@ -40,6 +40,17 @@ it("uses natural testing statements and distinguishes framework work from missin
   expect(classify(["modules/auxiliary/example.rb"]).testingEnv).toBe("unknown");
 });
 
+it("treats a docker run/compose command in the Setup and Reproduction section as target evidence", () => {
+  const body = "## Description\nSome fix.\n\n## Setup and Reproduction\n1. Deploy a vulnerable instance:\ndocker run -d --name vulnapp -p 3000:3000 vulnapp/vulnapp\n2. Exploit it.\n\n## Verification\nDone.";
+  expect(classify([], body).testingEnv).toBe("docker");
+  expect(classify([], "## Setup and Reproduction\nRHOSTS <target> (Docker environment in data/exploits/CVE-2026-1/)").testingEnv).toBe("docker");
+  // A bare "ran it in Docker" mention, or one referring to msfconsole/Metasploit itself, is the
+  // attacker's own setup, not the target's.
+  expect(classify([], "## Setup and Reproduction\nRun Metasploit in Docker.").testingEnv).toBe("unknown");
+  expect(classify([], "## Setup and Reproduction\nStart msfconsole in Docker.").testingEnv).toBe("unknown");
+  expect(classify([], "Deploy a vulnerable instance:\ndocker run -d --name vulnapp vulnapp/vulnapp").testingEnv).toBe("unknown");
+});
+
 it("recognizes appliance evidence without treating template guidance as evidence", () => {
   expect(classify(["modules/exploits/unix/smtp/cisco.rb"], "Repair the appliance after testing").testingEnv).toBe("appliance");
   expect(classify(["modules/auxiliary/scanner/example.rb"], "If your module targets specialized hardware (routers, IoT, PLCs), provide a video.").testingEnv).toBe("unknown");

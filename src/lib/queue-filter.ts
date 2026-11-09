@@ -38,10 +38,12 @@ export const queueFilterLabels = {
   younger: "Open PRs younger than 30 days",
   oldest: "Oldest open PRs",
   created: "Open PRs by creation date",
+  age: "Open PRs by age",
 } as const;
 
 export type QueueFilter = keyof typeof queueFilterLabels;
 export type CreationInterval = { start: string; end: string; label: string; affiliation?: "community" | "rapid7" };
+export type AgeInterval = { minDays: number; maxDays: number | null; label: string; affiliation?: "community" | "rapid7" };
 
 /** Ported from gh-review's matchesQueueFilter, trimmed to fields this dashboard fetches. */
 export function matchesQueueFilter(
@@ -49,7 +51,8 @@ export function matchesQueueFilter(
   filter: QueueFilter | null,
   oldestCreatedAt?: number,
   now = Date.now(),
-  interval?: CreationInterval
+  interval?: CreationInterval,
+  ageInterval?: AgeInterval
 ): boolean {
   if (!filter) return true;
   switch (filter) {
@@ -58,6 +61,13 @@ export function matchesQueueFilter(
       && Date.parse(pr.createdAt) >= Date.parse(interval.start)
       && Date.parse(pr.createdAt) < Date.parse(interval.end)
       && (!interval.affiliation || (isRapid7(pr.author) ? "rapid7" : "community") === interval.affiliation);
+    case "age": {
+      if (!ageInterval || !Number.isFinite(Date.parse(pr.createdAt))) return false;
+      const ageDays = Math.max(0, now - Date.parse(pr.createdAt)) / 86_400_000;
+      return ageDays >= ageInterval.minDays
+        && (ageInterval.maxDays === null || ageDays < ageInterval.maxDays)
+        && (!ageInterval.affiliation || (isRapid7(pr.author) ? "rapid7" : "community") === ageInterval.affiliation);
+    }
     case "rapid7": return isRapid7(pr.author);
     case "community": return !isRapid7(pr.author);
     case "unassigned": return pr.assignees.length === 0;

@@ -1,65 +1,103 @@
 "use client";
 
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { useMemo, useState } from "react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { Maximize2, Search } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { LabelsBadges } from "@/components/badges";
-import type { PrSummary, RepoSummary } from "@/lib/stats/repo-summary";
-import type { Label } from "@/lib/types";
-
-function toLabels(names: string[]): Label[] {
-  return names.map((name) => ({ name, color: "888888" }));
-}
-
-function PrList({ prs, emptyText }: { prs: PrSummary[]; emptyText: string }) {
-  if (prs.length === 0) return <p className="text-muted-foreground">{emptyText}</p>;
-  return (
-    <ul className="space-y-2">
-      {prs.map((pr) => (
-        <li key={pr.number} className="flex flex-wrap items-start justify-between gap-2 border-b border-border/50 pb-2 last:border-0 last:pb-0">
-          <div className="min-w-0">
-            <a href={pr.url} target="_blank" rel="noopener noreferrer" className="font-medium text-foreground hover:underline">
-              #{pr.number} {pr.title}
-            </a>
-            <div className="mt-1 flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
-              <span>@{pr.author}</span>
-              <span>{pr.commentCount} comments</span>
-              <Badge variant="outline" className={pr.hasReview ? "border-emerald-500/50 text-emerald-600 dark:text-emerald-400" : "border-amber-500/50 text-amber-600 dark:text-amber-400"}>
-                {pr.hasReview ? "Reviewed" : "Needs review"}
-              </Badge>
-            </div>
-            <LabelsBadges labels={toLabels(pr.labels)} />
-          </div>
-        </li>
-      ))}
-    </ul>
-  );
-}
+import { Input } from "@/components/ui/input";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
+import type { RepoSummary } from "@/lib/stats/repo-summary";
 
 export function RepoSummaryTable({ repos }: { repos: RepoSummary[] }) {
+  const router = useRouter();
+  const [search, setSearch] = useState("");
+
+  const filteredRepos = useMemo(() => {
+    const query = search.trim().toLowerCase();
+    return query ? repos.filter((repo) => repo.repo.toLowerCase().includes(query)) : repos;
+  }, [repos, search]);
+
+  const totalOpen = repos.reduce((sum, repo) => sum + repo.openPrs.length, 0);
+  const reposWithOpenPrs = repos.filter((repo) => repo.openPrs.length > 0).length;
+
+  const openDetailedView = (repo: string) => router.push(`/queue/${repo}/`);
+
   return (
-    <Accordion type="multiple" className="rounded-md border px-3">
-      {repos.map((repo) => (
-        <AccordionItem key={repo.repo} value={repo.repo}>
-          <AccordionTrigger>
-            <span className="flex flex-1 items-baseline justify-between gap-2 pr-2">
-              <span className="font-mono">{repo.repo}</span>
-              <span className="text-xs text-muted-foreground tabular-nums">
-                {repo.openPrs.length} open · {repo.closedPrs.length} closed
-              </span>
-            </span>
-          </AccordionTrigger>
-          <AccordionContent className="space-y-4">
-            <div>
-              <h3 className="mb-2 font-medium text-foreground">Open pull requests</h3>
-              <PrList prs={repo.openPrs} emptyText="No open pull requests." />
-            </div>
-            <div>
-              <h3 className="mb-2 font-medium text-foreground">Recently closed</h3>
-              <PrList prs={repo.closedPrs.slice(0, 10)} emptyText="No closed pull requests." />
-            </div>
-          </AccordionContent>
-        </AccordionItem>
-      ))}
-    </Accordion>
+    <div>
+      <div className="mb-3 flex flex-wrap items-center gap-3">
+        <div className="relative max-w-sm flex-1">
+          <Search className="absolute top-2.5 left-2.5 h-4 w-4 text-muted-foreground" />
+          <Input placeholder="Filter repos by name..." value={search} onChange={(e) => setSearch(e.target.value)} className="pl-9" />
+        </div>
+        <span className="text-sm tabular-nums text-muted-foreground">
+          {filteredRepos.length} of {repos.length} repos · {reposWithOpenPrs} with open PRs · {totalOpen} open PRs total
+        </span>
+      </div>
+
+      <div className="rounded-md border">
+        <Table>
+          <TableHeader>
+            <TableRow>
+              <TableHead>Repo</TableHead>
+              <TableHead className="w-[100px] text-right">Open</TableHead>
+              <TableHead className="w-[100px] text-right">Closed</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {filteredRepos.length === 0 && (
+              <TableRow>
+                <TableCell colSpan={3} className="py-16 text-center text-muted-foreground">
+                  No repos match &quot;{search}&quot;.
+                </TableCell>
+              </TableRow>
+            )}
+            {filteredRepos.map((repo) => {
+              const hasOpenPrs = repo.openPrs.length > 0;
+              return (
+                <TableRow
+                  key={repo.repo}
+                  role="button"
+                  tabIndex={0}
+                  onClick={() => openDetailedView(repo.repo)}
+                  onKeyDown={(e) => {
+                    if (e.key !== "Enter" && e.key !== " ") return;
+                    e.preventDefault();
+                    openDetailedView(repo.repo);
+                  }}
+                  className="cursor-pointer select-none"
+                >
+                  <TableCell className="font-mono">
+                    <span className="flex items-center gap-1.5">
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <Link
+                            href={`/queue/${repo.repo}/`}
+                            aria-label={`Open the detailed PR queue for ${repo.repo}`}
+                            onClick={(e) => e.stopPropagation()}
+                            className="inline-flex rounded-md p-1 text-muted-foreground hover:bg-muted hover:text-foreground"
+                          >
+                            <Maximize2 className="size-4" />
+                          </Link>
+                        </TooltipTrigger>
+                        <TooltipContent>Detailed view: open the full PR queue</TooltipContent>
+                      </Tooltip>
+                      {repo.repo}
+                    </span>
+                  </TableCell>
+                  <TableCell className="text-right tabular-nums">
+                    <Badge variant="outline" className={hasOpenPrs ? "border-primary/50 text-primary" : "border-transparent text-muted-foreground"}>
+                      {repo.openPrs.length}
+                    </Badge>
+                  </TableCell>
+                  <TableCell className="text-right tabular-nums text-muted-foreground">{repo.closedPrs.length}</TableCell>
+                </TableRow>
+              );
+            })}
+          </TableBody>
+        </Table>
+      </div>
+    </div>
   );
 }

@@ -18,10 +18,10 @@ export default async function StatsLayout({ children }: { children: ReactNode })
   const weeklyCountByKey = Object.fromEntries(weeklyGroups.map((group) => [group.key, group.items.length]));
 
   const navItems: StatsNavItem[] = [
-    { href: "/", label: STATS_CATEGORIES.pullRequests.label, badge: weeklyCountByKey.pullRequests },
+    { href: "/", label: "Metasploit Repositories" },
+    { href: "/pull-requests/", label: STATS_CATEGORIES.pullRequests.label, badge: weeklyCountByKey.pullRequests },
     { href: "/bugs/", label: STATS_CATEGORIES.bugs.label, badge: weeklyCountByKey.bugs },
     { href: "/features-and-enhancements/", label: STATS_CATEGORIES.featuresAndEnhancements.label, badge: weeklyCountByKey.featuresAndEnhancements },
-    { href: "/repositories/", label: "Metasploit Repositories" },
     { href: "/pull-request-rates/", label: "Pull Requests per Quarter" },
     { href: "/bug-rates/", label: "Bugs per Quarter" },
     { href: "/feature-and-enhancement-rates/", label: "Features and Enhancements per Quarter" },

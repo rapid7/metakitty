@@ -42,7 +42,11 @@ function toPrSummary(issue: HistoricalIssue): PrSummary {
   };
 }
 
-/** Groups PRs by repo, split open/closed, sorted by total PR count desc — the "Metasploit Repositories" page. */
+/**
+ * Groups PRs by repo, split open/closed — the "Metasploit Repositories" page. Sorted by open PR
+ * count desc first, not total count: a repo with a handful of PRs awaiting review belongs above
+ * one that's merely had more PRs historically but has nothing open right now.
+ */
 export function getRepoSummaries(issues: HistoricalIssue[]): RepoSummary[] {
   const byRepo = new Map<string, RepoSummary>();
   for (const issue of issues) {
@@ -59,5 +63,7 @@ export function getRepoSummaries(issues: HistoricalIssue[]): RepoSummary[] {
     summary.openPrs.sort((a, b) => Date.parse(b.createdAt) - Date.parse(a.createdAt));
     summary.closedPrs.sort((a, b) => Date.parse(b.createdAt) - Date.parse(a.createdAt));
   }
-  return [...byRepo.values()].sort((a, b) => b.totalCount - a.totalCount || a.repo.localeCompare(b.repo));
+  return [...byRepo.values()].sort(
+    (a, b) => b.openPrs.length - a.openPrs.length || b.totalCount - a.totalCount || a.repo.localeCompare(b.repo)
+  );
 }

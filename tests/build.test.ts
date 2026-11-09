@@ -24,31 +24,46 @@ describe("next build (static export) against fixture data", () => {
     // Plain static file servers (a bare `http.server`, S3 website hosting, ...) only resolve
     // clean URLs like /queue to a directory's index.html, not to a same-named flat file — see
     // next.config.ts's trailingSlash comment. Lock in that this doesn't silently regress.
-    for (const route of ["queue", "bugs", "features-and-enhancements", "repositories", "pull-request-rates", "bug-rates", "feature-and-enhancement-rates"]) {
+    for (const route of [
+      "queue",
+      "queue/metasploit-framework",
+      "pull-requests",
+      "bugs",
+      "features-and-enhancements",
+      "pull-request-rates",
+      "bug-rates",
+      "feature-and-enhancement-rates",
+    ]) {
       expect(existsSync(resolve(rootDir, "out", route, "index.html"))).toBe(true);
       expect(existsSync(resolve(rootDir, "out", `${route}.html`))).toBe(false);
     }
   });
 
-  it("renders the Dashboard (historical stats) landing page at index.html, linking to /queue/", () => {
+  it("renders the Dashboard's repositories breakdown as the landing page at index.html, each repo linking to its PR queue", () => {
     const html = readFileSync(resolve(rootDir, "out/index.html"), "utf8");
-    expect(html).toContain("Open Pull Requests");
+    expect(html).toContain("Metasploit Repositories");
+    expect(html).toContain("metasploit-framework");
     expect(html).toContain("Top committers this last month");
-    expect(html).toContain("recharts");
-    expect(html).toContain('href="/queue/"');
+    expect(html).toContain('href="/queue/metasploit-framework/"');
   });
 
-  it("renders the fixture pull requests and queue overview at /queue/, linking back to /", () => {
+  it("renders the Open Pull Requests steady-state chart at /pull-requests/", () => {
+    const html = readFileSync(resolve(rootDir, "out/pull-requests/index.html"), "utf8");
+    expect(html).toContain("Open Pull Requests");
+    expect(html).toContain("recharts");
+  });
+
+  it("renders a queue index at /queue/ linking to the flagship repo's queue", () => {
     const html = readFileSync(resolve(rootDir, "out/queue/index.html"), "utf8");
+    expect(html).toContain('href="/queue/metasploit-framework/"');
+  });
+
+  it("renders the fixture pull requests and queue overview at /queue/metasploit-framework/, linking back to /", () => {
+    const html = readFileSync(resolve(rootDir, "out/queue/metasploit-framework/index.html"), "utf8");
     expect(html).toContain("Add exploit module for Example Corp Widget RCE");
     expect(html).toContain("Queue overview");
     expect(html).toContain("rapid7/metasploit-framework open pull requests");
     expect(html).toContain('href="/"');
-  });
-
-  it("renders fixture content into the repositories breakdown page", () => {
-    const repositories = readFileSync(resolve(rootDir, "out/repositories/index.html"), "utf8");
-    expect(repositories).toContain("metasploit-framework");
   });
 
   it("writes the 6 standalone JSON feeds as static assets with fixture content", () => {

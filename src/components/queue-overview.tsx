@@ -1,11 +1,11 @@
 "use client";
 
-import { useState, type ReactNode } from "react";
+import { type ReactNode } from "react";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
-import { getAssignmentStats, getCreationHistogram, getQueueStats } from "@/lib/queue-stats";
-import { nonModuleDescription, queueFilterLabels, type CreationInterval, type QueueFilter } from "@/lib/queue-filter";
+import { getAgeHistogram, getAssignmentCreationHistogram, getAssignmentStats, getCreationHistogram, getQueueStats } from "@/lib/queue-stats";
+import { nonModuleDescription, queueFilterLabels, type AgeInterval, type CreationInterval, type QueueFilter } from "@/lib/queue-filter";
+import type { QueueDialogId } from "@/lib/dashboard-filters";
 import { testingEnvironmentLabels } from "@/lib/testing-environment";
 import type { PullRequest } from "@/lib/types";
 
@@ -22,15 +22,21 @@ export function QueueOverview({
   selected,
   onSelectAssignee,
   selectedAssignee,
+  openDialog,
+  onOpenDialogChange,
 }: {
   pullRequests: PullRequest[];
-  onSelect: (filter: QueueFilter, oldestCreatedAt?: number, interval?: CreationInterval) => void;
+  onSelect: (filter: QueueFilter, oldestCreatedAt?: number, interval?: CreationInterval, ageInterval?: AgeInterval) => void;
   selected: QueueFilter | null;
   onSelectAssignee: (login: string) => void;
   selectedAssignee: string;
+  openDialog: QueueDialogId | null;
+  onOpenDialogChange: (dialog: QueueDialogId | null) => void;
 }) {
-  const [histogramOpen, setHistogramOpen] = useState(false);
-  const [assigneesOpen, setAssigneesOpen] = useState(false);
+  const histogramOpen = openDialog === "histogram";
+  const ageHistogramOpen = openDialog === "age-histogram";
+  const byAssigneeOpen = openDialog === "by-assignee";
+  const assignmentHistogramOpen = openDialog === "assignment-histogram";
   const stats = getQueueStats(pullRequests);
   const assignments = getAssignmentStats(pullRequests);
   const oldestCreatedAt = Math.min(...pullRequests.map((pr) => Date.parse(pr.createdAt)).filter(Number.isFinite));
@@ -83,7 +89,13 @@ export function QueueOverview({
   };
 
   const histogramTrigger = (
-    <button type="button" onClick={() => setHistogramOpen(true)} className="rounded-sm text-primary underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2">
+    <button type="button" onClick={() => onOpenDialogChange("histogram")} className="rounded-sm text-primary underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2">
+      Histogram
+    </button>
+  );
+
+  const ageHistogramTrigger = (
+    <button type="button" onClick={() => onOpenDialogChange("age-histogram")} className="rounded-sm text-primary underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2">
       Histogram
     </button>
   );
@@ -102,7 +114,7 @@ export function QueueOverview({
     },
     {
       label: "Average age",
-      popover: histogramTrigger,
+      popover: ageHistogramTrigger,
       value: <span className="text-2xl font-semibold tracking-tight">{Math.round(stats.averageAge)} days</span>,
       detail: (
         <>
@@ -113,55 +125,22 @@ export function QueueOverview({
     {
       label: "Assignments",
       popover: (
-        <Popover open={assigneesOpen} onOpenChange={setAssigneesOpen}>
-          <PopoverTrigger asChild>
-            <button type="button" className="rounded-sm text-primary underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2">
-              By assignee
-            </button>
-          </PopoverTrigger>
-          <PopoverContent align="start" aria-label="PR workload by assignee" className="max-w-[calc(100vw-2rem)] text-xs">
-            <h3 className="font-semibold text-foreground">PRs per assignee</h3>
-            <p className="mt-1 text-muted-foreground">
-              {assignments.people.length} assignees ·{" "}
-              <button
-                type="button"
-                className="text-primary hover:underline"
-                onClick={() => {
-                  onSelect("shared");
-                  setAssigneesOpen(false);
-                }}
-              >
-                {assignments.shared} shared PRs
-              </button>
-            </p>
-            {assignments.people.length ? (
-              <>
-                <ul aria-label="Open PR workload by assignee" className="mt-3 max-h-64 space-y-1 overflow-y-auto">
-                  {assignments.people.map(({ login, count }) => (
-                    <li key={login}>
-                      <button
-                        type="button"
-                        onClick={() => {
-                          onSelectAssignee(login);
-                          setAssigneesOpen(false);
-                        }}
-                        aria-label={`Show ${count} open PRs assigned to ${login}`}
-                        aria-pressed={selected === "assigned" && selectedAssignee === `user:${login}`}
-                        className={`flex w-full items-baseline justify-between gap-2 rounded px-2 py-2 text-left hover:bg-muted focus-visible:outline-2 focus-visible:outline-primary ${selected === "assigned" && selectedAssignee === `user:${login}` ? "bg-muted text-primary" : ""}`}
-                      >
-                        <span className="min-w-0 break-all">@{login}</span>
-                        <span className="font-semibold tabular-nums">{count}</span>
-                      </button>
-                    </li>
-                  ))}
-                </ul>
-                <p className="mt-3 text-muted-foreground">Shared PRs count toward each assignee. Enforcing a maximum work in progress could be a positive.</p>
-              </>
-            ) : (
-              <p className="mt-3 text-muted-foreground">{stats.total ? "No assignees yet." : "No open PRs."}</p>
-            )}
-          </PopoverContent>
-        </Popover>
+        <span className="flex items-center gap-2">
+          <button
+            type="button"
+            onClick={() => onOpenDialogChange("assignment-histogram")}
+            className="rounded-sm text-primary underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2"
+          >
+            Histogram
+          </button>
+          <button
+            type="button"
+            onClick={() => onOpenDialogChange("by-assignee")}
+            className="rounded-sm text-primary underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2"
+          >
+            By assignee
+          </button>
+        </span>
       ),
       value: (
         <span className="text-sm font-semibold">
@@ -265,9 +244,46 @@ export function QueueOverview({
         ))}
       </dl>
 
-      <HistogramDialog open={histogramOpen} onOpenChange={setHistogramOpen} pullRequests={pullRequests} onSelect={onSelect} />
+      <HistogramDialog
+        open={histogramOpen}
+        onOpenChange={(open) => onOpenDialogChange(open ? "histogram" : null)}
+        pullRequests={pullRequests}
+        onSelect={onSelect}
+      />
+      <AgeHistogramDialog
+        open={ageHistogramOpen}
+        onOpenChange={(open) => onOpenDialogChange(open ? "age-histogram" : null)}
+        pullRequests={pullRequests}
+        onSelect={onSelect}
+      />
+      <AssignmentCreationHistogramDialog
+        open={assignmentHistogramOpen}
+        onOpenChange={(open) => onOpenDialogChange(open ? "assignment-histogram" : null)}
+        pullRequests={pullRequests}
+        onSelect={onSelect}
+        onSelectAssignee={onSelectAssignee}
+      />
+      <AssigneeBreakdownDialog
+        open={byAssigneeOpen}
+        onOpenChange={(open) => onOpenDialogChange(open ? "by-assignee" : null)}
+        assignments={assignments}
+        selected={selected}
+        selectedAssignee={selectedAssignee}
+        onSelect={onSelect}
+        onSelectAssignee={onSelectAssignee}
+      />
     </section>
   );
+}
+
+// Scales the dialog to fit however many monthly bars it has (each bar tops out at 80px wide
+// anyway, so beyond that this just caps out rather than leaving the dialog mostly empty space).
+const HISTOGRAM_DIALOG_MIN_WIDTH = 480;
+const HISTOGRAM_DIALOG_MAX_WIDTH = 1024;
+const HISTOGRAM_DIALOG_WIDTH_PER_BIN = 90;
+
+function histogramDialogWidth(binCount: number) {
+  return Math.min(HISTOGRAM_DIALOG_MAX_WIDTH, Math.max(HISTOGRAM_DIALOG_MIN_WIDTH, binCount * HISTOGRAM_DIALOG_WIDTH_PER_BIN));
 }
 
 function HistogramDialog({
@@ -296,7 +312,7 @@ function HistogramDialog({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-h-[90vh] w-[calc(100vw-2rem)] max-w-3xl overflow-y-auto">
+      <DialogContent className="max-h-[90vh] w-[calc(100vw-2rem)] overflow-y-auto" style={{ maxWidth: histogramDialogWidth(bins.length) }}>
         <DialogHeader>
           <DialogTitle>PR creation dates</DialogTitle>
           <DialogDescription>{pullRequests.length} open PRs grouped by creation date (UTC). Select a bar to filter.</DialogDescription>
@@ -314,7 +330,7 @@ function HistogramDialog({
               </span>
             </div>
             <div className="overflow-x-auto pb-2">
-              <div className="flex h-56 items-end gap-1 border-b px-1" style={{ minWidth: bins.length * 42 }}>
+              <div className="flex h-72 items-end gap-1 border-b px-1" style={{ minWidth: bins.length * 42 }}>
                 {bins.map((bin) => (
                   <div key={bin.start} className="flex h-full min-w-0 flex-1 flex-col justify-end text-center">
                     <span className="text-xs tabular-nums">{bin.count}</span>
@@ -324,15 +340,18 @@ function HistogramDialog({
                         .map((affiliation) => {
                           const description = `Show ${bin[affiliation]} ${affiliation === "rapid7" ? "Rapid7" : "community"} open PRs created ${label(bin)} (UTC)`;
                           return (
-                            <button
-                              key={affiliation}
-                              type="button"
-                              onClick={() => select(bin, affiliation)}
-                              aria-label={description}
-                              title={description}
-                              className={`min-h-0 cursor-pointer hover:brightness-110 ${affiliation === "rapid7" ? "bg-sky-500" : "bg-primary"}`}
-                              style={{ flex: bin[affiliation] }}
-                            />
+                            <Tooltip key={affiliation} delayDuration={150}>
+                              <TooltipTrigger asChild>
+                                <button
+                                  type="button"
+                                  onClick={() => select(bin, affiliation)}
+                                  aria-label={description}
+                                  className={`min-h-0 cursor-pointer hover:brightness-110 ${affiliation === "rapid7" ? "bg-sky-500" : "bg-primary"}`}
+                                  style={{ flex: bin[affiliation] }}
+                                />
+                              </TooltipTrigger>
+                              <TooltipContent side="top">{description}</TooltipContent>
+                            </Tooltip>
                           );
                         })}
                     </div>
@@ -375,6 +394,303 @@ function HistogramDialog({
                 </tbody>
               </table>
             </details>
+          </>
+        ) : (
+          <p className="text-sm text-muted-foreground">No open PRs with valid creation dates.</p>
+        )}
+      </DialogContent>
+    </Dialog>
+  );
+}
+
+function AgeHistogramDialog({
+  open,
+  onOpenChange,
+  pullRequests,
+  onSelect,
+}: {
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
+  pullRequests: PullRequest[];
+  onSelect: (filter: QueueFilter, oldestCreatedAt?: number, interval?: CreationInterval, ageInterval?: AgeInterval) => void;
+}) {
+  const bins = getAgeHistogram(pullRequests);
+  const maximum = Math.max(1, ...bins.map((bin) => bin.count));
+  const select = (bin: (typeof bins)[number], affiliation?: AgeInterval["affiliation"]) => {
+    onSelect("age", undefined, undefined, { minDays: bin.minDays, maxDays: bin.maxDays, label: bin.label, affiliation });
+    onOpenChange(false);
+  };
+
+  return (
+    <Dialog open={open} onOpenChange={onOpenChange}>
+      <DialogContent className="max-h-[90vh] w-[calc(100vw-2rem)] overflow-y-auto" style={{ maxWidth: histogramDialogWidth(bins.length) }}>
+        <DialogHeader>
+          <DialogTitle>PR age</DialogTitle>
+          <DialogDescription>{pullRequests.length} open PRs grouped by days since creation. Select a bar to filter.</DialogDescription>
+        </DialogHeader>
+        <div className="flex gap-4 text-xs text-muted-foreground">
+          <span className="flex items-center gap-1.5">
+            <span className="h-3 w-3 rounded-sm bg-primary" />
+            Community
+          </span>
+          <span className="flex items-center gap-1.5">
+            <span className="h-3 w-3 rounded-sm bg-sky-500" />
+            Rapid7
+          </span>
+        </div>
+        <div className="overflow-x-auto pb-2">
+          <div className="flex h-72 items-end gap-1 border-b px-1" style={{ minWidth: bins.length * 42 }}>
+            {bins.map((bin) => (
+              <div key={bin.label} className="flex h-full min-w-0 flex-1 flex-col justify-end text-center">
+                <span className="text-xs tabular-nums">{bin.count}</span>
+                <div className="mx-auto flex w-full max-w-20 shrink-0 flex-col overflow-hidden rounded-t" style={{ height: `${(bin.count / maximum) * 78}%` }}>
+                  {(["rapid7", "community"] as const)
+                    .filter((affiliation) => bin[affiliation] > 0)
+                    .map((affiliation) => {
+                      const description = `Show ${bin[affiliation]} ${affiliation === "rapid7" ? "Rapid7" : "community"} open PRs aged ${bin.label}`;
+                      return (
+                        <Tooltip key={affiliation} delayDuration={150}>
+                          <TooltipTrigger asChild>
+                            <button
+                              type="button"
+                              onClick={() => select(bin, affiliation)}
+                              aria-label={description}
+                              className={`min-h-0 cursor-pointer hover:brightness-110 ${affiliation === "rapid7" ? "bg-sky-500" : "bg-primary"}`}
+                              style={{ flex: bin[affiliation] }}
+                            />
+                          </TooltipTrigger>
+                          <TooltipContent side="top">{description}</TooltipContent>
+                        </Tooltip>
+                      );
+                    })}
+                </div>
+                <button
+                  type="button"
+                  onClick={() => select(bin)}
+                  aria-label={`Show all ${bin.count} open PRs aged ${bin.label}`}
+                  className="mt-2 h-9 rounded-sm text-[10px] leading-tight text-muted-foreground hover:text-primary hover:underline"
+                >
+                  {bin.label}
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </DialogContent>
+    </Dialog>
+  );
+}
+
+function AssigneeBreakdownDialog({
+  open,
+  onOpenChange,
+  assignments,
+  selected,
+  selectedAssignee,
+  onSelect,
+  onSelectAssignee,
+}: {
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
+  assignments: ReturnType<typeof getAssignmentStats>;
+  selected: QueueFilter | null;
+  selectedAssignee: string;
+  onSelect: (filter: QueueFilter, oldestCreatedAt?: number, interval?: CreationInterval) => void;
+  onSelectAssignee: (login: string) => void;
+}) {
+  const bars = [
+    ...assignments.people.map((person) => ({
+      key: person.login,
+      label: `@${person.login}`,
+      count: person.count,
+      color: "bg-primary",
+      pressed: selected === "assigned" && selectedAssignee === `user:${person.login}`,
+      onClick: () => {
+        onSelectAssignee(person.login);
+        onOpenChange(false);
+      },
+      description: `Show ${person.count} open PRs assigned to @${person.login}`,
+    })),
+    ...(assignments.unassigned > 0
+      ? [
+          {
+            key: "unassigned",
+            label: "Unassigned",
+            count: assignments.unassigned,
+            color: "bg-muted-foreground/40",
+            pressed: selected === "unassigned",
+            onClick: () => {
+              onSelect("unassigned");
+              onOpenChange(false);
+            },
+            description: `Show ${assignments.unassigned} open PRs with no assignee`,
+          },
+        ]
+      : []),
+  ];
+  const maximum = Math.max(1, ...bars.map((bar) => bar.count));
+  const total = assignments.assigned + assignments.unassigned;
+
+  return (
+    <Dialog open={open} onOpenChange={onOpenChange}>
+      <DialogContent className="max-h-[90vh] w-[calc(100vw-2rem)] max-w-3xl overflow-y-auto">
+        <DialogHeader>
+          <DialogTitle>PRs per assignee</DialogTitle>
+          <DialogDescription>
+            {total} open PRs grouped by assignee. Select a bar to filter.
+            {assignments.shared > 0 && (
+              <>
+                {" "}
+                ·{" "}
+                <button
+                  type="button"
+                  className="text-primary hover:underline"
+                  onClick={() => {
+                    onSelect("shared");
+                    onOpenChange(false);
+                  }}
+                >
+                  {assignments.shared} shared PRs
+                </button>
+              </>
+            )}
+          </DialogDescription>
+        </DialogHeader>
+        {bars.length ? (
+          <ul className="space-y-1.5">
+            {bars.map((bar) => (
+              <li key={bar.key}>
+                <button
+                  type="button"
+                  onClick={bar.onClick}
+                  aria-label={bar.description}
+                  aria-pressed={bar.pressed}
+                  title={bar.description}
+                  className={`flex w-full items-center gap-2 rounded-sm px-1 py-1 hover:bg-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary ${bar.pressed ? "bg-muted" : ""}`}
+                >
+                  <span className="w-32 shrink-0 truncate text-left text-xs text-muted-foreground">{bar.label}</span>
+                  <span className="h-4 flex-1 rounded-sm bg-muted">
+                    <span className={`block h-full rounded-sm ${bar.color}`} style={{ width: `${(bar.count / maximum) * 100}%` }} />
+                  </span>
+                  <span className="w-8 shrink-0 text-right text-xs font-semibold tabular-nums">{bar.count}</span>
+                </button>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p className="text-sm text-muted-foreground">No open PRs.</p>
+        )}
+      </DialogContent>
+    </Dialog>
+  );
+}
+
+const ASSIGNEE_SEGMENT_COLORS = [
+  "bg-sky-500",
+  "bg-violet-500",
+  "bg-emerald-500",
+  "bg-amber-500",
+  "bg-rose-500",
+  "bg-teal-500",
+  "bg-indigo-500",
+  "bg-fuchsia-500",
+  "bg-lime-500",
+  "bg-cyan-500",
+];
+
+function AssignmentCreationHistogramDialog({
+  open,
+  onOpenChange,
+  pullRequests,
+  onSelect,
+  onSelectAssignee,
+}: {
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
+  pullRequests: PullRequest[];
+  onSelect: (filter: QueueFilter, oldestCreatedAt?: number, interval?: CreationInterval) => void;
+  onSelectAssignee: (login: string) => void;
+}) {
+  const { bins, logins } = getAssignmentCreationHistogram(pullRequests);
+  const colorFor = (login: string) => ASSIGNEE_SEGMENT_COLORS[logins.indexOf(login) % ASSIGNEE_SEGMENT_COLORS.length];
+  const maximum = Math.max(1, ...bins.map((bin) => bin.count));
+  const monthFormat = new Intl.DateTimeFormat("en", { month: "short", year: "numeric", timeZone: "UTC" });
+  const label = (bin: (typeof bins)[number]) => {
+    const start = monthFormat.format(new Date(bin.start));
+    const end = monthFormat.format(new Date(Date.parse(bin.end) - 1));
+    return start === end ? start : `${start} – ${end}`;
+  };
+  const selectMonth = (bin: (typeof bins)[number]) => {
+    onSelect("created", undefined, { start: bin.start, end: bin.end, label: label(bin) });
+    onOpenChange(false);
+  };
+  const selectLogin = (login: string) => {
+    if (login === "unassigned") onSelect("unassigned");
+    else onSelectAssignee(login);
+    onOpenChange(false);
+  };
+
+  return (
+    <Dialog open={open} onOpenChange={onOpenChange}>
+      <DialogContent className="max-h-[90vh] w-[calc(100vw-2rem)] overflow-y-auto" style={{ maxWidth: histogramDialogWidth(bins.length) }}>
+        <DialogHeader>
+          <DialogTitle>Assignments by creation date</DialogTitle>
+          <DialogDescription>
+            {pullRequests.length} open PRs grouped by creation month (UTC) and assignee. Select a segment to filter.
+          </DialogDescription>
+        </DialogHeader>
+        {bins.length ? (
+          <>
+            <div className="flex flex-wrap gap-4 text-xs text-muted-foreground">
+              {logins.map((login) => (
+                <span key={login} className="flex items-center gap-1.5">
+                  <span className={`h-3 w-3 rounded-sm ${colorFor(login)}`} />@{login}
+                </span>
+              ))}
+              <span className="flex items-center gap-1.5">
+                <span className="h-3 w-3 rounded-sm bg-muted-foreground/40" />
+                Unassigned
+              </span>
+            </div>
+            <div className="overflow-x-auto pb-2">
+              <div className="flex h-72 items-end gap-1 border-b px-1" style={{ minWidth: bins.length * 42 }}>
+                {bins.map((bin) => (
+                  <div key={bin.start} className="flex h-full min-w-0 flex-1 flex-col justify-end text-center">
+                    <span className="text-xs tabular-nums">{bin.count}</span>
+                    <div className="mx-auto flex w-full max-w-20 shrink-0 flex-col overflow-hidden rounded-t" style={{ height: `${(bin.count / maximum) * 78}%` }}>
+                      {[...logins, "unassigned"]
+                        .filter((login) => (bin.byLogin[login] ?? 0) > 0)
+                        .map((login) => {
+                          const count = bin.byLogin[login] ?? 0;
+                          const description = `Show ${count} open PRs created ${label(bin)} (UTC) assigned to ${login === "unassigned" ? "no one" : `@${login}`}`;
+                          return (
+                            <Tooltip key={login} delayDuration={150}>
+                              <TooltipTrigger asChild>
+                                <button
+                                  type="button"
+                                  onClick={() => selectLogin(login)}
+                                  aria-label={description}
+                                  className={`min-h-0 cursor-pointer hover:brightness-110 ${login === "unassigned" ? "bg-muted-foreground/40" : colorFor(login)}`}
+                                  style={{ flex: count }}
+                                />
+                              </TooltipTrigger>
+                              <TooltipContent side="top">{description}</TooltipContent>
+                            </Tooltip>
+                          );
+                        })}
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => selectMonth(bin)}
+                      aria-label={`Show all ${bin.count} open PRs created ${label(bin)} (UTC)`}
+                      className="mt-2 h-9 rounded-sm text-[10px] leading-tight text-muted-foreground hover:text-primary hover:underline"
+                    >
+                      {label(bin)}
+                    </button>
+                  </div>
+                ))}
+              </div>
+            </div>
           </>
         ) : (
           <p className="text-sm text-muted-foreground">No open PRs with valid creation dates.</p>

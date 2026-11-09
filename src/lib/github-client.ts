@@ -211,6 +211,28 @@ export async function fetchOpenPullRequests(config: GitHubConfig): Promise<RawPu
   return nodes;
 }
 
+const OPEN_PULL_REQUEST_COUNT_QUERY = `
+  query OpenPullRequestCount($owner: String!, $repo: String!) {
+    rateLimit { remaining resetAt cost }
+    repository(owner: $owner, name: $repo) {
+      pullRequests(states: OPEN) { totalCount }
+    }
+  }
+`;
+
+interface PullRequestCountPage {
+  repository: { pullRequests: { totalCount: number } } | null;
+}
+
+/** Just the open PR count for a repo — a single-request, no-pagination counterpart to {@link fetchOpenPullRequests} for callers (e.g. the repo switcher) that only need the number. */
+export async function fetchOpenPullRequestCount(config: GitHubConfig): Promise<number> {
+  const data = await graphqlRequest<PullRequestCountPage>(config.token, OPEN_PULL_REQUEST_COUNT_QUERY, {
+    owner: config.owner,
+    repo: config.repo,
+  });
+  return data.repository?.pullRequests.totalCount ?? 0;
+}
+
 interface RestPage<T> {
   data: T;
   nextUrl: string | null;

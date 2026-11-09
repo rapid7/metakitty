@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { getAssignmentStats, getCreationHistogram, getLabelCounts, getQueueStats } from "../src/lib/queue-stats";
+import { getAgeHistogram, getAssignmentStats, getCreationHistogram, getLabelCounts, getQueueStats } from "../src/lib/queue-stats";
 import { pr } from "./helpers";
 
 const now = Date.parse("2026-10-24T12:00:00Z");
@@ -75,6 +75,30 @@ describe("getCreationHistogram", () => {
       { start: "2026-02-01T00:00:00.000Z", end: "2026-03-01T00:00:00.000Z", count: 1, community: 1, rapid7: 0 },
     ]);
     expect(getCreationHistogram([])).toEqual([]);
+  });
+});
+
+describe("getAgeHistogram", () => {
+  it("buckets PRs by days since creation, relative to `now`, split by affiliation", () => {
+    const bins = getAgeHistogram(
+      [
+        pr({ number: 1, createdAt: "2026-10-20T12:00:00Z" }), // 4 days old
+        pr({ number: 2, createdAt: "2026-10-10T12:00:00Z", author: "bob-r7" }), // 14 days old
+        pr({ number: 3, createdAt: "2025-10-24T12:00:00Z" }), // 365 days old, lands in the open-ended last bucket
+        pr({ number: 4, createdAt: "invalid" }),
+      ],
+      now
+    );
+    expect(bins[0]).toMatchObject({ minDays: 0, maxDays: 7, label: "0–6 days", count: 1, community: 1, rapid7: 0 });
+    expect(bins[1]).toMatchObject({ minDays: 7, maxDays: 30, label: "7–29 days", count: 1, community: 0, rapid7: 1 });
+    const lastBin = bins[bins.length - 1];
+    expect(lastBin).toMatchObject({ minDays: 365, maxDays: null, label: "365+ days", count: 1, community: 1, rapid7: 0 });
+    expect(bins.reduce((sum, bin) => sum + bin.count, 0)).toBe(3);
+  });
+
+  it("clamps negative ages (future createdAt) into the youngest bucket instead of dropping them", () => {
+    const bins = getAgeHistogram([pr({ createdAt: "2026-10-25T12:00:00Z" })], now);
+    expect(bins[0].count).toBe(1);
   });
 });
 

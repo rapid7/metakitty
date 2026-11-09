@@ -92,3 +92,33 @@ describe("creation interval filter", () => {
     expect(matchesQueueFilter(pr(), "created")).toBe(false);
   });
 });
+
+describe("age interval filter", () => {
+  const interval = { minDays: 7, maxDays: 30, label: "7–29 days" };
+
+  it("matches an inclusive minimum and exclusive maximum", () => {
+    const matches = (createdAt: string) => matchesQueueFilter(pr({ createdAt }), "age", undefined, now, undefined, interval);
+    expect(matches("2026-10-17T12:00:00Z")).toBe(true); // exactly 7 days old
+    expect(matches("2026-09-25T12:00:00Z")).toBe(true); // exactly 29 days old
+    expect(matches("2026-10-24T12:00:00Z")).toBe(false); // 0 days old
+    expect(matches("2026-09-24T12:00:00Z")).toBe(false); // exactly 30 days old
+  });
+
+  it("treats an open-ended maxDays (null) as unbounded", () => {
+    const matches = matchesQueueFilter(pr({ createdAt: "2024-01-01T12:00:00Z" }), "age", undefined, now, undefined, { minDays: 365, maxDays: null, label: "365+ days" });
+    expect(matches).toBe(true);
+  });
+
+  it("filters by affiliation when provided", () => {
+    const community = pr({ author: "alice", createdAt: "2026-10-15T00:00:00Z" });
+    const rapid7 = pr({ author: "bob-r7", createdAt: "2026-10-15T00:00:00Z" });
+    expect(matchesQueueFilter(community, "age", undefined, now, undefined, { ...interval, affiliation: "community" })).toBe(true);
+    expect(matchesQueueFilter(rapid7, "age", undefined, now, undefined, { ...interval, affiliation: "community" })).toBe(false);
+    expect(matchesQueueFilter(rapid7, "age", undefined, now, undefined, { ...interval, affiliation: "rapid7" })).toBe(true);
+  });
+
+  it("returns false without an interval, or with an invalid creation date", () => {
+    expect(matchesQueueFilter(pr(), "age", undefined, now)).toBe(false);
+    expect(matchesQueueFilter(pr({ createdAt: "invalid" }), "age", undefined, now, undefined, interval)).toBe(false);
+  });
+});

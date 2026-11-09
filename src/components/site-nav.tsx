@@ -2,9 +2,9 @@
 
 import { usePathname } from "next/navigation";
 
-/** Mirrors metakitty's original navbar: a "Metasploit Stats" brand plus links out to the docs site and GitHub. */
+/** Mirrors metakitty's original navbar: a "Metasploit Stats" brand (linking to `/`) plus links out to the docs site and GitHub. */
 const NAV_LINKS = [
-  { href: "/queue/", label: "Open PR queue" },
+  { href: "/", label: "Metasploit Stats" },
   { href: "https://docs.metasploit.com", label: "Metasploit Docs", external: true },
   { href: "https://github.com/rapid7/metasploit-framework", label: "Metasploit on Github", external: true },
 ];
@@ -22,7 +22,10 @@ export function SiteNav() {
         </a>
         <ul className="flex items-center gap-4">
           {NAV_LINKS.map((link) => {
-            const active = !link.external && pathname.startsWith(link.href);
+            // The root link means "the stats section", which spans every route except /queue —
+            // a plain pathname.startsWith(link.href) would make it match (and look active on)
+            // every route, since every pathname starts with "/".
+            const active = link.href === "/" ? !onQueue : !link.external && pathname.startsWith(link.href);
             return (
               <li key={link.href}>
                 <a
