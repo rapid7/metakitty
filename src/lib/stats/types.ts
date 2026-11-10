@@ -20,6 +20,12 @@ export interface HistoricalIssue {
   /** Only populated for currently-open PRs (used for has-review detection); null otherwise. */
   lastCommentAt: string | null;
   assignees: string[];
+  /** Only populated for merged PRs; null for plain issues and for closed-but-not-merged PRs. */
+  mergedBy: string | null;
+  /** Only populated for merged PRs; null for plain issues and for closed-but-not-merged PRs. */
+  mergedAt: string | null;
+  /** Only populated for merged PRs; null for plain issues and for closed-but-not-merged PRs. */
+  mergedByAvatarUrl: string | null;
 }
 
 export interface HistoricalDataset {

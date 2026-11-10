@@ -26,6 +26,8 @@ function prNode(overrides: Partial<TaggedPullRequestNode> = {}): TaggedPullReque
     state: "OPEN",
     comments: { totalCount: 2, nodes: [{ createdAt: "2026-01-03T00:00:00Z" }] },
     commits: { nodes: [{ commit: { committedDate: "2026-01-02T12:00:00Z" } }] },
+    mergedBy: null,
+    mergedAt: null,
     ...overrides,
   };
 }
@@ -67,5 +69,20 @@ describe("mapHistoricalPullRequest", () => {
   it("maps MERGED to closed and never populates lastCommitAt/lastCommentAt for a closed PR", () => {
     const mapped = mapHistoricalPullRequest(prNode({ state: "MERGED", closedAt: "2026-03-01T00:00:00Z" }));
     expect(mapped).toMatchObject({ state: "closed", closedAt: "2026-03-01T00:00:00Z", lastCommitAt: null, lastCommentAt: null });
+  });
+
+  it("maps mergedBy/mergedAt/mergedByAvatarUrl when present, and defaults to null when absent", () => {
+    const merged = mapHistoricalPullRequest(
+      prNode({
+        state: "MERGED",
+        closedAt: "2026-03-01T00:00:00Z",
+        mergedBy: { login: "alice", avatarUrl: "https://avatars.example/alice" },
+        mergedAt: "2026-03-01T00:00:00Z",
+      })
+    );
+    expect(merged).toMatchObject({ mergedBy: "alice", mergedAt: "2026-03-01T00:00:00Z", mergedByAvatarUrl: "https://avatars.example/alice" });
+
+    const open = mapHistoricalPullRequest(prNode());
+    expect(open).toMatchObject({ mergedBy: null, mergedAt: null, mergedByAvatarUrl: null });
   });
 });

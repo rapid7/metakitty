@@ -20,6 +20,8 @@ export interface RawHistoricalPullRequestNode extends Omit<RawHistoricalIssueNod
   state: "OPEN" | "CLOSED" | "MERGED";
   comments: { totalCount: number; nodes: Array<{ createdAt: string }> };
   commits: { nodes: Array<{ commit: { committedDate: string } }> };
+  mergedBy: { login: string; avatarUrl: string } | null;
+  mergedAt: string | null;
 }
 
 export type TaggedIssueNode = RawHistoricalIssueNode & { project: string };
@@ -68,6 +70,8 @@ const REPO_PULL_REQUESTS_QUERY = `
           assignees(first: 10) { nodes { login } }
           labels(first: 20) { nodes { name } }
           commits(last: 1) { nodes { commit { committedDate } } }
+          mergedBy { login avatarUrl }
+          mergedAt
         }
       }
     }

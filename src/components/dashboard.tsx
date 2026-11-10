@@ -266,7 +266,19 @@ export function Dashboard({
             {queueFilter === "created" && creationInterval && `: ${creationInterval.label} (UTC)`}
             {queueFilter === "age" && ageInterval && `: ${ageInterval.label}`}
           </span>
-          <button type="button" onClick={() => setQueueFilter(null)} className="text-primary underline underline-offset-4">
+          <button
+            type="button"
+            onClick={() => {
+              setQueueFilter(null);
+              setCreationInterval(undefined);
+              setAgeInterval(undefined);
+              setOldestCreatedAt(undefined);
+              // The assignee filter is only coupled to the "assigned" queue filter (set together by
+              // selectAssignee); for other queue filters it's an independent selection to leave alone.
+              if (queueFilter === "assigned") setAssigneeFilter("all");
+            }}
+            className="text-primary underline underline-offset-4"
+          >
             Clear queue filter
           </button>
         </div>

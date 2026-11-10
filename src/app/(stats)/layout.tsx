@@ -20,6 +20,7 @@ export default async function StatsLayout({ children }: { children: ReactNode })
   const navItems: StatsNavItem[] = [
     { href: "/", label: "Metasploit Repositories" },
     { href: "/pull-requests/", label: STATS_CATEGORIES.pullRequests.label, badge: weeklyCountByKey.pullRequests },
+    { href: "/maintainers/", label: "Maintainer Stats" },
     { href: "/bugs/", label: STATS_CATEGORIES.bugs.label, badge: weeklyCountByKey.bugs },
     { href: "/features-and-enhancements/", label: STATS_CATEGORIES.featuresAndEnhancements.label, badge: weeklyCountByKey.featuresAndEnhancements },
     { href: "/pull-request-rates/", label: "Pull Requests per Quarter" },

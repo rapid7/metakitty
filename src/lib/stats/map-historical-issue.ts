@@ -22,6 +22,9 @@ export function mapHistoricalIssue(raw: TaggedIssueNode): HistoricalIssue {
     lastCommitAt: null,
     lastCommentAt: null,
     assignees: raw.assignees.nodes.map((assignee) => assignee.login),
+    mergedBy: null,
+    mergedAt: null,
+    mergedByAvatarUrl: null,
   };
 }
 
@@ -45,5 +48,8 @@ export function mapHistoricalPullRequest(raw: TaggedPullRequestNode): Historical
     lastCommitAt: isOpen ? raw.commits.nodes[0]?.commit.committedDate ?? null : null,
     lastCommentAt: isOpen ? raw.comments.nodes[0]?.createdAt ?? null : null,
     assignees: raw.assignees.nodes.map((assignee) => assignee.login),
+    mergedBy: raw.mergedBy?.login ?? null,
+    mergedAt: raw.mergedAt ?? null,
+    mergedByAvatarUrl: raw.mergedBy?.avatarUrl ?? null,
   };
 }

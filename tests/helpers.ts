@@ -18,6 +18,9 @@ export function historicalIssue(overrides: Partial<HistoricalIssue> = {}): Histo
     lastCommitAt: null,
     lastCommentAt: null,
     assignees: [],
+    mergedBy: null,
+    mergedAt: null,
+    mergedByAvatarUrl: null,
     ...overrides,
   };
 }
