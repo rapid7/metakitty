@@ -1,0 +1,23 @@
+[
+  {
+    "number": 1,
+    "project": "rex-java",
+    "pullRequest": true,
+    "title": "Metamodel based serializer + exploitation framework",
+    "url": "https://github.com/rapid7/rex-java/pull/1",
+    "reporter": "mb-syss",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/47665865?v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2019-11-12T10:55:25Z",
+    "closedAt": "2020-11-06T15:59:36Z",
+    "updatedAt": "2020-11-06T15:59:36Z",
+    "commentCount": 2,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  }
+]

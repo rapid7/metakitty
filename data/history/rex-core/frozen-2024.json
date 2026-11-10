@@ -1,0 +1,46 @@
+[
+  {
+    "number": 39,
+    "project": "rex-core",
+    "pullRequest": true,
+    "title": "Upversion Github actions",
+    "url": "https://github.com/rapid7/rex-core/pull/39",
+    "reporter": "KanchiMoe",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/5897898?u=6901fba8e1027ef407136df52346efb483f96c5a&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2024-05-11T01:34:49Z",
+    "closedAt": "2024-05-11T11:31:05Z",
+    "updatedAt": "2024-05-11T17:41:14Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "adfoster-r7",
+    "mergedAt": "2024-05-11T11:31:05Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/60357436?v=4"
+  },
+  {
+    "number": 40,
+    "project": "rex-core",
+    "pullRequest": true,
+    "title": "Add support for Windows Ruby ucrt",
+    "url": "https://github.com/rapid7/rex-core/pull/40",
+    "reporter": "adfoster-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/60357436?v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2024-05-15T17:13:02Z",
+    "closedAt": "2024-05-15T18:08:02Z",
+    "updatedAt": "2024-05-15T18:08:02Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "smcintyre-r7"
+    ],
+    "mergedBy": "smcintyre-r7",
+    "mergedAt": "2024-05-15T18:08:02Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/58950994?u=898561ae7344081c10810bb0a4139c8e9724290d&v=4"
+  }
+]

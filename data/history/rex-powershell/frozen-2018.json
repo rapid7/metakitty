@@ -1,0 +1,73 @@
+[
+  {
+    "number": 12,
+    "project": "rex-powershell",
+    "pullRequest": true,
+    "title": "Update GetMethod for GetProcAddress for Windows 10 1803",
+    "url": "https://github.com/rapid7/rex-powershell/pull/12",
+    "reporter": "chervaliery",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/10849551?u=6bc5f8c66b978841a935e060f82d143a51d4300f&v=4",
+    "labels": [
+      "bug"
+    ],
+    "state": "closed",
+    "createdAt": "2018-06-21T14:16:04Z",
+    "closedAt": "2018-06-21T16:31:38Z",
+    "updatedAt": "2018-06-21T16:31:38Z",
+    "commentCount": 1,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "busterb"
+    ],
+    "mergedBy": "busterb",
+    "mergedAt": "2018-06-21T16:31:38Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/4108654?u=123ac5abc8c3e6051b9484fa19d630ffcd97b066&v=4"
+  },
+  {
+    "number": 13,
+    "project": "rex-powershell",
+    "pullRequest": true,
+    "title": "Update cmd_psh_payload to simplify exec_in_place",
+    "url": "https://github.com/rapid7/rex-powershell/pull/13",
+    "reporter": "sempervictus",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/1331084?v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2018-07-04T03:59:57Z",
+    "closedAt": "2018-08-01T16:46:26Z",
+    "updatedAt": "2018-08-01T16:46:26Z",
+    "commentCount": 1,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "bwatters-r7"
+    ],
+    "mergedBy": "bwatters-r7",
+    "mergedAt": "2018-08-01T16:46:26Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/17987018?u=562c1b6600d722e45a20f2202dddeb2d6db1f091&v=4"
+  },
+  {
+    "number": 14,
+    "project": "rex-powershell",
+    "pullRequest": true,
+    "title": "Add option to use Invoke-Expression and RC4",
+    "url": "https://github.com/rapid7/rex-powershell/pull/14",
+    "reporter": "AdrianVollmer",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/26064811?u=5a13ed2a9b27d69e978bcbd1080e837385a1c629&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2018-07-09T14:26:02Z",
+    "closedAt": "2020-02-21T15:49:23Z",
+    "updatedAt": "2020-02-21T15:49:23Z",
+    "commentCount": 19,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "bwatters-r7"
+    ],
+    "mergedBy": "bwatters-r7",
+    "mergedAt": "2020-02-21T15:49:22Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/17987018?u=562c1b6600d722e45a20f2202dddeb2d6db1f091&v=4"
+  }
+]

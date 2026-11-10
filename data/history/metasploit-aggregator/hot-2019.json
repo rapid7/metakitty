@@ -1,0 +1,25 @@
+[
+  {
+    "number": 15,
+    "project": "metasploit-aggregator",
+    "pullRequest": false,
+    "title": "metasploit-aggrigator",
+    "url": "https://github.com/rapid7/metasploit-aggregator/issues/15",
+    "reporter": "bcoles",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/434827?u=1fe0601f243e1627c6f738027d2e71b90dad989d&v=4",
+    "labels": [
+      "invalid"
+    ],
+    "state": "open",
+    "createdAt": "2019-02-12T10:33:36Z",
+    "closedAt": null,
+    "updatedAt": "2022-01-18T02:38:16Z",
+    "commentCount": 1,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  }
+]

@@ -1,0 +1,71 @@
+[
+  {
+    "number": 288,
+    "project": "mettle",
+    "pullRequest": false,
+    "title": "Mettle Does Not Support Proxies",
+    "url": "https://github.com/rapid7/mettle/issues/288",
+    "reporter": "smcintyre-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/58950994?u=898561ae7344081c10810bb0a4139c8e9724290d&v=4",
+    "labels": [
+      "enhancement"
+    ],
+    "state": "open",
+    "createdAt": "2025-11-13T22:36:04Z",
+    "closedAt": null,
+    "updatedAt": "2025-11-13T22:36:04Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "dledda-r7"
+    ],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  },
+  {
+    "number": 289,
+    "project": "mettle",
+    "pullRequest": false,
+    "title": "PPC, PPC64LE, PPCe500v2 and ARMBE",
+    "url": "https://github.com/rapid7/mettle/issues/289",
+    "reporter": "dledda-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/171709318?u=1b95174056ba711e53816c46bc793466b258cd0d&v=4",
+    "labels": [],
+    "state": "open",
+    "createdAt": "2025-12-15T16:45:22Z",
+    "closedAt": null,
+    "updatedAt": "2025-12-15T16:45:22Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  },
+  {
+    "number": 287,
+    "project": "mettle",
+    "pullRequest": true,
+    "title": "Adds migrate command for Linux x64/x86",
+    "url": "https://github.com/rapid7/mettle/pull/287",
+    "reporter": "msutovsky-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/190406428?v=4",
+    "labels": [],
+    "state": "open",
+    "createdAt": "2025-10-23T09:43:35Z",
+    "closedAt": null,
+    "updatedAt": "2026-10-23T13:53:12Z",
+    "commentCount": 0,
+    "lastCommitAt": "2026-10-23T13:50:30Z",
+    "lastCommentAt": null,
+    "assignees": [
+      "dledda-r7"
+    ],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  }
+]

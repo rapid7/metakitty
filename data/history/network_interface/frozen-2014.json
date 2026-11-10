@@ -1,0 +1,23 @@
+[
+  {
+    "number": 4,
+    "project": "network_interface",
+    "pullRequest": true,
+    "title": "fixed ifc_req struct assignment",
+    "url": "https://github.com/rapid7/network_interface/pull/4",
+    "reporter": "tux-mind",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/1824153?v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2014-05-08T23:47:19Z",
+    "closedAt": "2017-08-28T13:52:21Z",
+    "updatedAt": "2017-08-28T13:52:22Z",
+    "commentCount": 2,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "busterb",
+    "mergedAt": "2017-08-28T13:52:21Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/4108654?u=123ac5abc8c3e6051b9484fa19d630ffcd97b066&v=4"
+  }
+]

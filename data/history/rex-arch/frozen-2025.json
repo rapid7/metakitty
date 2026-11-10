@@ -1,0 +1,48 @@
+[
+  {
+    "number": 11,
+    "project": "rex-arch",
+    "pullRequest": true,
+    "title": "PD-49865 Set Cortex tags to identify repo exposure",
+    "url": "https://github.com/rapid7/rex-arch/pull/11",
+    "reporter": "simonirwin-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/12156460?u=20553a8b59d512c630292916232dcce80fe258bb&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2025-02-13T09:03:26Z",
+    "closedAt": "2025-02-13T14:49:15Z",
+    "updatedAt": "2025-02-13T14:49:17Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "adfoster-r7",
+    "mergedAt": "2025-02-13T14:49:15Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/60357436?v=4"
+  },
+  {
+    "number": 12,
+    "project": "rex-arch",
+    "pullRequest": true,
+    "title": "Add register constants",
+    "url": "https://github.com/rapid7/rex-arch/pull/12",
+    "reporter": "bcoles",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/434827?u=1fe0601f243e1627c6f738027d2e71b90dad989d&v=4",
+    "labels": [
+      "enhancement"
+    ],
+    "state": "closed",
+    "createdAt": "2025-11-23T01:02:54Z",
+    "closedAt": "2026-01-15T15:08:21Z",
+    "updatedAt": "2026-01-15T22:44:20Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "dledda-r7"
+    ],
+    "mergedBy": "adfoster-r7",
+    "mergedAt": "2026-01-15T15:08:21Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/60357436?v=4"
+  }
+]

@@ -1,0 +1,48 @@
+[
+  {
+    "number": 7,
+    "project": "rex",
+    "pullRequest": false,
+    "title": "warning: constant OpenSSL::SSL::SSLContext::METHODS is deprecated",
+    "url": "https://github.com/rapid7/rex/issues/7",
+    "reporter": "KINGSABRI",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/1071827?u=766a02253fbdbdc48c737a3f78d4a4a4f36472c4&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2018-11-20T14:22:03Z",
+    "closedAt": "2019-06-08T02:11:46Z",
+    "updatedAt": "2019-06-18T17:03:09Z",
+    "commentCount": 3,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "busterb"
+    ],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  },
+  {
+    "number": 8,
+    "project": "rex",
+    "pullRequest": true,
+    "title": "Fix Issue #7",
+    "url": "https://github.com/rapid7/rex/pull/8",
+    "reporter": "KINGSABRI",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/1071827?u=766a02253fbdbdc48c737a3f78d4a4a4f36472c4&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2018-11-20T14:47:04Z",
+    "closedAt": "2018-11-20T20:06:51Z",
+    "updatedAt": "2018-11-20T20:21:27Z",
+    "commentCount": 13,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "busterb"
+    ],
+    "mergedBy": "bcook-r7",
+    "mergedAt": "2018-11-20T20:06:51Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/10031469?u=b7d29fd2dbf28a7488cd2615b604ee455d240f42&v=4"
+  }
+]

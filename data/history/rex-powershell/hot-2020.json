@@ -1,0 +1,23 @@
+[
+  {
+    "number": 26,
+    "project": "rex-powershell",
+    "pullRequest": false,
+    "title": "bundler fails to install data files, may be others",
+    "url": "https://github.com/rapid7/rex-powershell/issues/26",
+    "reporter": "blshkv",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/309751?u=8acf6963c6709e3ce64199110024170f8173d894&v=4",
+    "labels": [],
+    "state": "open",
+    "createdAt": "2020-11-29T00:56:37Z",
+    "closedAt": null,
+    "updatedAt": "2020-11-29T06:51:39Z",
+    "commentCount": 1,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  }
+]

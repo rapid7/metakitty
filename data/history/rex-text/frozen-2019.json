@@ -1,0 +1,101 @@
+[
+  {
+    "number": 22,
+    "project": "rex-text",
+    "pullRequest": true,
+    "title": "Implement XOR with variable-length key",
+    "url": "https://github.com/rapid7/rex-text/pull/22",
+    "reporter": "wvu",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/4551878?u=99426fa1baf3d6e40a669942251d846cf81a9c25&v=4",
+    "labels": [
+      "bug",
+      "enhancement"
+    ],
+    "state": "closed",
+    "createdAt": "2019-07-18T18:53:39Z",
+    "closedAt": "2019-07-22T21:19:15Z",
+    "updatedAt": "2019-07-22T22:22:03Z",
+    "commentCount": 4,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "asoto-r7"
+    ],
+    "mergedBy": "asoto-r7",
+    "mergedAt": "2019-07-22T21:19:15Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/35073726?u=7ae5e2358a306eefcf30693bb5e72a2a30f6b8f3&v=4"
+  },
+  {
+    "number": 23,
+    "project": "rex-text",
+    "pullRequest": true,
+    "title": "fix python3 bytes string",
+    "url": "https://github.com/rapid7/rex-text/pull/23",
+    "reporter": "deltaclock",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/24370162?u=debe3d533346b30d82cd9e9f7acd57a2c0a81c44&v=4",
+    "labels": [
+      "enhancement"
+    ],
+    "state": "closed",
+    "createdAt": "2019-08-25T20:27:25Z",
+    "closedAt": "2019-08-27T04:54:34Z",
+    "updatedAt": "2019-08-27T04:54:54Z",
+    "commentCount": 1,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "acammack-r7"
+    ],
+    "mergedBy": "acammack-r7",
+    "mergedAt": "2019-08-27T04:54:34Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/16652544?v=4"
+  },
+  {
+    "number": 24,
+    "project": "rex-text",
+    "pullRequest": true,
+    "title": "Implement Rex::Text random function name generator",
+    "url": "https://github.com/rapid7/rex-text/pull/24",
+    "reporter": "sempervictus",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/1331084?v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2019-09-03T01:39:22Z",
+    "closedAt": "2021-08-13T16:26:47Z",
+    "updatedAt": "2021-08-13T16:26:47Z",
+    "commentCount": 2,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "gwillcox-r7"
+    ],
+    "mergedBy": "gwillcox-r7",
+    "mergedAt": "2021-08-13T16:26:47Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/63261883?u=1144db3aa7b18a30fe7e7d91e1161aa11a819bfd&v=4"
+  },
+  {
+    "number": 25,
+    "project": "rex-text",
+    "pullRequest": true,
+    "title": "Add missing psh comment",
+    "url": "https://github.com/rapid7/rex-text/pull/25",
+    "reporter": "egypt",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/287967?v=4",
+    "labels": [
+      "enhancement"
+    ],
+    "state": "closed",
+    "createdAt": "2019-09-18T17:17:05Z",
+    "closedAt": "2019-09-18T19:21:55Z",
+    "updatedAt": "2019-09-18T21:39:05Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "acammack-r7"
+    ],
+    "mergedBy": "acammack-r7",
+    "mergedAt": "2019-09-18T19:21:55Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/16652544?v=4"
+  }
+]

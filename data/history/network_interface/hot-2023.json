@@ -1,0 +1,23 @@
+[
+  {
+    "number": 18,
+    "project": "network_interface",
+    "pullRequest": false,
+    "title": "Windows support issues",
+    "url": "https://github.com/rapid7/network_interface/issues/18",
+    "reporter": "adfoster-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/60357436?v=4",
+    "labels": [],
+    "state": "open",
+    "createdAt": "2023-08-11T12:36:03Z",
+    "closedAt": null,
+    "updatedAt": "2023-08-11T12:36:37Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  }
+]

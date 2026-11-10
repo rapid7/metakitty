@@ -1,0 +1,27 @@
+[
+  {
+    "number": 172,
+    "project": "ruby_smb",
+    "pullRequest": false,
+    "title": "ruby_smb error when reading empty files",
+    "url": "https://github.com/rapid7/ruby_smb/issues/172",
+    "reporter": "cgranleese-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/69522014?u=a06454779604922ad42843c97a984a4cc5467c47&v=4",
+    "labels": [
+      "bug"
+    ],
+    "state": "open",
+    "createdAt": "2021-05-13T11:40:33Z",
+    "closedAt": null,
+    "updatedAt": "2021-05-17T14:36:07Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "cdelafuente-r7"
+    ],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  }
+]

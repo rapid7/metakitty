@@ -1,0 +1,46 @@
+[
+  {
+    "number": 126,
+    "project": "metasploit-credential",
+    "pullRequest": true,
+    "title": "handle hostnames that are passed in instead of addresses",
+    "url": "https://github.com/rapid7/metasploit-credential/pull/126",
+    "reporter": "busterb",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/4108654?u=123ac5abc8c3e6051b9484fa19d630ffcd97b066&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2017-06-08T23:35:10Z",
+    "closedAt": "2017-06-09T05:55:09Z",
+    "updatedAt": "2017-06-09T05:55:09Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "wvu"
+    ],
+    "mergedBy": "wvu",
+    "mergedAt": "2017-06-09T05:55:09Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/4551878?u=99426fa1baf3d6e40a669942251d846cf81a9c25&v=4"
+  },
+  {
+    "number": 127,
+    "project": "metasploit-credential",
+    "pullRequest": true,
+    "title": "Fix the bug on skipping entries.",
+    "url": "https://github.com/rapid7/metasploit-credential/pull/127",
+    "reporter": "jinq102030",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/20934902?v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2017-08-02T18:12:25Z",
+    "closedAt": "2017-08-10T18:20:27Z",
+    "updatedAt": "2017-08-10T18:20:35Z",
+    "commentCount": 2,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "nbibinagar-r7",
+    "mergedAt": "2017-08-10T18:20:27Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/4729301?v=4"
+  }
+]

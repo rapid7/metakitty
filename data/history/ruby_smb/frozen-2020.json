@@ -1,0 +1,309 @@
+[
+  {
+    "number": 159,
+    "project": "ruby_smb",
+    "pullRequest": false,
+    "title": "STATUS_LOGON_FAILURE",
+    "url": "https://github.com/rapid7/ruby_smb/issues/159",
+    "reporter": "Fcukit",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/7287769?v=4",
+    "labels": [
+      "bug",
+      "need_more_details"
+    ],
+    "state": "closed",
+    "createdAt": "2020-07-07T08:27:52Z",
+    "closedAt": "2023-09-26T20:29:53Z",
+    "updatedAt": "2023-09-26T20:29:53Z",
+    "commentCount": 2,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  },
+  {
+    "number": 161,
+    "project": "ruby_smb",
+    "pullRequest": false,
+    "title": "Stripping leading \"/\"s from RPC service names is not unconditionally the right thing",
+    "url": "https://github.com/rapid7/ruby_smb/issues/161",
+    "reporter": "charles-dyfis-net",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/22370?v=4",
+    "labels": [
+      "bug"
+    ],
+    "state": "closed",
+    "createdAt": "2020-08-10T16:03:47Z",
+    "closedAt": "2020-08-26T13:30:15Z",
+    "updatedAt": "2020-08-26T13:30:15Z",
+    "commentCount": 3,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "cdelafuente-r7"
+    ],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  },
+  {
+    "number": 154,
+    "project": "ruby_smb",
+    "pullRequest": true,
+    "title": "Add SMBv3 support",
+    "url": "https://github.com/rapid7/ruby_smb/pull/154",
+    "reporter": "cdelafuente-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/56716719?u=742106a5d45f3f0b208d4e88badee1be8d6c4800&v=4",
+    "labels": [
+      "enhancement"
+    ],
+    "state": "closed",
+    "createdAt": "2020-05-07T18:49:20Z",
+    "closedAt": "2020-06-04T16:37:42Z",
+    "updatedAt": "2020-06-04T16:37:42Z",
+    "commentCount": 12,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "smcintyre-r7",
+    "mergedAt": "2020-06-04T16:37:42Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/58950994?u=898561ae7344081c10810bb0a4139c8e9724290d&v=4"
+  },
+  {
+    "number": 155,
+    "project": "ruby_smb",
+    "pullRequest": true,
+    "title": "Store server time values and GUID",
+    "url": "https://github.com/rapid7/ruby_smb/pull/155",
+    "reporter": "zeroSteiner",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/2058303?u=7c0365666ad089e619b8906d31dfe7b9bfbca8af&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2020-06-10T02:14:49Z",
+    "closedAt": "2020-06-12T17:22:50Z",
+    "updatedAt": "2020-06-12T17:25:55Z",
+    "commentCount": 4,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "cdelafuente-r7"
+    ],
+    "mergedBy": "cdelafuente-r7",
+    "mergedAt": "2020-06-12T17:22:50Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/56716719?u=742106a5d45f3f0b208d4e88badee1be8d6c4800&v=4"
+  },
+  {
+    "number": 156,
+    "project": "ruby_smb",
+    "pullRequest": true,
+    "title": "Fixes and improvements from MSF code review",
+    "url": "https://github.com/rapid7/ruby_smb/pull/156",
+    "reporter": "cdelafuente-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/56716719?u=742106a5d45f3f0b208d4e88badee1be8d6c4800&v=4",
+    "labels": [
+      "bug",
+      "enhancement"
+    ],
+    "state": "closed",
+    "createdAt": "2020-06-17T10:54:55Z",
+    "closedAt": "2020-06-19T20:25:18Z",
+    "updatedAt": "2020-06-19T20:25:19Z",
+    "commentCount": 2,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "smcintyre-r7"
+    ],
+    "mergedBy": "smcintyre-r7",
+    "mergedAt": "2020-06-19T20:25:18Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/58950994?u=898561ae7344081c10810bb0a4139c8e9724290d&v=4"
+  },
+  {
+    "number": 157,
+    "project": "ruby_smb",
+    "pullRequest": true,
+    "title": "Fix Session Signing For SMB 3.1.1",
+    "url": "https://github.com/rapid7/ruby_smb/pull/157",
+    "reporter": "zeroSteiner",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/2058303?u=7c0365666ad089e619b8906d31dfe7b9bfbca8af&v=4",
+    "labels": [
+      "bug"
+    ],
+    "state": "closed",
+    "createdAt": "2020-06-22T21:57:23Z",
+    "closedAt": "2020-06-23T15:08:08Z",
+    "updatedAt": "2020-06-23T15:09:14Z",
+    "commentCount": 5,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "cdelafuente-r7",
+    "mergedAt": "2020-06-23T15:08:08Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/56716719?u=742106a5d45f3f0b208d4e88badee1be8d6c4800&v=4"
+  },
+  {
+    "number": 158,
+    "project": "ruby_smb",
+    "pullRequest": true,
+    "title": "Feature/ms 2840/net share enum",
+    "url": "https://github.com/rapid7/ruby_smb/pull/158",
+    "reporter": "egorcat",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/18294428?v=4",
+    "labels": [
+      "invalid"
+    ],
+    "state": "closed",
+    "createdAt": "2020-06-30T13:51:15Z",
+    "closedAt": "2020-06-30T15:27:32Z",
+    "updatedAt": "2020-06-30T15:27:40Z",
+    "commentCount": 2,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  },
+  {
+    "number": 160,
+    "project": "ruby_smb",
+    "pullRequest": true,
+    "title": "DCERPC update: add svcctl interface with common RPC calls and update winreg",
+    "url": "https://github.com/rapid7/ruby_smb/pull/160",
+    "reporter": "cdelafuente-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/56716719?u=742106a5d45f3f0b208d4e88badee1be8d6c4800&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2020-07-21T12:19:42Z",
+    "closedAt": "2020-08-13T15:46:59Z",
+    "updatedAt": "2020-08-13T15:46:59Z",
+    "commentCount": 7,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "smcintyre-r7"
+    ],
+    "mergedBy": "smcintyre-r7",
+    "mergedAt": "2020-08-13T15:46:59Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/58950994?u=898561ae7344081c10810bb0a4139c8e9724290d&v=4"
+  },
+  {
+    "number": 162,
+    "project": "ruby_smb",
+    "pullRequest": true,
+    "title": "Multiple fixes and query_service_status example script",
+    "url": "https://github.com/rapid7/ruby_smb/pull/162",
+    "reporter": "cdelafuente-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/56716719?u=742106a5d45f3f0b208d4e88badee1be8d6c4800&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2020-08-13T17:01:58Z",
+    "closedAt": "2020-08-14T18:32:22Z",
+    "updatedAt": "2020-08-14T18:32:22Z",
+    "commentCount": 4,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "smcintyre-r7"
+    ],
+    "mergedBy": "smcintyre-r7",
+    "mergedAt": "2020-08-14T18:32:22Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/58950994?u=898561ae7344081c10810bb0a4139c8e9724290d&v=4"
+  },
+  {
+    "number": 163,
+    "project": "ruby_smb",
+    "pullRequest": true,
+    "title": "Fix for old samba compatibility",
+    "url": "https://github.com/rapid7/ruby_smb/pull/163",
+    "reporter": "cdelafuente-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/56716719?u=742106a5d45f3f0b208d4e88badee1be8d6c4800&v=4",
+    "labels": [
+      "bug"
+    ],
+    "state": "closed",
+    "createdAt": "2020-08-21T17:07:56Z",
+    "closedAt": "2020-08-24T14:23:49Z",
+    "updatedAt": "2020-08-24T14:23:49Z",
+    "commentCount": 2,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "smcintyre-r7"
+    ],
+    "mergedBy": "smcintyre-r7",
+    "mergedAt": "2020-08-24T14:23:48Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/58950994?u=898561ae7344081c10810bb0a4139c8e9724290d&v=4"
+  },
+  {
+    "number": 164,
+    "project": "ruby_smb",
+    "pullRequest": true,
+    "title": "Minimal Netlogon Implementation For CVE-2020-1472 (AKA: Zerologon)",
+    "url": "https://github.com/rapid7/ruby_smb/pull/164",
+    "reporter": "zeroSteiner",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/2058303?u=7c0365666ad089e619b8906d31dfe7b9bfbca8af&v=4",
+    "labels": [
+      "enhancement"
+    ],
+    "state": "closed",
+    "createdAt": "2020-09-17T16:40:20Z",
+    "closedAt": "2020-09-21T18:18:33Z",
+    "updatedAt": "2020-09-23T13:16:30Z",
+    "commentCount": 6,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "cdelafuente-r7"
+    ],
+    "mergedBy": "cdelafuente-r7",
+    "mergedAt": "2020-09-21T18:18:33Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/56716719?u=742106a5d45f3f0b208d4e88badee1be8d6c4800&v=4"
+  },
+  {
+    "number": 165,
+    "project": "ruby_smb",
+    "pullRequest": true,
+    "title": "Fix SMB1 Trans2 response packets",
+    "url": "https://github.com/rapid7/ruby_smb/pull/165",
+    "reporter": "cdelafuente-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/56716719?u=742106a5d45f3f0b208d4e88badee1be8d6c4800&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2020-09-23T12:54:17Z",
+    "closedAt": "2020-09-23T21:50:24Z",
+    "updatedAt": "2020-09-23T21:50:24Z",
+    "commentCount": 1,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "smcintyre-r7",
+    "mergedAt": "2020-09-23T21:50:24Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/58950994?u=898561ae7344081c10810bb0a4139c8e9724290d&v=4"
+  },
+  {
+    "number": 166,
+    "project": "ruby_smb",
+    "pullRequest": true,
+    "title": "Add missing padding to Netlogon request packets",
+    "url": "https://github.com/rapid7/ruby_smb/pull/166",
+    "reporter": "cdelafuente-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/56716719?u=742106a5d45f3f0b208d4e88badee1be8d6c4800&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2020-11-13T16:44:49Z",
+    "closedAt": "2020-11-18T22:32:01Z",
+    "updatedAt": "2020-11-18T22:32:01Z",
+    "commentCount": 6,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "smcintyre-r7"
+    ],
+    "mergedBy": "smcintyre-r7",
+    "mergedAt": "2020-11-18T22:32:01Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/58950994?u=898561ae7344081c10810bb0a4139c8e9724290d&v=4"
+  }
+]

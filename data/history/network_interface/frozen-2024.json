@@ -1,0 +1,23 @@
+[
+  {
+    "number": 24,
+    "project": "network_interface",
+    "pullRequest": true,
+    "title": "Upversion Github actions",
+    "url": "https://github.com/rapid7/network_interface/pull/24",
+    "reporter": "KanchiMoe",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/5897898?u=6901fba8e1027ef407136df52346efb483f96c5a&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2024-05-10T00:19:22Z",
+    "closedAt": "2025-04-10T14:39:42Z",
+    "updatedAt": "2025-04-10T14:39:42Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  }
+]

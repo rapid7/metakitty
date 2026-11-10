@@ -1,0 +1,48 @@
+[
+  {
+    "number": 41,
+    "project": "rex-powershell",
+    "pullRequest": true,
+    "title": "Update proxy aware script generation",
+    "url": "https://github.com/rapid7/rex-powershell/pull/41",
+    "reporter": "cdelafuente-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/56716719?u=742106a5d45f3f0b208d4e88badee1be8d6c4800&v=4",
+    "labels": [
+      "enhancement"
+    ],
+    "state": "closed",
+    "createdAt": "2023-05-30T11:51:34Z",
+    "closedAt": "2023-06-12T18:38:30Z",
+    "updatedAt": "2023-06-15T16:11:15Z",
+    "commentCount": 1,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "jheysel-r7"
+    ],
+    "mergedBy": "jheysel-r7",
+    "mergedAt": "2023-06-12T18:38:29Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/23320005?v=4"
+  },
+  {
+    "number": 42,
+    "project": "rex-powershell",
+    "pullRequest": true,
+    "title": "PD-41096 Auto-add cortex.yaml",
+    "url": "https://github.com/rapid7/rex-powershell/pull/42",
+    "reporter": "simonirwin-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/12156460?u=20553a8b59d512c630292916232dcce80fe258bb&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2023-10-03T14:05:01Z",
+    "closedAt": "2023-10-04T13:16:03Z",
+    "updatedAt": "2023-10-04T13:16:06Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "aRobinson-R7",
+    "mergedAt": "2023-10-04T13:16:03Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/14922412?u=8b51842cc9b0838307636afd29c65c27e44b1d69&v=4"
+  }
+]

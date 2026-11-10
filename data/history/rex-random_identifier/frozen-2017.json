@@ -1,0 +1,23 @@
+[
+  {
+    "number": 3,
+    "project": "rex-random_identifier",
+    "pullRequest": true,
+    "title": "RIG - check forbidden values and pass length",
+    "url": "https://github.com/rapid7/rex-random_identifier/pull/3",
+    "reporter": "sempervictus",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/1331084?v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2017-07-25T05:49:44Z",
+    "closedAt": "2017-08-25T18:16:23Z",
+    "updatedAt": "2017-08-25T18:16:34Z",
+    "commentCount": 2,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "busterb",
+    "mergedAt": "2017-08-25T18:16:23Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/4108654?u=123ac5abc8c3e6051b9484fa19d630ffcd97b066&v=4"
+  }
+]

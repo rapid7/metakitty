@@ -1,0 +1,23 @@
+[
+  {
+    "number": 2,
+    "project": "rex-ole",
+    "pullRequest": true,
+    "title": "relax dev bundle and update authors",
+    "url": "https://github.com/rapid7/rex-ole/pull/2",
+    "reporter": "jmartin-tech",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/7873740?u=761d485098432a30044aa248045cd6d7573482c0&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2020-11-12T20:56:09Z",
+    "closedAt": "2020-11-30T17:15:11Z",
+    "updatedAt": "2020-11-30T18:10:25Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "acammack-r7",
+    "mergedAt": "2020-11-30T17:15:11Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/16652544?v=4"
+  }
+]

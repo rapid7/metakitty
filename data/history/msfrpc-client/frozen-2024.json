@@ -1,0 +1,23 @@
+[
+  {
+    "number": 8,
+    "project": "msfrpc-client",
+    "pullRequest": true,
+    "title": "Resolve snyk warnings",
+    "url": "https://github.com/rapid7/msfrpc-client/pull/8",
+    "reporter": "adfoster-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/60357436?v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2024-01-22T16:47:06Z",
+    "closedAt": "2024-01-22T16:55:11Z",
+    "updatedAt": "2024-01-22T16:55:11Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "dwelch-r7",
+    "mergedAt": "2024-01-22T16:55:10Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/19910435?v=4"
+  }
+]

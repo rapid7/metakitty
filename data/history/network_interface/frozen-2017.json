@@ -1,0 +1,23 @@
+[
+  {
+    "number": 5,
+    "project": "network_interface",
+    "pullRequest": true,
+    "title": "Fix compile error when building network_interface gem within termux",
+    "url": "https://github.com/rapid7/network_interface/pull/5",
+    "reporter": "timwr",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/684924?u=698860b80fa0f23962524b00ff0a0988447121f7&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2017-07-09T12:32:45Z",
+    "closedAt": "2017-08-28T13:52:22Z",
+    "updatedAt": "2017-08-28T13:55:57Z",
+    "commentCount": 1,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "busterb",
+    "mergedAt": "2017-08-28T13:52:22Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/4108654?u=123ac5abc8c3e6051b9484fa19d630ffcd97b066&v=4"
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "number": 43,
+    "project": "rex-powershell",
+    "pullRequest": true,
+    "title": "Upversion Github actions",
+    "url": "https://github.com/rapid7/rex-powershell/pull/43",
+    "reporter": "KanchiMoe",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/5897898?u=6901fba8e1027ef407136df52346efb483f96c5a&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2024-05-10T00:29:55Z",
+    "closedAt": "2024-07-04T14:36:24Z",
+    "updatedAt": "2024-07-04T20:26:30Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "adfoster-r7",
+    "mergedAt": "2024-07-04T14:36:24Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/60357436?v=4"
+  }
+]

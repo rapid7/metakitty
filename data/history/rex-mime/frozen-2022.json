@@ -1,0 +1,27 @@
+[
+  {
+    "number": 2,
+    "project": "rex-mime",
+    "pullRequest": true,
+    "title": "\"Fix\" Multipart Boundary Fingerprint Issue",
+    "url": "https://github.com/rapid7/rex-mime/pull/2",
+    "reporter": "jbaines-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/91965877?u=c5dc1f8c51eff0330bb7a5b2851cebaf5098d536&v=4",
+    "labels": [
+      "enhancement"
+    ],
+    "state": "closed",
+    "createdAt": "2022-03-02T00:51:52Z",
+    "closedAt": "2022-03-07T14:27:05Z",
+    "updatedAt": "2022-03-11T10:56:30Z",
+    "commentCount": 7,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "smcintyre-r7"
+    ],
+    "mergedBy": "smcintyre-r7",
+    "mergedAt": "2022-03-07T14:27:05Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/58950994?u=898561ae7344081c10810bb0a4139c8e9724290d&v=4"
+  }
+]

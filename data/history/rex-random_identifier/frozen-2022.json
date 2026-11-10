@@ -1,0 +1,23 @@
+[
+  {
+    "number": 8,
+    "project": "rex-random_identifier",
+    "pullRequest": true,
+    "title": "Update Ubuntu 18.04 to 20.04 in Github CI script",
+    "url": "https://github.com/rapid7/rex-random_identifier/pull/8",
+    "reporter": "cgranleese-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/69522014?u=a06454779604922ad42843c97a984a4cc5467c47&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2022-09-01T16:11:27Z",
+    "closedAt": "2022-09-02T14:52:02Z",
+    "updatedAt": "2022-09-02T14:52:02Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "adfoster-r7",
+    "mergedAt": "2022-09-02T14:52:02Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/60357436?v=4"
+  }
+]

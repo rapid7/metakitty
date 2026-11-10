@@ -1,0 +1,23 @@
+[
+  {
+    "number": 6,
+    "project": "msfrpc-client",
+    "pullRequest": false,
+    "title": "Using 'pro.start_webscan'",
+    "url": "https://github.com/rapid7/msfrpc-client/issues/6",
+    "reporter": "Pl0414141",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/49842059?v=4",
+    "labels": [],
+    "state": "open",
+    "createdAt": "2020-08-09T13:51:52Z",
+    "closedAt": null,
+    "updatedAt": "2020-08-09T13:51:52Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  }
+]

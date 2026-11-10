@@ -1,0 +1,120 @@
+[
+  {
+    "number": 22,
+    "project": "rex-socket",
+    "pullRequest": true,
+    "title": "Add to_ and merge_ hash methods to the Parameters class",
+    "url": "https://github.com/rapid7/rex-socket/pull/22",
+    "reporter": "zeroSteiner",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/2058303?u=7c0365666ad089e619b8906d31dfe7b9bfbca8af&v=4",
+    "labels": [
+      "enhancement"
+    ],
+    "state": "closed",
+    "createdAt": "2020-02-17T18:10:28Z",
+    "closedAt": "2020-03-04T20:29:44Z",
+    "updatedAt": "2020-03-04T20:30:26Z",
+    "commentCount": 2,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "busterb"
+    ],
+    "mergedBy": "busterb",
+    "mergedAt": "2020-03-04T20:29:44Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/4108654?u=123ac5abc8c3e6051b9484fa19d630ffcd97b066&v=4"
+  },
+  {
+    "number": 23,
+    "project": "rex-socket",
+    "pullRequest": true,
+    "title": "Store the local name info on server client sockets",
+    "url": "https://github.com/rapid7/rex-socket/pull/23",
+    "reporter": "zeroSteiner",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/2058303?u=7c0365666ad089e619b8906d31dfe7b9bfbca8af&v=4",
+    "labels": [
+      "bug"
+    ],
+    "state": "closed",
+    "createdAt": "2020-03-10T18:31:25Z",
+    "closedAt": "2020-03-21T10:41:19Z",
+    "updatedAt": "2020-03-21T10:41:19Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "busterb",
+      "acammack-r7"
+    ],
+    "mergedBy": "bcook-r7",
+    "mergedAt": "2020-03-21T10:41:19Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/10031469?u=b7d29fd2dbf28a7488cd2615b604ee455d240f42&v=4"
+  },
+  {
+    "number": 24,
+    "project": "rex-socket",
+    "pullRequest": true,
+    "title": "x509_certificate: add use of EC keys",
+    "url": "https://github.com/rapid7/rex-socket/pull/24",
+    "reporter": "bigbael",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/28420886?v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2020-09-05T01:03:05Z",
+    "closedAt": "2020-09-09T19:11:07Z",
+    "updatedAt": "2020-09-09T19:12:15Z",
+    "commentCount": 1,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  },
+  {
+    "number": 25,
+    "project": "rex-socket",
+    "pullRequest": true,
+    "title": "x509_certificate: Allow use of EC keys",
+    "url": "https://github.com/rapid7/rex-socket/pull/25",
+    "reporter": "bigbael",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/28420886?v=4",
+    "labels": [
+      "bug"
+    ],
+    "state": "closed",
+    "createdAt": "2020-09-09T19:33:10Z",
+    "closedAt": "2020-09-22T17:24:29Z",
+    "updatedAt": "2020-09-22T17:24:30Z",
+    "commentCount": 3,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "smcintyre-r7"
+    ],
+    "mergedBy": "smcintyre-r7",
+    "mergedAt": "2020-09-22T17:24:29Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/58950994?u=898561ae7344081c10810bb0a4139c8e9724290d&v=4"
+  },
+  {
+    "number": 26,
+    "project": "rex-socket",
+    "pullRequest": true,
+    "title": "relax dev bundle and update authors",
+    "url": "https://github.com/rapid7/rex-socket/pull/26",
+    "reporter": "jmartin-tech",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/7873740?u=761d485098432a30044aa248045cd6d7573482c0&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2020-11-13T15:12:53Z",
+    "closedAt": "2020-11-30T17:05:21Z",
+    "updatedAt": "2020-11-30T18:11:02Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "acammack-r7",
+    "mergedAt": "2020-11-30T17:05:21Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/16652544?v=4"
+  }
+]

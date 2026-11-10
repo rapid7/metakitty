@@ -1,0 +1,69 @@
+[
+  {
+    "number": 5,
+    "project": "rex-random_identifier",
+    "pullRequest": true,
+    "title": "Add Github action tests",
+    "url": "https://github.com/rapid7/rex-random_identifier/pull/5",
+    "reporter": "sjanusz-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/85949464?v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2021-07-19T14:48:06Z",
+    "closedAt": "2021-07-19T14:53:49Z",
+    "updatedAt": "2021-07-19T14:53:49Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "adfoster-r7",
+    "mergedAt": "2021-07-19T14:53:49Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/60357436?v=4"
+  },
+  {
+    "number": 6,
+    "project": "rex-random_identifier",
+    "pullRequest": true,
+    "title": "Add language option to generator",
+    "url": "https://github.com/rapid7/rex-random_identifier/pull/6",
+    "reporter": "sjanusz-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/85949464?v=4",
+    "labels": [
+      "enhancement"
+    ],
+    "state": "closed",
+    "createdAt": "2021-07-19T15:31:49Z",
+    "closedAt": "2021-07-20T12:00:05Z",
+    "updatedAt": "2021-07-20T12:00:06Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "dwelch-r7"
+    ],
+    "mergedBy": "dwelch-r7",
+    "mergedAt": "2021-07-20T12:00:05Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/19910435?v=4"
+  },
+  {
+    "number": 7,
+    "project": "rex-random_identifier",
+    "pullRequest": true,
+    "title": "Update setup-ruby action",
+    "url": "https://github.com/rapid7/rex-random_identifier/pull/7",
+    "reporter": "sjanusz-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/85949464?v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2021-09-01T16:16:56Z",
+    "closedAt": "2021-09-09T18:06:20Z",
+    "updatedAt": "2021-09-09T18:06:20Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "adfoster-r7",
+    "mergedAt": "2021-09-09T18:06:20Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/60357436?v=4"
+  }
+]

@@ -1,0 +1,71 @@
+[
+  {
+    "number": 19,
+    "project": "metasploit-javapayload",
+    "pullRequest": false,
+    "title": "Extensions Architecture ",
+    "url": "https://github.com/rapid7/metasploit-javapayload/issues/19",
+    "reporter": "AnwarMohamed",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/2848916?u=0e43bd4b3f5b77548ee9996a6df99dbbd6af0374&v=4",
+    "labels": [],
+    "state": "open",
+    "createdAt": "2014-07-31T11:22:14Z",
+    "closedAt": null,
+    "updatedAt": "2014-07-31T17:17:20Z",
+    "commentCount": 2,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  },
+  {
+    "number": 20,
+    "project": "metasploit-javapayload",
+    "pullRequest": false,
+    "title": "Java Meterpreter process.execute and arguments",
+    "url": "https://github.com/rapid7/metasploit-javapayload/issues/20",
+    "reporter": "todb-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/1170909?v=4",
+    "labels": [
+      "bug"
+    ],
+    "state": "open",
+    "createdAt": "2014-10-06T18:21:08Z",
+    "closedAt": null,
+    "updatedAt": "2014-10-06T18:22:13Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  },
+  {
+    "number": 21,
+    "project": "metasploit-javapayload",
+    "pullRequest": false,
+    "title": "Meterpreter apk receives \"INSTALL_PARSE_FAILED_NO_CERTIFICATES\" error.",
+    "url": "https://github.com/rapid7/metasploit-javapayload/issues/21",
+    "reporter": "frenchbeard",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/2510284?u=2f83f9969096d3ff397242e3d89e7cbca3ae47de&v=4",
+    "labels": [
+      "bug"
+    ],
+    "state": "open",
+    "createdAt": "2014-10-29T10:00:27Z",
+    "closedAt": null,
+    "updatedAt": "2015-05-08T08:16:43Z",
+    "commentCount": 11,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "timwr"
+    ],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  }
+]

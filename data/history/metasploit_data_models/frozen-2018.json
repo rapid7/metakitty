@@ -1,0 +1,94 @@
+[
+  {
+    "number": 171,
+    "project": "metasploit_data_models",
+    "pullRequest": true,
+    "title": "Replace factory_girl with factory_bot",
+    "url": "https://github.com/rapid7/metasploit_data_models/pull/171",
+    "reporter": "firefart",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/105281?u=34b91b58b59ab25a46eef20861ee0200496d3b56&v=4",
+    "labels": [
+      "enhancement"
+    ],
+    "state": "closed",
+    "createdAt": "2018-03-22T17:31:08Z",
+    "closedAt": "2018-03-27T15:08:26Z",
+    "updatedAt": "2018-03-27T16:25:51Z",
+    "commentCount": 11,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "busterb"
+    ],
+    "mergedBy": "bcook-r7",
+    "mergedAt": "2018-03-27T15:08:26Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/10031469?u=b7d29fd2dbf28a7488cd2615b604ee455d240f42&v=4"
+  },
+  {
+    "number": 172,
+    "project": "metasploit_data_models",
+    "pullRequest": true,
+    "title": "Add Payload Model",
+    "url": "https://github.com/rapid7/metasploit_data_models/pull/172",
+    "reporter": "jbarnett-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/12236529?u=246a1be4ebb9b1cad3f263f329b650d6ab841024&v=4",
+    "labels": [
+      "enhancement"
+    ],
+    "state": "closed",
+    "createdAt": "2018-09-20T15:31:29Z",
+    "closedAt": "2019-03-04T21:09:52Z",
+    "updatedAt": "2021-06-09T13:36:06Z",
+    "commentCount": 6,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "asoto-r7",
+    "mergedAt": "2019-03-04T21:09:52Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/35073726?u=7ae5e2358a306eefcf30693bb5e72a2a30f6b8f3&v=4"
+  },
+  {
+    "number": 173,
+    "project": "metasploit_data_models",
+    "pullRequest": true,
+    "title": "Add a new type",
+    "url": "https://github.com/rapid7/metasploit_data_models/pull/173",
+    "reporter": "wchen-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/1170914?u=bcd94995d63a2806bb71f8c4dad1b767f6fd77a7&v=4",
+    "labels": [
+      "enhancement"
+    ],
+    "state": "closed",
+    "createdAt": "2018-10-01T18:02:26Z",
+    "closedAt": "2018-10-06T19:04:50Z",
+    "updatedAt": "2018-10-06T19:05:17Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "busterb",
+    "mergedAt": "2018-10-06T19:04:50Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/4108654?u=123ac5abc8c3e6051b9484fa19d630ffcd97b066&v=4"
+  },
+  {
+    "number": 174,
+    "project": "metasploit_data_models",
+    "pullRequest": true,
+    "title": "update tests for latest version of factory-bot",
+    "url": "https://github.com/rapid7/metasploit_data_models/pull/174",
+    "reporter": "busterb",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/4108654?u=123ac5abc8c3e6051b9484fa19d630ffcd97b066&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2018-11-26T10:20:14Z",
+    "closedAt": "2018-11-26T20:48:52Z",
+    "updatedAt": "2018-11-26T20:48:52Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "bcook-r7",
+    "mergedAt": "2018-11-26T20:48:52Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/10031469?u=b7d29fd2dbf28a7488cd2615b604ee455d240f42&v=4"
+  }
+]

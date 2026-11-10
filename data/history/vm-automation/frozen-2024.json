@@ -1,0 +1,23 @@
+[
+  {
+    "number": 26,
+    "project": "vm-automation",
+    "pullRequest": true,
+    "title": "[auto] snyk and codeowners",
+    "url": "https://github.com/rapid7/vm-automation/pull/26",
+    "reporter": "dshafranskiy-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/167208426?u=1e9974b6e6d0858c0ada83b2abddbcd68961d96c&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2024-10-24T13:59:05Z",
+    "closedAt": "2024-10-24T17:14:46Z",
+    "updatedAt": "2024-10-24T17:14:46Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "claughlin-r7",
+    "mergedAt": "2024-10-24T17:14:46Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/11389689?u=285c25f41d2a6f89dfaecceb3f7ecf51f59c2075&v=4"
+  }
+]

@@ -1,0 +1,46 @@
+[
+  {
+    "number": 1,
+    "project": "rex-random_identifier",
+    "pullRequest": false,
+    "title": "license",
+    "url": "https://github.com/rapid7/rex-random_identifier/issues/1",
+    "reporter": "ZeroChaos-",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/1670905?u=dc56f3cadfc56b0554f136eb92a76b6014443719&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2016-07-29T19:54:28Z",
+    "closedAt": "2017-09-06T19:58:45Z",
+    "updatedAt": "2017-09-06T19:58:45Z",
+    "commentCount": 2,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  },
+  {
+    "number": 2,
+    "project": "rex-random_identifier",
+    "pullRequest": false,
+    "title": "console and setup binaries",
+    "url": "https://github.com/rapid7/rex-random_identifier/issues/2",
+    "reporter": "ZeroChaos-",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/1670905?u=dc56f3cadfc56b0554f136eb92a76b6014443719&v=4",
+    "labels": [
+      "bug"
+    ],
+    "state": "closed",
+    "createdAt": "2016-07-29T20:06:02Z",
+    "closedAt": "2017-09-07T06:53:30Z",
+    "updatedAt": "2017-09-07T06:55:02Z",
+    "commentCount": 5,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  }
+]

@@ -1,0 +1,73 @@
+[
+  {
+    "number": 121,
+    "project": "ruby_smb",
+    "pullRequest": false,
+    "title": "Implement DCOM on authenticated DCERPC",
+    "url": "https://github.com/rapid7/ruby_smb/issues/121",
+    "reporter": "sempervictus",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/1331084?v=4",
+    "labels": [
+      "enhancement",
+      "DCERPC"
+    ],
+    "state": "open",
+    "createdAt": "2018-01-02T23:35:31Z",
+    "closedAt": null,
+    "updatedAt": "2020-09-24T09:12:56Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  },
+  {
+    "number": 141,
+    "project": "ruby_smb",
+    "pullRequest": false,
+    "title": "NetShareEnumAll raises UnexpectedStatusCode 'STATUS_BUFFER_OVERFLOW' when result is bigger than 1024 bytes",
+    "url": "https://github.com/rapid7/ruby_smb/issues/141",
+    "reporter": "14mRh4X0r",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/518535?v=4",
+    "labels": [
+      "bug",
+      "DCERPC"
+    ],
+    "state": "open",
+    "createdAt": "2018-09-04T18:10:13Z",
+    "closedAt": null,
+    "updatedAt": "2020-09-24T09:13:17Z",
+    "commentCount": 3,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  },
+  {
+    "number": 142,
+    "project": "ruby_smb",
+    "pullRequest": false,
+    "title": "Copy local file to remote",
+    "url": "https://github.com/rapid7/ruby_smb/issues/142",
+    "reporter": "HarlemSquirrel",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/6445815?u=78b1db2a8a9753dfaa38dc961636e61c928bd029&v=4",
+    "labels": [
+      "enhancement"
+    ],
+    "state": "open",
+    "createdAt": "2018-10-04T15:10:51Z",
+    "closedAt": null,
+    "updatedAt": "2020-09-24T09:13:31Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  }
+]

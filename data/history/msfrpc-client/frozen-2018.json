@@ -1,0 +1,25 @@
+[
+  {
+    "number": 5,
+    "project": "msfrpc-client",
+    "pullRequest": true,
+    "title": "Remove Rex as a dependency of msfrpc-client",
+    "url": "https://github.com/rapid7/msfrpc-client/pull/5",
+    "reporter": "busterb",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/4108654?u=123ac5abc8c3e6051b9484fa19d630ffcd97b066&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2018-05-11T03:23:49Z",
+    "closedAt": "2018-05-15T22:32:12Z",
+    "updatedAt": "2018-05-15T22:32:12Z",
+    "commentCount": 5,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "jmartin-tech"
+    ],
+    "mergedBy": "jmartin-tech",
+    "mergedAt": "2018-05-15T22:32:12Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/7873740?u=761d485098432a30044aa248045cd6d7573482c0&v=4"
+  }
+]

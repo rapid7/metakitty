@@ -1,0 +1,23 @@
+[
+  {
+    "number": 7,
+    "project": "metasploit-aggregator",
+    "pullRequest": false,
+    "title": "If you lose connection to the aggregator, aggregator_disconnect fails with a backtrace",
+    "url": "https://github.com/rapid7/metasploit-aggregator/issues/7",
+    "reporter": "busterb",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/4108654?u=123ac5abc8c3e6051b9484fa19d630ffcd97b066&v=4",
+    "labels": [],
+    "state": "open",
+    "createdAt": "2017-04-21T16:24:27Z",
+    "closedAt": null,
+    "updatedAt": "2017-04-21T16:24:27Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  }
+]

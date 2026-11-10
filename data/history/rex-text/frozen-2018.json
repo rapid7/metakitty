@@ -1,0 +1,271 @@
+[
+  {
+    "number": 11,
+    "project": "rex-text",
+    "pullRequest": true,
+    "title": "Support ranges with rand_base (and rand_text_*)",
+    "url": "https://github.com/rapid7/rex-text/pull/11",
+    "reporter": "wvu",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/4551878?u=99426fa1baf3d6e40a669942251d846cf81a9c25&v=4",
+    "labels": [
+      "enhancement"
+    ],
+    "state": "closed",
+    "createdAt": "2018-04-08T06:44:14Z",
+    "closedAt": "2018-04-08T07:18:17Z",
+    "updatedAt": "2018-04-08T23:25:17Z",
+    "commentCount": 3,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "wvu"
+    ],
+    "mergedBy": "wvu",
+    "mergedAt": "2018-04-08T07:18:17Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/4551878?u=99426fa1baf3d6e40a669942251d846cf81a9c25&v=4"
+  },
+  {
+    "number": 12,
+    "project": "rex-text",
+    "pullRequest": true,
+    "title": "bump version to 2.5.1",
+    "url": "https://github.com/rapid7/rex-text/pull/12",
+    "reporter": "picatz",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/14850816?u=e9f5b7b963a5e5c234019d0c74a8e1a20cd2567e&v=4",
+    "labels": [
+      "ruby-compat"
+    ],
+    "state": "closed",
+    "createdAt": "2018-04-10T04:02:59Z",
+    "closedAt": "2018-04-18T10:37:06Z",
+    "updatedAt": "2018-04-18T12:04:44Z",
+    "commentCount": 4,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "busterb"
+    ],
+    "mergedBy": "busterb",
+    "mergedAt": "2018-04-18T10:37:06Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/4108654?u=123ac5abc8c3e6051b9484fa19d630ffcd97b066&v=4"
+  },
+  {
+    "number": 13,
+    "project": "rex-text",
+    "pullRequest": true,
+    "title": "Add support for some encryption formats",
+    "url": "https://github.com/rapid7/rex-text/pull/13",
+    "reporter": "wchen-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/1170914?u=bcd94995d63a2806bb71f8c4dad1b767f6fd77a7&v=4",
+    "labels": [
+      "enhancement"
+    ],
+    "state": "closed",
+    "createdAt": "2018-04-11T00:38:00Z",
+    "closedAt": "2018-04-12T07:03:44Z",
+    "updatedAt": "2018-04-12T07:09:14Z",
+    "commentCount": 3,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "busterb"
+    ],
+    "mergedBy": "busterb",
+    "mergedAt": "2018-04-12T07:03:44Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/4108654?u=123ac5abc8c3e6051b9484fa19d630ffcd97b066&v=4"
+  },
+  {
+    "number": 14,
+    "project": "rex-text",
+    "pullRequest": true,
+    "title": "Remove AES256 and RC4 routines",
+    "url": "https://github.com/rapid7/rex-text/pull/14",
+    "reporter": "wchen-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/1170914?u=bcd94995d63a2806bb71f8c4dad1b767f6fd77a7&v=4",
+    "labels": [
+      "enhancement"
+    ],
+    "state": "closed",
+    "createdAt": "2018-04-18T01:18:39Z",
+    "closedAt": "2018-04-18T10:17:11Z",
+    "updatedAt": "2018-04-18T10:20:04Z",
+    "commentCount": 2,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "busterb"
+    ],
+    "mergedBy": "busterb",
+    "mergedAt": "2018-04-18T10:17:11Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/4108654?u=123ac5abc8c3e6051b9484fa19d630ffcd97b066&v=4"
+  },
+  {
+    "number": 15,
+    "project": "rex-text",
+    "pullRequest": true,
+    "title": "A lil faster",
+    "url": "https://github.com/rapid7/rex-text/pull/15",
+    "reporter": "picatz",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/14850816?u=e9f5b7b963a5e5c234019d0c74a8e1a20cd2567e&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2018-04-27T15:43:12Z",
+    "closedAt": "2018-04-27T17:35:55Z",
+    "updatedAt": "2018-04-27T17:35:55Z",
+    "commentCount": 4,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  },
+  {
+    "number": 16,
+    "project": "rex-text",
+    "pullRequest": true,
+    "title": "simplify shuffle_a implementation",
+    "url": "https://github.com/rapid7/rex-text/pull/16",
+    "reporter": "picatz",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/14850816?u=e9f5b7b963a5e5c234019d0c74a8e1a20cd2567e&v=4",
+    "labels": [
+      "enhancement"
+    ],
+    "state": "closed",
+    "createdAt": "2018-04-27T17:34:16Z",
+    "closedAt": "2018-06-13T22:30:55Z",
+    "updatedAt": "2018-06-13T22:30:56Z",
+    "commentCount": 1,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "busterb",
+    "mergedAt": "2018-06-13T22:30:55Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/4108654?u=123ac5abc8c3e6051b9484fa19d630ffcd97b066&v=4"
+  },
+  {
+    "number": 17,
+    "project": "rex-text",
+    "pullRequest": true,
+    "title": "speedup to_mixed_case_array method",
+    "url": "https://github.com/rapid7/rex-text/pull/17",
+    "reporter": "picatz",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/14850816?u=e9f5b7b963a5e5c234019d0c74a8e1a20cd2567e&v=4",
+    "labels": [
+      "enhancement"
+    ],
+    "state": "closed",
+    "createdAt": "2018-04-27T19:22:50Z",
+    "closedAt": "2018-06-13T22:30:56Z",
+    "updatedAt": "2018-06-13T22:30:56Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "busterb"
+    ],
+    "mergedBy": "busterb",
+    "mergedAt": "2018-06-13T22:30:56Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/4108654?u=123ac5abc8c3e6051b9484fa19d630ffcd97b066&v=4"
+  },
+  {
+    "number": 18,
+    "project": "rex-text",
+    "pullRequest": true,
+    "title": "use single regular expression for strict case",
+    "url": "https://github.com/rapid7/rex-text/pull/18",
+    "reporter": "picatz",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/14850816?u=e9f5b7b963a5e5c234019d0c74a8e1a20cd2567e&v=4",
+    "labels": [
+      "enhancement"
+    ],
+    "state": "closed",
+    "createdAt": "2018-04-28T00:22:27Z",
+    "closedAt": "2018-06-13T22:30:56Z",
+    "updatedAt": "2018-06-13T22:30:57Z",
+    "commentCount": 2,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "busterb"
+    ],
+    "mergedBy": "busterb",
+    "mergedAt": "2018-06-13T22:30:56Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/4108654?u=123ac5abc8c3e6051b9484fa19d630ffcd97b066&v=4"
+  },
+  {
+    "number": 19,
+    "project": "rex-text",
+    "pullRequest": true,
+    "title": "remove unnecessary gsub regex to remove newline",
+    "url": "https://github.com/rapid7/rex-text/pull/19",
+    "reporter": "picatz",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/14850816?u=e9f5b7b963a5e5c234019d0c74a8e1a20cd2567e&v=4",
+    "labels": [
+      "enhancement"
+    ],
+    "state": "closed",
+    "createdAt": "2018-04-28T01:01:02Z",
+    "closedAt": "2018-06-13T22:30:57Z",
+    "updatedAt": "2018-06-13T22:30:57Z",
+    "commentCount": 3,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "busterb"
+    ],
+    "mergedBy": "busterb",
+    "mergedAt": "2018-06-13T22:30:57Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/4108654?u=123ac5abc8c3e6051b9484fa19d630ffcd97b066&v=4"
+  },
+  {
+    "number": 20,
+    "project": "rex-text",
+    "pullRequest": true,
+    "title": "optimize default case for to_hex method",
+    "url": "https://github.com/rapid7/rex-text/pull/20",
+    "reporter": "picatz",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/14850816?u=e9f5b7b963a5e5c234019d0c74a8e1a20cd2567e&v=4",
+    "labels": [
+      "enhancement"
+    ],
+    "state": "closed",
+    "createdAt": "2018-04-29T15:19:37Z",
+    "closedAt": "2018-06-13T22:30:02Z",
+    "updatedAt": "2018-06-13T22:30:03Z",
+    "commentCount": 2,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "busterb"
+    ],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  },
+  {
+    "number": 21,
+    "project": "rex-text",
+    "pullRequest": true,
+    "title": "add SHA2 digest",
+    "url": "https://github.com/rapid7/rex-text/pull/21",
+    "reporter": "Auxilus",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/23075789?u=93bf88b981a9812511c87f474d12ed4df15483f8&v=4",
+    "labels": [
+      "enhancement"
+    ],
+    "state": "closed",
+    "createdAt": "2018-05-23T18:31:23Z",
+    "closedAt": "2018-06-13T22:30:57Z",
+    "updatedAt": "2018-06-14T02:35:05Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "busterb"
+    ],
+    "mergedBy": "busterb",
+    "mergedAt": "2018-06-13T22:30:57Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/4108654?u=123ac5abc8c3e6051b9484fa19d630ffcd97b066&v=4"
+  }
+]

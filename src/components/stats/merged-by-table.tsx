@@ -9,7 +9,7 @@ export function MergedByTable({ rows, onLoginHover }: { rows: MergedByCount[]; o
   for (let i = 0; i < rows.length; i += COLUMNS) chunks.push(rows.slice(i, i + COLUMNS));
 
   return (
-    <div className="rounded-md border">
+    <div className="max-h-96 overflow-y-auto rounded-md border">
       <Table>
         <TableBody>
           {chunks.map((chunk, index) => (

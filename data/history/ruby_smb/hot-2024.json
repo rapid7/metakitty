@@ -1,0 +1,23 @@
+[
+  {
+    "number": 261,
+    "project": "ruby_smb",
+    "pullRequest": false,
+    "title": "Field 'stub' shadows an existing method in RubySMB::Dcerpc::Request while unit testing",
+    "url": "https://github.com/rapid7/ruby_smb/issues/261",
+    "reporter": "ls5302",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/13901919?u=7c8d0e23fb06b5d2f2f65c74ee63a56dcbd33d8d&v=4",
+    "labels": [],
+    "state": "open",
+    "createdAt": "2024-02-27T14:48:09Z",
+    "closedAt": null,
+    "updatedAt": "2024-02-27T16:18:27Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  }
+]

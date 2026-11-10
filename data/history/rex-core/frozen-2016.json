@@ -1,0 +1,46 @@
+[
+  {
+    "number": 2,
+    "project": "rex-core",
+    "pullRequest": false,
+    "title": "rex-core doesn't have any license",
+    "url": "https://github.com/rapid7/rex-core/issues/2",
+    "reporter": "ant1",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/2913346?v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2016-12-22T09:14:31Z",
+    "closedAt": "2016-12-29T22:27:26Z",
+    "updatedAt": "2016-12-29T22:27:26Z",
+    "commentCount": 1,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  },
+  {
+    "number": 1,
+    "project": "rex-core",
+    "pullRequest": true,
+    "title": "Support UDP payloads and handlers",
+    "url": "https://github.com/rapid7/rex-core/pull/1",
+    "reporter": "sempervictus",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/1331084?v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2016-12-11T08:08:20Z",
+    "closedAt": "2016-12-29T22:29:16Z",
+    "updatedAt": "2016-12-29T22:29:16Z",
+    "commentCount": 1,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "bcook-r7"
+    ],
+    "mergedBy": "bcook-r7",
+    "mergedAt": "2016-12-29T22:29:16Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/10031469?u=b7d29fd2dbf28a7488cd2615b604ee455d240f42&v=4"
+  }
+]

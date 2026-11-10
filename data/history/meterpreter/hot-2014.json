@@ -1,0 +1,117 @@
+[
+  {
+    "number": 96,
+    "project": "meterpreter",
+    "pullRequest": false,
+    "title": "Sniffer extension causes BSOD on Windows 2000",
+    "url": "https://github.com/rapid7/meterpreter/issues/96",
+    "reporter": "OJ",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/28896?u=d05827ec7c3935f8a00eb0f4dfa3b330b91f7071&v=4",
+    "labels": [
+      "bug"
+    ],
+    "state": "open",
+    "createdAt": "2014-09-16T21:46:27Z",
+    "closedAt": null,
+    "updatedAt": "2014-09-16T21:46:27Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  },
+  {
+    "number": 97,
+    "project": "meterpreter",
+    "pullRequest": false,
+    "title": "Screenshot function kills Meterpreter on Windows 2000",
+    "url": "https://github.com/rapid7/meterpreter/issues/97",
+    "reporter": "OJ",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/28896?u=d05827ec7c3935f8a00eb0f4dfa3b330b91f7071&v=4",
+    "labels": [
+      "bug"
+    ],
+    "state": "open",
+    "createdAt": "2014-09-16T21:49:49Z",
+    "closedAt": null,
+    "updatedAt": "2015-03-20T12:29:14Z",
+    "commentCount": 1,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  },
+  {
+    "number": 98,
+    "project": "meterpreter",
+    "pullRequest": false,
+    "title": "Java Meterpreter process.execute and arguments",
+    "url": "https://github.com/rapid7/meterpreter/issues/98",
+    "reporter": "todb-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/1170909?v=4",
+    "labels": [
+      "bug"
+    ],
+    "state": "open",
+    "createdAt": "2014-10-06T17:54:34Z",
+    "closedAt": null,
+    "updatedAt": "2014-10-06T19:37:06Z",
+    "commentCount": 2,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  },
+  {
+    "number": 99,
+    "project": "meterpreter",
+    "pullRequest": false,
+    "title": "POSIX and Windows meterpreter, inconsistent return types for interface in routes",
+    "url": "https://github.com/rapid7/meterpreter/issues/99",
+    "reporter": "todb-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/1170909?v=4",
+    "labels": [
+      "bug"
+    ],
+    "state": "open",
+    "createdAt": "2014-10-06T18:03:26Z",
+    "closedAt": null,
+    "updatedAt": "2014-10-06T18:04:42Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  },
+  {
+    "number": 108,
+    "project": "meterpreter",
+    "pullRequest": false,
+    "title": "Incorrect type on Railgun Structs?",
+    "url": "https://github.com/rapid7/meterpreter/issues/108",
+    "reporter": "Meatballs1",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/1854557?v=4",
+    "labels": [],
+    "state": "open",
+    "createdAt": "2014-12-27T18:52:59Z",
+    "closedAt": null,
+    "updatedAt": "2015-02-19T14:37:24Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "bcook-r7"
+    ],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  }
+]

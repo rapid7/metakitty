@@ -1,0 +1,25 @@
+[
+  {
+    "number": 264,
+    "project": "mettle",
+    "pullRequest": false,
+    "title": "Mettle loader doesn't support local binaries",
+    "url": "https://github.com/rapid7/mettle/issues/264",
+    "reporter": "smcintyre-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/58950994?u=898561ae7344081c10810bb0a4139c8e9724290d&v=4",
+    "labels": [
+      "suggestion"
+    ],
+    "state": "open",
+    "createdAt": "2024-07-16T15:42:39Z",
+    "closedAt": null,
+    "updatedAt": "2024-07-16T15:42:40Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  }
+]
