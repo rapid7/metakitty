@@ -9,6 +9,7 @@ export interface HistoricalIssue {
   title: string;
   url: string;
   reporter: string;
+  reporterAvatarUrl: string | null;
   labels: string[];
   state: IssueState;
   createdAt: string;

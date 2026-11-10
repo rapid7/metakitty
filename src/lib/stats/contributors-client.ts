@@ -17,7 +17,7 @@ export interface GitHubUserProfile {
 /** All-time contributor counts for a repo via REST, paginated. */
 export async function fetchRepoContributorsAllTime(token: string, repo: string): Promise<RawContributor[]> {
   const url = `${GITHUB_API_BASE}repos/${STATS_OWNER}/${repo}/contributors?per_page=100`;
-  return restGetAllPages<RawContributor>(token, url);
+  return restGetAllPages<RawContributor>(token, url, `${STATS_OWNER}/${repo} contributors`);
 }
 
 /** Returns null (rather than throwing) for a deleted/renamed account, since a stale alias/login shouldn't fail the whole build. */

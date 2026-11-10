@@ -19,13 +19,10 @@ export default async function StatsLayout({ children }: { children: ReactNode })
 
   const navItems: StatsNavItem[] = [
     { href: "/", label: "Metasploit Repositories" },
-    { href: "/pull-requests/", label: STATS_CATEGORIES.pullRequests.label, badge: weeklyCountByKey.pullRequests },
     { href: "/maintainers/", label: "Maintainer Stats" },
-    { href: "/bugs/", label: STATS_CATEGORIES.bugs.label, badge: weeklyCountByKey.bugs },
-    { href: "/features-and-enhancements/", label: STATS_CATEGORIES.featuresAndEnhancements.label, badge: weeklyCountByKey.featuresAndEnhancements },
-    { href: "/pull-request-rates/", label: "Pull Requests per Quarter" },
-    { href: "/bug-rates/", label: "Bugs per Quarter" },
-    { href: "/feature-and-enhancement-rates/", label: "Features and Enhancements per Quarter" },
+    { href: "/contributors/", label: "Contributor Stats" },
+    { href: "/issues/", label: "Issue Stats", badge: weeklyCountByKey.bugs + weeklyCountByKey.featuresAndEnhancements },
+    { href: "/modules/", label: "Module Stats" },
   ];
 
   const topCommitters = getTopCommitters(dataset.recentCommitAuthors);

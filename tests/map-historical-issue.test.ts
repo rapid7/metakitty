@@ -12,7 +12,7 @@ function issueNode(overrides: Partial<TaggedIssueNode> = {}): TaggedIssueNode {
     closedAt: null,
     updatedAt: "2026-01-02T00:00:00Z",
     state: "OPEN",
-    author: { login: "alice" },
+    author: { login: "alice", avatarUrl: "https://avatars.example/alice" },
     comments: { totalCount: 2 },
     assignees: { nodes: [] },
     labels: { nodes: [{ name: "bug" }] },
@@ -39,11 +39,16 @@ describe("mapHistoricalIssue", () => {
       project: "metasploit-framework",
       pullRequest: false,
       reporter: "ghost",
+      reporterAvatarUrl: null,
       labels: ["bug"],
       state: "open",
       lastCommitAt: null,
       lastCommentAt: null,
     });
+  });
+
+  it("maps the reporter's avatar URL when present", () => {
+    expect(mapHistoricalIssue(issueNode())).toMatchObject({ reporter: "alice", reporterAvatarUrl: "https://avatars.example/alice" });
   });
 
   it("treats a null labels connection as no labels", () => {

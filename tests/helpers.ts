@@ -9,6 +9,7 @@ export function historicalIssue(overrides: Partial<HistoricalIssue> = {}): Histo
     title: "Example",
     url: "https://github.com/rapid7/metasploit-framework/issues/1",
     reporter: "alice",
+    reporterAvatarUrl: null,
     labels: [],
     state: "open",
     createdAt: "2026-10-14T12:00:00Z",

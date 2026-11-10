@@ -286,13 +286,21 @@ export async function restGet<T>(token: string, url: string): Promise<RestPage<T
   throw new RateLimitError("GitHub API rate limit exceeded after retrying", new Date());
 }
 
-/** Follows `Link: rel="next"` pagination to collect every page of a REST array endpoint. */
-export async function restGetAllPages<T>(token: string, initialUrl: string): Promise<T[]> {
+/** Pages logged at this interval so a big paginated fetch doesn't look stalled — matches graphqlRequest's GraphQL page-by-page callers in github-history-client.ts. */
+const PAGE_LOG_INTERVAL = 20;
+
+/** Follows `Link: rel="next"` pagination to collect every page of a REST array endpoint. When `label` is given, logs progress every {@link PAGE_LOG_INTERVAL} pages. */
+export async function restGetAllPages<T>(token: string, initialUrl: string, label?: string): Promise<T[]> {
   const results: T[] = [];
   let url: string | null = initialUrl;
+  let pageNumber = 0;
   while (url) {
     const page: RestPage<T[]> = await restGet<T[]>(token, url);
     results.push(...page.data);
+    pageNumber++;
+    if (label && pageNumber % PAGE_LOG_INTERVAL === 0) {
+      console.log(`[stats]   ${label}: page ${pageNumber}, ${results.length} fetched so far...`);
+    }
     url = page.nextUrl;
   }
   return results;
@@ -334,6 +342,40 @@ export async function getFileContent(config: GitHubConfig, path: string, ref: st
     if (typeof data.size === "number" && data.size > MAX_FILE_CONTENT_BYTES) return null;
     if (!data.content || data.encoding !== "base64") return null;
     return Buffer.from(data.content, "base64").toString("utf8");
+  }
+  throw new Error(`GitHub Contents API error: exhausted retries fetching ${url}`);
+}
+
+/**
+ * Fetches a file's content at an exact ref via the REST Contents API's raw media type, which
+ * serves files up to 100MB directly (no base64/JSON wrapper) — unlike {@link getFileContent},
+ * which is capped at {@link MAX_FILE_CONTENT_BYTES} by the base64-in-JSON response format.
+ * Returns null if missing.
+ */
+export async function getRawFileContent(config: GitHubConfig, path: string, ref: string): Promise<string | null> {
+  const url = `${GITHUB_API_BASE}repos/${config.owner}/${config.repo}/contents/${path.split("/").map(encodeURIComponent).join("/")}?ref=${encodeURIComponent(ref)}`;
+
+  for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
+    const response = await fetchWithRetry(
+      url,
+      {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${config.token}`,
+          Accept: "application/vnd.github.raw+json",
+          "X-GitHub-Api-Version": "2022-11-28",
+        },
+      },
+      attempt
+    );
+    if (!response) continue;
+
+    if (response.status === 404) return null;
+    if (!response.ok) {
+      const body = await response.text().catch(() => "");
+      throw new Error(`GitHub Contents API error: ${response.status} ${response.statusText} - ${body}`);
+    }
+    return await response.text();
   }
   throw new Error(`GitHub Contents API error: exhausted retries fetching ${url}`);
 }

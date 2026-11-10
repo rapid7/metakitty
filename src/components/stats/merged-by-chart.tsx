@@ -9,12 +9,21 @@ import type { MergedByCount } from "@/lib/stats/merged-by";
 const TOP_N = 10;
 const ROW_HEIGHT = 32;
 
-const chartConfig: ChartConfig = {
-  count: { label: "Merged PRs", color: "var(--chart-1)" },
-};
-
-/** Top-10 mergers by count for one window, as a ranked horizontal bar chart, with a "view all" toggle when the window has more mergers than that; the full list always stays in the table alongside it. */
-export function MergedByChart({ rows, highlightedLogin = null }: { rows: MergedByCount[]; highlightedLogin?: string | null }) {
+/** Top-10 rows by count for one window, as a ranked horizontal bar chart, with a "view all" toggle when the window has more rows than that; the full list always stays in the table alongside it. */
+export function MergedByChart({
+  rows,
+  highlightedLogin = null,
+  barLabel = "Merged PRs",
+  itemLabel = "mergers",
+}: {
+  rows: MergedByCount[];
+  highlightedLogin?: string | null;
+  barLabel?: string;
+  itemLabel?: string;
+}) {
+  const chartConfig: ChartConfig = {
+    count: { label: barLabel, color: "var(--chart-1)" },
+  };
   const [expanded, setExpanded] = useState(false);
   // Animate in on first mount only — later re-renders (e.g. hover dimming) shouldn't replay the entrance animation.
   const isFirstRender = useRef(true);
@@ -44,7 +53,7 @@ export function MergedByChart({ rows, highlightedLogin = null }: { rows: MergedB
       </ChartContainer>
       {isTruncated && (
         <Button variant="link" size="sm" className="px-0" aria-expanded={expanded} onClick={() => setExpanded((current) => !current)}>
-          {expanded ? "Show top 10" : `View all ${rows.length} mergers`}
+          {expanded ? "Show top 10" : `View all ${rows.length} ${itemLabel}`}
         </Button>
       )}
     </div>

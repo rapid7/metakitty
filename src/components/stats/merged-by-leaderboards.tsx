@@ -15,7 +15,19 @@ export interface MergedByLeaderboardSection {
   trendSeries: MergedByTimeSeries;
 }
 
-function MergedByWindowSection({ title, rows, trendSeries }: { title: string; rows: MergedByCount[]; trendSeries: MergedByTimeSeries }) {
+function MergedByWindowSection({
+  title,
+  rows,
+  trendSeries,
+  barLabel,
+  itemLabel,
+}: {
+  title: string;
+  rows: MergedByCount[];
+  trendSeries: MergedByTimeSeries;
+  barLabel?: string;
+  itemLabel?: string;
+}) {
   const [view, setView] = useState<"ranking" | "trend">("trend");
   const [highlightedLogin, setHighlightedLogin] = useState<string | null>(null);
   if (rows.length === 0) return null;
@@ -37,7 +49,7 @@ function MergedByWindowSection({ title, rows, trendSeries }: { title: string; ro
         </Button>
       </div>
       {view === "ranking" ? (
-        <MergedByChart rows={rows} highlightedLogin={highlightedLogin} />
+        <MergedByChart rows={rows} highlightedLogin={highlightedLogin} barLabel={barLabel} itemLabel={itemLabel} />
       ) : (
         <MergedByTrendChart series={trendSeries} highlightedLogin={highlightedLogin} />
       )}
@@ -46,11 +58,11 @@ function MergedByWindowSection({ title, rows, trendSeries }: { title: string; ro
   );
 }
 
-export function MergedByLeaderboards({ sections }: { sections: MergedByLeaderboardSection[] }) {
+export function MergedByLeaderboards({ sections, barLabel, itemLabel }: { sections: MergedByLeaderboardSection[]; barLabel?: string; itemLabel?: string }) {
   return (
     <>
       {sections.map((section) => (
-        <MergedByWindowSection key={section.title} title={section.title} rows={section.rows} trendSeries={section.trendSeries} />
+        <MergedByWindowSection key={section.title} title={section.title} rows={section.rows} trendSeries={section.trendSeries} barLabel={barLabel} itemLabel={itemLabel} />
       ))}
     </>
   );

@@ -10,7 +10,7 @@ export interface RawHistoricalIssueNode {
   closedAt: string | null;
   updatedAt: string;
   state: "OPEN" | "CLOSED";
-  author: { login: string } | null;
+  author: { login: string; avatarUrl: string } | null;
   comments: { totalCount: number };
   assignees: { nodes: Array<{ login: string }> };
   labels: { nodes: Array<{ name: string }> } | null;
@@ -41,7 +41,7 @@ const REPO_ISSUES_QUERY = `
           closedAt
           updatedAt
           state
-          author { login }
+          author { login avatarUrl }
           comments { totalCount }
           assignees(first: 10) { nodes { login } }
           labels(first: 20) { nodes { name } }
@@ -65,7 +65,7 @@ const REPO_PULL_REQUESTS_QUERY = `
           closedAt
           updatedAt
           state
-          author { login }
+          author { login avatarUrl }
           comments(last: 1) { totalCount nodes { createdAt } }
           assignees(first: 10) { nodes { login } }
           labels(first: 20) { nodes { name } }

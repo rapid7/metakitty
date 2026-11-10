@@ -27,12 +27,9 @@ describe("next build (static export) against fixture data", () => {
     for (const route of [
       "queue",
       "queue/metasploit-framework",
-      "pull-requests",
-      "bugs",
-      "features-and-enhancements",
-      "pull-request-rates",
-      "bug-rates",
-      "feature-and-enhancement-rates",
+      "contributors",
+      "issues",
+      "modules",
     ]) {
       expect(existsSync(resolve(rootDir, "out", route, "index.html"))).toBe(true);
       expect(existsSync(resolve(rootDir, "out", `${route}.html`))).toBe(false);
@@ -47,10 +44,18 @@ describe("next build (static export) against fixture data", () => {
     expect(html).toContain('href="/queue/metasploit-framework/"');
   });
 
-  it("renders the Open Pull Requests steady-state chart at /pull-requests/", () => {
-    const html = readFileSync(resolve(rootDir, "out/pull-requests/index.html"), "utf8");
+  it("renders the Open Pull Requests steady-state chart at /contributors/", () => {
+    const html = readFileSync(resolve(rootDir, "out/contributors/index.html"), "utf8");
     expect(html).toContain("Open Pull Requests");
     expect(html).toContain("recharts");
+  });
+
+  it("renders the module type chart and browsable tree at /modules/", () => {
+    const html = readFileSync(resolve(rootDir, "out/modules/index.html"), "utf8");
+    expect(html).toContain("Module Stats");
+    expect(html).toContain("Modules by type");
+    expect(html).toContain("recharts");
+    expect(html).toContain("xslt_password_reset");
   });
 
   it("renders a queue index at /queue/ linking to the flagship repo's queue", () => {

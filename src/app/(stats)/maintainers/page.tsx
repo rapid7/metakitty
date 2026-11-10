@@ -12,7 +12,11 @@ export default async function MaintainersPage() {
 
   return (
     <>
-      <StatsPageHeader title="Maintainer Stats" generatedAt={dataset.fetchedAt} />
+      <StatsPageHeader
+        title="Maintainer Stats"
+        description="Who merged the most pull requests across Metasploit's repos — the maintainers keeping the review queue moving."
+        generatedAt={dataset.fetchedAt}
+      />
       <MergedByLeaderboards
         sections={[
           { title: "All time", rows: windows.all, trendSeries: getMergedByTimeSeries(dataset.issues, undefined, now) },
