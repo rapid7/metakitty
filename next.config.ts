@@ -1,7 +1,16 @@
 import type { NextConfig } from "next";
 
+// docs.metasploit.com publishes this at /stats/, not the domain root — but a local `npm run
+// build`/`npm run dev` should behave like any other app (root-relative), so this is opt-in via an
+// env var CI sets, rather than assumed by default from the build/dev distinction alone.
+const BASE_PATH = process.env.DASHBOARD_BASE_PATH ?? "";
+
 const nextConfig: NextConfig = {
   output: "export",
+  basePath: BASE_PATH,
+  env: {
+    NEXT_PUBLIC_BASE_PATH: BASE_PATH,
+  },
   // Without this, nested routes export as flat files (queue.html, bugs.html, ...) instead of
   // queue/index.html, bugs/index.html, ... — plain static file servers (a bare `python3 -m
   // http.server`, S3 website hosting, etc, not just `npx serve`/nginx with clean-URL rewriting)

@@ -6,6 +6,7 @@
   "description": "Static HTML snapshot of the rapid7/metasploit-framework open pull request queue.",
   "scripts": {
     "dev": "next dev",
+    "fetch:acceptance-tests": "node scripts/fetch-acceptance-tests.mjs",
     "build": "next build",
     "build:fixture": "FIXTURE_DATA=1 next build",
     "test": "vitest run",
@@ -29,6 +30,7 @@
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "fast-check": "^4.7.0",
+    "jszip": "^3.10.2",
     "shadcn": "^4.23.0",
     "tailwindcss": "^4.2.4",
     "typescript": "^5.7.3",

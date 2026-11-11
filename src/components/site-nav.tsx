@@ -9,6 +9,9 @@ const NAV_LINKS = [
   { href: "https://github.com/rapid7/metasploit-framework", label: "Metasploit on Github", external: true },
 ];
 
+// Plain <a> tags don't get next.config.ts's basePath applied automatically (unlike next/link).
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 export function SiteNav() {
   const pathname = usePathname();
   // Everything outside /queue belongs to the dashboard (historical stats) section, which lives at the root.
@@ -17,7 +20,7 @@ export function SiteNav() {
   return (
     <div className="border-b bg-muted/30">
       <nav aria-label="Site" className="mx-auto flex max-w-[1400px] items-center justify-between gap-4 px-4 py-2 text-sm">
-        <a href="/" aria-current={onQueue ? undefined : "page"} className={`font-semibold ${onQueue ? "text-muted-foreground hover:text-foreground" : "text-foreground"}`}>
+        <a href={`${BASE_PATH}/`} aria-current={onQueue ? undefined : "page"} className={`font-semibold ${onQueue ? "text-muted-foreground hover:text-foreground" : "text-foreground"}`}>
           Metasploit Stats
         </a>
         <ul className="flex items-center gap-4">
@@ -29,7 +32,7 @@ export function SiteNav() {
             return (
               <li key={link.href}>
                 <a
-                  href={link.href}
+                  href={link.external ? link.href : `${BASE_PATH}${link.href}`}
                   target={link.external ? "_blank" : undefined}
                   rel={link.external ? "noopener noreferrer" : undefined}
                   aria-current={active ? "page" : undefined}

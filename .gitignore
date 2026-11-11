@@ -1,7 +1,9 @@
 node_modules/
 .next/
 out/
+/preview/
 .cache/
+/public/acceptance-tests/
 next-env.d.ts
 *.tsbuildinfo
 .env

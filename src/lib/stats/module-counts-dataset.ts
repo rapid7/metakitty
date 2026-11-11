@@ -3,6 +3,7 @@ import { resolve } from "node:path";
 import { getModuleCounts, type ModuleCounts } from "./module-counts";
 import { readModuleCountsCache, writeModuleCountsCache } from "./module-counts-cache";
 import { fetchModuleMetadata, type RawModuleMetadataEntry } from "./module-counts-client";
+import { resolveGitHubToken } from "../github-token";
 
 const CACHE_DIR = resolve(process.cwd(), ".cache");
 const MODULE_COUNTS_CACHE_PATH = resolve(CACHE_DIR, "module-counts.json");
@@ -34,9 +35,9 @@ export function loadModuleCounts(): Promise<ModuleCounts> {
         return cached;
       }
 
-      const token = process.env.GITHUB_OAUTH_TOKEN?.trim();
+      const token = resolveGitHubToken();
       if (!token) {
-        throw new Error("GITHUB_OAUTH_TOKEN must be set (or pass FIXTURE_DATA=1 to build from fixtures).");
+        throw new Error("GITHUB_OAUTH_TOKEN or GITHUB_BASIC_AUTH must be set (or pass FIXTURE_DATA=1 to build from fixtures).");
       }
       console.log("[stats] No fresh module-counts cache; fetching metasploit-framework's module metadata (~11MB) from GitHub...");
       const metadata = await fetchModuleMetadata(token);

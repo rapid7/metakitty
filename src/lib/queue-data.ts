@@ -1,6 +1,7 @@
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { fetchOpenPullRequestCount, fetchOpenPullRequests, type RawPullRequestNode } from "./github-client";
+import { resolveGitHubToken } from "./github-token";
 import { mapPullRequest } from "./pull-requests";
 import { readPullRequestCache, writePullRequestCache } from "./pr-cache";
 import { readPullRequestCountCache, writePullRequestCountCache } from "./pr-count-cache";
@@ -25,9 +26,9 @@ export async function loadPullRequestsForRepo(owner: string, repo: string): Prom
     return rawPullRequests.map(mapPullRequest);
   }
 
-  const token = process.env.GITHUB_OAUTH_TOKEN?.trim();
+  const token = resolveGitHubToken();
   if (!token) {
-    throw new Error("GITHUB_OAUTH_TOKEN must be set (or pass FIXTURE_DATA=1 to build from fixtures).");
+    throw new Error("GITHUB_OAUTH_TOKEN or GITHUB_BASIC_AUTH must be set (or pass FIXTURE_DATA=1 to build from fixtures).");
   }
 
   const rawPullRequests = await loadRawPullRequests(owner, repo, token);
@@ -56,9 +57,9 @@ export async function loadOpenPullRequestCounts(owner: string, repos: string[]):
     return Object.fromEntries(repos.map((repo) => [repo, rawPullRequests.length]));
   }
 
-  const token = process.env.GITHUB_OAUTH_TOKEN?.trim();
+  const token = resolveGitHubToken();
   if (!token) {
-    throw new Error("GITHUB_OAUTH_TOKEN must be set (or pass FIXTURE_DATA=1 to build from fixtures).");
+    throw new Error("GITHUB_OAUTH_TOKEN or GITHUB_BASIC_AUTH must be set (or pass FIXTURE_DATA=1 to build from fixtures).");
   }
 
   const ttlMinutes = Number(process.env.GITHUB_CACHE_TTL_MINUTES ?? DEFAULT_CACHE_TTL_MINUTES);

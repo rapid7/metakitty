@@ -89,3 +89,28 @@ describe("next build (static export) against fixture data", () => {
     }
   });
 });
+
+// DASHBOARD_BASE_PATH is how CI opts into publishing at docs.metasploit.com/stats/ instead of
+// the domain root (see next.config.ts) — unset by default so a plain local `npm run build` stays
+// root-relative. Runs after the suite above so both builds share out/ without racing.
+describe("next build with DASHBOARD_BASE_PATH=/stats (simulates the CI-published site)", () => {
+  beforeAll(() => {
+    execFileSync("node_modules/.bin/next", ["build"], {
+      cwd: rootDir,
+      env: { ...process.env, FIXTURE_DATA: "1", DASHBOARD_BASE_PATH: "/stats" },
+      stdio: "inherit",
+    });
+  }, 120_000);
+
+  it("prefixes internal links and _next/ assets with /stats", () => {
+    const html = readFileSync(resolve(rootDir, "out/index.html"), "utf8");
+    expect(html).toContain('href="/stats/queue/metasploit-framework/"');
+    expect(html).toMatch(/href="\/stats\/_next\/static\/chunks\/[^"]+\.css"/);
+  });
+
+  it("leaves external links (GitHub, docs) untouched", () => {
+    const html = readFileSync(resolve(rootDir, "out/index.html"), "utf8");
+    expect(html).toContain('href="https://docs.metasploit.com"');
+    expect(html).toContain('href="https://github.com/rapid7/metasploit-framework"');
+  });
+});

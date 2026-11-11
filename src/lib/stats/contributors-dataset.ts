@@ -1,6 +1,7 @@
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { runInBatches } from "../async";
+import { resolveGitHubToken } from "../github-token";
 import { CONTRIBUTOR_ALIASES } from "./contributor-aliases";
 import { aggregateContributors, countLogins, topContributorInfos, type ContributorInfo } from "./contributors";
 import { fetchRepoContributorsAllTime, fetchUserProfile, type GitHubUserProfile } from "./contributors-client";
@@ -45,9 +46,9 @@ function loadFixtureContributors(): ContributorsDataset {
 }
 
 async function fetchLiveContributors(): Promise<ContributorsDataset> {
-  const token = process.env.GITHUB_OAUTH_TOKEN?.trim();
+  const token = resolveGitHubToken();
   if (!token) {
-    throw new Error("GITHUB_OAUTH_TOKEN must be set (or pass FIXTURE_DATA=1 to build from fixtures).");
+    throw new Error("GITHUB_OAUTH_TOKEN or GITHUB_BASIC_AUTH must be set (or pass FIXTURE_DATA=1 to build from fixtures).");
   }
 
   const ttlMinutes = Number(process.env.GITHUB_HISTORY_CACHE_TTL_MINUTES ?? DEFAULT_CACHE_TTL_MINUTES);

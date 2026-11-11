@@ -5,6 +5,7 @@ import { mapHistoricalIssue, mapHistoricalPullRequest } from "./map-historical-i
 import { readHistoryStore, readFreshHistoryStore, writeHistoryStore } from "./history-store";
 import { PRIMARY_REPO, STATS_OWNER, STATS_REPOS } from "./repos";
 import type { HistoricalDataset } from "./types";
+import { resolveGitHubToken } from "../github-token";
 
 // A committed directory serves as both the TTL-gated cache for an active build session and the
 // baseline a developer chooses to check in — fetching the full history is expensive (thousands of
@@ -73,17 +74,17 @@ async function fetchLiveDataset(): Promise<HistoricalDataset> {
     return fresh;
   }
 
-  const token = process.env.GITHUB_OAUTH_TOKEN?.trim();
+  const token = resolveGitHubToken();
   if (!token) {
     const committed = readHistoryStore(HISTORY_STORE_DIR);
     if (committed) {
       console.warn(
-        `[stats] GITHUB_OAUTH_TOKEN not set and ${HISTORY_STORE_DIR} isn't fresh enough (or STATS_REPOS changed); falling back to it anyway (fetched ${committed.fetchedAt}, may be stale). Set a token to refresh it.`
+        `[stats] No GitHub token (GITHUB_OAUTH_TOKEN/GITHUB_BASIC_AUTH) and ${HISTORY_STORE_DIR} isn't fresh enough (or STATS_REPOS changed); falling back to it anyway (fetched ${committed.fetchedAt}, may be stale). Set a token to refresh it.`
       );
       return committed;
     }
     throw new Error(
-      "GITHUB_OAUTH_TOKEN must be set (or pass FIXTURE_DATA=1 to build from fixtures). Running a build with a token at least once also commits a data/history/ snapshot other token-less builds can fall back to."
+      "GITHUB_OAUTH_TOKEN or GITHUB_BASIC_AUTH must be set (or pass FIXTURE_DATA=1 to build from fixtures). Running a build with a token at least once also commits a data/history/ snapshot other token-less builds can fall back to."
     );
   }
 

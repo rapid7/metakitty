@@ -14,6 +14,9 @@ function withoutTrailingSlash(path: string): string {
   return path.length > 1 && path.endsWith("/") ? path.slice(0, -1) : path;
 }
 
+// Plain <a> tags don't get next.config.ts's basePath applied automatically (unlike next/link).
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 export function StatsNav({ items }: { items: StatsNavItem[] }) {
   const pathname = usePathname();
   return (
@@ -23,7 +26,7 @@ export function StatsNav({ items }: { items: StatsNavItem[] }) {
         return (
           <a
             key={item.href}
-            href={item.href}
+            href={`${BASE_PATH}${item.href}`}
             aria-current={active ? "page" : undefined}
             className={`flex items-center justify-between gap-2 rounded-md px-3 py-1.5 ${active ? "bg-muted font-medium text-foreground" : "text-muted-foreground hover:bg-muted hover:text-foreground"}`}
           >

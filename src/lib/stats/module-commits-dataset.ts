@@ -2,6 +2,7 @@ import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { getLandedModuleCommits, type LandedModuleCommit } from "./commits-modules";
 import { fetchModuleCommitsSince, type RawModuleCommit } from "./module-commits-client";
+import { resolveGitHubToken } from "../github-token";
 
 const LOOKBACK_DAYS = 30;
 
@@ -18,9 +19,9 @@ export function loadLandedModuleCommits(): Promise<LandedModuleCommit[]> {
       if (process.env.FIXTURE_DATA === "1") {
         return getLandedModuleCommits(loadFixtureModuleCommits());
       }
-      const token = process.env.GITHUB_OAUTH_TOKEN?.trim();
+      const token = resolveGitHubToken();
       if (!token) {
-        throw new Error("GITHUB_OAUTH_TOKEN must be set (or pass FIXTURE_DATA=1 to build from fixtures).");
+        throw new Error("GITHUB_OAUTH_TOKEN or GITHUB_BASIC_AUTH must be set (or pass FIXTURE_DATA=1 to build from fixtures).");
       }
       console.log("[stats] Fetching recently landed module commits...");
       const sinceIso = new Date(Date.now() - LOOKBACK_DAYS * 86_400_000).toISOString();
