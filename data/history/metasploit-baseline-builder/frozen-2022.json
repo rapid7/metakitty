@@ -1,0 +1,23 @@
+[
+  {
+    "number": 59,
+    "project": "metasploit-baseline-builder",
+    "pullRequest": true,
+    "title": "vm-tools step already has 7z",
+    "url": "https://github.com/rapid7/metasploit-baseline-builder/pull/59",
+    "reporter": "jmartin-tech",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/7873740?u=761d485098432a30044aa248045cd6d7573482c0&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2022-07-07T18:18:10Z",
+    "closedAt": "2023-03-14T13:57:05Z",
+    "updatedAt": "2023-03-14T13:57:10Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "jmartin-tech",
+    "mergedAt": "2023-03-14T13:57:05Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/7873740?u=761d485098432a30044aa248045cd6d7573482c0&v=4"
+  }
+]

@@ -1,0 +1,25 @@
+[
+  {
+    "number": 121,
+    "project": "mettle",
+    "pullRequest": false,
+    "title": "UDP network channels too stream-y",
+    "url": "https://github.com/rapid7/mettle/issues/121",
+    "reporter": "acammack-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/16652544?v=4",
+    "labels": [
+      "help wanted"
+    ],
+    "state": "open",
+    "createdAt": "2018-04-06T19:47:15Z",
+    "closedAt": null,
+    "updatedAt": "2018-08-27T19:53:00Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  }
+]

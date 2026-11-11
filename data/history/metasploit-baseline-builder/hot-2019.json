@@ -1,0 +1,23 @@
+[
+  {
+    "number": 47,
+    "project": "metasploit-baseline-builder",
+    "pullRequest": false,
+    "title": "Add AD abilities",
+    "url": "https://github.com/rapid7/metasploit-baseline-builder/issues/47",
+    "reporter": "bwatters-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/17987018?u=562c1b6600d722e45a20f2202dddeb2d6db1f091&v=4",
+    "labels": [],
+    "state": "open",
+    "createdAt": "2019-12-31T13:20:32Z",
+    "closedAt": null,
+    "updatedAt": "2019-12-31T13:20:32Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  }
+]

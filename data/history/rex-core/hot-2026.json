@@ -1,0 +1,46 @@
+[
+  {
+    "number": 45,
+    "project": "rex-core",
+    "pullRequest": true,
+    "title": "Add and use #reset!",
+    "url": "https://github.com/rapid7/rex-core/pull/45",
+    "reporter": "zeroSteiner",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/2058303?u=7c0365666ad089e619b8906d31dfe7b9bfbca8af&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2026-03-03T21:53:26Z",
+    "closedAt": "2026-04-01T11:41:37Z",
+    "updatedAt": "2026-04-01T11:41:37Z",
+    "commentCount": 2,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "dledda-r7"
+    ],
+    "mergedBy": "dledda-r7",
+    "mergedAt": "2026-04-01T11:41:37Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/171709318?u=1b95174056ba711e53816c46bc793466b258cd0d&v=4"
+  },
+  {
+    "number": 46,
+    "project": "rex-core",
+    "pullRequest": true,
+    "title": "Fix relay scheduler cleanup between runs",
+    "url": "https://github.com/rapid7/rex-core/pull/46",
+    "reporter": "mjatin2007",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/22603802?u=c24896293799a0f890b34aa91d366bec9e851acb&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2026-10-13T18:07:07Z",
+    "closedAt": "2026-10-14T16:35:26Z",
+    "updatedAt": "2026-10-14T16:35:26Z",
+    "commentCount": 1,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "sjanusz-r7",
+    "mergedAt": "2026-10-14T16:35:26Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/85949464?v=4"
+  }
+]

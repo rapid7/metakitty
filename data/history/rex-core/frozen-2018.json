@@ -1,0 +1,23 @@
+[
+  {
+    "number": 8,
+    "project": "rex-core",
+    "pullRequest": true,
+    "title": "Add android support",
+    "url": "https://github.com/rapid7/rex-core/pull/8",
+    "reporter": "Auxilus",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/23075789?u=93bf88b981a9812511c87f474d12ed4df15483f8&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2018-02-22T04:41:26Z",
+    "closedAt": "2018-02-22T21:54:10Z",
+    "updatedAt": "2018-02-23T02:40:35Z",
+    "commentCount": 1,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "busterb",
+    "mergedAt": "2018-02-22T21:54:10Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/4108654?u=123ac5abc8c3e6051b9484fa19d630ffcd97b066&v=4"
+  }
+]

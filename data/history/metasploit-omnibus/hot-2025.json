@@ -1,0 +1,23 @@
+[
+  {
+    "number": 231,
+    "project": "metasploit-omnibus",
+    "pullRequest": false,
+    "title": "Failed to build metasploit framework",
+    "url": "https://github.com/rapid7/metasploit-omnibus/issues/231",
+    "reporter": "Fulgurance",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/31563027?u=1b962fdfe70aecbab7da52e2448c79092f32b7be&v=4",
+    "labels": [],
+    "state": "open",
+    "createdAt": "2025-06-17T13:57:05Z",
+    "closedAt": null,
+    "updatedAt": "2025-06-30T17:31:22Z",
+    "commentCount": 20,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  }
+]

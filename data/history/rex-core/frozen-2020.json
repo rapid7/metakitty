@@ -1,0 +1,23 @@
+[
+  {
+    "number": 10,
+    "project": "rex-core",
+    "pullRequest": true,
+    "title": "relax dev bundle and update authors",
+    "url": "https://github.com/rapid7/rex-core/pull/10",
+    "reporter": "jmartin-tech",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/7873740?u=761d485098432a30044aa248045cd6d7573482c0&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2020-11-12T17:00:27Z",
+    "closedAt": "2020-11-30T18:04:50Z",
+    "updatedAt": "2020-11-30T18:08:38Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "acammack-r7",
+    "mergedAt": "2020-11-30T18:04:50Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/16652544?v=4"
+  }
+]

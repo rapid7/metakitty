@@ -1,0 +1,23 @@
+[
+  {
+    "number": 7,
+    "project": "rex-sslscan",
+    "pullRequest": false,
+    "title": "Update supported_versions in result class",
+    "url": "https://github.com/rapid7/rex-sslscan/issues/7",
+    "reporter": "nhkaraka-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/104774338?u=28978e3cb4fa45a0305dc5460d47d056f28270ef&v=4",
+    "labels": [],
+    "state": "open",
+    "createdAt": "2023-07-17T14:17:24Z",
+    "closedAt": null,
+    "updatedAt": "2023-07-17T14:57:10Z",
+    "commentCount": 2,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  }
+]

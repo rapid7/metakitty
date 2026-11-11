@@ -1,0 +1,48 @@
+[
+  {
+    "number": 145,
+    "project": "ruby_smb",
+    "pullRequest": false,
+    "title": "requested_oplock invalid value for 2.0.2 dialect",
+    "url": "https://github.com/rapid7/ruby_smb/issues/145",
+    "reporter": "bulkans",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/7143216?v=4",
+    "labels": [
+      "bug"
+    ],
+    "state": "open",
+    "createdAt": "2019-02-12T14:09:45Z",
+    "closedAt": null,
+    "updatedAt": "2020-09-24T09:13:59Z",
+    "commentCount": 2,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  },
+  {
+    "number": 146,
+    "project": "ruby_smb",
+    "pullRequest": false,
+    "title": "Problem with windows/smb/ms17_010_eternalblue",
+    "url": "https://github.com/rapid7/ruby_smb/issues/146",
+    "reporter": "ntoskrnl-exe",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/43867884?u=fd77f9067d000b19015227c2151d83b461e5c060&v=4",
+    "labels": [
+      "bug"
+    ],
+    "state": "open",
+    "createdAt": "2019-02-23T20:19:21Z",
+    "closedAt": null,
+    "updatedAt": "2020-09-24T09:14:16Z",
+    "commentCount": 1,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  }
+]

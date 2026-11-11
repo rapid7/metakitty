@@ -1,0 +1,23 @@
+[
+  {
+    "number": 53,
+    "project": "metasploit-credential",
+    "pullRequest": false,
+    "title": "NTLMHash -> LM Hash & NTLMHash",
+    "url": "https://github.com/rapid7/metasploit-credential/issues/53",
+    "reporter": "Meatballs1",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/1854557?v=4",
+    "labels": [],
+    "state": "open",
+    "createdAt": "2014-07-21T20:59:10Z",
+    "closedAt": null,
+    "updatedAt": "2014-07-21T22:02:47Z",
+    "commentCount": 7,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  }
+]

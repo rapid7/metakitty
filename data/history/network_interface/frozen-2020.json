@@ -1,0 +1,25 @@
+[
+  {
+    "number": 12,
+    "project": "network_interface",
+    "pullRequest": true,
+    "title": "Bump rake from 12.0.0 to 13.0.1",
+    "url": "https://github.com/rapid7/network_interface/pull/12",
+    "reporter": "dependabot",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/in/29110?v=4",
+    "labels": [
+      "dependencies"
+    ],
+    "state": "closed",
+    "createdAt": "2020-02-28T18:21:03Z",
+    "closedAt": "2021-02-12T10:21:07Z",
+    "updatedAt": "2021-02-12T10:21:08Z",
+    "commentCount": 1,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  }
+]

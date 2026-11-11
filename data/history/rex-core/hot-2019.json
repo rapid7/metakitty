@@ -1,0 +1,23 @@
+[
+  {
+    "number": 9,
+    "project": "rex-core",
+    "pullRequest": false,
+    "title": "Updating open_webrtc_browser() in Compat.rb",
+    "url": "https://github.com/rapid7/rex-core/issues/9",
+    "reporter": "hkerma",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/35636205?u=c6b4f539f70fb7a4bbe3781dc4f4662517033598&v=4",
+    "labels": [],
+    "state": "open",
+    "createdAt": "2019-07-24T18:56:25Z",
+    "closedAt": null,
+    "updatedAt": "2023-05-11T08:30:00Z",
+    "commentCount": 2,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  }
+]

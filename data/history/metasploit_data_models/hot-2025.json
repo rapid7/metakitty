@@ -1,0 +1,23 @@
+[
+  {
+    "number": 219,
+    "project": "metasploit_data_models",
+    "pullRequest": false,
+    "title": "Improve test support for newer Rails versions",
+    "url": "https://github.com/rapid7/metasploit_data_models/issues/219",
+    "reporter": "adfoster-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/60357436?v=4",
+    "labels": [],
+    "state": "open",
+    "createdAt": "2025-06-03T09:56:11Z",
+    "closedAt": null,
+    "updatedAt": "2025-06-03T09:56:11Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "number": 70,
+    "project": "metasploit-model",
+    "pullRequest": true,
+    "title": "Remove hardcoded secret",
+    "url": "https://github.com/rapid7/metasploit-model/pull/70",
+    "reporter": "dwelch-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/19910435?v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2024-06-24T14:52:49Z",
+    "closedAt": "2024-06-27T09:38:56Z",
+    "updatedAt": "2024-06-27T09:38:56Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "adfoster-r7",
+    "mergedAt": "2024-06-27T09:38:56Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/60357436?v=4"
+  }
+]

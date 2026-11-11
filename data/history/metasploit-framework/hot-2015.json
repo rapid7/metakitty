@@ -1,0 +1,395 @@
+[
+  {
+    "number": 4555,
+    "project": "metasploit-framework",
+    "pullRequest": false,
+    "title": "Replace session/channel signal handlers in msfconsole with detach & kill commands",
+    "url": "https://github.com/rapid7/metasploit-framework/issues/4555",
+    "reporter": "wchen-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/1170914?u=bcd94995d63a2806bb71f8c4dad1b767f6fd77a7&v=4",
+    "labels": [
+      "library",
+      "bug",
+      "msfconsole"
+    ],
+    "state": "open",
+    "createdAt": "2015-01-08T16:35:45Z",
+    "closedAt": null,
+    "updatedAt": "2018-02-14T14:54:54Z",
+    "commentCount": 8,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "hdm"
+    ],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  },
+  {
+    "number": 4820,
+    "project": "metasploit-framework",
+    "pullRequest": false,
+    "title": "reverse_https times out with bypassuac_injection",
+    "url": "https://github.com/rapid7/metasploit-framework/issues/4820",
+    "reporter": "wchen-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/1170914?u=bcd94995d63a2806bb71f8c4dad1b767f6fd77a7&v=4",
+    "labels": [
+      "module",
+      "bug",
+      "confirmed"
+    ],
+    "state": "open",
+    "createdAt": "2015-02-22T18:56:06Z",
+    "closedAt": null,
+    "updatedAt": "2021-01-18T15:29:58Z",
+    "commentCount": 15,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "OJ"
+    ],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  },
+  {
+    "number": 4863,
+    "project": "metasploit-framework",
+    "pullRequest": false,
+    "title": "MIPS (LE/BE) encoder modules are Linux only due to cacheflush system call",
+    "url": "https://github.com/rapid7/metasploit-framework/issues/4863",
+    "reporter": "hdm",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/1171392?u=8211049301b359476be0562a4b7e393b4fb6bb8b&v=4",
+    "labels": [
+      "module",
+      "library"
+    ],
+    "state": "open",
+    "createdAt": "2015-03-02T20:15:02Z",
+    "closedAt": null,
+    "updatedAt": "2015-03-02T20:37:19Z",
+    "commentCount": 3,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  },
+  {
+    "number": 4895,
+    "project": "metasploit-framework",
+    "pullRequest": false,
+    "title": "Comprehensively refactor Windows reverse_http stagers",
+    "url": "https://github.com/rapid7/metasploit-framework/issues/4895",
+    "reporter": "hdm",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/1171392?u=8211049301b359476be0562a4b7e393b4fb6bb8b&v=4",
+    "labels": [
+      "module",
+      "library",
+      "meterpreter",
+      "bug"
+    ],
+    "state": "open",
+    "createdAt": "2015-03-08T20:46:41Z",
+    "closedAt": null,
+    "updatedAt": "2022-06-30T08:28:47Z",
+    "commentCount": 9,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "hdm"
+    ],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  },
+  {
+    "number": 5048,
+    "project": "metasploit-framework",
+    "pullRequest": false,
+    "title": "Binding HTTPServer (Non SSL) and reverse_*https to same port doesn't give a warning",
+    "url": "https://github.com/rapid7/metasploit-framework/issues/5048",
+    "reporter": "Meatballs1",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/1854557?v=4",
+    "labels": [
+      "module",
+      "library",
+      "bug",
+      "payload"
+    ],
+    "state": "open",
+    "createdAt": "2015-04-01T13:46:29Z",
+    "closedAt": null,
+    "updatedAt": "2017-03-29T20:55:29Z",
+    "commentCount": 2,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  },
+  {
+    "number": 5232,
+    "project": "metasploit-framework",
+    "pullRequest": false,
+    "title": "support utf-8 conversion in ADSI meterpreter code",
+    "url": "https://github.com/rapid7/metasploit-framework/issues/5232",
+    "reporter": "Meatballs1",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/1854557?v=4",
+    "labels": [
+      "meterpreter",
+      "bug",
+      "feature"
+    ],
+    "state": "open",
+    "createdAt": "2015-04-23T09:32:29Z",
+    "closedAt": null,
+    "updatedAt": "2020-07-25T13:19:56Z",
+    "commentCount": 8,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "bcook-r7"
+    ],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  },
+  {
+    "number": 5441,
+    "project": "metasploit-framework",
+    "pullRequest": false,
+    "title": "Make machine_id result consistant across Meterpreters",
+    "url": "https://github.com/rapid7/metasploit-framework/issues/5441",
+    "reporter": "OJ",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/28896?u=d05827ec7c3935f8a00eb0f4dfa3b330b91f7071&v=4",
+    "labels": [
+      "meterpreter",
+      "bug",
+      "not-stale"
+    ],
+    "state": "open",
+    "createdAt": "2015-05-29T22:12:46Z",
+    "closedAt": null,
+    "updatedAt": "2021-01-18T15:29:08Z",
+    "commentCount": 8,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "bcook-r7"
+    ],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  },
+  {
+    "number": 5571,
+    "project": "metasploit-framework",
+    "pullRequest": false,
+    "title": "Channels should be logged (or at least Shell channels)",
+    "url": "https://github.com/rapid7/metasploit-framework/issues/5571",
+    "reporter": "Meatballs1",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/1854557?v=4",
+    "labels": [
+      "library",
+      "enhancement"
+    ],
+    "state": "open",
+    "createdAt": "2015-06-19T20:04:28Z",
+    "closedAt": null,
+    "updatedAt": "2016-07-29T04:32:27Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  },
+  {
+    "number": 5634,
+    "project": "metasploit-framework",
+    "pullRequest": false,
+    "title": "Feature request: add DOMAIN NAME to session output",
+    "url": "https://github.com/rapid7/metasploit-framework/issues/5634",
+    "reporter": "OJ",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/28896?u=d05827ec7c3935f8a00eb0f4dfa3b330b91f7071&v=4",
+    "labels": [
+      "enhancement"
+    ],
+    "state": "open",
+    "createdAt": "2015-06-30T12:14:54Z",
+    "closedAt": null,
+    "updatedAt": "2016-07-29T04:32:28Z",
+    "commentCount": 2,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  },
+  {
+    "number": 5808,
+    "project": "metasploit-framework",
+    "pullRequest": false,
+    "title": "Feature request: Alias functionality (or generic: extensibility) for meterpreter shells.",
+    "url": "https://github.com/rapid7/metasploit-framework/issues/5808",
+    "reporter": "henryk",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/71508?v=4",
+    "labels": [
+      "feature",
+      "msfconsole",
+      "enhancement",
+      "informative",
+      "usability"
+    ],
+    "state": "open",
+    "createdAt": "2015-08-04T13:40:54Z",
+    "closedAt": null,
+    "updatedAt": "2020-03-15T14:59:25Z",
+    "commentCount": 18,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  },
+  {
+    "number": 5843,
+    "project": "metasploit-framework",
+    "pullRequest": false,
+    "title": "The notes command should be able to search based on sub-field",
+    "url": "https://github.com/rapid7/metasploit-framework/issues/5843",
+    "reporter": "Viss",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/1756255?u=7ed4ec158e6547add67647f555631a64471c865a&v=4",
+    "labels": [
+      "feature"
+    ],
+    "state": "open",
+    "createdAt": "2015-08-13T22:36:37Z",
+    "closedAt": null,
+    "updatedAt": "2015-09-01T01:37:44Z",
+    "commentCount": 11,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "hdm"
+    ],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  },
+  {
+    "number": 6104,
+    "project": "metasploit-framework",
+    "pullRequest": false,
+    "title": "Add support for custom headers/cookies in HTTP(S) Meterpreters",
+    "url": "https://github.com/rapid7/metasploit-framework/issues/6104",
+    "reporter": "OJ",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/28896?u=d05827ec7c3935f8a00eb0f4dfa3b330b91f7071&v=4",
+    "labels": [
+      "meterpreter",
+      "feature",
+      "enhancement"
+    ],
+    "state": "open",
+    "createdAt": "2015-10-18T07:06:02Z",
+    "closedAt": null,
+    "updatedAt": "2017-08-29T04:08:46Z",
+    "commentCount": 3,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "OJ"
+    ],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  },
+  {
+    "number": 6149,
+    "project": "metasploit-framework",
+    "pullRequest": false,
+    "title": "post/windows/gather/checkvm returns a bad result on java meterpreter",
+    "url": "https://github.com/rapid7/metasploit-framework/issues/6149",
+    "reporter": "jvazquez-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/1742838?v=4",
+    "labels": [
+      "module",
+      "meterpreter",
+      "bug",
+      "confirmed"
+    ],
+    "state": "open",
+    "createdAt": "2015-10-29T19:12:45Z",
+    "closedAt": null,
+    "updatedAt": "2023-09-05T12:04:26Z",
+    "commentCount": 6,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "busterb"
+    ],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  },
+  {
+    "number": 6274,
+    "project": "metasploit-framework",
+    "pullRequest": false,
+    "title": "Increase command timeout for Python, powershell extensions",
+    "url": "https://github.com/rapid7/metasploit-framework/issues/6274",
+    "reporter": "OJ",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/28896?u=d05827ec7c3935f8a00eb0f4dfa3b330b91f7071&v=4",
+    "labels": [
+      "meterpreter",
+      "suggestion-feature"
+    ],
+    "state": "open",
+    "createdAt": "2015-11-22T23:23:44Z",
+    "closedAt": null,
+    "updatedAt": "2023-09-13T17:43:17Z",
+    "commentCount": 6,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "OJ"
+    ],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  },
+  {
+    "number": 6349,
+    "project": "metasploit-framework",
+    "pullRequest": false,
+    "title": "Python Extension Modules",
+    "url": "https://github.com/rapid7/metasploit-framework/issues/6349",
+    "reporter": "mubix",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/679319?v=4",
+    "labels": [
+      "docs",
+      "meterpreter",
+      "not-stale"
+    ],
+    "state": "open",
+    "createdAt": "2015-12-14T19:51:09Z",
+    "closedAt": null,
+    "updatedAt": "2021-01-07T15:09:20Z",
+    "commentCount": 10,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "OJ"
+    ],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  }
+]

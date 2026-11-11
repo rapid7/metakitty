@@ -1,0 +1,25 @@
+[
+  {
+    "number": 3,
+    "project": "rex-mime",
+    "pullRequest": false,
+    "title": "VERSION Constant Is Defined Under Rex::Mime",
+    "url": "https://github.com/rapid7/rex-mime/issues/3",
+    "reporter": "smcintyre-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/58950994?u=898561ae7344081c10810bb0a4139c8e9724290d&v=4",
+    "labels": [
+      "bug"
+    ],
+    "state": "open",
+    "createdAt": "2022-03-04T14:17:47Z",
+    "closedAt": null,
+    "updatedAt": "2022-03-04T14:17:47Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  }
+]

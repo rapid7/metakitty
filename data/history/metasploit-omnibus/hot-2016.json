@@ -1,0 +1,48 @@
+[
+  {
+    "number": 34,
+    "project": "metasploit-omnibus",
+    "pullRequest": false,
+    "title": "msfremove should auto-stop the database and offer to delete it",
+    "url": "https://github.com/rapid7/metasploit-omnibus/issues/34",
+    "reporter": "bcook-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/10031469?u=b7d29fd2dbf28a7488cd2615b604ee455d240f42&v=4",
+    "labels": [
+      "enhancement"
+    ],
+    "state": "open",
+    "createdAt": "2016-04-06T16:40:31Z",
+    "closedAt": null,
+    "updatedAt": "2017-08-29T00:32:37Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  },
+  {
+    "number": 37,
+    "project": "metasploit-omnibus",
+    "pullRequest": false,
+    "title": "OOB experience should give the ability to auto-start the database on start",
+    "url": "https://github.com/rapid7/metasploit-omnibus/issues/37",
+    "reporter": "bcook-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/10031469?u=b7d29fd2dbf28a7488cd2615b604ee455d240f42&v=4",
+    "labels": [
+      "enhancement"
+    ],
+    "state": "open",
+    "createdAt": "2016-06-30T17:40:27Z",
+    "closedAt": null,
+    "updatedAt": "2017-08-29T00:32:37Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  }
+]

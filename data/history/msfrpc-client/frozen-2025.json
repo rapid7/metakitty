@@ -1,0 +1,23 @@
+[
+  {
+    "number": 9,
+    "project": "msfrpc-client",
+    "pullRequest": true,
+    "title": "PD-49865 Set Cortex tags to identify repo exposure",
+    "url": "https://github.com/rapid7/msfrpc-client/pull/9",
+    "reporter": "simonirwin-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/12156460?u=20553a8b59d512c630292916232dcce80fe258bb&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2025-02-13T09:01:38Z",
+    "closedAt": "2025-02-13T14:47:11Z",
+    "updatedAt": "2025-02-13T14:47:13Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "adfoster-r7",
+    "mergedAt": "2025-02-13T14:47:11Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/60357436?v=4"
+  }
+]

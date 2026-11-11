@@ -1,0 +1,27 @@
+[
+  {
+    "number": 1,
+    "project": "rex-bin_tools",
+    "pullRequest": true,
+    "title": "Revert bad sed of lib/rex/assembly/nasm.rb",
+    "url": "https://github.com/rapid7/rex-bin_tools/pull/1",
+    "reporter": "wvu",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/4551878?u=99426fa1baf3d6e40a669942251d846cf81a9c25&v=4",
+    "labels": [
+      "bug"
+    ],
+    "state": "closed",
+    "createdAt": "2016-10-03T00:28:31Z",
+    "closedAt": "2016-10-03T00:43:40Z",
+    "updatedAt": "2016-10-03T04:41:11Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "bcook-r7"
+    ],
+    "mergedBy": "bcook-r7",
+    "mergedAt": "2016-10-03T00:43:40Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/10031469?u=b7d29fd2dbf28a7488cd2615b604ee455d240f42&v=4"
+  }
+]

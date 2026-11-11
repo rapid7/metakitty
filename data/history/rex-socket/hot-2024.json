@@ -1,0 +1,23 @@
+[
+  {
+    "number": 70,
+    "project": "rex-socket",
+    "pullRequest": false,
+    "title": "Add socks 4a proxy support",
+    "url": "https://github.com/rapid7/rex-socket/issues/70",
+    "reporter": "adfoster-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/60357436?v=4",
+    "labels": [],
+    "state": "open",
+    "createdAt": "2024-12-02T16:41:17Z",
+    "closedAt": null,
+    "updatedAt": "2024-12-02T16:42:08Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  }
+]

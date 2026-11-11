@@ -1,0 +1,23 @@
+[
+  {
+    "number": 173,
+    "project": "metasploit-omnibus",
+    "pullRequest": false,
+    "title": "Old versions",
+    "url": "https://github.com/rapid7/metasploit-omnibus/issues/173",
+    "reporter": "cool-bull",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/107622443?v=4",
+    "labels": [],
+    "state": "open",
+    "createdAt": "2022-06-22T06:15:09Z",
+    "closedAt": null,
+    "updatedAt": "2022-06-22T06:17:22Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  }
+]

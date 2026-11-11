@@ -1,0 +1,1314 @@
+[
+  {
+    "repo": "metasploit-payloads",
+    "author": "bwatters-r7"
+  },
+  {
+    "repo": "metasploit-payloads",
+    "author": "kx7m2qd"
+  },
+  {
+    "repo": "metasploit-payloads",
+    "author": "bwatters-r7"
+  },
+  {
+    "repo": "metasploit-payloads",
+    "author": "kx7m2qd"
+  },
+  {
+    "repo": "metasploit-payloads",
+    "author": "jenkins-metasploit"
+  },
+  {
+    "repo": "metasploit-payloads",
+    "author": "bwatters-r7"
+  },
+  {
+    "repo": "metasploit-payloads",
+    "author": "bwatters-r7"
+  },
+  {
+    "repo": "metasploit-payloads",
+    "author": "bwatters-r7"
+  },
+  {
+    "repo": "metasploit-payloads",
+    "author": "zeroSteiner"
+  },
+  {
+    "repo": "metasploit-payloads",
+    "author": "zeroSteiner"
+  },
+  {
+    "repo": "metasploit-payloads",
+    "author": "jenkins-metasploit"
+  },
+  {
+    "repo": "metasploit-payloads",
+    "author": "adfoster-r7"
+  },
+  {
+    "repo": "metasploit-payloads",
+    "author": "bwatters-r7"
+  },
+  {
+    "repo": "metasploit-payloads",
+    "author": "jenkins-metasploit"
+  },
+  {
+    "repo": "metasploit-payloads",
+    "author": "dledda-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jenkins-metasploit"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "adfoster-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "adfoster-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "adfoster-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jenkins-metasploit"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "bwatters-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jenkins-metasploit"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "bwatters-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "dwelch-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "dwelch-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jenkins-metasploit"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "dwelch-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jenkins-metasploit"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "dwelch-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "dwelch-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "dwelch-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "dwelch-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "Army-R"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "dwelch-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "adfoster-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "adfoster-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jenkins-metasploit"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "cgranleese-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jenkins-metasploit"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "adfoster-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "adfoster-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "adfoster-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "adfoster-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "adfoster-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "adfoster-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "adfoster-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "adfoster-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jenkins-metasploit"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "cgranleese-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "dwelch-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "dwelch-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "adfoster-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jenkins-metasploit"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "adfoster-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "adfoster-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "adfoster-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jenkins-metasploit"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "adfoster-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "adfoster-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "adfoster-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jenkins-metasploit"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "bwatters-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jheysel-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jheysel-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jenkins-metasploit"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jheysel-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "adfoster-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "Sevban Dönmez"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "Sevban Dönmez"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jenkins-metasploit"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "Yeagerist0"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "adfoster-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "adfoster-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jenkins-metasploit"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "cgranleese-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "Yeagerist0"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "Yeagerist0"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "Yeagerist0"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "mjatin2007"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "sfewer-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "sfewer-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "sfewer-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "sfewer-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "adfoster-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "adfoster-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "sfewer-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "adfoster-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "sfewer-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "sfewer-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "sfewer-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "sfewer-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "adfoster-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "sfewer-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "sfewer-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "sfewer-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "adfoster-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jenkins-metasploit"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "sfewer-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "sfewer-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "sfewer-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "sfewer-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "cgranleese-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jenkins-metasploit"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jheysel-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jheysel-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jenkins-metasploit"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "bwatters-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jenkins-metasploit"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jheysel-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jenkins-metasploit"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "bwatters-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "M4nu02"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "M4nu02"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "4n33sh"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "4n33sh"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "4n33sh"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "4n33sh"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "4n33sh"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "4n33sh"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "4n33sh"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "4n33sh"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "4n33sh"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "4n33sh"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jheysel-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "h00die"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "Yeagerist0"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "mjatin2007"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "mjatin2007"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jheysel-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jenkins-metasploit"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "bwatters-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "bwatters-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "bwatters-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jenkins-metasploit"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "bwatters-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jenkins-metasploit"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "msutovsky-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jheysel-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jheysel-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "bwatters-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "Yeagerist0"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "Yeagerist0"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "Yeagerist0"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "adfoster-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jenkins-metasploit"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jheysel-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jheysel-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "adfoster-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "adfoster-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "adfoster-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "cgranleese-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "dwelch-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "adfoster-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jenkins-metasploit"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "msutovsky-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "msutovsky-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "adfoster-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jenkins-metasploit"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jheysel-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "eipoverflow"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "eipoverflow"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "eipoverflow"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "eipoverflow"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "eipoverflow"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "eipoverflow"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "eipoverflow"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "msutovsky-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "msutovsky-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "msutovsky-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "msutovsky-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "msutovsky-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jenkins-metasploit"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "adfoster-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "adfoster-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "cgranleese-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "msutovsky-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jenkins-metasploit"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "cgranleese-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "cgranleese-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "cgranleese-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "cgranleese-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "kx7m2qd"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "kx7m2qd"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "kx7m2qd"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jheysel-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jheysel-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jheysel-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "mjatin2007"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "adfoster-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "dwelch-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jenkins-metasploit"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "adfoster-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "adfoster-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "Yeagerist0"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "Yeagerist0"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "Yeagerist0"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "Yeagerist0"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "Yeagerist0"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "Yeagerist0"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "vognik"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "kx7m2qd"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "Yeagerist0"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "Gill-Singh-A"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "M4nu02"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "M4nu02"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "M4nu02"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "M4nu02"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "protonnegativo"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "roguesquadron"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "vinicius-batistella"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "bwatters-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "dledda-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "bwatters-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "cdelafuente-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "bwatters-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "bwatters-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "bwatters-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "bwatters-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "bwatters-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "bwatters-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "bwatters-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "dledda-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "dledda-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "dledda-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jvoisin"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jenkins-metasploit"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jheysel-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jheysel-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "mjatin2007"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "mjatin2007"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jenkins-metasploit"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jenkins-metasploit"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "adfoster-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "adfoster-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "sfewer-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "sfewer-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "sfewer-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "sfewer-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "dledda-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "dledda-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "dledda-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "bwatters-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "dledda-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "dledda-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "dledda-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "dledda-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "dledda-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "dledda-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "dledda-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "dledda-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "dwelch-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jenkins-metasploit"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "msutovsky-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "dwelch-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jenkins-metasploit"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jheysel-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "adfoster-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "bwatters-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "bwatters-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jenkins-metasploit"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "cgranleese-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "cgranleese-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "cgranleese-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "dledda-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jenkins-metasploit"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jheysel-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "dwelch-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "dwelch-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "dwelch-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "vinicius-batistella"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "vinicius-batistella"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "dledda-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "h00die"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "msutovsky-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "sfewer-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "rmhowe425"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "rmhowe425"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "sfewer-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "sfewer-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "sfewer-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "sfewer-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "sfewer-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "sfewer-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "sfewer-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "sfewer-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "kx7m2qd"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "bwatters-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "bwatters-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jenkins-metasploit"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "adfoster-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "adfoster-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "sfewer-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jenkins-metasploit"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "adfoster-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "cgranleese-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "sfewer-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jheysel-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jheysel-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jheysel-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "keyanskv"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "sjanusz-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "sfewer-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jenkins-metasploit"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jheysel-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jheysel-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jheysel-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jheysel-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jheysel-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jheysel-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jenkins-metasploit"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "bwatters-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "mjatin2007"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jenkins-metasploit"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "bwatters-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "adfoster-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "adfoster-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "ozcanpng"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jenkins-metasploit"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "jheysel-r7"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "mjatin2007"
+  },
+  {
+    "repo": "metasploit-framework",
+    "author": "h00die"
+  },
+  {
+    "repo": "metasploit-omnibus",
+    "author": "adfoster-r7"
+  },
+  {
+    "repo": "metasploit-omnibus",
+    "author": "dwelch-r7"
+  },
+  {
+    "repo": "metasploit-omnibus",
+    "author": "dwelch-r7"
+  },
+  {
+    "repo": "rex-core",
+    "author": "jenkins-metasploit"
+  },
+  {
+    "repo": "rex-core",
+    "author": "sjanusz-r7"
+  },
+  {
+    "repo": "rex-core",
+    "author": "mjatin2007"
+  },
+  {
+    "repo": "rex-core",
+    "author": "mjatin2007"
+  }
+]

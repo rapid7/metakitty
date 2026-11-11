@@ -1,0 +1,46 @@
+[
+  {
+    "number": 9,
+    "project": "network_interface",
+    "pullRequest": true,
+    "title": "[MSF 8] WIP Add class methods",
+    "url": "https://github.com/rapid7/network_interface/pull/9",
+    "reporter": "dustineichler",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/84730?v=4",
+    "labels": [
+      "enhancement"
+    ],
+    "state": "closed",
+    "createdAt": "2019-11-06T16:17:02Z",
+    "closedAt": "2020-03-05T04:40:05Z",
+    "updatedAt": "2020-03-05T04:40:05Z",
+    "commentCount": 8,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  },
+  {
+    "number": 11,
+    "project": "network_interface",
+    "pullRequest": true,
+    "title": "[MSF 10] Add Dependency Pry",
+    "url": "https://github.com/rapid7/network_interface/pull/11",
+    "reporter": "dustineichler",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/84730?v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2019-11-06T16:33:01Z",
+    "closedAt": "2022-06-18T21:26:48Z",
+    "updatedAt": "2022-06-18T21:26:52Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  }
+]

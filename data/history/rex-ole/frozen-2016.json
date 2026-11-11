@@ -1,0 +1,25 @@
+[
+  {
+    "number": 1,
+    "project": "rex-ole",
+    "pullRequest": true,
+    "title": "Replace rex debug logging calls with comments.",
+    "url": "https://github.com/rapid7/rex-ole/pull/1",
+    "reporter": "pbarry-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/19912177?u=0b023c30367f79db5b30a53c18484dbec6ac9510&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2016-07-25T16:00:00Z",
+    "closedAt": "2016-07-25T18:33:25Z",
+    "updatedAt": "2016-07-25T18:33:25Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "dmohanty-r7"
+    ],
+    "mergedBy": "dmohanty-r7",
+    "mergedAt": "2016-07-25T18:33:25Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/13103793?u=587d960feff5b08b9dd678ac68f4335e6345985e&v=4"
+  }
+]

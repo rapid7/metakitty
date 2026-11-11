@@ -1,0 +1,117 @@
+[
+  {
+    "number": 3,
+    "project": "rex-core",
+    "pullRequest": true,
+    "title": "clean_path() should not mutate its args",
+    "url": "https://github.com/rapid7/rex-core/pull/3",
+    "reporter": "justinsteven",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/1893909?u=edc8fc2e360e4fe8d007619b932164ad9333d167&v=4",
+    "labels": [
+      "bug"
+    ],
+    "state": "closed",
+    "createdAt": "2017-01-01T11:29:18Z",
+    "closedAt": "2017-01-11T20:12:49Z",
+    "updatedAt": "2017-01-11T20:12:49Z",
+    "commentCount": 1,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "bcook-r7"
+    ],
+    "mergedBy": "bcook-r7",
+    "mergedAt": "2017-01-11T20:12:49Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/10031469?u=b7d29fd2dbf28a7488cd2615b604ee455d240f42&v=4"
+  },
+  {
+    "number": 4,
+    "project": "rex-core",
+    "pullRequest": true,
+    "title": "Escape dots in clean_path()'s regexes",
+    "url": "https://github.com/rapid7/rex-core/pull/4",
+    "reporter": "justinsteven",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/1893909?u=edc8fc2e360e4fe8d007619b932164ad9333d167&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2017-02-07T12:49:45Z",
+    "closedAt": "2017-02-07T19:38:49Z",
+    "updatedAt": "2017-02-07T19:42:09Z",
+    "commentCount": 6,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "pbarry-r7"
+    ],
+    "mergedBy": "pbarry-r7",
+    "mergedAt": "2017-02-07T19:38:49Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/19912177?u=0b023c30367f79db5b30a53c18484dbec6ac9510&v=4"
+  },
+  {
+    "number": 5,
+    "project": "rex-core",
+    "pullRequest": true,
+    "title": "Allow short selects",
+    "url": "https://github.com/rapid7/rex-core/pull/5",
+    "reporter": "acammack-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/16652544?v=4",
+    "labels": [
+      "enhancement"
+    ],
+    "state": "closed",
+    "createdAt": "2017-03-30T19:49:52Z",
+    "closedAt": "2017-03-30T20:06:32Z",
+    "updatedAt": "2017-03-30T22:07:08Z",
+    "commentCount": 1,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "busterb",
+    "mergedAt": "2017-03-30T20:06:32Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/4108654?u=123ac5abc8c3e6051b9484fa19d630ffcd97b066&v=4"
+  },
+  {
+    "number": 6,
+    "project": "rex-core",
+    "pullRequest": true,
+    "title": "Add StreamServer#detach_client",
+    "url": "https://github.com/rapid7/rex-core/pull/6",
+    "reporter": "acammack-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/16652544?v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2017-07-05T21:54:59Z",
+    "closedAt": "2017-07-05T22:01:53Z",
+    "updatedAt": "2017-07-05T22:02:12Z",
+    "commentCount": 1,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "wvu"
+    ],
+    "mergedBy": "wvu",
+    "mergedAt": "2017-07-05T22:01:53Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/4551878?u=99426fa1baf3d6e40a669942251d846cf81a9c25&v=4"
+  },
+  {
+    "number": 7,
+    "project": "rex-core",
+    "pullRequest": true,
+    "title": "Restore earlier behavior of Rex::ThreadSafe.select, remove unnecessary gem bits",
+    "url": "https://github.com/rapid7/rex-core/pull/7",
+    "reporter": "busterb",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/4108654?u=123ac5abc8c3e6051b9484fa19d630ffcd97b066&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2017-07-20T09:59:23Z",
+    "closedAt": "2017-07-20T13:18:11Z",
+    "updatedAt": "2017-07-20T13:18:11Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "busterb",
+    "mergedAt": "2017-07-20T13:18:11Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/4108654?u=123ac5abc8c3e6051b9484fa19d630ffcd97b066&v=4"
+  }
+]

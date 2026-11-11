@@ -1,0 +1,25 @@
+[
+  {
+    "number": 49,
+    "project": "rex-powershell",
+    "pullRequest": true,
+    "title": "Route AArch64 payloads to the native powershell.exe on Windows on ARM",
+    "url": "https://github.com/rapid7/rex-powershell/pull/49",
+    "reporter": "vinicius-batistella",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/87672627?u=4f5042439cfc9cf3434e3715e8ca79d9b82d4f5c&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2026-08-19T00:21:15Z",
+    "closedAt": "2026-08-31T16:10:41Z",
+    "updatedAt": "2026-08-31T21:54:00Z",
+    "commentCount": 2,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "bwatters-r7"
+    ],
+    "mergedBy": "bwatters-r7",
+    "mergedAt": "2026-08-31T16:10:40Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/17987018?u=562c1b6600d722e45a20f2202dddeb2d6db1f091&v=4"
+  }
+]

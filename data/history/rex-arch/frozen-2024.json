@@ -1,0 +1,46 @@
+[
+  {
+    "number": 9,
+    "project": "rex-arch",
+    "pullRequest": true,
+    "title": "Add support for RISC-V 32bit / RISC-V 64bit / LoongArch 64-bit",
+    "url": "https://github.com/rapid7/rex-arch/pull/9",
+    "reporter": "bcoles",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/434827?u=1fe0601f243e1627c6f738027d2e71b90dad989d&v=4",
+    "labels": [
+      "enhancement"
+    ],
+    "state": "closed",
+    "createdAt": "2024-09-16T13:02:31Z",
+    "closedAt": "2024-09-20T13:43:15Z",
+    "updatedAt": "2024-09-21T12:48:40Z",
+    "commentCount": 3,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "adfoster-r7",
+    "mergedAt": "2024-09-20T13:43:15Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/60357436?v=4"
+  },
+  {
+    "number": 10,
+    "project": "rex-arch",
+    "pullRequest": true,
+    "title": "spec: Add missing tests",
+    "url": "https://github.com/rapid7/rex-arch/pull/10",
+    "reporter": "bcoles",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/434827?u=1fe0601f243e1627c6f738027d2e71b90dad989d&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2024-09-22T05:28:13Z",
+    "closedAt": "2025-02-27T11:27:36Z",
+    "updatedAt": "2025-02-27T11:34:43Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "adfoster-r7",
+    "mergedAt": "2025-02-27T11:27:36Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/60357436?v=4"
+  }
+]

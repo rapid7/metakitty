@@ -1,0 +1,25 @@
+[
+  {
+    "number": 35,
+    "project": "metasploit-model",
+    "pullRequest": false,
+    "title": "Close this issues page, point to Metasploit-Framework's issues",
+    "url": "https://github.com/rapid7/metasploit-model/issues/35",
+    "reporter": "todb-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/1170909?v=4",
+    "labels": [
+      "question"
+    ],
+    "state": "open",
+    "createdAt": "2015-04-02T18:21:25Z",
+    "closedAt": null,
+    "updatedAt": "2015-12-08T22:13:49Z",
+    "commentCount": 2,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  }
+]

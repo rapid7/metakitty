@@ -1,0 +1,25 @@
+[
+  {
+    "number": 5,
+    "project": "rex-bin_tools",
+    "pullRequest": true,
+    "title": "Disable PEiD Armadillo packer false positive",
+    "url": "https://github.com/rapid7/rex-bin_tools/pull/5",
+    "reporter": "wesinator",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/5124946?u=bd01b6e8834a8d4418b89f19c85df1cc252ab21b&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2019-05-21T01:50:18Z",
+    "closedAt": "2021-08-13T00:56:12Z",
+    "updatedAt": "2021-08-15T12:18:19Z",
+    "commentCount": 1,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "gwillcox-r7"
+    ],
+    "mergedBy": "gwillcox-r7",
+    "mergedAt": "2021-08-13T00:56:12Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/63261883?u=1144db3aa7b18a30fe7e7d91e1161aa11a819bfd&v=4"
+  }
+]

@@ -1,0 +1,94 @@
+[
+  {
+    "number": 77,
+    "project": "ruby_smb",
+    "pullRequest": false,
+    "title": "add a way to determine permission levels for a share without writing files",
+    "url": "https://github.com/rapid7/ruby_smb/issues/77",
+    "reporter": "busterb",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/4108654?u=123ac5abc8c3e6051b9484fa19d630ffcd97b066&v=4",
+    "labels": [
+      "enhancement"
+    ],
+    "state": "open",
+    "createdAt": "2017-03-29T20:26:38Z",
+    "closedAt": null,
+    "updatedAt": "2017-03-29T20:26:43Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  },
+  {
+    "number": 82,
+    "project": "ruby_smb",
+    "pullRequest": false,
+    "title": "Implement directory methods",
+    "url": "https://github.com/rapid7/ruby_smb/issues/82",
+    "reporter": "thelightcosine",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/1146440?v=4",
+    "labels": [
+      "enhancement"
+    ],
+    "state": "open",
+    "createdAt": "2017-03-31T15:21:05Z",
+    "closedAt": null,
+    "updatedAt": "2020-09-24T09:11:34Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  },
+  {
+    "number": 84,
+    "project": "ruby_smb",
+    "pullRequest": false,
+    "title": "Implement Get and Set Attributes for files",
+    "url": "https://github.com/rapid7/ruby_smb/issues/84",
+    "reporter": "thelightcosine",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/1146440?v=4",
+    "labels": [
+      "enhancement"
+    ],
+    "state": "open",
+    "createdAt": "2017-03-31T15:22:25Z",
+    "closedAt": null,
+    "updatedAt": "2020-09-24T09:11:50Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  },
+  {
+    "number": 85,
+    "project": "ruby_smb",
+    "pullRequest": false,
+    "title": "Implement file locking ",
+    "url": "https://github.com/rapid7/ruby_smb/issues/85",
+    "reporter": "thelightcosine",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/1146440?v=4",
+    "labels": [
+      "enhancement"
+    ],
+    "state": "open",
+    "createdAt": "2017-03-31T15:26:15Z",
+    "closedAt": null,
+    "updatedAt": "2020-09-24T09:12:09Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  }
+]

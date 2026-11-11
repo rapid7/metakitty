@@ -1,0 +1,23 @@
+[
+  {
+    "number": 1,
+    "project": "rex-encoder",
+    "pullRequest": true,
+    "title": "Update unicode_upper.rb",
+    "url": "https://github.com/rapid7/rex-encoder/pull/1",
+    "reporter": "Ramzeth",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/25324933?v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2017-01-24T15:28:15Z",
+    "closedAt": "2020-06-15T12:16:39Z",
+    "updatedAt": "2020-06-15T20:23:39Z",
+    "commentCount": 2,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  }
+]

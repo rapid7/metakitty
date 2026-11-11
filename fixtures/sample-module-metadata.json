@@ -1,0 +1,16 @@
+{
+  "auxiliary_admin/2wire/xslt_password_reset": { "fullname": "auxiliary/admin/2wire/xslt_password_reset", "type": "auxiliary", "path": "/modules/auxiliary/admin/2wire/xslt_password_reset.rb" },
+  "auxiliary_scanner/http/apache_optionsbleed": { "fullname": "auxiliary/scanner/http/apache_optionsbleed", "type": "auxiliary", "path": "/modules/auxiliary/scanner/http/apache_optionsbleed.rb" },
+  "auxiliary_scanner/http/http_version": { "fullname": "auxiliary/scanner/http/http_version", "type": "auxiliary", "path": "/modules/auxiliary/scanner/http/http_version.rb" },
+  "encoder_x86/shikata_ga_nai": { "fullname": "encoder/x86/shikata_ga_nai", "type": "encoder", "path": "/modules/encoders/x86/shikata_ga_nai.rb" },
+  "evasion_windows/applocker_evasion_install_util": { "fullname": "evasion/windows/applocker_evasion_install_util", "type": "evasion", "path": "/modules/evasion/windows/applocker_evasion_install_util.rb" },
+  "exploit_linux/http/example_widget_rce": { "fullname": "exploit/linux/http/example_widget_rce", "type": "exploit", "path": "/modules/exploits/linux/http/example_widget_rce.rb" },
+  "exploit_windows/smb/ms17_010_eternalblue": { "fullname": "exploit/windows/smb/ms17_010_eternalblue", "type": "exploit", "path": "/modules/exploits/windows/smb/ms17_010_eternalblue.rb" },
+  "exploit_windows/smb/ms08_067_netapi": { "fullname": "exploit/windows/smb/ms08_067_netapi", "type": "exploit", "path": "/modules/exploits/windows/smb/ms08_067_netapi.rb" },
+  "nop_x86/opty2": { "fullname": "nop/x86/opty2", "type": "nop", "path": "/modules/nops/x86/opty2.rb" },
+  "payload_linux/x86/shell_bind_tcp": { "fullname": "payload/linux/x86/shell_bind_tcp", "type": "payload", "path": "/modules/payloads/singles/linux/x86/shell_bind_tcp.rb" },
+  "payload_windows/meterpreter/reverse_tcp": { "fullname": "payload/windows/meterpreter/reverse_tcp", "type": "payload", "path": "/modules/payloads/stagers/windows/reverse_tcp.rb" },
+  "payload_windows/meterpreter/reverse_http": { "fullname": "payload/windows/meterpreter/reverse_http", "type": "payload", "path": "/modules/payloads/stagers/windows/reverse_http.rb" },
+  "post_linux/gather/enum_configs": { "fullname": "post/linux/gather/enum_configs", "type": "post", "path": "/modules/post/linux/gather/enum_configs.rb" },
+  "post_windows/gather/credentials_vnc": { "fullname": "post/windows/gather/credentials_vnc", "type": "post", "path": "/modules/post/windows/gather/credentials_vnc.rb" }
+}

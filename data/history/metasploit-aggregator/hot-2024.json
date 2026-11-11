@@ -1,0 +1,23 @@
+[
+  {
+    "number": 20,
+    "project": "metasploit-aggregator",
+    "pullRequest": false,
+    "title": "bug report",
+    "url": "https://github.com/rapid7/metasploit-aggregator/issues/20",
+    "reporter": "daniela2000111",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/145082059?v=4",
+    "labels": [],
+    "state": "open",
+    "createdAt": "2024-10-09T17:49:59Z",
+    "closedAt": null,
+    "updatedAt": "2024-10-09T17:49:59Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "number": 27,
+    "project": "rex-core",
+    "pullRequest": false,
+    "title": "Read/Write lock thread safety issue",
+    "url": "https://github.com/rapid7/rex-core/issues/27",
+    "reporter": "adfoster-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/60357436?v=4",
+    "labels": [],
+    "state": "open",
+    "createdAt": "2022-03-14T15:36:19Z",
+    "closedAt": null,
+    "updatedAt": "2022-03-17T21:28:32Z",
+    "commentCount": 1,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  }
+]

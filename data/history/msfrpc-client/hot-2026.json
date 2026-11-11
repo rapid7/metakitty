@@ -1,0 +1,23 @@
+[
+  {
+    "number": 10,
+    "project": "msfrpc-client",
+    "pullRequest": true,
+    "title": "Update dependencies",
+    "url": "https://github.com/rapid7/msfrpc-client/pull/10",
+    "reporter": "adfoster-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/60357436?v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2026-10-02T22:14:31Z",
+    "closedAt": "2026-10-02T22:24:47Z",
+    "updatedAt": "2026-10-02T22:24:48Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "adfoster-r7",
+    "mergedAt": "2026-10-02T22:24:47Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/60357436?v=4"
+  }
+]

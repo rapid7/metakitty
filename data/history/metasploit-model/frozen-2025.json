@@ -1,0 +1,69 @@
+[
+  {
+    "number": 71,
+    "project": "metasploit-model",
+    "pullRequest": true,
+    "title": "Add search operation model for JSONB",
+    "url": "https://github.com/rapid7/metasploit-model/pull/71",
+    "reporter": "cdelafuente-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/56716719?u=742106a5d45f3f0b208d4e88badee1be8d6c4800&v=4",
+    "labels": [
+      "enhancement"
+    ],
+    "state": "closed",
+    "createdAt": "2025-02-12T14:58:04Z",
+    "closedAt": "2025-03-25T15:27:07Z",
+    "updatedAt": "2025-03-25T15:27:07Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "jheysel-r7"
+    ],
+    "mergedBy": "jheysel-r7",
+    "mergedAt": "2025-03-25T15:27:06Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/23320005?v=4"
+  },
+  {
+    "number": 72,
+    "project": "metasploit-model",
+    "pullRequest": true,
+    "title": "PD-49865 Set Cortex tags to identify repo exposure",
+    "url": "https://github.com/rapid7/metasploit-model/pull/72",
+    "reporter": "simonirwin-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/12156460?u=20553a8b59d512c630292916232dcce80fe258bb&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2025-02-13T09:00:34Z",
+    "closedAt": "2025-02-13T14:46:22Z",
+    "updatedAt": "2025-02-13T14:46:24Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "adfoster-r7",
+    "mergedAt": "2025-02-13T14:46:22Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/60357436?v=4"
+  },
+  {
+    "number": 73,
+    "project": "metasploit-model",
+    "pullRequest": true,
+    "title": "Updates verify workflow to use shared pipeline",
+    "url": "https://github.com/rapid7/metasploit-model/pull/73",
+    "reporter": "cgranleese-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/69522014?u=a06454779604922ad42843c97a984a4cc5467c47&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2025-04-03T10:14:35Z",
+    "closedAt": "2025-05-02T11:53:17Z",
+    "updatedAt": "2025-05-02T11:53:17Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "adfoster-r7",
+    "mergedAt": "2025-05-02T11:53:17Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/60357436?v=4"
+  }
+]

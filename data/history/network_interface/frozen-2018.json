@@ -1,0 +1,23 @@
+[
+  {
+    "number": 6,
+    "project": "network_interface",
+    "pullRequest": false,
+    "title": "missing git tag for 0.0.2 on rubygems",
+    "url": "https://github.com/rapid7/network_interface/issues/6",
+    "reporter": "anthraxx",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/203012?u=939d6d3b5ff0b9e46e911d8792a40c20408574e2&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2018-11-06T19:17:50Z",
+    "closedAt": "2018-11-20T17:31:16Z",
+    "updatedAt": "2018-11-20T17:32:22Z",
+    "commentCount": 2,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null
+  }
+]
