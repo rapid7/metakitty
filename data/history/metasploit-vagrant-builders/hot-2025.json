@@ -1,0 +1,24 @@
+[
+  {
+    "number": 25,
+    "project": "metasploit-vagrant-builders",
+    "pullRequest": true,
+    "title": "Bump Windows version, add long path support",
+    "url": "https://github.com/rapid7/metasploit-vagrant-builders/pull/25",
+    "reporter": "sjanusz-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/85949464?v=4",
+    "labels": [],
+    "state": "open",
+    "createdAt": "2025-12-16T11:56:48Z",
+    "closedAt": null,
+    "updatedAt": "2025-12-16T13:58:29Z",
+    "commentCount": 0,
+    "lastCommitAt": "2025-12-16T13:58:24Z",
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null,
+    "reviewDecision": "none"
+  }
+]

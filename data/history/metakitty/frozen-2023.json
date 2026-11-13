@@ -1,0 +1,72 @@
+[
+  {
+    "number": 27,
+    "project": "metakitty",
+    "pullRequest": true,
+    "title": "Update metakitty to only display stats",
+    "url": "https://github.com/rapid7/metakitty/pull/27",
+    "reporter": "adfoster-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/60357436?v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2023-06-27T00:33:26Z",
+    "closedAt": "2023-06-29T12:27:55Z",
+    "updatedAt": "2023-06-29T12:27:56Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "cgranleese-r7"
+    ],
+    "mergedBy": "cgranleese-r7",
+    "mergedAt": "2023-06-29T12:27:55Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/69522014?u=a06454779604922ad42843c97a984a4cc5467c47&v=4",
+    "reviewDecision": null
+  },
+  {
+    "number": 28,
+    "project": "metakitty",
+    "pullRequest": true,
+    "title": "Add downloading latest acceptance test results",
+    "url": "https://github.com/rapid7/metakitty/pull/28",
+    "reporter": "adfoster-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/60357436?v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2023-09-18T20:25:15Z",
+    "closedAt": "2023-09-19T09:27:55Z",
+    "updatedAt": "2023-09-20T12:04:07Z",
+    "commentCount": 1,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "cgranleese-r7"
+    ],
+    "mergedBy": "cgranleese-r7",
+    "mergedAt": "2023-09-19T09:27:55Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/69522014?u=a06454779604922ad42843c97a984a4cc5467c47&v=4",
+    "reviewDecision": null
+  },
+  {
+    "number": 29,
+    "project": "metakitty",
+    "pullRequest": true,
+    "title": "PD-41096 Auto-add cortex.yaml",
+    "url": "https://github.com/rapid7/metakitty/pull/29",
+    "reporter": "simonirwin-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/12156460?u=20553a8b59d512c630292916232dcce80fe258bb&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2023-10-02T19:59:48Z",
+    "closedAt": "2023-10-04T12:21:26Z",
+    "updatedAt": "2023-10-04T12:21:28Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "aRobinson-R7",
+    "mergedAt": "2023-10-04T12:21:26Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/14922412?u=8b51842cc9b0838307636afd29c65c27e44b1d69&v=4",
+    "reviewDecision": null
+  }
+]

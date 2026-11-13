@@ -272,7 +272,8 @@
     "assignees": [],
     "mergedBy": null,
     "mergedAt": null,
-    "mergedByAvatarUrl": null
+    "mergedByAvatarUrl": null,
+    "reviewDecision": "none"
   },
   {
     "number": 604,
@@ -293,6 +294,7 @@
     "assignees": [],
     "mergedBy": null,
     "mergedAt": null,
-    "mergedByAvatarUrl": null
+    "mergedByAvatarUrl": null,
+    "reviewDecision": "none"
   }
 ]

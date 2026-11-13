@@ -1,0 +1,24 @@
+[
+  {
+    "number": 9,
+    "project": "windows_error",
+    "pullRequest": true,
+    "title": "Check when a HRESULT is a Win32 code and fetch it",
+    "url": "https://github.com/rapid7/windows_error/pull/9",
+    "reporter": "zeroSteiner",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/2058303?u=7c0365666ad089e619b8906d31dfe7b9bfbca8af&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2026-07-08T18:43:11Z",
+    "closedAt": "2026-07-09T22:28:23Z",
+    "updatedAt": "2026-07-09T22:28:23Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "adfoster-r7",
+    "mergedAt": "2026-07-09T22:28:23Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/60357436?v=4",
+    "reviewDecision": null
+  }
+]

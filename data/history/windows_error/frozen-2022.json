@@ -1,0 +1,24 @@
+[
+  {
+    "number": 4,
+    "project": "windows_error",
+    "pullRequest": true,
+    "title": "Sort constants so the order is deterministic",
+    "url": "https://github.com/rapid7/windows_error/pull/4",
+    "reporter": "zeroSteiner",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/2058303?u=7c0365666ad089e619b8906d31dfe7b9bfbca8af&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2022-03-24T15:39:27Z",
+    "closedAt": "2022-03-30T11:37:27Z",
+    "updatedAt": "2022-03-30T11:37:28Z",
+    "commentCount": 1,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "cdelafuente-r7",
+    "mergedAt": "2022-03-30T11:37:27Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/56716719?u=742106a5d45f3f0b208d4e88badee1be8d6c4800&v=4",
+    "reviewDecision": null
+  }
+]

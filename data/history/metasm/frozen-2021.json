@@ -1,0 +1,26 @@
+[
+  {
+    "number": 1,
+    "project": "metasm",
+    "pullRequest": true,
+    "title": "Properly handle encoding empty export sections",
+    "url": "https://github.com/rapid7/metasm/pull/1",
+    "reporter": "zeroSteiner",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/2058303?u=7c0365666ad089e619b8906d31dfe7b9bfbca8af&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2021-03-09T16:17:01Z",
+    "closedAt": "2021-07-02T20:10:54Z",
+    "updatedAt": "2021-07-02T20:10:54Z",
+    "commentCount": 5,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "gwillcox-r7"
+    ],
+    "mergedBy": "jmartin-tech",
+    "mergedAt": "2021-07-02T20:10:54Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/7873740?u=761d485098432a30044aa248045cd6d7573482c0&v=4",
+    "reviewDecision": null
+  }
+]

@@ -1,0 +1,24 @@
+[
+  {
+    "number": 1,
+    "project": "vagrant-aws",
+    "pullRequest": true,
+    "title": "PD-41096 Auto-add cortex.yaml",
+    "url": "https://github.com/rapid7/vagrant-aws/pull/1",
+    "reporter": "simonirwin-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/12156460?u=20553a8b59d512c630292916232dcce80fe258bb&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2023-10-05T06:42:18Z",
+    "closedAt": "2023-10-05T10:44:31Z",
+    "updatedAt": "2023-10-05T10:44:33Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "fpedrini",
+    "mergedAt": "2023-10-05T10:44:31Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/16778734?u=0f5ea6db83711e68caf2a49b3f958c9ed6fa6708&v=4",
+    "reviewDecision": null
+  }
+]

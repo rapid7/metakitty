@@ -1,0 +1,24 @@
+[
+  {
+    "number": 25,
+    "project": "ssh-badkeys",
+    "pullRequest": false,
+    "title": "Add FortiSIEM default SSH key for the \"tunneluser\" account",
+    "url": "https://github.com/rapid7/ssh-badkeys/issues/25",
+    "reporter": "en4rab",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/7647391?u=92c3b98880e09a03a83dc95e06c26ff490962dad&v=4",
+    "labels": [],
+    "state": "open",
+    "createdAt": "2020-01-22T11:59:39Z",
+    "closedAt": null,
+    "updatedAt": "2020-01-22T11:59:39Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null,
+    "reviewDecision": null
+  }
+]

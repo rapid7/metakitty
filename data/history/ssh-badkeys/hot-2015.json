@@ -1,0 +1,74 @@
+[
+  {
+    "number": 2,
+    "project": "ssh-badkeys",
+    "pullRequest": false,
+    "title": "Add Lancom default SSH hostkeys",
+    "url": "https://github.com/rapid7/ssh-badkeys/issues/2",
+    "reporter": "hdm",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/1171392?u=8211049301b359476be0562a4b7e393b4fb6bb8b&v=4",
+    "labels": [
+      "wishlist"
+    ],
+    "state": "open",
+    "createdAt": "2015-02-18T01:22:56Z",
+    "closedAt": null,
+    "updatedAt": "2015-10-13T16:12:50Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null,
+    "reviewDecision": null
+  },
+  {
+    "number": 4,
+    "project": "ssh-badkeys",
+    "pullRequest": false,
+    "title": "Add Cisco Virtual WSA, ESA, and SMA authorized keys",
+    "url": "https://github.com/rapid7/ssh-badkeys/issues/4",
+    "reporter": "hdm",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/1171392?u=8211049301b359476be0562a4b7e393b4fb6bb8b&v=4",
+    "labels": [
+      "wishlist"
+    ],
+    "state": "open",
+    "createdAt": "2015-10-13T16:13:53Z",
+    "closedAt": null,
+    "updatedAt": "2015-10-13T16:13:57Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null,
+    "reviewDecision": null
+  },
+  {
+    "number": 13,
+    "project": "ssh-badkeys",
+    "pullRequest": false,
+    "title": "Comcast/Shaw 1039-bit RSA: e7:86:c7:22:b3:08:af:c7:11:fb:a5:ff:9a:ae:38:e4",
+    "url": "https://github.com/rapid7/ssh-badkeys/issues/13",
+    "reporter": "blackswanburst",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/925324?u=2b9d47aad04e44dbb78ffd3ec6399711c0713ef7&v=4",
+    "labels": [
+      "wishlist"
+    ],
+    "state": "open",
+    "createdAt": "2015-12-10T11:06:10Z",
+    "closedAt": null,
+    "updatedAt": "2018-08-28T00:46:44Z",
+    "commentCount": 2,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null,
+    "reviewDecision": null
+  }
+]

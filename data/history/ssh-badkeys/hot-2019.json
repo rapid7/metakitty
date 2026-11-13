@@ -1,0 +1,24 @@
+[
+  {
+    "number": 24,
+    "project": "ssh-badkeys",
+    "pullRequest": true,
+    "title": "Static key for Tesla Instrument cluster S&X models",
+    "url": "https://github.com/rapid7/ssh-badkeys/pull/24",
+    "reporter": "pk-mdt",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/35041244?u=ace52c08e7d384fb3a2c01d7c28d0a5a75d84580&v=4",
+    "labels": [],
+    "state": "open",
+    "createdAt": "2019-10-23T18:01:57Z",
+    "closedAt": null,
+    "updatedAt": "2019-10-23T18:01:57Z",
+    "commentCount": 0,
+    "lastCommitAt": "2019-10-23T18:01:05Z",
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null,
+    "reviewDecision": "review_required"
+  }
+]

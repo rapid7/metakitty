@@ -1,0 +1,48 @@
+[
+  {
+    "number": 30,
+    "project": "metakitty",
+    "pullRequest": true,
+    "title": "No longer auth on azure redirect",
+    "url": "https://github.com/rapid7/metakitty/pull/30",
+    "reporter": "adfoster-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/60357436?v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2024-03-06T16:24:59Z",
+    "closedAt": "2024-03-06T17:00:32Z",
+    "updatedAt": "2024-03-06T17:00:36Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "cgranleese-r7"
+    ],
+    "mergedBy": "cgranleese-r7",
+    "mergedAt": "2024-03-06T17:00:32Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/69522014?u=a06454779604922ad42843c97a984a4cc5467c47&v=4",
+    "reviewDecision": null
+  },
+  {
+    "number": 31,
+    "project": "metakitty",
+    "pullRequest": true,
+    "title": "Warn if missing test artifacts",
+    "url": "https://github.com/rapid7/metakitty/pull/31",
+    "reporter": "adfoster-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/60357436?v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2024-10-30T22:53:51Z",
+    "closedAt": "2024-10-30T22:54:14Z",
+    "updatedAt": "2024-10-30T22:54:14Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "adfoster-r7",
+    "mergedAt": "2024-10-30T22:54:13Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/60357436?v=4",
+    "reviewDecision": null
+  }
+]

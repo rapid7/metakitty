@@ -1,0 +1,24 @@
+[
+  {
+    "number": 2,
+    "project": "windows_error",
+    "pullRequest": true,
+    "title": "Fixes for ruby 2.4",
+    "url": "https://github.com/rapid7/windows_error/pull/2",
+    "reporter": "busterb",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/4108654?u=123ac5abc8c3e6051b9484fa19d630ffcd97b066&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2017-01-17T16:54:33Z",
+    "closedAt": "2017-01-18T17:09:13Z",
+    "updatedAt": "2017-01-18T17:09:13Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "bcook-r7",
+    "mergedAt": "2017-01-18T17:09:13Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/10031469?u=b7d29fd2dbf28a7488cd2615b604ee455d240f42&v=4",
+    "reviewDecision": null
+  }
+]

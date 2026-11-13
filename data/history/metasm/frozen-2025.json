@@ -1,0 +1,24 @@
+[
+  {
+    "number": 3,
+    "project": "metasm",
+    "pullRequest": true,
+    "title": "PD-49865 Set Cortex tags to identify repo exposure",
+    "url": "https://github.com/rapid7/metasm/pull/3",
+    "reporter": "simonirwin-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/12156460?u=20553a8b59d512c630292916232dcce80fe258bb&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2025-02-13T09:01:17Z",
+    "closedAt": "2025-02-13T14:46:50Z",
+    "updatedAt": "2025-02-13T14:46:52Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "adfoster-r7",
+    "mergedAt": "2025-02-13T14:46:50Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/60357436?v=4",
+    "reviewDecision": null
+  }
+]

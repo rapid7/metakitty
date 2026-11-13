@@ -144,6 +144,7 @@
     "assignees": [],
     "mergedBy": null,
     "mergedAt": null,
-    "mergedByAvatarUrl": null
+    "mergedByAvatarUrl": null,
+    "reviewDecision": "none"
   }
 ]

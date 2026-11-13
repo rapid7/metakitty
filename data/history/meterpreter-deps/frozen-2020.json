@@ -1,0 +1,52 @@
+[
+  {
+    "number": 2,
+    "project": "meterpreter-deps",
+    "pullRequest": true,
+    "title": "Toolset update to 141_xp with VS2019",
+    "url": "https://github.com/rapid7/meterpreter-deps/pull/2",
+    "reporter": "OJ",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/28896?u=d05827ec7c3935f8a00eb0f4dfa3b330b91f7071&v=4",
+    "labels": [
+      "enhancement"
+    ],
+    "state": "closed",
+    "createdAt": "2020-04-15T23:14:05Z",
+    "closedAt": "2020-04-16T00:47:17Z",
+    "updatedAt": "2020-04-16T04:47:10Z",
+    "commentCount": 1,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "busterb",
+    "mergedAt": "2020-04-16T00:47:17Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/4108654?u=123ac5abc8c3e6051b9484fa19d630ffcd97b066&v=4",
+    "reviewDecision": null
+  },
+  {
+    "number": 3,
+    "project": "meterpreter-deps",
+    "pullRequest": true,
+    "title": "Provide support for building with multiple platform toolsets",
+    "url": "https://github.com/rapid7/meterpreter-deps/pull/3",
+    "reporter": "OJ",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/28896?u=d05827ec7c3935f8a00eb0f4dfa3b330b91f7071&v=4",
+    "labels": [
+      "enhancement"
+    ],
+    "state": "closed",
+    "createdAt": "2020-04-20T09:27:44Z",
+    "closedAt": "2020-04-20T14:20:27Z",
+    "updatedAt": "2020-04-20T22:12:27Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "busterb"
+    ],
+    "mergedBy": "busterb",
+    "mergedAt": "2020-04-20T14:20:27Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/4108654?u=123ac5abc8c3e6051b9484fa19d630ffcd97b066&v=4",
+    "reviewDecision": null
+  }
+]

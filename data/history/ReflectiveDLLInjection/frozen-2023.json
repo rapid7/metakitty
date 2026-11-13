@@ -1,0 +1,50 @@
+[
+  {
+    "number": 14,
+    "project": "ReflectiveDLLInjection",
+    "pullRequest": true,
+    "title": "PD-41096 Auto-add cortex.yaml",
+    "url": "https://github.com/rapid7/ReflectiveDLLInjection/pull/14",
+    "reporter": "simonirwin-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/12156460?u=20553a8b59d512c630292916232dcce80fe258bb&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2023-10-02T13:45:34Z",
+    "closedAt": "2023-10-04T11:43:41Z",
+    "updatedAt": "2023-10-04T11:43:45Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "aRobinson-R7",
+    "mergedAt": "2023-10-04T11:43:41Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/14922412?u=8b51842cc9b0838307636afd29c65c27e44b1d69&v=4",
+    "reviewDecision": null
+  },
+  {
+    "number": 15,
+    "project": "ReflectiveDLLInjection",
+    "pullRequest": true,
+    "title": "Direct syscalls implementation",
+    "url": "https://github.com/rapid7/ReflectiveDLLInjection/pull/15",
+    "reporter": "cdelafuente-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/56716719?u=742106a5d45f3f0b208d4e88badee1be8d6c4800&v=4",
+    "labels": [
+      "enhancement"
+    ],
+    "state": "closed",
+    "createdAt": "2023-10-04T20:14:05Z",
+    "closedAt": "2024-01-08T17:40:37Z",
+    "updatedAt": "2024-01-08T17:40:37Z",
+    "commentCount": 3,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "smcintyre-r7"
+    ],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null,
+    "reviewDecision": null
+  }
+]

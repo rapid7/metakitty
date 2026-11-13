@@ -22,6 +22,7 @@ export interface RawHistoricalPullRequestNode extends Omit<RawHistoricalIssueNod
   commits: { nodes: Array<{ commit: { committedDate: string } }> };
   mergedBy: { login: string; avatarUrl: string } | null;
   mergedAt: string | null;
+  reviewDecision: "APPROVED" | "CHANGES_REQUESTED" | "REVIEW_REQUIRED" | null;
 }
 
 export type TaggedIssueNode = RawHistoricalIssueNode & { project: string };
@@ -66,6 +67,7 @@ const PULL_REQUEST_FIELDS = `
   commits(last: 1) { nodes { commit { committedDate } } }
   mergedBy { login avatarUrl }
   mergedAt
+  reviewDecision
 `;
 
 const REPO_PULL_REQUESTS_QUERY = `

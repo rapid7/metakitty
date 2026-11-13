@@ -1,0 +1,24 @@
+[
+  {
+    "number": 1,
+    "project": "metasploit-omnibus-cache",
+    "pullRequest": true,
+    "title": "bump dependencies",
+    "url": "https://github.com/rapid7/metasploit-omnibus-cache/pull/1",
+    "reporter": "busterb",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/4108654?u=123ac5abc8c3e6051b9484fa19d630ffcd97b066&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2018-02-20T10:15:35Z",
+    "closedAt": "2018-03-13T06:33:03Z",
+    "updatedAt": "2018-03-13T06:33:03Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "busterb",
+    "mergedAt": "2018-03-13T06:33:03Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/4108654?u=123ac5abc8c3e6051b9484fa19d630ffcd97b066&v=4",
+    "reviewDecision": null
+  }
+]

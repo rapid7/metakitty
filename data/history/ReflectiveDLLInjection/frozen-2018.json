@@ -1,0 +1,26 @@
+[
+  {
+    "number": 4,
+    "project": "ReflectiveDLLInjection",
+    "pullRequest": true,
+    "title": "Pull in updates from upstream project",
+    "url": "https://github.com/rapid7/ReflectiveDLLInjection/pull/4",
+    "reporter": "busterb",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/4108654?u=123ac5abc8c3e6051b9484fa19d630ffcd97b066&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2018-02-14T03:57:21Z",
+    "closedAt": "2019-05-16T05:55:12Z",
+    "updatedAt": "2019-05-16T05:55:34Z",
+    "commentCount": 5,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "bwatters-r7"
+    ],
+    "mergedBy": "timwr",
+    "mergedAt": "2019-05-16T05:55:12Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/684924?u=698860b80fa0f23962524b00ff0a0988447121f7&v=4",
+    "reviewDecision": null
+  }
+]

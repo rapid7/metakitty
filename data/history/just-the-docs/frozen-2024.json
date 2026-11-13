@@ -1,0 +1,24 @@
+[
+  {
+    "number": 4,
+    "project": "just-the-docs",
+    "pullRequest": true,
+    "title": "Remove dockerfile",
+    "url": "https://github.com/rapid7/just-the-docs/pull/4",
+    "reporter": "adfoster-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/60357436?v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2024-01-31T10:21:47Z",
+    "closedAt": "2024-01-31T10:22:01Z",
+    "updatedAt": "2024-01-31T10:22:01Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "adfoster-r7",
+    "mergedAt": "2024-01-31T10:22:01Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/60357436?v=4",
+    "reviewDecision": null
+  }
+]

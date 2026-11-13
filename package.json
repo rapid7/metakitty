@@ -7,6 +7,8 @@
   "scripts": {
     "dev": "next dev",
     "fetch:acceptance-tests": "node scripts/fetch-acceptance-tests.mjs",
+    "sync:repos": "node scripts/sync-stats-repos.mjs",
+    "sync:repos:check": "node scripts/sync-stats-repos.mjs --check",
     "build": "next build",
     "build:fixture": "FIXTURE_DATA=1 next build",
     "test": "vitest run",

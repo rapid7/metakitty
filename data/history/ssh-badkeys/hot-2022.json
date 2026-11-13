@@ -1,0 +1,24 @@
+[
+  {
+    "number": 26,
+    "project": "ssh-badkeys",
+    "pullRequest": true,
+    "title": "Add ssh host keys for two Piunora releases",
+    "url": "https://github.com/rapid7/ssh-badkeys/pull/26",
+    "reporter": "PinkFreud",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/6100139?u=eb67c167fcf0f4150791a0e2d73e3ef85982ea97&v=4",
+    "labels": [],
+    "state": "open",
+    "createdAt": "2022-06-22T03:33:31Z",
+    "closedAt": null,
+    "updatedAt": "2024-01-02T17:59:03Z",
+    "commentCount": 0,
+    "lastCommitAt": "2024-01-02T17:59:01Z",
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null,
+    "reviewDecision": "review_required"
+  }
+]

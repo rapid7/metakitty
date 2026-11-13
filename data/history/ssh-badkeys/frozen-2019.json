@@ -1,0 +1,24 @@
+[
+  {
+    "number": 23,
+    "project": "ssh-badkeys",
+    "pullRequest": true,
+    "title": "Correct F5 key",
+    "url": "https://github.com/rapid7/ssh-badkeys/pull/23",
+    "reporter": "jhart-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/3869433?u=ff3a4362223f9e7e49ff677b5fedc93da6ab4db4&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2019-01-24T23:01:46Z",
+    "closedAt": "2019-01-25T16:17:38Z",
+    "updatedAt": "2019-01-25T16:17:48Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "jhart-r7",
+    "mergedAt": "2019-01-25T16:17:38Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/3869433?u=ff3a4362223f9e7e49ff677b5fedc93da6ab4db4&v=4",
+    "reviewDecision": null
+  }
+]

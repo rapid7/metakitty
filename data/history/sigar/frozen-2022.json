@@ -1,0 +1,48 @@
+[
+  {
+    "number": 2,
+    "project": "sigar",
+    "pullRequest": true,
+    "title": "Added updated darwin support for Apple Silicon Macs and new Software Updates",
+    "url": "https://github.com/rapid7/sigar/pull/2",
+    "reporter": "Ishaanahuja7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/23166866?v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2022-11-05T17:39:03Z",
+    "closedAt": "2023-01-12T21:10:51Z",
+    "updatedAt": "2023-01-12T21:16:05Z",
+    "commentCount": 15,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "space-r7"
+    ],
+    "mergedBy": "jmartin-tech",
+    "mergedAt": "2023-01-12T21:10:51Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/7873740?u=761d485098432a30044aa248045cd6d7573482c0&v=4",
+    "reviewDecision": null
+  },
+  {
+    "number": 3,
+    "project": "sigar",
+    "pullRequest": true,
+    "title": "Update upstream",
+    "url": "https://github.com/rapid7/sigar/pull/3",
+    "reporter": "busterb",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/4108654?u=123ac5abc8c3e6051b9484fa19d630ffcd97b066&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2022-12-16T12:49:03Z",
+    "closedAt": "2023-01-12T21:08:31Z",
+    "updatedAt": "2023-01-12T21:11:34Z",
+    "commentCount": 3,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "jmartin-tech",
+    "mergedAt": "2023-01-12T21:08:31Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/7873740?u=761d485098432a30044aa248045cd6d7573482c0&v=4",
+    "reviewDecision": null
+  }
+]

@@ -1,10 +1,26 @@
 import type { HistoricalIssue } from "./types";
 
-/** A PR has been reviewed if it has comments and the last commit is at-or-before the last comment — a direct port of metakitty's `has_review?`. */
-export function hasReview(issue: HistoricalIssue): boolean {
-  if (issue.commentCount === 0) return false;
-  if (!issue.lastCommitAt || !issue.lastCommentAt) return true;
-  return Date.parse(issue.lastCommitAt) <= Date.parse(issue.lastCommentAt);
+export type PrReviewStatus = "needs_review" | "changes_requested" | "approved";
+
+/**
+ * Maps a PR's own `reviewDecision` (GitHub's authoritative review state) to a 3-way status —
+ * replaces an earlier comment-timing heuristic (a port of metakitty's `has_review?`) that
+ * mislabeled most unreviewed PRs as "reviewed" just because someone had left any comment on them.
+ * Null for `reviewDecision` of `null` (always the case for non-open PRs, since it's only
+ * meaningful/populated while open).
+ */
+export function getPrReviewStatus(issue: HistoricalIssue): PrReviewStatus | null {
+  switch (issue.reviewDecision) {
+    case "approved":
+      return "approved";
+    case "changes_requested":
+      return "changes_requested";
+    case "review_required":
+    case "none":
+      return "needs_review";
+    default:
+      return null;
+  }
 }
 
 export interface PrSummary {
@@ -13,7 +29,7 @@ export interface PrSummary {
   author: string;
   assignees: string[];
   commentCount: number;
-  hasReview: boolean;
+  reviewStatus: PrReviewStatus | null;
   labels: string[];
   url: string;
   createdAt: string;
@@ -34,7 +50,7 @@ function toPrSummary(issue: HistoricalIssue): PrSummary {
     author: issue.reporter,
     assignees: issue.assignees,
     commentCount: issue.commentCount,
-    hasReview: hasReview(issue),
+    reviewStatus: getPrReviewStatus(issue),
     labels: issue.labels,
     url: issue.url,
     createdAt: issue.createdAt,

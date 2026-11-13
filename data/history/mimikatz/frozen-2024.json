@@ -1,0 +1,50 @@
+[
+  {
+    "number": 12,
+    "project": "mimikatz",
+    "pullRequest": true,
+    "title": "Feat/update",
+    "url": "https://github.com/rapid7/mimikatz/pull/12",
+    "reporter": "zeroSteiner",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/2058303?u=7c0365666ad089e619b8906d31dfe7b9bfbca8af&v=4",
+    "labels": [
+      "update"
+    ],
+    "state": "closed",
+    "createdAt": "2024-01-31T19:33:13Z",
+    "closedAt": "2024-02-20T17:37:22Z",
+    "updatedAt": "2024-02-20T17:39:16Z",
+    "commentCount": 3,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "cdelafuente-r7"
+    ],
+    "mergedBy": "cdelafuente-r7",
+    "mergedAt": "2024-02-20T17:37:22Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/56716719?u=742106a5d45f3f0b208d4e88badee1be8d6c4800&v=4",
+    "reviewDecision": null
+  },
+  {
+    "number": 13,
+    "project": "mimikatz",
+    "pullRequest": true,
+    "title": "bugfix machine masterkey decryption",
+    "url": "https://github.com/rapid7/mimikatz/pull/13",
+    "reporter": "NtAlexio2",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/110637492?u=42592f273f66bdda8f61a4967f82a53ba884e8a0&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2024-09-03T08:03:06Z",
+    "closedAt": "2024-09-03T19:28:45Z",
+    "updatedAt": "2024-09-03T19:44:53Z",
+    "commentCount": 1,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null,
+    "reviewDecision": null
+  }
+]

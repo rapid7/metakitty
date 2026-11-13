@@ -1,0 +1,76 @@
+[
+  {
+    "number": 8,
+    "project": "ReflectiveDLLInjection",
+    "pullRequest": true,
+    "title": "Change the default DllMain implementation",
+    "url": "https://github.com/rapid7/ReflectiveDLLInjection/pull/8",
+    "reporter": "OJ",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/28896?u=d05827ec7c3935f8a00eb0f4dfa3b330b91f7071&v=4",
+    "labels": [
+      "enhancement"
+    ],
+    "state": "closed",
+    "createdAt": "2020-04-20T02:17:03Z",
+    "closedAt": "2020-04-20T02:21:57Z",
+    "updatedAt": "2020-04-20T02:22:26Z",
+    "commentCount": 2,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "busterb"
+    ],
+    "mergedBy": "busterb",
+    "mergedAt": "2020-04-20T02:21:57Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/4108654?u=123ac5abc8c3e6051b9484fa19d630ffcd97b066&v=4",
+    "reviewDecision": null
+  },
+  {
+    "number": 9,
+    "project": "ReflectiveDLLInjection",
+    "pullRequest": true,
+    "title": "Change RDI so that the loader function can be specified by name or ordinal",
+    "url": "https://github.com/rapid7/ReflectiveDLLInjection/pull/9",
+    "reporter": "OJ",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/28896?u=d05827ec7c3935f8a00eb0f4dfa3b330b91f7071&v=4",
+    "labels": [
+      "enhancement"
+    ],
+    "state": "closed",
+    "createdAt": "2020-05-18T09:39:14Z",
+    "closedAt": "2020-06-23T17:34:10Z",
+    "updatedAt": "2020-06-23T21:58:37Z",
+    "commentCount": 3,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "smcintyre-r7"
+    ],
+    "mergedBy": "smcintyre-r7",
+    "mergedAt": "2020-06-23T17:34:10Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/58950994?u=898561ae7344081c10810bb0a4139c8e9724290d&v=4",
+    "reviewDecision": null
+  },
+  {
+    "number": 10,
+    "project": "ReflectiveDLLInjection",
+    "pullRequest": true,
+    "title": "Cross compile linux",
+    "url": "https://github.com/rapid7/ReflectiveDLLInjection/pull/10",
+    "reporter": "OJ",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/28896?u=d05827ec7c3935f8a00eb0f4dfa3b330b91f7071&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2020-07-05T02:58:23Z",
+    "closedAt": "2020-07-06T00:32:12Z",
+    "updatedAt": "2020-07-06T00:32:35Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "busterb",
+    "mergedAt": "2020-07-06T00:32:12Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/4108654?u=123ac5abc8c3e6051b9484fa19d630ffcd97b066&v=4",
+    "reviewDecision": null
+  }
+]

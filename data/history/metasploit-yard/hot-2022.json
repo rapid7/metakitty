@@ -1,0 +1,24 @@
+[
+  {
+    "number": 9,
+    "project": "metasploit-yard",
+    "pullRequest": false,
+    "title": "Is there any way to set yard:stats to fail on warning?",
+    "url": "https://github.com/rapid7/metasploit-yard/issues/9",
+    "reporter": "jcavalieri",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/2171614?u=5f70a62a350925e5c15fcc104483d271948c1d48&v=4",
+    "labels": [],
+    "state": "open",
+    "createdAt": "2022-09-30T20:33:35Z",
+    "closedAt": null,
+    "updatedAt": "2022-09-30T20:33:35Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null,
+    "reviewDecision": null
+  }
+]

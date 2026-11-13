@@ -1,6 +1,7 @@
 import type { RawPullRequestNode } from "./github-client";
+import { mapReviewDecision } from "./review-decision";
 import { classifyTestingEnvironment } from "./testing-environment";
-import type { CiStatus, PullRequest, ReviewDecision } from "./types";
+import type { CiStatus, PullRequest } from "./types";
 
 const MODULE_PATH = /^modules\/(exploits|auxiliary|post|payloads|encoders|evasion|nops)\/(.+)\.rb$/;
 
@@ -18,15 +19,6 @@ function mapCiStatus(state: string | null | undefined): CiStatus {
     case "PENDING":
     case "EXPECTED": return "pending";
     default: return "unknown";
-  }
-}
-
-function mapReviewDecision(decision: RawPullRequestNode["reviewDecision"]): ReviewDecision {
-  switch (decision) {
-    case "APPROVED": return "approved";
-    case "CHANGES_REQUESTED": return "changes_requested";
-    case "REVIEW_REQUIRED": return "review_required";
-    default: return "none";
   }
 }
 

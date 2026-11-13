@@ -1,0 +1,53 @@
+[
+  {
+    "number": 20,
+    "project": "metakitty",
+    "pullRequest": false,
+    "title": "Add a book reference",
+    "url": "https://github.com/rapid7/metakitty/issues/20",
+    "reporter": "todb-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/1170909?v=4",
+    "labels": [
+      "enhancement"
+    ],
+    "state": "closed",
+    "createdAt": "2015-01-23T16:28:17Z",
+    "closedAt": "2015-01-23T22:13:29Z",
+    "updatedAt": "2015-01-23T22:13:29Z",
+    "commentCount": 2,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null,
+    "reviewDecision": null
+  },
+  {
+    "number": 21,
+    "project": "metakitty",
+    "pullRequest": true,
+    "title": "Adjust whitespace for visual padding",
+    "url": "https://github.com/rapid7/metakitty/pull/21",
+    "reporter": "wvu",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/4551878?u=99426fa1baf3d6e40a669942251d846cf81a9c25&v=4",
+    "labels": [
+      "bug",
+      "enhancement",
+      "help wanted",
+      "question"
+    ],
+    "state": "closed",
+    "createdAt": "2015-03-18T07:15:21Z",
+    "closedAt": "2015-03-18T16:11:32Z",
+    "updatedAt": "2015-09-30T15:40:19Z",
+    "commentCount": 2,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "todb-r7",
+    "mergedAt": "2015-03-18T16:11:32Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/1170909?v=4",
+    "reviewDecision": null
+  }
+]

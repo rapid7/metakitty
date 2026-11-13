@@ -1,0 +1,24 @@
+[
+  {
+    "number": 3,
+    "project": "metasploit-omnibus-cache",
+    "pullRequest": true,
+    "title": "Add postgres 13.6",
+    "url": "https://github.com/rapid7/metasploit-omnibus-cache/pull/3",
+    "reporter": "adfoster-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/60357436?v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2022-04-06T11:21:10Z",
+    "closedAt": "2022-04-06T14:14:10Z",
+    "updatedAt": "2022-04-06T14:14:10Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "jmartin-tech",
+    "mergedAt": "2022-04-06T14:14:10Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/7873740?u=761d485098432a30044aa248045cd6d7573482c0&v=4",
+    "reviewDecision": null
+  }
+]

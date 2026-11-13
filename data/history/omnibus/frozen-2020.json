@@ -1,0 +1,24 @@
+[
+  {
+    "number": 1,
+    "project": "omnibus",
+    "pullRequest": true,
+    "title": "Change health check to fail on absolute link paths on osx",
+    "url": "https://github.com/rapid7/omnibus/pull/1",
+    "reporter": "adfoster-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/60357436?v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2020-06-05T12:22:15Z",
+    "closedAt": "2020-06-09T17:32:44Z",
+    "updatedAt": "2020-06-09T17:32:45Z",
+    "commentCount": 6,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "jmartin-tech",
+    "mergedAt": "2020-06-09T17:32:44Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/7873740?u=761d485098432a30044aa248045cd6d7573482c0&v=4",
+    "reviewDecision": null
+  }
+]

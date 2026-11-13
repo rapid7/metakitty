@@ -1,0 +1,24 @@
+[
+  {
+    "number": 6,
+    "project": "just-the-docs",
+    "pullRequest": true,
+    "title": "Support a raw href override for the left nav",
+    "url": "https://github.com/rapid7/just-the-docs/pull/6",
+    "reporter": "adfoster-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/60357436?v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2026-11-11T12:52:50Z",
+    "closedAt": "2026-11-11T15:15:33Z",
+    "updatedAt": "2026-11-11T15:15:33Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "adfoster-r7",
+    "mergedAt": "2026-11-11T15:15:32Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/60357436?v=4",
+    "reviewDecision": null
+  }
+]

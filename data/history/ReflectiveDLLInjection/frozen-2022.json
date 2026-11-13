@@ -1,0 +1,50 @@
+[
+  {
+    "number": 12,
+    "project": "ReflectiveDLLInjection",
+    "pullRequest": true,
+    "title": "Fix rapid7/metasploit-framework#16493, remove RWX section and apply section Characteristics",
+    "url": "https://github.com/rapid7/ReflectiveDLLInjection/pull/12",
+    "reporter": "timwr",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/684924?u=698860b80fa0f23962524b00ff0a0988447121f7&v=4",
+    "labels": [
+      "enhancement"
+    ],
+    "state": "closed",
+    "createdAt": "2022-04-25T04:53:10Z",
+    "closedAt": "2022-05-04T18:33:00Z",
+    "updatedAt": "2022-05-04T18:33:00Z",
+    "commentCount": 4,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "smcintyre-r7"
+    ],
+    "mergedBy": "smcintyre-r7",
+    "mergedAt": "2022-05-04T18:33:00Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/58950994?u=898561ae7344081c10810bb0a4139c8e9724290d&v=4",
+    "reviewDecision": null
+  },
+  {
+    "number": 13,
+    "project": "ReflectiveDLLInjection",
+    "pullRequest": true,
+    "title": "Add a comment with attribution",
+    "url": "https://github.com/rapid7/ReflectiveDLLInjection/pull/13",
+    "reporter": "zeroSteiner",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/2058303?u=7c0365666ad089e619b8906d31dfe7b9bfbca8af&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2022-05-05T17:48:12Z",
+    "closedAt": "2022-05-05T21:02:17Z",
+    "updatedAt": "2022-05-05T21:02:18Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "adfoster-r7",
+    "mergedAt": "2022-05-05T21:02:17Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/60357436?v=4",
+    "reviewDecision": null
+  }
+]

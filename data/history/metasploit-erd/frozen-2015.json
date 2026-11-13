@@ -1,0 +1,72 @@
+[
+  {
+    "number": 4,
+    "project": "metasploit-erd",
+    "pullRequest": true,
+    "title": "Use metasploit-yard instead of lib/tasks/yard.rake",
+    "url": "https://github.com/rapid7/metasploit-erd/pull/4",
+    "reporter": "limhoff-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/2230482?v=4",
+    "labels": [
+      "enhancement"
+    ],
+    "state": "closed",
+    "createdAt": "2015-04-16T15:42:05Z",
+    "closedAt": "2015-04-21T16:25:49Z",
+    "updatedAt": "2015-04-21T16:28:27Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "trosen-r7",
+    "mergedAt": "2015-04-21T16:25:49Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/1170769?v=4",
+    "reviewDecision": null
+  },
+  {
+    "number": 5,
+    "project": "metasploit-erd",
+    "pullRequest": true,
+    "title": "Upgrade to rspec 3.2",
+    "url": "https://github.com/rapid7/metasploit-erd/pull/5",
+    "reporter": "limhoff-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/2230482?v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2015-04-16T18:20:46Z",
+    "closedAt": "2015-04-21T16:25:49Z",
+    "updatedAt": "2015-04-21T16:25:49Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "trosen-r7",
+    "mergedAt": "2015-04-21T16:25:49Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/1170769?v=4",
+    "reviewDecision": null
+  },
+  {
+    "number": 6,
+    "project": "metasploit-erd",
+    "pullRequest": true,
+    "title": "Use metasploit-version instead of copied version_spec.rb",
+    "url": "https://github.com/rapid7/metasploit-erd/pull/6",
+    "reporter": "limhoff-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/2230482?v=4",
+    "labels": [
+      "enhancement"
+    ],
+    "state": "closed",
+    "createdAt": "2015-04-16T20:09:26Z",
+    "closedAt": "2015-04-21T16:25:49Z",
+    "updatedAt": "2015-04-21T16:25:50Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "trosen-r7",
+    "mergedAt": "2015-04-21T16:25:49Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/1170769?v=4",
+    "reviewDecision": null
+  }
+]
