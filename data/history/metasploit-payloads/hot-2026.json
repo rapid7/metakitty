@@ -113,10 +113,10 @@
     "reporter": "0xAnk",
     "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/241117634?v=4",
     "labels": [],
-    "state": "open",
+    "state": "closed",
     "createdAt": "2026-10-24T13:38:20Z",
-    "closedAt": null,
-    "updatedAt": "2026-10-24T13:38:20Z",
+    "closedAt": "2026-11-11T09:26:45Z",
+    "updatedAt": "2026-11-11T09:26:45Z",
     "commentCount": 0,
     "lastCommitAt": null,
     "lastCommentAt": null,
@@ -793,18 +793,18 @@
     "reporter": "kx7m2qd",
     "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/240281788?u=912bad0b957ff9fb9a56c9dba41b59077b5bb290&v=4",
     "labels": [],
-    "state": "open",
+    "state": "closed",
     "createdAt": "2026-10-29T09:09:36Z",
-    "closedAt": null,
-    "updatedAt": "2026-11-09T19:09:05Z",
+    "closedAt": "2026-11-10T22:45:52Z",
+    "updatedAt": "2026-11-10T22:45:52Z",
     "commentCount": 13,
-    "lastCommitAt": "2026-11-05T10:16:57Z",
-    "lastCommentAt": "2026-11-07T16:15:58Z",
+    "lastCommitAt": null,
+    "lastCommentAt": null,
     "assignees": [
       "bwatters-r7"
     ],
-    "mergedBy": null,
-    "mergedAt": null,
-    "mergedByAvatarUrl": null
+    "mergedBy": "bwatters-r7",
+    "mergedAt": "2026-11-10T22:45:52Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/17987018?u=562c1b6600d722e45a20f2202dddeb2d6db1f091&v=4"
   }
 ]

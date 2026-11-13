@@ -65,9 +65,14 @@ function retryDelayMs(attempt: number): number {
 
 /** Runs `fetch` via `readOnlyFetch`, retrying with exponential backoff on a transient 5xx status or a network-level failure (DNS, reset, timeout). Rethrows a `ReadOnlyViolationError` immediately — that's a safety guard, not a transient condition. */
 async function fetchWithRetry(url: string, init: RequestInit, attempt: number): Promise<Response | null> {
+  // A failed attempt's pooled keep-alive connection can be left in a bad state (e.g. a desynced
+  // chunked-encoding frame) that keeps producing broken — sometimes entirely empty — responses on
+  // every subsequent request that reuses it. `Connection: close` forces a fresh connection for any
+  // retry, rather than retrying onto the same bad socket indefinitely.
+  const requestInit = attempt > 0 ? { ...init, headers: { ...(init.headers as Record<string, string> | undefined), Connection: "close" } } : init;
   let response: Response;
   try {
-    response = await readOnlyFetch(url, init);
+    response = await readOnlyFetch(url, requestInit);
   } catch (error) {
     if (error instanceof ReadOnlyViolationError) throw error;
     if (attempt >= MAX_RETRIES) throw error;
@@ -168,7 +173,19 @@ export async function graphqlRequest<T>(token: string, query: string, variables:
       throw new Error(`GitHub API error: ${response.status} ${response.statusText} - ${body}`);
     }
 
-    const json = (await response.json()) as GraphQLResponse<T>;
+    // A response can be `.ok` with a fully-sent status line yet still have its body cut short by
+    // a dropped connection partway through streaming a large page — `.json()` then throws a
+    // SyntaxError that, unlike the status-code checks above, isn't naturally covered by the
+    // retry loop. Treat it the same as a transient 5xx rather than letting it escape and fail the
+    // whole repo.
+    let json: GraphQLResponse<T>;
+    try {
+      json = (await response.json()) as GraphQLResponse<T>;
+    } catch (error) {
+      if (attempt >= MAX_RETRIES) throw error;
+      await sleep(retryDelayMs(attempt));
+      continue;
+    }
     if (json.errors?.length) {
       throw new Error(`GitHub GraphQL error: ${json.errors.map((error) => error.message).join("; ")}`);
     }
@@ -280,7 +297,16 @@ export async function restGet<T>(token: string, url: string): Promise<RestPage<T
       throw new Error(`GitHub REST API error: ${response.status} ${response.statusText} - ${body}`);
     }
 
-    const data = (await response.json()) as T;
+    // See the matching comment in graphqlRequest: a truncated body on an otherwise-`.ok` response
+    // throws from `.json()` outside the status-code checks above, so it needs its own retry.
+    let data: T;
+    try {
+      data = (await response.json()) as T;
+    } catch (error) {
+      if (attempt >= MAX_RETRIES) throw error;
+      await sleep(retryDelayMs(attempt));
+      continue;
+    }
     return { data, nextUrl: parseNextLink(response.headers.get("link")) };
   }
   throw new RateLimitError("GitHub API rate limit exceeded after retrying", new Date());

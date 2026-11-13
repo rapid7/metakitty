@@ -823,11 +823,13 @@
     "state": "open",
     "createdAt": "2025-10-24T06:38:27Z",
     "closedAt": null,
-    "updatedAt": "2025-12-04T01:07:31Z",
-    "commentCount": 1,
+    "updatedAt": "2026-11-12T12:17:57Z",
+    "commentCount": 2,
     "lastCommitAt": null,
     "lastCommentAt": null,
-    "assignees": [],
+    "assignees": [
+      "4n33sh"
+    ],
     "mergedBy": null,
     "mergedAt": null,
     "mergedByAvatarUrl": null

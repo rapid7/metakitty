@@ -76,10 +76,12 @@ breakdown table; open-pull-requests/bugs/features-and-enhancements over time liv
 `/pull-requests`, `/bugs`, `/features-and-enhancements`, alongside the matching "per quarter"
 opened/closed rate charts (`/pull-request-rates`, `/bug-rates`, `/feature-and-enhancement-rates`),
 a top-committers table, and a "new this week" accordion. Unlike the PR queue, this needs full
-issue/PR history (not just currently-open PRs), fetched via GraphQL and cached to
-`.cache/github-historical-issues.json` (`GITHUB_HISTORY_CACHE_TTL_MINUTES`, default 24h). Renamed
-or archived repos are skipped with a warning rather than failing the build, and transient GitHub
-API errors are retried with backoff.
+issue/PR history (not just currently-open PRs), fetched via GraphQL and persisted to the committed
+`data/history/`. That directory is the source of truth, not a TTL-gated cache: a build always
+trusts whatever's committed as a baseline and live-fetches only what's missing (a repo new to
+`STATS_REPOS`, full history) or changed since the baseline's own `fetchedAt` (every other repo, an
+incremental `since`-filtered top-up). Renamed or archived repos are skipped with a warning rather
+than failing the build, and transient GitHub API errors are retried with backoff.
 
 It also publishes metakitty's standalone JSON feeds as static assets — `/contributors_all.json`,
 `/contributors_month.json`, `/contributors_year.json`, `/commits_modules.json`,

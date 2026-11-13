@@ -2,7 +2,7 @@ import { existsSync, mkdirSync, mkdtempSync, rmSync, writeFileSync } from "node:
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
-import { readFreshHistoryStore, readHistoryStore, writeHistoryStore } from "../src/lib/stats/history-store";
+import { readHistoryMeta, readHistoryStore, writeHistoryStore } from "../src/lib/stats/history-store";
 import { historicalIssue } from "./helpers";
 import type { HistoricalDataset } from "../src/lib/stats/types";
 
@@ -19,14 +19,12 @@ afterEach(() => {
   rmSync(dir, { recursive: true, force: true });
 });
 
-// readFreshHistoryStore's TTL check is against the real wall clock, not the injectable `now` used
-// for createdAt-year bucketing — so a "fresh" fetchedAt here must be the real current time, not NOW.
 function dataset(issues: ReturnType<typeof historicalIssue>[], fetchedAt = new Date().toISOString()): HistoricalDataset {
   return { issues, recentCommitAuthors: [{ repo: "rex", author: "alice" }], fetchedAt };
 }
 
 describe("writeHistoryStore + readHistoryStore (lax)", () => {
-  it("round-trips issues across repos and years, plus recentCommitAuthors", () => {
+  it("round-trips issues across repos and years", () => {
     const a = historicalIssue({ number: 1, project: "metasploit-framework", state: "closed", createdAt: "2020-01-01T00:00:00Z" });
     const b = historicalIssue({ number: 2, project: "rex", state: "open", createdAt: "2015-01-01T00:00:00Z" });
     const ds = dataset([a, b]);
@@ -35,9 +33,23 @@ describe("writeHistoryStore + readHistoryStore (lax)", () => {
     const read = readHistoryStore(dir);
 
     expect(read?.fetchedAt).toBe(ds.fetchedAt);
-    expect(read?.recentCommitAuthors).toEqual(ds.recentCommitAuthors);
     expect(read?.issues).toEqual(expect.arrayContaining([a, b]));
     expect(read?.issues).toHaveLength(2);
+  });
+
+  it("never persists recentCommitAuthors — it lives in .cache/ (recent-commits-cache.ts), not the committed baseline", () => {
+    writeHistoryStore(dir, repos, dataset([]), NOW);
+    expect(existsSync(join(dir, "recent-commits.json"))).toBe(false);
+    expect(readHistoryStore(dir)?.recentCommitAuthors).toEqual([]);
+  });
+
+  it("deletes a leftover recent-commits.json from a checkout predating the move to .cache/", () => {
+    writeHistoryStore(dir, repos, dataset([]), NOW);
+    writeFileSync(join(dir, "recent-commits.json"), "[]");
+    expect(existsSync(join(dir, "recent-commits.json"))).toBe(true);
+
+    writeHistoryStore(dir, repos, dataset([]), NOW);
+    expect(existsSync(join(dir, "recent-commits.json"))).toBe(false);
   });
 
   it("writes a frozen-<year>.json for closed/elapsed items and a hot-<year>.json for everything else", () => {
@@ -89,29 +101,19 @@ describe("writeHistoryStore + readHistoryStore (lax)", () => {
   });
 });
 
-describe("readFreshHistoryStore (strict)", () => {
+describe("readHistoryMeta", () => {
   it("returns null when meta.json doesn't exist", () => {
-    expect(readFreshHistoryStore(dir, repos, 60_000)).toBeNull();
+    expect(readHistoryMeta(dir)).toBeNull();
   });
 
-  it("hits when fresh and the repo set matches (order-insensitive)", () => {
+  it("returns the committed repos list and fetchedAt without reading any bucket files", () => {
     writeHistoryStore(dir, repos, dataset([]), NOW);
-    expect(readFreshHistoryStore(dir, [...repos].reverse(), 60_000)).not.toBeNull();
+    expect(readHistoryMeta(dir)).toEqual({ repos, fetchedAt: expect.any(String) });
   });
 
-  it("misses when the TTL has expired", () => {
-    writeHistoryStore(dir, repos, dataset([], new Date(NOW.getTime() - 120_000).toISOString()), NOW);
-    expect(readFreshHistoryStore(dir, repos, 60_000)).toBeNull();
-  });
-
-  it("treats a TTL of zero or less as disabled", () => {
-    writeHistoryStore(dir, repos, dataset([]), NOW);
-    expect(readFreshHistoryStore(dir, repos, 0)).toBeNull();
-  });
-
-  it("misses when the repo set doesn't match (e.g. STATS_REPOS was edited)", () => {
-    writeHistoryStore(dir, repos, dataset([]), NOW);
-    expect(readFreshHistoryStore(dir, ["metasploit-framework"], 60_000)).toBeNull();
-    expect(readFreshHistoryStore(dir, [...repos, "mettle"], 60_000)).toBeNull();
+  it("reflects however old the committed data is — there's no staleness concept here, data/history/ is the source of truth", () => {
+    const old = new Date(0).toISOString();
+    writeHistoryStore(dir, repos, dataset([], old), NOW);
+    expect(readHistoryMeta(dir)).toEqual({ repos, fetchedAt: old });
   });
 });

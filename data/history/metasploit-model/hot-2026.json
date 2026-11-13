@@ -50,16 +50,18 @@
     "reporter": "Avicennasis",
     "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/913872?u=1e29d46674575fc24157bd76e32304f468b7259d&v=4",
     "labels": [],
-    "state": "open",
+    "state": "closed",
     "createdAt": "2026-09-19T09:09:31Z",
-    "closedAt": null,
-    "updatedAt": "2026-09-19T09:09:31Z",
+    "closedAt": "2026-11-12T12:56:29Z",
+    "updatedAt": "2026-11-12T12:56:29Z",
     "commentCount": 0,
-    "lastCommitAt": "2026-09-19T09:05:58Z",
+    "lastCommitAt": null,
     "lastCommentAt": null,
-    "assignees": [],
-    "mergedBy": null,
-    "mergedAt": null,
-    "mergedByAvatarUrl": null
+    "assignees": [
+      "cgranleese-r7"
+    ],
+    "mergedBy": "cgranleese-r7",
+    "mergedAt": "2026-11-12T12:56:29Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/69522014?u=a06454779604922ad42843c97a984a4cc5467c47&v=4"
   }
 ]
