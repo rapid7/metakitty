@@ -5,7 +5,6 @@
 // `npm run build` — not wired in as a build/prebuild hook, so it only runs when asked to.
 
 import { mkdir, mkdtemp, rename, rm, writeFile } from "node:fs/promises";
-import { tmpdir } from "node:os";
 import { dirname, isAbsolute, join, relative, resolve } from "node:path";
 import JSZip from "jszip";
 
@@ -151,12 +150,19 @@ async function main() {
 
   // Extract into a scratch directory and swap it into place only once extraction fully succeeds,
   // so a failure partway through never leaves public/acceptance-tests/ missing or half-written.
-  const scratchDir = await mkdtemp(join(tmpdir(), "acceptance-tests-"));
-  await extractZip(zipBuffer, scratchDir);
-
-  await rm(OUTPUT_DIR, { recursive: true, force: true });
+  // The scratch dir must live next to OUTPUT_DIR rather than under os.tmpdir(): the final rename
+  // only works within a single filesystem, and on CI /tmp and the workspace are different mounts.
   await mkdir(dirname(OUTPUT_DIR), { recursive: true });
-  await rename(scratchDir, OUTPUT_DIR);
+  const scratchDir = await mkdtemp(join(dirname(OUTPUT_DIR), "acceptance-tests-"));
+  try {
+    await extractZip(zipBuffer, scratchDir);
+
+    await rm(OUTPUT_DIR, { recursive: true, force: true });
+    await rename(scratchDir, OUTPUT_DIR);
+  } catch (error) {
+    await rm(scratchDir, { recursive: true, force: true });
+    throw error;
+  }
 
   console.log(`[acceptance-tests] Extracted "${artifact.name}" to ${OUTPUT_DIR}`);
 }

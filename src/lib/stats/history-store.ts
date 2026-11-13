@@ -3,22 +3,17 @@ import { join } from "node:path";
 import { bucketRepoHistory } from "./history-buckets";
 import type { HistoricalDataset, HistoricalIssue } from "./types";
 
-interface Meta {
+export interface Meta {
   repos: string[];
   fetchedAt: string;
-}
-
-function sameRepoSet(a: string[], b: string[]): boolean {
-  if (a.length !== b.length) return false;
-  const sorted = [...b].sort();
-  return [...a].sort().every((repo, index) => repo === sorted[index]);
 }
 
 function metaPath(dir: string): string {
   return join(dir, "meta.json");
 }
 
-function recentCommitsPath(dir: string): string {
+/** No longer written here — recent-commit authors live in the gitignored `.cache/` (see `recent-commits-cache.ts`), not the committed baseline. Only used to clean up the file for a checkout from before that move. */
+function legacyRecentCommitsPath(dir: string): string {
   return join(dir, "recent-commits.json");
 }
 
@@ -52,40 +47,32 @@ function readRepoIssues(dir: string, repo: string): HistoricalIssue[] {
   return issues;
 }
 
+/** `recentCommitAuthors` is always empty here — it's no longer stored in data/history/ at all (see `recent-commits-cache.ts`); `dataset.ts` fills it in separately before this is used. */
 function assembleDataset(dir: string, repos: string[], fetchedAt: string): HistoricalDataset {
   return {
     issues: repos.flatMap((repo) => readRepoIssues(dir, repo)),
-    recentCommitAuthors: readJson(recentCommitsPath(dir)) ?? [],
+    recentCommitAuthors: [],
     fetchedAt,
   };
 }
 
 /**
- * data/history/ is both the TTL-gated cache for an active build session and the committed
- * baseline a developer chooses to check in — the same directory serves both roles, since every
- * live fetch writes it (see `fetchAndPersistHistoricalDataset` in `dataset.ts`).
+ * data/history/ is the committed source of truth, not a TTL-gated cache (unlike the gitignored
+ * `.cache/` used elsewhere) — `dataset.ts` always trusts whatever's here as a baseline and only
+ * live-fetches what's missing or changed since `fetchedAt` (see `fetchAndPersistHistoricalDataset`).
  *
- * Strict read: only usable as a live-fetch substitute if `meta.json` is within `ttlMs` and its
- * repo set matches `repos` (e.g. STATS_REPOS wasn't edited since). Returns null on any miss.
+ * Returns just `{ repos, fetchedAt }` without reading any bucket files — `dataset.ts` uses this to
+ * decide, per repo in STATS_REPOS, whether it already has a baseline (incremental top-up) or needs
+ * a full fetch (never seen before). Null if there's no committed data at all yet.
  */
-export function readFreshHistoryStore(dir: string, repos: string[], ttlMs: number): HistoricalDataset | null {
-  if (ttlMs <= 0) return null;
-
-  const meta = readJson<Meta>(metaPath(dir));
-  if (!meta) return null;
-  if (!sameRepoSet(meta.repos, repos)) return null;
-
-  const age = Date.now() - Date.parse(meta.fetchedAt);
-  if (!Number.isFinite(age) || age > ttlMs) return null;
-
-  return assembleDataset(dir, meta.repos, meta.fetchedAt);
+export function readHistoryMeta(dir: string): Meta | null {
+  return readJson<Meta>(metaPath(dir));
 }
 
 /**
- * Lax read: whatever's committed, however stale or repo-set-mismatched, as a last resort when
- * there's no GITHUB_OAUTH_TOKEN to fetch live. Unlike {@link readFreshHistoryStore}, only misses
- * when `meta.json` itself is missing/corrupt — age and repo-set are irrelevant here, since
- * "whatever's committed" beats refusing to render at all.
+ * Whatever's committed, however old or repo-set-mismatched — only misses when `meta.json` itself
+ * is missing/corrupt. Used both as the merge baseline for a live incremental fetch, and as a
+ * last-resort fallback when there's no GITHUB_OAUTH_TOKEN to fetch live at all.
  */
 export function readHistoryStore(dir: string): HistoricalDataset | null {
   const meta = readJson<Meta>(metaPath(dir));
@@ -98,8 +85,9 @@ export function readHistoryStore(dir: string): HistoricalDataset | null {
  * `history-buckets.ts`, overwriting every bucket file from this fetch's full snapshot. Also
  * deletes anything no longer produced: a bucket file emptied out (e.g. a `hot-<year>.json` whose
  * last lingering open item finally closed, so that year is now fully captured by
- * `frozen-<year>.json` instead), and whole repo directories for a repo that's no longer in
- * `repos` (e.g. removed from STATS_REPOS).
+ * `frozen-<year>.json` instead), whole repo directories for a repo that's no longer in `repos`
+ * (e.g. removed from STATS_REPOS), and a leftover `recent-commits.json` from a checkout predating
+ * its move to `.cache/`. `dataset.recentCommitAuthors` itself is ignored — not this function's concern.
  */
 export function writeHistoryStore(dir: string, repos: string[], dataset: HistoricalDataset, now: Date = new Date()): void {
   mkdirSync(dir, { recursive: true });
@@ -141,6 +129,6 @@ export function writeHistoryStore(dir: string, repos: string[], dataset: Histori
     }
   }
 
-  writeJson(recentCommitsPath(dir), dataset.recentCommitAuthors);
+  rmSync(legacyRecentCommitsPath(dir), { force: true });
   writeJson(metaPath(dir), { repos, fetchedAt: dataset.fetchedAt } satisfies Meta);
 }

@@ -4,6 +4,7 @@ out/
 /preview/
 .cache/
 /public/acceptance-tests/
+/public/acceptance-tests-*/
 next-env.d.ts
 *.tsbuildinfo
 .env

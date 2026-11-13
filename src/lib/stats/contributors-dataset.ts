@@ -8,6 +8,7 @@ import { fetchRepoContributorsAllTime, fetchUserProfile, type GitHubUserProfile 
 import { readContributorsCache, writeContributorsCache } from "./contributors-cache";
 import { fetchRepoRecentCommits } from "./github-history-client";
 import { STATS_REPOS } from "./repos";
+import { withFileLock } from "./file-lock";
 
 const CACHE_DIR = resolve(process.cwd(), ".cache");
 const CONTRIBUTORS_CACHE_PATH = resolve(CACHE_DIR, "github-contributors.json");
@@ -46,6 +47,10 @@ function loadFixtureContributors(): ContributorsDataset {
 }
 
 async function fetchLiveContributors(): Promise<ContributorsDataset> {
+  return withFileLock(resolve(CACHE_DIR, ".lock"), () => fetchAndCacheLiveContributors());
+}
+
+async function fetchAndCacheLiveContributors(): Promise<ContributorsDataset> {
   const token = resolveGitHubToken();
   if (!token) {
     throw new Error("GITHUB_OAUTH_TOKEN or GITHUB_BASIC_AUTH must be set (or pass FIXTURE_DATA=1 to build from fixtures).");
@@ -76,7 +81,14 @@ async function fetchLiveContributors(): Promise<ContributorsDataset> {
         fetchRepoRecentCommits(token, repo, yearSinceIso),
       ]);
       for (const contributor of contributors) {
-        if (contributor.login) allCounts.push({ login: contributor.login, contributions: contributor.contributions });
+        // Falls back to name/email for an anon=true "Anonymous" entry (no login) — ported
+        // verbatim from metakitty's `contributor_id`. A profile lookup by that id still resolves
+        // for a real account (e.g. an "Anonymous" entry named "hdm" is really github.com/hdm,
+        // just with commits GitHub's stats generator couldn't link to the verified account); a
+        // genuinely unresolvable name/email just won't resolve a profile and gets dropped later
+        // by topContributorInfos's existing profilesByLogin filter, same as any stale login.
+        const id = contributor.login ?? contributor.name ?? contributor.email;
+        if (id) allCounts.push({ login: id, contributions: contributor.contributions });
       }
       monthLogins.push(...monthAuthors);
       yearLogins.push(...yearAuthors);

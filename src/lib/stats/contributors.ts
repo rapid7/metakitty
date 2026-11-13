@@ -1,5 +1,6 @@
 import { EXCLUDED_CONTRIBUTORS } from "./contributor-aliases";
 import type { GitHubUserProfile } from "./contributors-client";
+import type { MergedByCount } from "./merged-by";
 
 export interface ContributorInfo {
   login: string;
@@ -41,4 +42,9 @@ export function topContributorInfos(counts: Map<string, number>, profilesByLogin
       const profile = profilesByLogin.get(login)!;
       return { login, name: profile.name, avatarUrl: profile.avatar_url, htmlUrl: profile.html_url, contributions };
     });
+}
+
+/** Adapts a commit-contributions row to the {@link MergedByCount} shape so it can reuse the merged-by bar chart/table components. */
+export function toMergedByCount(info: ContributorInfo): MergedByCount {
+  return { login: info.login, count: info.contributions, avatarUrl: info.avatarUrl };
 }

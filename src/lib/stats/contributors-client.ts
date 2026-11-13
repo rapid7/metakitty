@@ -3,6 +3,9 @@ import { STATS_OWNER } from "./repos";
 
 export interface RawContributor {
   login?: string;
+  /** Only present on an `anon=true` "Anonymous" entry — GitHub's stats generator couldn't link the commits to a verified account, so there's no `login`, just whatever name/email git recorded. */
+  name?: string;
+  email?: string;
   contributions: number;
 }
 
@@ -14,9 +17,15 @@ export interface GitHubUserProfile {
   bio?: string | null;
 }
 
-/** All-time contributor counts for a repo via REST, paginated. */
+/**
+ * All-time contributor counts for a repo via REST, paginated. `anon=true` also includes commits
+ * GitHub's stats generator couldn't link to a verified account (returned as `type: "Anonymous"`,
+ * `login` absent) — without it, long-tenured contributors whose early history predates their
+ * account's email verification (e.g. metasploit-framework's founder, who pre-dates GitHub itself)
+ * are silently dropped entirely rather than just appearing under a fallback identity.
+ */
 export async function fetchRepoContributorsAllTime(token: string, repo: string): Promise<RawContributor[]> {
-  const url = `${GITHUB_API_BASE}repos/${STATS_OWNER}/${repo}/contributors?per_page=100`;
+  const url = `${GITHUB_API_BASE}repos/${STATS_OWNER}/${repo}/contributors?per_page=100&anon=true`;
   return restGetAllPages<RawContributor>(token, url, `${STATS_OWNER}/${repo} contributors`);
 }
 
