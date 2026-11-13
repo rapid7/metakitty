@@ -1,24 +1,26 @@
 import { describe, expect, it } from "vitest";
-import { getRepoSummaries, hasReview } from "../src/lib/stats/repo-summary";
+import { getPrReviewStatus, getRepoSummaries } from "../src/lib/stats/repo-summary";
 import { historicalIssue } from "./helpers";
 
-describe("hasReview", () => {
-  it("is false when there are no comments", () => {
-    expect(hasReview(historicalIssue({ commentCount: 0 }))).toBe(false);
+describe("getPrReviewStatus", () => {
+  it("is needs_review when GitHub says a review is required", () => {
+    expect(getPrReviewStatus(historicalIssue({ reviewDecision: "review_required" }))).toBe("needs_review");
   });
 
-  it("is true when the last comment is at-or-after the last commit", () => {
-    const issue = historicalIssue({ commentCount: 1, lastCommitAt: "2026-01-01T00:00:00Z", lastCommentAt: "2026-01-02T00:00:00Z" });
-    expect(hasReview(issue)).toBe(true);
+  it("is needs_review when GitHub has no decision at all (no reviewers requested/submitted)", () => {
+    expect(getPrReviewStatus(historicalIssue({ reviewDecision: "none" }))).toBe("needs_review");
   });
 
-  it("is false when there are unreviewed commits after the last comment", () => {
-    const issue = historicalIssue({ commentCount: 1, lastCommitAt: "2026-01-02T00:00:00Z", lastCommentAt: "2026-01-01T00:00:00Z" });
-    expect(hasReview(issue)).toBe(false);
+  it("is changes_requested when a reviewer asked for changes", () => {
+    expect(getPrReviewStatus(historicalIssue({ reviewDecision: "changes_requested" }))).toBe("changes_requested");
   });
 
-  it("defaults to true when timing data is missing but there are comments", () => {
-    expect(hasReview(historicalIssue({ commentCount: 2, lastCommitAt: null, lastCommentAt: null }))).toBe(true);
+  it("is approved when a reviewer approved it", () => {
+    expect(getPrReviewStatus(historicalIssue({ reviewDecision: "approved" }))).toBe("approved");
+  });
+
+  it("is null for a closed/merged PR (reviewDecision is only populated while open)", () => {
+    expect(getPrReviewStatus(historicalIssue({ reviewDecision: null }))).toBe(null);
   });
 });
 
@@ -49,5 +51,12 @@ describe("getRepoSummaries", () => {
 
   it("ignores non-PR issues entirely", () => {
     expect(getRepoSummaries([historicalIssue({ pullRequest: false })])).toEqual([]);
+  });
+
+  it("carries each open PR's review status through into its summary", () => {
+    const summaries = getRepoSummaries([
+      historicalIssue({ number: 1, pullRequest: true, state: "open", reviewDecision: "changes_requested" }),
+    ]);
+    expect(summaries[0].openPrs[0]).toMatchObject({ reviewStatus: "changes_requested" });
   });
 });

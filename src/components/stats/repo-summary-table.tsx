@@ -21,6 +21,8 @@ export function RepoSummaryTable({ repos }: { repos: RepoSummary[] }) {
 
   const totalOpen = repos.reduce((sum, repo) => sum + repo.openPrs.length, 0);
   const reposWithOpenPrs = repos.filter((repo) => repo.openPrs.length > 0).length;
+  const needsReviewCount = (repo: RepoSummary) => repo.openPrs.filter((pr) => pr.reviewStatus === "needs_review").length;
+  const totalNeedsReview = repos.reduce((sum, repo) => sum + needsReviewCount(repo), 0);
 
   const openDetailedView = (repo: string) => router.push(`/queue/${repo}/`);
 
@@ -32,7 +34,7 @@ export function RepoSummaryTable({ repos }: { repos: RepoSummary[] }) {
           <Input placeholder="Filter repos by name..." value={search} onChange={(e) => setSearch(e.target.value)} className="pl-9" />
         </div>
         <span className="text-sm tabular-nums text-muted-foreground">
-          {filteredRepos.length} of {repos.length} repos · {reposWithOpenPrs} with open PRs · {totalOpen} open PRs total
+          {filteredRepos.length} of {repos.length} repos · {reposWithOpenPrs} with open PRs · {totalOpen} open PRs total · {totalNeedsReview} awaiting review
         </span>
       </div>
 
@@ -42,19 +44,21 @@ export function RepoSummaryTable({ repos }: { repos: RepoSummary[] }) {
             <TableRow>
               <TableHead>Repo</TableHead>
               <TableHead className="w-[100px] text-right">Open</TableHead>
+              <TableHead className="w-[100px] text-right">Awaiting review</TableHead>
               <TableHead className="w-[100px] text-right">Closed</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
             {filteredRepos.length === 0 && (
               <TableRow>
-                <TableCell colSpan={3} className="py-16 text-center text-muted-foreground">
+                <TableCell colSpan={4} className="py-16 text-center text-muted-foreground">
                   No repos match &quot;{search}&quot;.
                 </TableCell>
               </TableRow>
             )}
             {filteredRepos.map((repo) => {
               const hasOpenPrs = repo.openPrs.length > 0;
+              const needsReview = needsReviewCount(repo);
               return (
                 <TableRow
                   key={repo.repo}
@@ -90,6 +94,16 @@ export function RepoSummaryTable({ repos }: { repos: RepoSummary[] }) {
                     <Badge variant="outline" className={hasOpenPrs ? "border-primary/50 text-primary" : "border-transparent text-muted-foreground"}>
                       {repo.openPrs.length}
                     </Badge>
+                  </TableCell>
+                  <TableCell className="text-right tabular-nums">
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <Badge variant="outline" className={needsReview > 0 ? "border-transparent text-foreground" : "border-transparent text-muted-foreground"}>
+                          {needsReview}
+                        </Badge>
+                      </TooltipTrigger>
+                      <TooltipContent>Pull requests nobody has reviewed yet</TooltipContent>
+                    </Tooltip>
                   </TableCell>
                   <TableCell className="text-right tabular-nums text-muted-foreground">{repo.closedPrs.length}</TableCell>
                 </TableRow>

@@ -186,7 +186,8 @@
     "assignees": [],
     "mergedBy": null,
     "mergedAt": null,
-    "mergedByAvatarUrl": null
+    "mergedByAvatarUrl": null,
+    "reviewDecision": "none"
   },
   {
     "number": 488,
@@ -207,7 +208,8 @@
     "assignees": [],
     "mergedBy": null,
     "mergedAt": null,
-    "mergedByAvatarUrl": null
+    "mergedByAvatarUrl": null,
+    "reviewDecision": "none"
   },
   {
     "number": 489,
@@ -228,6 +230,7 @@
     "assignees": [],
     "mergedBy": null,
     "mergedAt": null,
-    "mergedByAvatarUrl": null
+    "mergedByAvatarUrl": null,
+    "reviewDecision": "none"
   }
 ]

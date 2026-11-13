@@ -1,4 +1,5 @@
 import type { TaggedIssueNode, TaggedPullRequestNode } from "./github-history-client";
+import { mapReviewDecision } from "../review-decision";
 import type { HistoricalIssue, IssueState } from "./types";
 
 function mapState(state: "OPEN" | "CLOSED" | "MERGED"): IssueState {
@@ -26,10 +27,11 @@ export function mapHistoricalIssue(raw: TaggedIssueNode): HistoricalIssue {
     mergedBy: null,
     mergedAt: null,
     mergedByAvatarUrl: null,
+    reviewDecision: null,
   };
 }
 
-/** `lastCommitAt`/`lastCommentAt` are only meaningful (and only populated) for currently-open PRs, matching metakitty's has-review detection — closed PRs never need them. */
+/** `lastCommitAt`/`lastCommentAt`/`reviewDecision` are only meaningful (and only populated) for currently-open PRs — closed PRs never need them. */
 export function mapHistoricalPullRequest(raw: TaggedPullRequestNode): HistoricalIssue {
   const state = mapState(raw.state);
   const isOpen = state === "open";
@@ -53,5 +55,6 @@ export function mapHistoricalPullRequest(raw: TaggedPullRequestNode): Historical
     mergedBy: raw.mergedBy?.login ?? null,
     mergedAt: raw.mergedAt ?? null,
     mergedByAvatarUrl: raw.mergedBy?.avatarUrl ?? null,
+    reviewDecision: isOpen ? mapReviewDecision(raw.reviewDecision) : null,
   };
 }

@@ -33,8 +33,7 @@
     "metasploitable3",
     "msfrpc-client",
     "fastlib",
-    "ruby_smb",
-    "vm-automation"
+    "ruby_smb"
   ],
-  "fetchedAt": "2026-11-13T10:33:28.618Z"
+  "fetchedAt": "2026-11-13T16:05:30.246Z"
 }

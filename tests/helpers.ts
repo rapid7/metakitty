@@ -22,6 +22,7 @@ export function historicalIssue(overrides: Partial<HistoricalIssue> = {}): Histo
     mergedBy: null,
     mergedAt: null,
     mergedByAvatarUrl: null,
+    reviewDecision: null,
     ...overrides,
   };
 }

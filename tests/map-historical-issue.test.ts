@@ -28,6 +28,7 @@ function prNode(overrides: Partial<TaggedPullRequestNode> = {}): TaggedPullReque
     commits: { nodes: [{ commit: { committedDate: "2026-01-02T12:00:00Z" } }] },
     mergedBy: null,
     mergedAt: null,
+    reviewDecision: "REVIEW_REQUIRED",
     ...overrides,
   };
 }
@@ -44,6 +45,7 @@ describe("mapHistoricalIssue", () => {
       state: "open",
       lastCommitAt: null,
       lastCommentAt: null,
+      reviewDecision: null,
     });
   });
 
@@ -89,5 +91,16 @@ describe("mapHistoricalPullRequest", () => {
 
     const open = mapHistoricalPullRequest(prNode());
     expect(open).toMatchObject({ mergedBy: null, mergedAt: null, mergedByAvatarUrl: null });
+  });
+
+  it("maps reviewDecision for an open PR, lowercased", () => {
+    expect(mapHistoricalPullRequest(prNode({ reviewDecision: "APPROVED" }))).toMatchObject({ reviewDecision: "approved" });
+    expect(mapHistoricalPullRequest(prNode({ reviewDecision: "CHANGES_REQUESTED" }))).toMatchObject({ reviewDecision: "changes_requested" });
+    expect(mapHistoricalPullRequest(prNode({ reviewDecision: null }))).toMatchObject({ reviewDecision: "none" });
+  });
+
+  it("never populates reviewDecision for a closed PR", () => {
+    const closed = mapHistoricalPullRequest(prNode({ state: "MERGED", closedAt: "2026-03-01T00:00:00Z", reviewDecision: "APPROVED" }));
+    expect(closed).toMatchObject({ reviewDecision: null });
   });
 });

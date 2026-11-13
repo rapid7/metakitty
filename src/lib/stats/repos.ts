@@ -43,5 +43,4 @@ export const STATS_REPOS: string[] = [
   "msfrpc-client",
   "fastlib",
   "ruby_smb",
-  "vm-automation",
 ];
