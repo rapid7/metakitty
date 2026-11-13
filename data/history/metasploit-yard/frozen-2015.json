@@ -1,0 +1,48 @@
+[
+  {
+    "number": 5,
+    "project": "metasploit-yard",
+    "pullRequest": true,
+    "title": "Set postgres version for Travis to 9.3",
+    "url": "https://github.com/rapid7/metasploit-yard/pull/5",
+    "reporter": "shuckins-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/1745894?u=1eaeafd81ecc041dddc5b8fb5277c0f0a63737a1&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2015-04-09T21:36:28Z",
+    "closedAt": "2015-04-10T20:37:26Z",
+    "updatedAt": "2015-04-10T20:38:04Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "sgonzalez-r7",
+    "mergedAt": "2015-04-10T20:37:26Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/10050455?u=843230237b478a72e18e5f8ebbcf6ca5a753e0a4&v=4",
+    "reviewDecision": null
+  },
+  {
+    "number": 6,
+    "project": "metasploit-yard",
+    "pullRequest": true,
+    "title": "Ignore undocumented attribute writer",
+    "url": "https://github.com/rapid7/metasploit-yard/pull/6",
+    "reporter": "limhoff-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/2230482?v=4",
+    "labels": [
+      "enhancement"
+    ],
+    "state": "closed",
+    "createdAt": "2015-05-18T19:59:29Z",
+    "closedAt": "2015-05-28T14:21:37Z",
+    "updatedAt": "2015-05-28T14:22:38Z",
+    "commentCount": 4,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "trosen-r7",
+    "mergedAt": "2015-05-28T14:21:37Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/1170769?v=4",
+    "reviewDecision": null
+  }
+]

@@ -1,0 +1,48 @@
+[
+  {
+    "number": 18,
+    "project": "ssh-badkeys",
+    "pullRequest": true,
+    "title": "Master",
+    "url": "https://github.com/rapid7/ssh-badkeys/pull/18",
+    "reporter": "en4rab",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/7647391?u=92c3b98880e09a03a83dc95e06c26ff490962dad&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2016-01-07T20:44:28Z",
+    "closedAt": "2016-01-22T16:54:55Z",
+    "updatedAt": "2016-01-22T16:54:55Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "hdm",
+    "mergedAt": "2016-01-22T16:54:55Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/1171392?u=8211049301b359476be0562a4b7e393b4fb6bb8b&v=4",
+    "reviewDecision": null
+  },
+  {
+    "number": 19,
+    "project": "ssh-badkeys",
+    "pullRequest": true,
+    "title": "Add ExaGrid key, CVE-2016-1561",
+    "url": "https://github.com/rapid7/ssh-badkeys/pull/19",
+    "reporter": "egypt",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/287967?v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2016-05-02T16:35:21Z",
+    "closedAt": "2017-07-15T17:08:53Z",
+    "updatedAt": "2017-07-15T17:08:54Z",
+    "commentCount": 2,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "busterb"
+    ],
+    "mergedBy": "bcook-r7",
+    "mergedAt": "2017-07-15T17:08:53Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/10031469?u=b7d29fd2dbf28a7488cd2615b604ee455d240f42&v=4",
+    "reviewDecision": null
+  }
+]

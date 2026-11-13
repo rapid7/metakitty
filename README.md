@@ -71,7 +71,8 @@ columns/filters read as empty or "Framework / tooling" on other repos.
 
 Ported from [rapid7/metakitty](https://github.com/rapid7/metakitty) (the generator behind
 [docs.metasploit.com/stats](https://docs.metasploit.com/stats)), tracking issue/PR history across
-the ~30 `rapid7/*` repos in `src/lib/stats/repos.ts`. The landing page (`/`) is the multi-repo
+the public `rapid7/*` repositories whose root `cortex.yaml` declares the `metasploit` domain in
+`src/lib/stats/repos.ts`. The landing page (`/`) is the multi-repo
 breakdown table; open-pull-requests/bugs/features-and-enhancements over time live at
 `/pull-requests`, `/bugs`, `/features-and-enhancements`, alongside the matching "per quarter"
 opened/closed rate charts (`/pull-request-rates`, `/bug-rates`, `/feature-and-enhancement-rates`),
@@ -91,6 +92,21 @@ by any page in this dashboard.
 Like the PR queue, `FIXTURE_DATA=1` / `npm run build:fixture` stays fully offline using
 `fixtures/sample-stats.json`, `fixtures/sample-contributors.json`, and
 `fixtures/sample-module-commits.json`.
+
+### Refreshing the repository list
+
+`STATS_REPOS` is committed so its generated queue routes and historical-data scope are
+reproducible. Refresh it explicitly when Cortex ownership changes:
+
+```sh
+npm run sync:repos          # query public rapid7 Cortex manifests and update the list
+npm run sync:repos:check    # fail if the committed list differs from Cortex
+```
+
+The command loads `GITHUB_OAUTH_TOKEN` or `GITHUB_BASIC_AUTH` from the environment or local
+`.env`. It excludes archived repositories. Review the resulting diff before committing. A
+subsequent live `npm run build` fully fetches history for new repositories and incrementally
+refreshes repositories already present in `data/history/`.
 
 ## Project layout
 

@@ -1,0 +1,28 @@
+[
+  {
+    "number": 3,
+    "project": "ReflectiveDLLInjection",
+    "pullRequest": true,
+    "title": "Fixed out-of-bounds read in fixing relocations",
+    "url": "https://github.com/rapid7/ReflectiveDLLInjection/pull/3",
+    "reporter": "kgretzky",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/19260967?u=220f620ddd124b2532e92444d41c47cb8c58283b&v=4",
+    "labels": [
+      "bug"
+    ],
+    "state": "closed",
+    "createdAt": "2017-08-16T08:14:13Z",
+    "closedAt": "2018-02-14T03:51:16Z",
+    "updatedAt": "2018-02-14T03:51:30Z",
+    "commentCount": 7,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "busterb"
+    ],
+    "mergedBy": "busterb",
+    "mergedAt": "2018-02-14T03:51:16Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/4108654?u=123ac5abc8c3e6051b9484fa19d630ffcd97b066&v=4",
+    "reviewDecision": null
+  }
+]

@@ -1,0 +1,54 @@
+[
+  {
+    "number": 5,
+    "project": "mimikatz",
+    "pullRequest": true,
+    "title": "Pull upstream changes",
+    "url": "https://github.com/rapid7/mimikatz/pull/5",
+    "reporter": "zeroSteiner",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/2058303?u=7c0365666ad089e619b8906d31dfe7b9bfbca8af&v=4",
+    "labels": [
+      "update"
+    ],
+    "state": "closed",
+    "createdAt": "2021-06-11T18:21:05Z",
+    "closedAt": "2021-07-16T20:50:11Z",
+    "updatedAt": "2022-04-21T19:58:16Z",
+    "commentCount": 1,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "bwatters-r7"
+    ],
+    "mergedBy": "bwatters-r7",
+    "mergedAt": "2021-07-16T20:50:11Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/17987018?u=562c1b6600d722e45a20f2202dddeb2d6db1f091&v=4",
+    "reviewDecision": null
+  },
+  {
+    "number": 6,
+    "project": "mimikatz",
+    "pullRequest": true,
+    "title": "fix mingw x86 build error",
+    "url": "https://github.com/rapid7/mimikatz/pull/6",
+    "reporter": "timwr",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/684924?u=698860b80fa0f23962524b00ff0a0988447121f7&v=4",
+    "labels": [
+      "bug"
+    ],
+    "state": "closed",
+    "createdAt": "2021-07-31T14:26:51Z",
+    "closedAt": "2021-08-02T14:10:36Z",
+    "updatedAt": "2022-11-15T14:45:13Z",
+    "commentCount": 1,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "smcintyre-r7"
+    ],
+    "mergedBy": "smcintyre-r7",
+    "mergedAt": "2021-08-02T14:10:36Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/58950994?u=898561ae7344081c10810bb0a4139c8e9724290d&v=4",
+    "reviewDecision": null
+  }
+]

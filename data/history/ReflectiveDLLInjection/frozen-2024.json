@@ -1,0 +1,50 @@
+[
+  {
+    "number": 16,
+    "project": "ReflectiveDLLInjection",
+    "pullRequest": true,
+    "title": "Direct syscalls implementation (2)",
+    "url": "https://github.com/rapid7/ReflectiveDLLInjection/pull/16",
+    "reporter": "cdelafuente-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/56716719?u=742106a5d45f3f0b208d4e88badee1be8d6c4800&v=4",
+    "labels": [
+      "enhancement"
+    ],
+    "state": "closed",
+    "createdAt": "2024-01-08T17:39:29Z",
+    "closedAt": "2024-01-12T13:51:39Z",
+    "updatedAt": "2024-01-12T13:51:39Z",
+    "commentCount": 1,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "smcintyre-r7"
+    ],
+    "mergedBy": "smcintyre-r7",
+    "mergedAt": "2024-01-12T13:51:39Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/58950994?u=898561ae7344081c10810bb0a4139c8e9724290d&v=4",
+    "reviewDecision": null
+  },
+  {
+    "number": 17,
+    "project": "ReflectiveDLLInjection",
+    "pullRequest": true,
+    "title": "Fix Direct Syscalls trampoline detection for Win10, Win8, Win8.1 (x86)",
+    "url": "https://github.com/rapid7/ReflectiveDLLInjection/pull/17",
+    "reporter": "cdelafuente-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/56716719?u=742106a5d45f3f0b208d4e88badee1be8d6c4800&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2024-01-12T18:18:06Z",
+    "closedAt": "2024-01-19T16:30:22Z",
+    "updatedAt": "2024-01-19T16:30:22Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "smcintyre-r7",
+    "mergedAt": "2024-01-19T16:30:22Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/58950994?u=898561ae7344081c10810bb0a4139c8e9724290d&v=4",
+    "reviewDecision": null
+  }
+]

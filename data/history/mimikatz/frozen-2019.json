@@ -1,0 +1,24 @@
+[
+  {
+    "number": 2,
+    "project": "mimikatz",
+    "pullRequest": true,
+    "title": "Cross-compilation with MinGW/Clang",
+    "url": "https://github.com/rapid7/mimikatz/pull/2",
+    "reporter": "plowsec",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/13260466?u=199efa6097079f89ed477c55f1a8996f0ca330f3&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2019-02-09T16:35:35Z",
+    "closedAt": "2020-09-02T21:16:47Z",
+    "updatedAt": "2020-09-02T21:16:47Z",
+    "commentCount": 2,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null,
+    "reviewDecision": null
+  }
+]

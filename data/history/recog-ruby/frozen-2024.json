@@ -1,0 +1,48 @@
+[
+  {
+    "number": 18,
+    "project": "recog-ruby",
+    "pullRequest": true,
+    "title": "Pin ffi gem version in Gemfile",
+    "url": "https://github.com/rapid7/recog-ruby/pull/18",
+    "reporter": "adfoster-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/60357436?v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2024-06-12T15:41:40Z",
+    "closedAt": "2024-06-12T15:49:59Z",
+    "updatedAt": "2024-06-12T15:50:00Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "dwelch-r7",
+    "mergedAt": "2024-06-12T15:49:59Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/19910435?v=4",
+    "reviewDecision": null
+  },
+  {
+    "number": 19,
+    "project": "recog-ruby",
+    "pullRequest": true,
+    "title": "Update ffi requirement from 1.16.3 to 1.17.0",
+    "url": "https://github.com/rapid7/recog-ruby/pull/19",
+    "reporter": "dependabot",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/in/29110?v=4",
+    "labels": [
+      "dependencies"
+    ],
+    "state": "closed",
+    "createdAt": "2024-06-13T11:46:19Z",
+    "closedAt": "2026-06-01T18:43:57Z",
+    "updatedAt": "2026-06-01T18:44:09Z",
+    "commentCount": 1,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null,
+    "reviewDecision": null
+  }
+]

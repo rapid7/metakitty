@@ -1,0 +1,24 @@
+[
+  {
+    "number": 138,
+    "project": "recog",
+    "pullRequest": false,
+    "title": "Add tests to ensure portability of regex syntax",
+    "url": "https://github.com/rapid7/recog/issues/138",
+    "reporter": "gschneider-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/4418817?v=4",
+    "labels": [],
+    "state": "open",
+    "createdAt": "2017-06-15T22:54:04Z",
+    "closedAt": null,
+    "updatedAt": "2017-06-15T22:54:04Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null,
+    "reviewDecision": null
+  }
+]

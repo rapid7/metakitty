@@ -1,0 +1,24 @@
+[
+  {
+    "number": 8,
+    "project": "sigar",
+    "pullRequest": true,
+    "title": "Fix a potential negative len value",
+    "url": "https://github.com/rapid7/sigar/pull/8",
+    "reporter": "zeroSteiner",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/2058303?u=7c0365666ad089e619b8906d31dfe7b9bfbca8af&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2024-03-21T16:30:04Z",
+    "closedAt": "2024-04-02T13:11:15Z",
+    "updatedAt": "2024-04-02T13:11:15Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "adfoster-r7",
+    "mergedAt": "2024-04-02T13:11:15Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/60357436?v=4",
+    "reviewDecision": null
+  }
+]

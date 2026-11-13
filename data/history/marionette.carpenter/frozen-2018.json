@@ -1,0 +1,24 @@
+[
+  {
+    "number": 49,
+    "project": "marionette.carpenter",
+    "pullRequest": true,
+    "title": "Use getEmptyView callback to choose the correct emptyView",
+    "url": "https://github.com/rapid7/marionette.carpenter/pull/49",
+    "reporter": "acammack-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/16652544?v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2018-10-12T16:51:14Z",
+    "closedAt": "2018-10-24T19:44:14Z",
+    "updatedAt": "2018-10-24T19:44:33Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "bcook-r7",
+    "mergedAt": "2018-10-24T19:44:14Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/10031469?u=b7d29fd2dbf28a7488cd2615b604ee455d240f42&v=4",
+    "reviewDecision": null
+  }
+]

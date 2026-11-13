@@ -1,0 +1,76 @@
+[
+  {
+    "number": 18,
+    "project": "ReflectiveDLLInjection",
+    "pullRequest": true,
+    "title": "PD-49865 Set Cortex tags to identify repo exposure",
+    "url": "https://github.com/rapid7/ReflectiveDLLInjection/pull/18",
+    "reporter": "simonirwin-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/12156460?u=20553a8b59d512c630292916232dcce80fe258bb&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2025-02-13T09:01:46Z",
+    "closedAt": "2025-02-13T14:47:20Z",
+    "updatedAt": "2025-02-13T14:47:23Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "adfoster-r7",
+    "mergedAt": "2025-02-13T14:47:20Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/60357436?v=4",
+    "reviewDecision": null
+  },
+  {
+    "number": 19,
+    "project": "ReflectiveDLLInjection",
+    "pullRequest": true,
+    "title": "Enhance ReflectiveDLLInjection with ARM64 Support and Major Refinements",
+    "url": "https://github.com/rapid7/ReflectiveDLLInjection/pull/19",
+    "reporter": "xaitax",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/5014849?u=878e1662e10e2e98f02d1602aadf6fe31ec918b6&v=4",
+    "labels": [
+      "enhancement"
+    ],
+    "state": "closed",
+    "createdAt": "2025-06-02T17:15:04Z",
+    "closedAt": "2025-06-20T14:40:59Z",
+    "updatedAt": "2025-06-20T14:40:59Z",
+    "commentCount": 2,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "bwatters-r7",
+      "smcintyre-r7",
+      "dledda-r7"
+    ],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null,
+    "reviewDecision": null
+  },
+  {
+    "number": 20,
+    "project": "ReflectiveDLLInjection",
+    "pullRequest": true,
+    "title": "Add ARM64 Support and Modernize Syscall Framework",
+    "url": "https://github.com/rapid7/ReflectiveDLLInjection/pull/20",
+    "reporter": "xaitax",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/5014849?u=878e1662e10e2e98f02d1602aadf6fe31ec918b6&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2025-06-20T14:40:46Z",
+    "closedAt": "2025-08-14T08:52:37Z",
+    "updatedAt": "2025-08-14T08:52:37Z",
+    "commentCount": 12,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "dledda-r7"
+    ],
+    "mergedBy": "dledda-r7",
+    "mergedAt": "2025-08-14T08:52:37Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/171709318?u=1b95174056ba711e53816c46bc793466b258cd0d&v=4",
+    "reviewDecision": null
+  }
+]

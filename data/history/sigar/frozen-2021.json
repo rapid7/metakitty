@@ -1,0 +1,24 @@
+[
+  {
+    "number": 1,
+    "project": "sigar",
+    "pullRequest": true,
+    "title": "add macOS Big Sur",
+    "url": "https://github.com/rapid7/sigar/pull/1",
+    "reporter": "timwr",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/684924?u=698860b80fa0f23962524b00ff0a0988447121f7&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2021-04-02T09:37:46Z",
+    "closedAt": "2023-02-08T23:11:49Z",
+    "updatedAt": "2023-02-08T23:11:49Z",
+    "commentCount": 3,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null,
+    "reviewDecision": null
+  }
+]

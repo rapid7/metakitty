@@ -1,0 +1,24 @@
+[
+  {
+    "number": 25,
+    "project": "metakitty",
+    "pullRequest": true,
+    "title": "write monthly and yearly stats",
+    "url": "https://github.com/rapid7/metakitty/pull/25",
+    "reporter": "busterb",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/4108654?u=123ac5abc8c3e6051b9484fa19d630ffcd97b066&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2018-12-17T18:58:01Z",
+    "closedAt": "2018-12-17T22:37:49Z",
+    "updatedAt": "2018-12-17T22:37:49Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "ccondon-r7",
+    "mergedAt": "2018-12-17T22:37:49Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/40408740?u=a4760e9ee13db32bc35abcbae31ec34776f34bf7&v=4",
+    "reviewDecision": null
+  }
+]

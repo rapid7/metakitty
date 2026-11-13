@@ -1,0 +1,28 @@
+[
+  {
+    "number": 11,
+    "project": "ReflectiveDLLInjection",
+    "pullRequest": true,
+    "title": "Fix VirtualProtectEx failure with ERROR_NOACCESS (998)",
+    "url": "https://github.com/rapid7/ReflectiveDLLInjection/pull/11",
+    "reporter": "SirFerdek",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/17548441?u=8ed5b9d5dce725954d309d6c3a3a91afaf3323c1&v=4",
+    "labels": [
+      "bug"
+    ],
+    "state": "closed",
+    "createdAt": "2021-05-24T07:56:00Z",
+    "closedAt": "2022-05-09T18:45:08Z",
+    "updatedAt": "2022-05-09T18:47:24Z",
+    "commentCount": 5,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "smcintyre-r7"
+    ],
+    "mergedBy": "smcintyre-r7",
+    "mergedAt": "2022-05-09T18:45:08Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/58950994?u=898561ae7344081c10810bb0a4139c8e9724290d&v=4",
+    "reviewDecision": null
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "number": 21,
+    "project": "ReflectiveDLLInjection",
+    "pullRequest": true,
+    "title": "Update DirectSyscall to a new format",
+    "url": "https://github.com/rapid7/ReflectiveDLLInjection/pull/21",
+    "reporter": "jbx81-1337",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/47637476?u=ff6f5418f338ac1674e73d452b53cf0acc2b169a&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2026-03-16T09:48:47Z",
+    "closedAt": "2026-04-03T20:09:09Z",
+    "updatedAt": "2026-04-03T20:10:20Z",
+    "commentCount": 3,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "bwatters-r7"
+    ],
+    "mergedBy": "bwatters-r7",
+    "mergedAt": "2026-04-03T20:09:09Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/17987018?u=562c1b6600d722e45a20f2202dddeb2d6db1f091&v=4",
+    "reviewDecision": null
+  }
+]

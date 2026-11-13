@@ -1,0 +1,104 @@
+[
+  {
+    "number": 1,
+    "project": "marionette.carpenter",
+    "pullRequest": false,
+    "title": "Add usage examples to marketing site",
+    "url": "https://github.com/rapid7/marionette.carpenter/issues/1",
+    "reporter": "mbuck-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/1170730?v=4",
+    "labels": [
+      "docs"
+    ],
+    "state": "closed",
+    "createdAt": "2014-09-08T16:17:37Z",
+    "closedAt": "2014-12-15T21:14:43Z",
+    "updatedAt": "2014-12-15T21:14:43Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "mbuck-r7"
+    ],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null,
+    "reviewDecision": null
+  },
+  {
+    "number": 2,
+    "project": "marionette.carpenter",
+    "pullRequest": false,
+    "title": "Finish README",
+    "url": "https://github.com/rapid7/marionette.carpenter/issues/2",
+    "reporter": "mbuck-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/1170730?v=4",
+    "labels": [
+      "docs"
+    ],
+    "state": "closed",
+    "createdAt": "2014-09-08T16:18:42Z",
+    "closedAt": "2014-12-15T21:14:50Z",
+    "updatedAt": "2014-12-15T21:14:50Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "mbuck-r7"
+    ],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null,
+    "reviewDecision": null
+  },
+  {
+    "number": 3,
+    "project": "marionette.carpenter",
+    "pullRequest": false,
+    "title": "Add generated docs to marketing site",
+    "url": "https://github.com/rapid7/marionette.carpenter/issues/3",
+    "reporter": "mbuck-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/1170730?v=4",
+    "labels": [
+      "docs"
+    ],
+    "state": "closed",
+    "createdAt": "2014-09-08T16:20:21Z",
+    "closedAt": "2014-12-15T21:14:34Z",
+    "updatedAt": "2014-12-15T21:14:34Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "mbuck-r7"
+    ],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null,
+    "reviewDecision": null
+  },
+  {
+    "number": 4,
+    "project": "marionette.carpenter",
+    "pullRequest": false,
+    "title": "Increase test coverage",
+    "url": "https://github.com/rapid7/marionette.carpenter/issues/4",
+    "reporter": "mbuck-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/1170730?v=4",
+    "labels": [
+      "testing"
+    ],
+    "state": "closed",
+    "createdAt": "2014-09-08T16:24:09Z",
+    "closedAt": "2014-12-15T21:14:25Z",
+    "updatedAt": "2014-12-15T21:14:25Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null,
+    "reviewDecision": null
+  }
+]

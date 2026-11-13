@@ -1,0 +1,24 @@
+[
+  {
+    "number": 10,
+    "project": "jsobfu",
+    "pullRequest": false,
+    "title": "Support jshint-style inline obfuscation options",
+    "url": "https://github.com/rapid7/jsobfu/issues/10",
+    "reporter": "joevennix",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/648995?v=4",
+    "labels": [],
+    "state": "open",
+    "createdAt": "2015-02-11T20:44:26Z",
+    "closedAt": null,
+    "updatedAt": "2015-10-23T04:02:38Z",
+    "commentCount": 1,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null,
+    "reviewDecision": null
+  }
+]

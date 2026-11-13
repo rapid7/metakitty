@@ -1,0 +1,24 @@
+[
+  {
+    "number": 55,
+    "project": "marionette.carpenter",
+    "pullRequest": true,
+    "title": "Document docker build env",
+    "url": "https://github.com/rapid7/marionette.carpenter/pull/55",
+    "reporter": "adfoster-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/60357436?v=4",
+    "labels": [],
+    "state": "open",
+    "createdAt": "2024-08-29T23:18:04Z",
+    "closedAt": null,
+    "updatedAt": "2025-03-13T11:01:41Z",
+    "commentCount": 2,
+    "lastCommitAt": "2025-03-13T11:01:36Z",
+    "lastCommentAt": "2024-08-30T07:42:24Z",
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null,
+    "reviewDecision": "none"
+  }
+]

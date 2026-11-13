@@ -1,0 +1,52 @@
+[
+  {
+    "number": 3,
+    "project": "mimikatz",
+    "pullRequest": true,
+    "title": "Toolset update to 141_xp with VS2019",
+    "url": "https://github.com/rapid7/mimikatz/pull/3",
+    "reporter": "OJ",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/28896?u=d05827ec7c3935f8a00eb0f4dfa3b330b91f7071&v=4",
+    "labels": [
+      "enhancement"
+    ],
+    "state": "closed",
+    "createdAt": "2020-04-15T23:10:54Z",
+    "closedAt": "2020-04-16T00:45:41Z",
+    "updatedAt": "2020-04-16T04:47:21Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "busterb"
+    ],
+    "mergedBy": "busterb",
+    "mergedAt": "2020-04-16T00:45:41Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/4108654?u=123ac5abc8c3e6051b9484fa19d630ffcd97b066&v=4",
+    "reviewDecision": null
+  },
+  {
+    "number": 4,
+    "project": "mimikatz",
+    "pullRequest": true,
+    "title": "Various changes required for cross compilation",
+    "url": "https://github.com/rapid7/mimikatz/pull/4",
+    "reporter": "OJ",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/28896?u=d05827ec7c3935f8a00eb0f4dfa3b330b91f7071&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2020-06-04T00:39:35Z",
+    "closedAt": "2020-06-29T14:11:20Z",
+    "updatedAt": "2020-06-29T14:11:21Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [
+      "smcintyre-r7"
+    ],
+    "mergedBy": "smcintyre-r7",
+    "mergedAt": "2020-06-29T14:11:20Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/58950994?u=898561ae7344081c10810bb0a4139c8e9724290d&v=4",
+    "reviewDecision": null
+  }
+]

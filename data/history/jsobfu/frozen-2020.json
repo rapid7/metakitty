@@ -1,0 +1,24 @@
+[
+  {
+    "number": 20,
+    "project": "jsobfu",
+    "pullRequest": true,
+    "title": "update dev env dependencies",
+    "url": "https://github.com/rapid7/jsobfu/pull/20",
+    "reporter": "jmartin-tech",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/7873740?u=761d485098432a30044aa248045cd6d7573482c0&v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2020-11-19T16:52:35Z",
+    "closedAt": "2020-11-25T16:46:56Z",
+    "updatedAt": "2020-11-30T18:12:54Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "acammack-r7",
+    "mergedAt": "2020-11-25T16:46:56Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/16652544?v=4",
+    "reviewDecision": null
+  }
+]

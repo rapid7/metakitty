@@ -1,0 +1,24 @@
+[
+  {
+    "number": 7,
+    "project": "metasploit-yard",
+    "pullRequest": true,
+    "title": "convert specs with transpec",
+    "url": "https://github.com/rapid7/metasploit-yard/pull/7",
+    "reporter": "thelightcosine",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/1146440?v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2016-02-11T17:03:10Z",
+    "closedAt": "2016-02-12T17:14:00Z",
+    "updatedAt": "2016-02-12T17:14:20Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "gmikeska-r7",
+    "mergedAt": "2016-02-12T17:14:00Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/11615916?v=4",
+    "reviewDecision": null
+  }
+]
