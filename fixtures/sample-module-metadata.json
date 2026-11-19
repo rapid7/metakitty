@@ -1,16 +1,518 @@
 {
-  "auxiliary_admin/2wire/xslt_password_reset": { "fullname": "auxiliary/admin/2wire/xslt_password_reset", "type": "auxiliary", "path": "/modules/auxiliary/admin/2wire/xslt_password_reset.rb" },
-  "auxiliary_scanner/http/apache_optionsbleed": { "fullname": "auxiliary/scanner/http/apache_optionsbleed", "type": "auxiliary", "path": "/modules/auxiliary/scanner/http/apache_optionsbleed.rb" },
-  "auxiliary_scanner/http/http_version": { "fullname": "auxiliary/scanner/http/http_version", "type": "auxiliary", "path": "/modules/auxiliary/scanner/http/http_version.rb" },
-  "encoder_x86/shikata_ga_nai": { "fullname": "encoder/x86/shikata_ga_nai", "type": "encoder", "path": "/modules/encoders/x86/shikata_ga_nai.rb" },
-  "evasion_windows/applocker_evasion_install_util": { "fullname": "evasion/windows/applocker_evasion_install_util", "type": "evasion", "path": "/modules/evasion/windows/applocker_evasion_install_util.rb" },
-  "exploit_linux/http/example_widget_rce": { "fullname": "exploit/linux/http/example_widget_rce", "type": "exploit", "path": "/modules/exploits/linux/http/example_widget_rce.rb" },
-  "exploit_windows/smb/ms17_010_eternalblue": { "fullname": "exploit/windows/smb/ms17_010_eternalblue", "type": "exploit", "path": "/modules/exploits/windows/smb/ms17_010_eternalblue.rb" },
-  "exploit_windows/smb/ms08_067_netapi": { "fullname": "exploit/windows/smb/ms08_067_netapi", "type": "exploit", "path": "/modules/exploits/windows/smb/ms08_067_netapi.rb" },
-  "nop_x86/opty2": { "fullname": "nop/x86/opty2", "type": "nop", "path": "/modules/nops/x86/opty2.rb" },
-  "payload_linux/x86/shell_bind_tcp": { "fullname": "payload/linux/x86/shell_bind_tcp", "type": "payload", "path": "/modules/payloads/singles/linux/x86/shell_bind_tcp.rb" },
-  "payload_windows/meterpreter/reverse_tcp": { "fullname": "payload/windows/meterpreter/reverse_tcp", "type": "payload", "path": "/modules/payloads/stagers/windows/reverse_tcp.rb" },
-  "payload_windows/meterpreter/reverse_http": { "fullname": "payload/windows/meterpreter/reverse_http", "type": "payload", "path": "/modules/payloads/stagers/windows/reverse_http.rb" },
-  "post_linux/gather/enum_configs": { "fullname": "post/linux/gather/enum_configs", "type": "post", "path": "/modules/post/linux/gather/enum_configs.rb" },
-  "post_windows/gather/credentials_vnc": { "fullname": "post/windows/gather/credentials_vnc", "type": "post", "path": "/modules/post/windows/gather/credentials_vnc.rb" }
+  "auxiliary_admin/2wire/xslt_password_reset": {
+    "fullname": "auxiliary/admin/2wire/xslt_password_reset",
+    "type": "auxiliary",
+    "path": "/modules/auxiliary/admin/2wire/xslt_password_reset.rb",
+    "disclosure_date": "2007-08-15",
+    "references": [
+      "CVE-2007-4387",
+      "OSVDB-37667",
+      "CWE-352"
+    ],
+    "name": "2Wire Cross-Site Request Forgery Password Reset Vulnerability",
+    "aliases": [],
+    "rank": 300,
+    "author": [
+      "hkm <hkm@hakim.ws>",
+      "Travis Phillips"
+    ],
+    "description": "This module will reset the admin password on a 2Wire wireless router.  This is\n          done by using the /xslt page where authentication is not required, thus allowing\n          configuration changes (such as resetting the password) as administrators.",
+    "platform": "",
+    "arch": "",
+    "targets": null,
+    "mod_time": "2025-05-21 08:32:40 +0000",
+    "ref_name": "admin/2wire/xslt_password_reset",
+    "check": false,
+    "post_auth": false,
+    "default_credential": false,
+    "notes": {
+      "Stability": [
+        "crash-safe"
+      ],
+      "SideEffects": [
+        "ioc-in-logs",
+        "config-changes"
+      ],
+      "Reliability": []
+    }
+  },
+  "auxiliary_scanner/http/apache_optionsbleed": {
+    "fullname": "auxiliary/scanner/http/apache_optionsbleed",
+    "type": "auxiliary",
+    "path": "/modules/auxiliary/scanner/http/apache_optionsbleed.rb",
+    "disclosure_date": "2017-09-16",
+    "references": [
+      "CVE-2017-9798"
+    ],
+    "name": "Apache Optionsbleed Scanner",
+    "aliases": [],
+    "rank": 300,
+    "author": [
+      "Hanno Böck",
+      "h00die"
+    ],
+    "description": "This module scans for the Apache optionsbleed vulnerability where the Allow\n          response header returned from an OPTIONS request may bleed memory if the\n          server has a .htaccess file with an invalid Limit method defined.",
+    "platform": "",
+    "arch": "",
+    "targets": null,
+    "mod_time": "2025-06-25 09:25:53 +0000",
+    "ref_name": "scanner/http/apache_optionsbleed",
+    "check": false,
+    "post_auth": false,
+    "default_credential": false,
+    "notes": {
+      "AKA": [
+        "Optionsbleed"
+      ],
+      "Stability": [
+        "unknown-stability"
+      ],
+      "Reliability": [
+        "unknown-reliability"
+      ],
+      "SideEffects": [
+        "unknown-side-effects"
+      ]
+    }
+  },
+  "auxiliary_scanner/http/http_version": {
+    "fullname": "auxiliary/scanner/http/http_version",
+    "type": "auxiliary",
+    "path": "/modules/auxiliary/scanner/http/http_version.rb",
+    "disclosure_date": null,
+    "references": [],
+    "name": "HTTP Version Detection",
+    "aliases": [],
+    "rank": 300,
+    "author": [
+      "hdm <x@hdm.io>"
+    ],
+    "description": "Display version information about each system.",
+    "platform": "",
+    "arch": "",
+    "targets": null,
+    "mod_time": "2025-06-20 13:20:44 +0000",
+    "ref_name": "scanner/http/http_version",
+    "check": false,
+    "post_auth": false,
+    "default_credential": false,
+    "notes": {}
+  },
+  "encoder_x86/shikata_ga_nai": {
+    "fullname": "encoder/x86/shikata_ga_nai",
+    "type": "encoder",
+    "path": "/modules/encoders/x86/shikata_ga_nai.rb",
+    "disclosure_date": null,
+    "references": [],
+    "name": "Polymorphic XOR Additive Feedback Encoder",
+    "aliases": [],
+    "rank": 600,
+    "author": [
+      "spoonm <spoonm@no$email.com>"
+    ],
+    "description": "This encoder implements a polymorphic XOR additive feedback encoder.\n        The decoder stub is generated based on dynamic instruction\n        substitution and dynamic block ordering.  Registers are also\n        selected dynamically.",
+    "platform": "All",
+    "arch": "x86",
+    "targets": null,
+    "mod_time": "2025-04-14 00:10:31 +0000",
+    "ref_name": "x86/shikata_ga_nai",
+    "check": false,
+    "post_auth": false,
+    "default_credential": false,
+    "notes": {}
+  },
+  "evasion_windows/applocker_evasion_install_util": {
+    "fullname": "evasion/windows/applocker_evasion_install_util",
+    "type": "evasion",
+    "path": "/modules/evasion/windows/applocker_evasion_install_util.rb",
+    "disclosure_date": null,
+    "references": [],
+    "name": "Applocker Evasion - .NET Framework Installation Utility",
+    "aliases": [],
+    "rank": 300,
+    "author": [
+      "Nick Tyrer <@NickTyrer>",
+      "Casey Smith"
+    ],
+    "description": "This module will assist you in evading Microsoft Windows\n          Applocker and Software Restriction Policies.\n          This technique utilises the Microsoft signed binary\n          InstallUtil.exe to execute user supplied code.",
+    "platform": "Windows",
+    "arch": "x86, x64",
+    "targets": [
+      "Microsoft Windows"
+    ],
+    "mod_time": "2025-05-03 12:57:40 +0000",
+    "ref_name": "windows/applocker_evasion_install_util",
+    "check": false,
+    "post_auth": false,
+    "default_credential": false,
+    "notes": {}
+  },
+  "exploit_linux/http/example_widget_rce": {
+    "fullname": "exploit/linux/http/example_widget_rce",
+    "type": "exploit",
+    "path": "/modules/exploits/linux/http/example_widget_rce.rb",
+    "disclosure_date": null,
+    "references": [
+      "CWE-502"
+    ],
+    "name": "Example Widget Software Unauthenticated RCE",
+    "aliases": [],
+    "rank": 400,
+    "author": [
+      "Jane Doe"
+    ],
+    "description": "A fictional module used only in test fixtures: sends a crafted HTTP request to\n          Example Widget Software, triggering remote code execution via an unsafe\n          deserialization bug in its plugin loader.",
+    "platform": "Linux",
+    "arch": "x64",
+    "targets": [
+      "Example Widget Software <= 2.3.0"
+    ],
+    "mod_time": "2026-01-05 00:00:00 +0000",
+    "ref_name": "linux/http/example_widget_rce",
+    "check": true,
+    "post_auth": false,
+    "default_credential": false,
+    "notes": {
+      "Stability": [
+        "crash-safe"
+      ],
+      "SideEffects": [
+        "ioc-in-logs"
+      ],
+      "Reliability": []
+    }
+  },
+  "exploit_windows/smb/ms17_010_eternalblue": {
+    "fullname": "exploit/windows/smb/ms17_010_eternalblue",
+    "type": "exploit",
+    "path": "/modules/exploits/windows/smb/ms17_010_eternalblue.rb",
+    "disclosure_date": "2017-03-14",
+    "references": [
+      "CVE-2017-0144"
+    ],
+    "name": "MS17-010 EternalBlue SMB Remote Windows Kernel Pool Corruption",
+    "aliases": [
+      "exploit/windows/smb/ms17_010_eternalblue_win8"
+    ],
+    "rank": 200,
+    "author": [
+      "Equation Group",
+      "Shadow Brokers",
+      "sleepya",
+      "Sean Dillon <sean.dillon@risksense.com>",
+      "Dylan Davis <dylan.davis@risksense.com>",
+      "thelightcosine",
+      "wvu <wvu@metasploit.com>",
+      "agalway-r7",
+      "cdelafuente-r7"
+    ],
+    "description": "This module is a port of the Equation Group ETERNALBLUE exploit, part of\n          the FuzzBunch toolkit released by Shadow Brokers.\n\n          There is a buffer overflow memmove operation in Srv!SrvOs2FeaToNt. The size\n          is calculated in Srv!SrvOs2FeaListSizeToNt, with mathematical error where a\n          DWORD is subtracted into a WORD. The kernel pool is groomed so that overflow\n          is well laid-out to overwrite an SMBv1 buffer. Actual RIP hijack is later\n          completed in srvnet!SrvNetWskReceiveComplete.\n\n          This exploit, like the original may not trigger 100% of the time, and should be\n          run continuously until triggered. It seems like the pool will get hot streaks\n          and need a cool down period before the shells rain in again.\n\n          The module will attempt to use Anonymous login, by default, to authenticate to perform the\n          exploit. If the user supplies credentials in the SMBUser, SMBPass, and SMBDomain options it will use\n          those instead.\n\n          On some systems, this module may cause system instability and crashes, such as a BSOD or\n          a reboot. This may be more likely with some payloads.",
+    "platform": "Windows",
+    "arch": "x64",
+    "targets": [
+      "Automatic Target",
+      "Windows 7",
+      "Windows Embedded Standard 7",
+      "Windows Server 2008 R2",
+      "Windows 8",
+      "Windows 8.1",
+      "Windows Server 2012",
+      "Windows 10 Pro",
+      "Windows 10 Enterprise Evaluation"
+    ],
+    "mod_time": "2025-06-06 12:39:33 +0000",
+    "ref_name": "windows/smb/ms17_010_eternalblue",
+    "check": true,
+    "post_auth": false,
+    "default_credential": false,
+    "notes": {
+      "AKA": [
+        "ETERNALBLUE"
+      ],
+      "Stability": [
+        "unknown-stability"
+      ],
+      "Reliability": [
+        "unknown-reliability"
+      ],
+      "SideEffects": [
+        "unknown-side-effects"
+      ]
+    }
+  },
+  "exploit_windows/smb/ms08_067_netapi": {
+    "fullname": "exploit/windows/smb/ms08_067_netapi",
+    "type": "exploit",
+    "path": "/modules/exploits/windows/smb/ms08_067_netapi.rb",
+    "disclosure_date": "2008-10-23",
+    "references": [
+      "CVE-2008-4250"
+    ],
+    "name": "MS08-067 Microsoft Server Service Relative Path Stack Corruption",
+    "aliases": [],
+    "rank": 500,
+    "author": [
+      "hdm <x@hdm.io>",
+      "Brett Moore <brett.moore@insomniasec.com>",
+      "frank2 <frank2@dc949.org>",
+      "jduck <jduck@metasploit.com>"
+    ],
+    "description": "This module exploits a parsing flaw in the path canonicalization code of\n          NetAPI32.dll through the Server Service. This module is capable of bypassing\n          NX on some operating systems and service packs. The correct target must be\n          used to prevent the Server Service (along with a dozen others in the same\n          process) from crashing. Windows XP targets seem to handle multiple successful\n          exploitation events, but 2003 targets will often crash or hang on subsequent\n          attempts. This is just the first version of this module, full support for\n          NX bypass on 2003, along with other platforms, is still in development.",
+    "platform": "Windows",
+    "arch": "",
+    "targets": [
+      "Automatic Targeting",
+      "Windows 2000 Universal",
+      "Windows XP SP0/SP1 Universal",
+      "Windows 2003 SP0 Universal",
+      "Windows XP SP2 English (AlwaysOn NX)",
+      "Windows XP SP2 English (NX)",
+      "Windows XP SP3 English (AlwaysOn NX)",
+      "Windows XP SP3 English (NX)",
+      "Windows XP SP2 Arabic (NX)",
+      "Windows XP SP2 Chinese - Traditional / Taiwan (NX)",
+      "Windows XP SP2 Chinese - Simplified (NX)",
+      "Windows XP SP2 Chinese - Traditional (NX)",
+      "Windows XP SP2 Czech (NX)",
+      "Windows XP SP2 Danish (NX)",
+      "Windows XP SP2 German (NX)",
+      "Windows XP SP2 Greek (NX)",
+      "Windows XP SP2 Spanish (NX)",
+      "Windows XP SP2 Finnish (NX)",
+      "Windows XP SP2 French (NX)",
+      "Windows XP SP2 Hebrew (NX)",
+      "Windows XP SP2 Hungarian (NX)",
+      "Windows XP SP2 Italian (NX)",
+      "Windows XP SP2 Japanese (NX)",
+      "Windows XP SP2 Korean (NX)",
+      "Windows XP SP2 Dutch (NX)",
+      "Windows XP SP2 Norwegian (NX)",
+      "Windows XP SP2 Polish (NX)",
+      "Windows XP SP2 Portuguese - Brazilian (NX)",
+      "Windows XP SP2 Portuguese (NX)",
+      "Windows XP SP2 Russian (NX)",
+      "Windows XP SP2 Swedish (NX)",
+      "Windows XP SP2 Turkish (NX)",
+      "Windows XP SP3 Arabic (NX)",
+      "Windows XP SP3 Chinese - Traditional / Taiwan (NX)",
+      "Windows XP SP3 Chinese - Simplified (NX)",
+      "Windows XP SP3 Chinese - Traditional (NX)",
+      "Windows XP SP3 Czech (NX)",
+      "Windows XP SP3 Danish (NX)",
+      "Windows XP SP3 German (NX)",
+      "Windows XP SP3 Greek (NX)",
+      "Windows XP SP3 Spanish (NX)",
+      "Windows XP SP3 Finnish (NX)",
+      "Windows XP SP3 French (NX)",
+      "Windows XP SP3 Hebrew (NX)",
+      "Windows XP SP3 Hungarian (NX)",
+      "Windows XP SP3 Italian (NX)",
+      "Windows XP SP3 Japanese (NX)",
+      "Windows XP SP3 Korean (NX)",
+      "Windows XP SP3 Dutch (NX)",
+      "Windows XP SP3 Norwegian (NX)",
+      "Windows XP SP3 Polish (NX)",
+      "Windows XP SP3 Portuguese - Brazilian (NX)",
+      "Windows XP SP3 Portuguese (NX)",
+      "Windows XP SP3 Russian (NX)",
+      "Windows XP SP3 Swedish (NX)",
+      "Windows XP SP3 Turkish (NX)",
+      "Windows 2003 SP1 English (NO NX)",
+      "Windows 2003 SP1 English (NX)",
+      "Windows 2003 SP1 Japanese (NO NX)",
+      "Windows 2003 SP1 Spanish (NO NX)",
+      "Windows 2003 SP1 Spanish (NX)",
+      "Windows 2003 SP1 French (NO NX)",
+      "Windows 2003 SP1 French (NX)",
+      "Windows 2003 SP2 English (NO NX)",
+      "Windows 2003 SP2 English (NX)",
+      "Windows 2003 SP2 German (NO NX)",
+      "Windows 2003 SP2 German (NX)",
+      "Windows 2003 SP2 Portuguese (NX)",
+      "Windows 2003 SP2 Portuguese - Brazilian (NX)",
+      "Windows 2003 SP2 Spanish (NO NX)",
+      "Windows 2003 SP2 Spanish (NX)",
+      "Windows 2003 SP2 Japanese (NO NX)",
+      "Windows 2003 SP2 French (NO NX)",
+      "Windows 2003 SP2 French (NX)",
+      "Windows 2003 SP2 Chinese - Simplified (NX)",
+      "Windows 2003 SP2 Czech (NX)",
+      "Windows 2003 SP2 Dutch (NX)",
+      "Windows 2003 SP2 Hungarian (NX)",
+      "Windows 2003 SP2 Italian (NX)",
+      "Windows 2003 SP2 Russian (NX)",
+      "Windows 2003 SP2 Swedish (NX)",
+      "Windows 2003 SP2 Turkish (NX)"
+    ],
+    "mod_time": "2026-04-22 11:58:58 +0000",
+    "ref_name": "windows/smb/ms08_067_netapi",
+    "check": true,
+    "post_auth": false,
+    "default_credential": false,
+    "notes": {
+      "AKA": [
+        "ECLIPSEDWING"
+      ],
+      "Stability": [
+        "unknown-stability"
+      ],
+      "Reliability": [
+        "unknown-reliability"
+      ],
+      "SideEffects": [
+        "unknown-side-effects"
+      ]
+    }
+  },
+  "nop_x86/opty2": {
+    "fullname": "nop/x86/opty2",
+    "type": "nop",
+    "path": "/modules/nops/x86/opty2.rb",
+    "disclosure_date": null,
+    "references": [],
+    "name": "Opty2",
+    "aliases": [],
+    "rank": 300,
+    "author": [
+      "spoonm <spoonm@no$email.com>",
+      "optyx <optyx@no$email.com>"
+    ],
+    "description": "Opty2 multi-byte NOP generator",
+    "platform": "All",
+    "arch": "x86",
+    "targets": null,
+    "mod_time": "2025-04-13 11:27:49 +0000",
+    "ref_name": "x86/opty2",
+    "check": false,
+    "post_auth": false,
+    "default_credential": false,
+    "notes": {}
+  },
+  "payload_linux/x86/shell_bind_tcp": {
+    "fullname": "payload/linux/x86/shell_bind_tcp",
+    "type": "payload",
+    "path": "/modules/payloads/singles/linux/x86/shell_bind_tcp.rb",
+    "disclosure_date": null,
+    "references": [],
+    "name": "Linux Command Shell, Bind TCP Inline",
+    "aliases": [],
+    "rank": 300,
+    "author": [
+      "Ramon de C Valle <rcvalle@metasploit.com>"
+    ],
+    "description": "Listen for a connection and spawn a command shell",
+    "platform": "Linux",
+    "arch": "x86",
+    "targets": null,
+    "mod_time": "2025-04-20 02:57:34 +0000",
+    "ref_name": "linux/x86/shell_bind_tcp",
+    "check": false,
+    "post_auth": false,
+    "default_credential": false,
+    "notes": {}
+  },
+  "payload_windows/meterpreter/reverse_tcp": {
+    "fullname": "payload/windows/meterpreter/reverse_tcp",
+    "type": "payload",
+    "path": "/modules/payloads/stagers/windows/reverse_tcp.rb",
+    "disclosure_date": null,
+    "references": [],
+    "name": "Windows Meterpreter (Reflective Injection), Reverse TCP Stager",
+    "aliases": [],
+    "rank": 300,
+    "author": [
+      "skape <mmiller@hick.org>",
+      "sf <stephen_fewer@harmonysecurity.com>",
+      "OJ Reeves",
+      "hdm <x@hdm.io>"
+    ],
+    "description": "Inject the Meterpreter server DLL via the Reflective Dll Injection payload (staged). Requires Windows XP SP2 or newer.\n\nConnect back to the attacker",
+    "platform": "Windows",
+    "arch": "x86",
+    "targets": null,
+    "mod_time": "2026-03-20 11:15:40 +0000",
+    "ref_name": "windows/meterpreter/reverse_tcp",
+    "check": false,
+    "post_auth": false,
+    "default_credential": false,
+    "notes": {}
+  },
+  "payload_windows/meterpreter/reverse_http": {
+    "fullname": "payload/windows/meterpreter/reverse_http",
+    "type": "payload",
+    "path": "/modules/payloads/stagers/windows/reverse_http.rb",
+    "disclosure_date": null,
+    "references": [],
+    "name": "Windows Meterpreter (Reflective Injection), Windows Reverse HTTP Stager (wininet)",
+    "aliases": [],
+    "rank": 300,
+    "author": [
+      "skape <mmiller@hick.org>",
+      "sf <stephen_fewer@harmonysecurity.com>",
+      "OJ Reeves",
+      "hdm <x@hdm.io>"
+    ],
+    "description": "Inject the Meterpreter server DLL via the Reflective Dll Injection payload (staged). Requires Windows XP SP2 or newer.\n\nTunnel communication over HTTP (Windows wininet)",
+    "platform": "Windows",
+    "arch": "x86",
+    "targets": null,
+    "mod_time": "2026-07-30 10:26:56 +0000",
+    "ref_name": "windows/meterpreter/reverse_http",
+    "check": false,
+    "post_auth": false,
+    "default_credential": false,
+    "notes": {}
+  },
+  "post_linux/gather/enum_configs": {
+    "fullname": "post/linux/gather/enum_configs",
+    "type": "post",
+    "path": "/modules/post/linux/gather/enum_configs.rb",
+    "disclosure_date": null,
+    "references": [],
+    "name": "Linux Gather Configurations",
+    "aliases": [],
+    "rank": 300,
+    "author": [
+      "ohdae <bindshell@live.com>"
+    ],
+    "description": "This module collects configuration files found on commonly installed\n          applications and services, such as Apache, MySQL, Samba, Sendmail, etc.\n          If a config file is found in its default path, the module will assume\n          that is the file we want.",
+    "platform": "Linux",
+    "arch": "",
+    "targets": null,
+    "mod_time": "2025-04-27 12:23:56 +0000",
+    "ref_name": "linux/gather/enum_configs",
+    "check": false,
+    "post_auth": false,
+    "default_credential": false,
+    "notes": {
+      "Stability": [
+        "crash-safe"
+      ],
+      "SideEffects": [],
+      "Reliability": []
+    }
+  },
+  "post_windows/gather/credentials_vnc": {
+    "fullname": "post/windows/gather/credentials_vnc",
+    "type": "post",
+    "path": "/modules/post/windows/gather/credentials_vnc.rb",
+    "disclosure_date": null,
+    "references": [],
+    "name": "Windows Gather VNC Password",
+    "aliases": [],
+    "rank": 300,
+    "author": [
+      "Carlos Perez"
+    ],
+    "description": "This module will recover the plaintext VNC passwords stored by various VNC\n          server implementations in the Windows registry.",
+    "platform": "Windows",
+    "arch": "",
+    "targets": null,
+    "mod_time": "2025-09-01 00:00:00 +0000",
+    "ref_name": "windows/gather/credentials_vnc",
+    "check": false,
+    "post_auth": true,
+    "default_credential": false,
+    "notes": {}
+  }
 }

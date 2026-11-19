@@ -61,14 +61,15 @@
     "state": "open",
     "createdAt": "2023-02-06T20:25:55Z",
     "closedAt": null,
-    "updatedAt": "2026-11-08T11:40:25Z",
+    "updatedAt": "2026-11-15T06:42:11Z",
     "commentCount": 16,
     "lastCommitAt": null,
     "lastCommentAt": null,
     "assignees": [],
     "mergedBy": null,
     "mergedAt": null,
-    "mergedByAvatarUrl": null
+    "mergedByAvatarUrl": null,
+    "reviewDecision": null
   },
   {
     "number": 17608,
