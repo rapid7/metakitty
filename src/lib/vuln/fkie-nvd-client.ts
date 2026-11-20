@@ -1,4 +1,5 @@
 import { extractBestCvssMetric, type CvssMetric } from "./nvd-metrics";
+import { extractCwes } from "./nvd-weaknesses";
 
 /** https://github.com/fkie-cad/nvd-json-data-feeds — a static, unauthenticated GitHub-hosted mirror of NVD records. */
 function buildFkieUrl(cveId: string): string | null {
@@ -19,4 +20,17 @@ export async function fetchFkieNvdCve(cveId: string): Promise<CvssMetric | null>
 
   const data = (await response.json()) as { metrics?: unknown };
   return extractBestCvssMetric(data.metrics);
+}
+
+/** Looks up a CVE's NVD-classified CWE id(s) via the same mirror {@link fetchFkieNvdCve} uses. Returns [] (not null) on a 404 — "no CWE found" and "no record found" are the same outcome for a histogram. */
+export async function fetchFkieNvdWeaknesses(cveId: string): Promise<string[]> {
+  const url = buildFkieUrl(cveId);
+  if (!url) return [];
+
+  const response = await fetch(url, { signal: AbortSignal.timeout(10_000) });
+  if (response.status === 404) return [];
+  if (!response.ok) throw new Error(`fkie-cad NVD mirror error: ${response.status} ${response.statusText}`);
+
+  const data = (await response.json()) as { weaknesses?: unknown };
+  return extractCwes(data.weaknesses);
 }

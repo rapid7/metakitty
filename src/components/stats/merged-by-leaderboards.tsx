@@ -51,7 +51,7 @@ function MergedByWindowSection({
       {view === "ranking" ? (
         <MergedByChart rows={rows} highlightedLogin={highlightedLogin} barLabel={barLabel} itemLabel={itemLabel} />
       ) : (
-        <MergedByTrendChart series={trendSeries} highlightedLogin={highlightedLogin} />
+        <MergedByTrendChart series={trendSeries} highlightedLogin={highlightedLogin} onLoginHover={setHighlightedLogin} />
       )}
       <MergedByTable rows={rows} onLoginHover={setHighlightedLogin} />
     </section>

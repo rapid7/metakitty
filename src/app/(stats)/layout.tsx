@@ -35,8 +35,6 @@ export default async function StatsLayout({ children }: { children: ReactNode })
         </div>
         <div className="min-w-0 flex-1">
           {children}
-          <TopCommittersTable committers={topCommitters} />
-          <WeeklyNewItemsAccordion groups={weeklyGroups} />
         </div>
       </div>
     </div>

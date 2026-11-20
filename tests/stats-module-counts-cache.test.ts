@@ -18,7 +18,7 @@ afterEach(() => {
 });
 
 function moduleCounts(): ModuleCounts {
-  return { totalCount: 1, countsByType: [], tree: [] };
+  return { totalCount: 1, countsByType: [], tree: [], cveCountsByYear: [], cveDetailsByYear: [], cweCounts: [] };
 }
 
 it("returns null when no cache file exists", () => {
@@ -45,5 +45,45 @@ it("treats a TTL of zero or less as disabled", () => {
 it("misses gracefully on corrupt (non-JSON) cache contents", () => {
   mkdirSync(join(dir, "nested"), { recursive: true });
   writeFileSync(cachePath, "not valid json");
+  expect(readModuleCountsCache(cachePath, 60_000)).toBeNull();
+});
+
+it("misses when a cache written by an older schema is missing a field the current code expects", () => {
+  mkdirSync(join(dir, "nested"), { recursive: true });
+  const legacyModuleCounts = { totalCount: 1, countsByType: [], tree: [] };
+  writeFileSync(cachePath, JSON.stringify({ fetchedAt: new Date().toISOString(), moduleCounts: legacyModuleCounts }));
+  expect(readModuleCountsCache(cachePath, 60_000)).toBeNull();
+});
+
+it("misses when a cached tree's nodes predate the `fullname` field (even though cveCountsByYear is present)", () => {
+  mkdirSync(join(dir, "nested"), { recursive: true });
+  const legacyModuleCounts = {
+    totalCount: 1,
+    countsByType: [],
+    cveCountsByYear: [],
+    tree: [{ name: "auxiliary", total: 1, modulePath: null, children: [{ name: "foo", total: 1, modulePath: "modules/auxiliary/foo.rb", children: [] }] }],
+  };
+  writeFileSync(cachePath, JSON.stringify({ fetchedAt: new Date().toISOString(), moduleCounts: legacyModuleCounts }));
+  expect(readModuleCountsCache(cachePath, 60_000)).toBeNull();
+});
+
+it("misses when a cache predates the `cveDetailsByYear` field (even though cveCountsByYear/cweCounts are present)", () => {
+  mkdirSync(join(dir, "nested"), { recursive: true });
+  const legacyModuleCounts = { totalCount: 1, countsByType: [], tree: [], cveCountsByYear: [], cweCounts: [] };
+  writeFileSync(cachePath, JSON.stringify({ fetchedAt: new Date().toISOString(), moduleCounts: legacyModuleCounts }));
+  expect(readModuleCountsCache(cachePath, 60_000)).toBeNull();
+});
+
+it("misses when cveDetailsByYear's modules predate the `path` field (even though the array itself is present)", () => {
+  mkdirSync(join(dir, "nested"), { recursive: true });
+  const legacyModuleCounts = {
+    totalCount: 1,
+    countsByType: [],
+    tree: [],
+    cveCountsByYear: [],
+    cweCounts: [],
+    cveDetailsByYear: [{ year: 2017, modules: [{ fullname: "exploit/windows/smb/ms17_010_eternalblue", cveIds: ["CVE-2017-0144"] }] }],
+  };
+  writeFileSync(cachePath, JSON.stringify({ fetchedAt: new Date().toISOString(), moduleCounts: legacyModuleCounts }));
   expect(readModuleCountsCache(cachePath, 60_000)).toBeNull();
 });

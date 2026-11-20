@@ -26,6 +26,22 @@ export function readModuleCountsCache(path: string, ttlMs: number): ModuleCounts
   const age = Date.now() - Date.parse(parsed.fetchedAt);
   if (!Number.isFinite(age) || age > ttlMs) return null;
 
+  // A cache written by an older schema (missing a field the current code expects) is a miss too,
+  // not a crash waiting to happen downstream. Every tree node (leaf or folder) carries a
+  // `fullname` key (string or null) as of the schema that added it; a cache from before that
+  // change has no such key on any node, which `=== undefined` catches (unlike `null`).
+  if (!Array.isArray(parsed.moduleCounts?.cveCountsByYear)) return null;
+  if (!Array.isArray(parsed.moduleCounts?.cweCounts)) return null;
+  if (!Array.isArray(parsed.moduleCounts?.cveDetailsByYear)) return null;
+  const [firstNode] = parsed.moduleCounts.tree ?? [];
+  if (firstNode && firstNode.fullname === undefined) return null;
+  // Every module entry under cveDetailsByYear carries a `path` key as of the schema that added
+  // it (used to link out to the module's GitHub source); a cache from before that change has no
+  // such key, which `=== undefined` catches.
+  const [firstYearGroup] = parsed.moduleCounts.cveDetailsByYear;
+  const [firstModule] = firstYearGroup?.modules ?? [];
+  if (firstModule && firstModule.path === undefined) return null;
+
   return parsed.moduleCounts;
 }
 

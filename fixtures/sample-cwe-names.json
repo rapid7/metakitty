@@ -1,0 +1,6 @@
+{
+  "CWE-94": "Improper Control of Generation of Code",
+  "CWE-352": "Cross-Site Request Forgery",
+  "CWE-416": "Use After Free",
+  "CWE-502": "Deserialization of Untrusted Data"
+}
