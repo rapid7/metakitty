@@ -78,12 +78,16 @@ export function getActorTimeSeries(events: ActorEvent[], sinceIso?: string, now:
     .map((c) => c.login);
 
   const sinceMs = sinceIso ? Date.parse(sinceIso) : null;
-  const eventMsValues = events
+  // Pre-filter excluded logins and pre-parse each event's timestamp once up front — the bucket
+  // loop below re-scans every event per bucket (day/week/month/quarter), and re-parsing `event.at`
+  // and re-checking `excluded` from scratch on every one of those passes is pure waste at this
+  // dataset's size (tens of thousands of merged-PR events over a multi-year "all time" window).
+  const taggedEvents = events
     .filter((event) => !excluded.includes(event.login))
-    .map((event) => Date.parse(event.at))
-    .filter((ms) => sinceMs === null || ms >= sinceMs);
+    .map((event) => ({ login: event.login, atMs: Date.parse(event.at) }))
+    .filter((event) => sinceMs === null || event.atMs >= sinceMs);
 
-  const rangeStartMs = sinceMs ?? (eventMsValues.length ? Math.min(...eventMsValues) : now);
+  const rangeStartMs = sinceMs ?? (taggedEvents.length ? Math.min(...taggedEvents.map((e) => e.atMs)) : now);
   const unit = pickUnit(now - rangeStartMs);
 
   const points: ActorTimePoint[] = [];
@@ -95,11 +99,8 @@ export function getActorTimeSeries(events: ActorEvent[], sinceIso?: string, now:
     const endMs = Math.min(next.getTime(), now);
 
     const counts: Record<string, number> = {};
-    for (const event of events) {
-      if (excluded.includes(event.login)) continue;
-      const atMs = Date.parse(event.at);
-      if (atMs < startMs || atMs >= endMs) continue;
-      if (sinceMs !== null && atMs < sinceMs) continue;
+    for (const event of taggedEvents) {
+      if (event.atMs < startMs || event.atMs >= endMs) continue;
       counts[event.login] = (counts[event.login] ?? 0) + 1;
     }
     points.push({ start: cursor.toISOString(), end: new Date(endMs).toISOString(), counts });

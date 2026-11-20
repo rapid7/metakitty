@@ -64,5 +64,27 @@
     "mergedAt": "2026-11-13T10:37:37Z",
     "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/60357436?v=4",
     "reviewDecision": null
+  },
+  {
+    "number": 39,
+    "project": "metakitty",
+    "pullRequest": true,
+    "title": "Add additional module details",
+    "url": "https://github.com/rapid7/metakitty/pull/39",
+    "reporter": "adfoster-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/60357436?v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2026-11-19T23:05:34Z",
+    "closedAt": "2026-11-20T10:22:55Z",
+    "updatedAt": "2026-11-20T10:22:55Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "adfoster-r7",
+    "mergedAt": "2026-11-20T10:22:55Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/60357436?v=4",
+    "reviewDecision": null
   }
 ]

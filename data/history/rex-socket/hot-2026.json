@@ -200,5 +200,27 @@
     "mergedBy": "adfoster-r7",
     "mergedAt": "2026-07-23T10:02:11Z",
     "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/60357436?v=4"
+  },
+  {
+    "number": 89,
+    "project": "rex-socket",
+    "pullRequest": true,
+    "title": "Fix IPv6 proxy connections and preserve target addresses",
+    "url": "https://github.com/rapid7/rex-socket/pull/89",
+    "reporter": "Yeagerist0",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/180412661?u=c881872b60d3a6431b6562f66633cf858cb4df21&v=4",
+    "labels": [],
+    "state": "open",
+    "createdAt": "2026-11-20T08:32:54Z",
+    "closedAt": null,
+    "updatedAt": "2026-11-20T08:33:28Z",
+    "commentCount": 0,
+    "lastCommitAt": "2026-11-20T08:32:34Z",
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null,
+    "reviewDecision": "none"
   }
 ]
