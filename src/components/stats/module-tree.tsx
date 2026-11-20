@@ -31,6 +31,12 @@ function sumTotals(nodes: ModuleTreeNode[]): number {
 }
 
 function TreeNode({ node, forceOpen }: { node: ModuleTreeNode; forceOpen: boolean }) {
+  // The full tree can be 8,000+ nodes — mounting every folder's children up front (even collapsed)
+  // means that many DOM nodes in the initial render. Deferring a folder's children until it's
+  // actually been opened at least once keeps the default render to just the visible rows. Sticky
+  // once true so re-collapsing doesn't throw the subtree away and force a remount on reopen.
+  const [hasOpened, setHasOpened] = useState(forceOpen);
+
   if (node.modulePath) {
     return (
       <li className={`flex items-center gap-1.5 rounded py-0.5 ${FILE_ROW_INDENT} hover:bg-muted`}>
@@ -44,7 +50,7 @@ function TreeNode({ node, forceOpen }: { node: ModuleTreeNode; forceOpen: boolea
 
   return (
     <li>
-      <details className="group" open={forceOpen || undefined}>
+      <details className="group" open={forceOpen || undefined} onToggle={(e) => e.currentTarget.open && setHasOpened(true)}>
         <summary className="flex cursor-pointer list-none items-center gap-1.5 rounded py-0.5 select-none hover:bg-muted">
           <ChevronRight className="size-3.5 shrink-0 text-muted-foreground transition-transform group-open:rotate-90" />
           <Folder className="size-3.5 shrink-0 fill-muted-foreground/25 text-muted-foreground" />
@@ -52,16 +58,15 @@ function TreeNode({ node, forceOpen }: { node: ModuleTreeNode; forceOpen: boolea
           <span className="font-mono text-xs tabular-nums text-muted-foreground">{node.total}</span>
         </summary>
         <ul className="ml-[6.5px] border-l border-border pl-3">
-          {node.children.map((child) => (
-            <TreeNode key={child.name} node={child} forceOpen={forceOpen} />
-          ))}
+          {(forceOpen || hasOpened) &&
+            node.children.map((child) => <TreeNode key={child.name} node={child} forceOpen={forceOpen} />)}
         </ul>
       </details>
     </li>
   );
 }
 
-/** Native `<details>`/`<summary>` disclosure tree — works without client JS for its browsing structure; only the filter box above it needs client JS. */
+/** Native `<details>`/`<summary>` disclosure tree. A folder's own row (name, icon, total) always renders without client JS; its children only mount once it's actually opened (see TreeNode), so browsing below the top level needs JS — a deliberate trade-off given the tree's size. */
 export function ModuleTree({ nodes }: { nodes: ModuleTreeNode[] }) {
   const [search, setSearch] = useState("");
   const query = search.trim().toLowerCase();
