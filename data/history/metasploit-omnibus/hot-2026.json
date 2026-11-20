@@ -410,5 +410,27 @@
     "mergedAt": null,
     "mergedByAvatarUrl": null,
     "reviewDecision": "none"
+  },
+  {
+    "number": 258,
+    "project": "metasploit-omnibus",
+    "pullRequest": true,
+    "title": "Bump to Ruby 3.4.13",
+    "url": "https://github.com/rapid7/metasploit-omnibus/pull/258",
+    "reporter": "sjanusz-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/85949464?v=4",
+    "labels": [],
+    "state": "open",
+    "createdAt": "2026-11-20T11:42:59Z",
+    "closedAt": null,
+    "updatedAt": "2026-11-20T11:50:03Z",
+    "commentCount": 0,
+    "lastCommitAt": "2026-11-20T11:49:56Z",
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": null,
+    "mergedAt": null,
+    "mergedByAvatarUrl": null,
+    "reviewDecision": "none"
   }
 ]

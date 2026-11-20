@@ -51,16 +51,18 @@ async function fetchLiveContributors(): Promise<ContributorsDataset> {
 }
 
 async function fetchAndCacheLiveContributors(): Promise<ContributorsDataset> {
+  const ttlMinutes = Number(process.env.GITHUB_HISTORY_CACHE_TTL_MINUTES ?? DEFAULT_CACHE_TTL_MINUTES);
+  const ttlMs = (Number.isFinite(ttlMinutes) ? ttlMinutes : DEFAULT_CACHE_TTL_MINUTES) * 60_000;
+
+  // Checked before requiring a token: a still-fresh cache answers this without GitHub at all, so a
+  // token should only be demanded once a live fetch is actually about to happen.
+  const cached = readContributorsCache(CONTRIBUTORS_CACHE_PATH, STATS_REPOS, ttlMs);
+  if (cached) return cached;
+
   const token = resolveGitHubToken();
   if (!token) {
     throw new Error("GITHUB_OAUTH_TOKEN or GITHUB_BASIC_AUTH must be set (or pass FIXTURE_DATA=1 to build from fixtures).");
   }
-
-  const ttlMinutes = Number(process.env.GITHUB_HISTORY_CACHE_TTL_MINUTES ?? DEFAULT_CACHE_TTL_MINUTES);
-  const ttlMs = (Number.isFinite(ttlMinutes) ? ttlMinutes : DEFAULT_CACHE_TTL_MINUTES) * 60_000;
-
-  const cached = readContributorsCache(CONTRIBUTORS_CACHE_PATH, STATS_REPOS, ttlMs);
-  if (cached) return cached;
 
   const monthSinceIso = new Date(Date.now() - MONTH_LOOKBACK_DAYS * 86_400_000).toISOString();
   const yearSinceIso = new Date(Date.now() - YEAR_LOOKBACK_DAYS * 86_400_000).toISOString();

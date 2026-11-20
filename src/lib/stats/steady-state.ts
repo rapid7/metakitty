@@ -23,15 +23,20 @@ export interface SteadyStatePoint {
  * here so the two lines stay aligned on one shared x-axis in a row-per-date chart format.
  */
 export function getSteadyStateSeries(issues: HistoricalIssue[], matches: (issue: HistoricalIssue) => boolean, now: number = Date.now()): SteadyStatePoint[] {
-  const matching = issues.filter(matches);
+  const matching = issues.filter(matches).map((issue) => ({
+    createdMs: Date.parse(issue.createdAt),
+    closedMs: issue.closedAt ? Date.parse(issue.closedAt) : null,
+    rapid7: isRapid7(issue.reporter),
+  }));
+
   const points: SteadyStatePoint[] = [];
   for (let dateMs = SERIES_START_MS; dateMs <= now; dateMs += WEEK_MS) {
     let all = 0;
     let rapid7 = 0;
     for (const issue of matching) {
-      if (!isOpenOn(issue, dateMs)) continue;
+      if (issue.createdMs > dateMs || (issue.closedMs !== null && issue.closedMs < dateMs)) continue;
       all++;
-      if (isRapid7(issue.reporter)) rapid7++;
+      if (issue.rapid7) rapid7++;
     }
     points.push({ date: new Date(dateMs).toISOString(), all, rapid7 });
   }

@@ -218,5 +218,27 @@
     "mergedAt": null,
     "mergedByAvatarUrl": null,
     "reviewDecision": "none"
+  },
+  {
+    "number": 32,
+    "project": "metasploit-omnibus-cache",
+    "pullRequest": true,
+    "title": "Add Ruby 3.4.13",
+    "url": "https://github.com/rapid7/metasploit-omnibus-cache/pull/32",
+    "reporter": "sjanusz-r7",
+    "reporterAvatarUrl": "https://avatars.githubusercontent.com/u/85949464?v=4",
+    "labels": [],
+    "state": "closed",
+    "createdAt": "2026-11-20T11:39:51Z",
+    "closedAt": "2026-11-20T11:44:04Z",
+    "updatedAt": "2026-11-20T11:44:04Z",
+    "commentCount": 0,
+    "lastCommitAt": null,
+    "lastCommentAt": null,
+    "assignees": [],
+    "mergedBy": "adfoster-r7",
+    "mergedAt": "2026-11-20T11:44:04Z",
+    "mergedByAvatarUrl": "https://avatars.githubusercontent.com/u/60357436?v=4",
+    "reviewDecision": null
   }
 ]
